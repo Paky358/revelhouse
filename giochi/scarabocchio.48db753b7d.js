@@ -1,0 +1,1929 @@
+/* =========================================================
+   GIOCO — "Scarabocchio" (disegna e indovina, tipo Pinturillo)
+   A turno uno disegna una parola segreta (sceglie tra 3) sulla
+   lavagna; gli altri la vedono comparire in tempo reale e provano
+   a indovinarla scrivendo in chat. La risposta giusta non si vede:
+   compare solo "Marco ha indovinato!" (anche se la parola è dentro
+   una frase). Punti: chi indovina prende tanti punti quanti secondi
+   mancano (+10 al primo); chi disegna, per ogni risposta giusta, quei
+   punti divisi per quanti possono indovinare (se indovinano tutti, la media).
+   Quando ha indovinato più di metà del gruppo restano 20 secondi.
+   Col tempo si scoprono alcune lettere; "ci sei quasi" lo sa solo
+   chi l'ha scritto. Solo ONLINE (ognuno dal suo telefono):
+   host-autoritativo come gli altri giochi. I tratti viaggiano a
+   pezzetti (~14 al secondo, coordinate su una lavagna 1000x1200)
+   e l'host li rimanda a tutti; chi arriva dopo chiede il disegno intero.
+   ========================================================= */
+(function () {
+  "use strict";
+
+  // ---------- le parole (tutte disegnabili) ----------
+  // Una voce per "|". Dopo "/" le altre risposte che valgono uguale (sinonimi): la parola da disegnare è la prima.
+  // Valgono anche il plurale e il singolare (gatti = gatto) e la parola scritta dentro una frase ("è un gatto").
+  var FACILI_TESTO = [
+    // animali
+    "gatto/gattino|cane/cagnolino|cavallo|mucca/vacca|maiale/maialino|pecora|gallina|gallo|pulcino|papera/anatra/paperella|oca|coniglio/coniglietto|topo/topolino|" +
+    "rana|pesce|pesce rosso|pesce palla|uccellino/uccello/passerotto|farfalla|ape|formica|ragno|lumaca/chiocciola|serpente/serpe|tartaruga|elefante|giraffa|leone|" +
+    "tigre|zebra|scimmia|gorilla|orso/orsetto|orso polare|panda|pinguino|balena|delfino|squalo|polpo/polipo|granchio|aragosta|gambero|coccodrillo|" +
+    "dinosauro/tirannosauro/t rex|gufo/civetta|volpe|lupo|cammello|canguro|koala|pappagallo|cigno|lucertola|riccio|pipistrello|medusa|stella marina|coccinella|" +
+    "zanzara|mosca|bruco|lombrico/verme|capra|asino|toro|cervo|renna|alce|cinghiale|ippopotamo|rinoceronte|leopardo|aquila|corvo|piccione|gabbiano|cicogna|" +
+    "libellula|grillo|scorpione|foca|tricheco|orca|criceto|talpa|ostrica|cozza",
+    // personaggi e mestieri
+    "drago/dragone|fantasma/spettro|robot|alieno/extraterrestre/marziano|sirena|unicorno|fata|elfo|gnomo|orco|gigante|zombie/zombi|angelo|diavolo/diavoletto|" +
+    "mago/stregone|strega|befana|pirata|re|regina|principe|principessa|cavaliere|pagliaccio/clown|supereroe|astronauta|cuoco/chef|pompiere/vigile del fuoco|" +
+    "poliziotto|dottore/medico|infermiera/infermiere|maestra/maestro|postino|cameriere|contadino|pescatore|marinaio|muratore|soldato|calciatore|ballerina|cantante|" +
+    "arbitro|subacqueo/sub|vampiro/dracula|mummia|ninja|cowboy|neonato/bebè|nonno|nonna|sposa|pinocchio|cappuccetto rosso|biancaneve|cenerentola",
+    // vestiti e accessori
+    "ombrello|occhiali/occhiali da sole|cappello/cappellino/berretto|scarpa|stivale|ciabatta/pantofola|calzino/calza|maglietta/t shirt|maglione|pantaloni|gonna|" +
+    "vestito|giacca|pigiama|mutande|costume da bagno/costume|cintura|guanto|sciarpa|cravatta|papillon|mantello|tutù|grembiule|casco|elmo|corona|anello|collana|" +
+    "braccialetto|orecchini|borsa|zaino/zainetto|valigia|portafoglio|orologio",
+    // in casa
+    "sedia|tavolo|letto|divano|poltrona|armadio|scrivania|lampada|candela|chiave|porta|finestra|scala|specchio|quadro|vaso|tappeto|cuscino|coperta|culla|amaca|" +
+    "camino/caminetto|sveglia|campanello|cassaforte|spazzolino/spazzolino da denti|dentifricio|pettine|spazzola|sapone/saponetta|asciugamano|" +
+    "asciugacapelli/phon/fon|doccia|vasca da bagno/vasca|lavandino|rubinetto|water/gabinetto/wc|carta igienica|ferro da stiro|scopa|secchio|" +
+    "bidone della spazzatura/pattumiera/spazzatura|cestino|frigorifero/frigo|forno|pentola|padella|teiera|mestolo|imbuto|barattolo|tazza|bicchiere|bottiglia|" +
+    "forchetta|coltello|cucchiaio|piatto|scatola|lampadina",
+    // oggetti, giochi e strumenti
+    "telefono/cellulare/smartphone/telefonino|computer/pc/portatile|televisione/tv/televisore|tablet|radio|macchina fotografica/fotocamera|stampante|drone|antenna|" +
+    "satellite|chitarra|pianoforte|tamburo|tromba|violino|flauto|arpa|sassofono/sax|fisarmonica|xilofono|maracas|nota musicale|microfono|cuffie/auricolari|" +
+    "pallone/palla|racchetta|libro|quaderno|matita|pastello|penna|gomma|temperino|astuccio|righello|forbici|colla|pennello|tavolozza|lavagna|gessetto|banco|" +
+    "mappamondo|martello|chiodo|vite|cacciavite|sega|trapano|pinza|chiave inglese|ascia|pala|rastrello|carriola|annaffiatoio|regalo/pacco regalo|palloncino|" +
+    "aquilone|bambola|orsacchiotto/peluche|trottola|yo yo|girandola|fionda|pistola ad acqua|bolle di sapone|carte da gioco/carte|dado|birilli|frisbee|maschera|" +
+    "parrucca|spada|scudo|arco|freccia|bandiera|mappa|tesoro|bussola|ancora|bomba|lucchetto|campana|fischietto|calamita/magnete|batteria/pila|binocolo|" +
+    "lente d'ingrandimento/lente|cannocchiale|torcia|fiammifero|lanterna|catena|corda|ruota|siringa|pillola|cerotto|stampella|ciuccio|biberon|passeggino|" +
+    "busta/lettera|francobollo|giornale|salvagente|pinne|ombrellone|sdraio|castello di sabbia|canna da pesca|amo|rete|gabbia|cuccia|osso|ciotola|guinzaglio|" +
+    "ferro di cavallo|sella|trappola per topi|sacco a pelo|trofeo/coppa|medaglia",
+    // natura e cielo
+    "sole|luna|stella|stella cadente|nuvola|pioggia|neve|fiocco di neve|fulmine|arcobaleno|montagna|collina|vulcano|isola|spiaggia|mare|onda|fiume|lago|cascata|" +
+    "grotta|scoglio|sasso/pietra|conchiglia|deserto|bosco/foresta|albero|tronco|fiore|tulipano|margherita|rosa|girasole|quadrifoglio|foglia|erba|fungo|cactus|" +
+    "palma|pigna|ghianda|goccia|pozzanghera|pianeta|saturno|pupazzo di neve/pupazzo",
+    // da mangiare e da bere
+    "pizza|gelato/cono gelato|torta|crostata|mela|banana|pera|pesca|arancia|mandarino|limone|fragola|ciliegia|uva|anguria/cocomero|melone|ananas|kiwi|" +
+    "cocco/noce di cocco|fico|castagna|noce|avocado|carota|pomodoro|peperoncino|peperone|melanzana|zucchina|cipolla|aglio|patata|pannocchia/mais|piselli|" +
+    "insalata/lattuga|broccolo|uovo|uovo fritto/uovo al tegamino|formaggio|mozzarella|prosciutto|salame|salsiccia|wurstel|bistecca|coscia di pollo/pollo|" +
+    "pane|panino|toast|hot dog|hamburger|patatine/patatine fritte/patate fritte|biscotto|caramella|lecca lecca|cioccolato/cioccolata|ciambella/donut|muffin|" +
+    "pasticcino|panettone|cannolo|bombolone/krapfen|caffè/espresso/tazzina di caffè|cappuccino|tè/the|latte|succo di frutta/succo|miele|marmellata|burro|yogurt|" +
+    "spaghetti/pasta|tortellini|ravioli|popcorn|oliva|ketchup|focaccia|grissino|piadina|arancino/arancina|frittata",
+    // posti
+    "casa|casetta sull'albero|castello|chiesa|scuola|ospedale|ponte|faro|torre|grattacielo|tenda|capanna|igloo|piramide|mulino/mulino a vento|stadio|fattoria|" +
+    "stalla|recinto|pozzo|fontana|statua|panchina|lampione|cassetta delle lettere/buca delle lettere|cartello stradale/cartello|strisce pedonali|semaforo|" +
+    "prigione/carcere|piscina|parco giochi|altalena|scivolo|giostra|zoo|porto|aeroporto",
+    // veicoli
+    "macchina/auto/automobile|bicicletta/bici|triciclo|moto/motocicletta|vespa/scooter/motorino|autobus/bus/pullman|taxi|camion|trattore|ruspa/escavatore|gru|" +
+    "ambulanza|carro armato|treno|tram|aereo/aeroplano|elicottero|razzo/missile|astronave/navicella|disco volante/ufo|nave|barca|barca a vela/veliero|canoa/kayak|" +
+    "zattera|gondola|sottomarino|monopattino|skateboard|pattini/pattini a rotelle|slitta|carrozza|mongolfiera",
+    // il corpo
+    "occhio|naso|bocca|orecchio|mano|piede|dito|gamba|braccio|pancia|dente|lingua|baffi|barba|cervello|cuore|muscoli/muscolo|scheletro|teschio|impronta|sorriso|" +
+    "lacrima|ombelico",
+    // sport, feste e Italia
+    "calcio|tennis|basket/pallacanestro|pallavolo|rugby|ping pong/tennis da tavolo|nuoto|sci|snowboard|surf|golf|bowling|boxe/pugilato|karate|ciclismo|canestro|" +
+    "albero di natale|babbo natale/santa claus|presepe|ghirlanda|zucca|ragnatela|calderone|pozione|uovo di pasqua|colosseo|torre di pisa|moka/caffettiera|mandolino"
+  ].join("|");
+  var DIFFICILI_TESTO = [
+    // cielo, tempo e stagioni
+    "tempesta/temporale/bufera|eclissi|terremoto|tsunami/maremoto|iceberg|meteorite/asteroide/meteora|cometa|galassia|aurora boreale|stalattite|tramonto|alba|" +
+    "tornado/uragano/tromba d'aria|valanga|grandine|nebbia|incendio|notte|estate|inverno|autunno|primavera|sistema solare|buco nero|oasi|ghiacciaio|giungla|" +
+    "barriera corallina",
+    // posti e attrazioni
+    "ascensore|scala mobile|montagne russe/ottovolante|ruota panoramica|trampolino|paracadute|luna park|parco acquatico|acquario|circo|museo|biblioteca|" +
+    "supermercato|autolavaggio|farmacia|palestra|discoteca|mercato|bancarella|stazione|autostrada|galleria/tunnel|binari|passaggio a livello|diga|molo|" +
+    "stazione spaziale|labirinto|edicola|ristorante|cinema|teatro|banca",
+    // mestieri
+    "giardiniere|idraulico|parrucchiere/barbiere|meccanico|fotografo|pittore|scienziato|detective/investigatore|benzinaio|dentista|veterinario|chirurgo|pilota|" +
+    "autista|giudice|sarto|falegname|panettiere/fornaio|pasticciere|macellaio|fioraio|bagnino|spazzacamino|elettricista|direttore d'orchestra|mimo|" +
+    "prestigiatore|giocoliere|acrobata|domatore|equilibrista|archeologo|esploratore|apicoltore|minatore|palombaro|cassiere/cassiera|giornalista|architetto",
+    // cose che si fanno, momenti
+    "sbadiglio|starnuto|abbraccio|selfie/autoscatto|matrimonio|picnic|campeggio|solletico|mal di denti|mal di pancia|febbre|singhiozzo|risata|bacio|" +
+    "stretta di mano|applauso|inchino|capriola|verticale|spaccata|tuffo|braccio di ferro|tiro alla fune|nascondino|girotondo|caccia al tesoro|" +
+    "bersaglio/tiro al bersaglio|palla di neve|castello di carte|karaoke|sfilata|trasloco|ingorgo/traffico|russare|arrampicata|pattinaggio|equitazione|scherma|" +
+    "tiro con l'arco|sollevamento pesi|salto in alto|maratona|canottaggio",
+    // oggetti difficili
+    "aspirapolvere|frullatore|tostapane|termometro|stetoscopio|telecomando|joystick/controller|presa elettrica/spina|calcolatrice|bilancia|clessidra|" +
+    "cavatappi|grattugia|mattarello|microscopio|telescopio|ventaglio|boomerang|catapulta|trampoli|ghiacciolo|spaventapasseri|graffetta|spillatrice|lavatrice|" +
+    "ventilatore|periscopio|dirigibile|deltaplano|betoniera|spremiagrumi|schiaccianoci|scolapasta|macchina da cucire|macchina da scrivere|giradischi|" +
+    "grammofono|proiettore|parchimetro|idrante|estintore|tombino|citofono|passaporto|scontrino|salvadanaio|portachiavi|carrucola|sedia a rotelle|radiografia|" +
+    "ingessatura/gesso|termosifone|apriscatole|cassetto|attaccapanni/appendiabiti|zerbino|tosaerba/tagliaerba|motosega|tastiera|telecamera",
+    // animali difficili
+    "ornitorinco|camaleonte|fenicottero|bradipo|lama/alpaca|struzzo|tucano|pavone|cavalluccio marino|scoiattolo|castoro|armadillo|formichiere|istrice|lontra|" +
+    "ghepardo|iena|bisonte|pellicano|picchio|colibrì|avvoltoio|airone|narvalo|manta|pesce spada|anguilla|piranha|millepiedi|scarabeo|lucciola|falena|" +
+    "salamandra|iguana|cobra|pterodattilo|mammut",
+    // cibo, monumenti e feste
+    "lasagne/lasagna|sushi|zucchero filato|pancake/frittella|croissant/cornetto/brioche|kebab|tiramisù|risotto|minestra/zuppa|polenta|frullato|torre eiffel|" +
+    "statua della libertà|big ben|sfinge|grande muraglia|fontana di trevi|vesuvio|trullo|fuochi d'artificio/fuochi|coriandoli|stelle filanti|puzzle|domino|" +
+    "scacchi|podio"
+  ].join("|");
+  var SINONIMI = Object.create(null), TUTTE = Object.create(null);   // le altre risposte buone; tutte le parole (per non scambiare "pesca" con "pesce")
+  function leggiParole(testo) {
+    var lista = [];
+    testo.split("|").forEach(function (voce) {
+      var a = voce.split("/").map(function (x) { return x.trim(); }).filter(Boolean);
+      if (!a.length || lista.indexOf(a[0]) >= 0) return;
+      lista.push(a[0]);
+      if (a.length > 1) SINONIMI[a[0]] = a.slice(1);
+      a.forEach(function (x) { TUTTE[norm(x).replace(/ /g, "")] = 1; });
+    });
+    return lista;
+  }
+  var FACILI = leggiParole(FACILI_TESTO), DIFFICILI = leggiParole(DIFFICILI_TESTO);
+
+  // ---------- «📝 Le nostre parole»: quelle del gruppo (nomi di amici, posti, battute) ----------
+  // Le scrive l'host nelle regole e restano sul suo profilo (SG.listaProfilo("scarabocchio")).
+  // Una voce = la parola da disegnare; dopo "/" gli altri modi di dirla che valgono uguale ("Peppe/Giuseppe").
+  var MAX_NOSTRE = 300, MAX_LUNGA = 24;
+  function chiaveNostra(v) { return norm(String(v || "").split("/")[0]).replace(/ /g, ""); }
+  function pulisciNostra(v) {
+    var alt = String(v || "").replace(/[’`´]/g, "'").split("/").map(function (w) { return w.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim(); }).filter(Boolean);
+    if (!alt.length) return null;
+    var visti = {}, ok = [];
+    for (var i = 0; i < alt.length; i++) {
+      var w = alt[i], k = norm(w).replace(/ /g, "");
+      if (w.length > MAX_LUNGA || !/^[A-Za-zÀ-ÖØ-öø-ÿ' ]+$/.test(w) || k.length < 2) return null;   // solo lettere (anche accentate), spazi e apostrofi
+      if (!visti[k]) { visti[k] = 1; ok.push(w); }
+    }
+    return ok.slice(0, 4).join("/");
+  }
+  function leggiNostre(lista) {
+    var out = [], visti = {};
+    (Array.isArray(lista) ? lista : []).forEach(function (v) {
+      var p = pulisciNostra(v); if (!p || out.length >= MAX_NOSTRE) return;
+      var k = chiaveNostra(p); if (visti[k]) return;
+      visti[k] = 1; out.push(p);
+    });
+    return out;
+  }
+  // "mix" = mescolate (una delle 3 scelte è vostra), "solo" = solo le vostre, "no" = solo quelle del gioco
+  function modoNostre(imp, n) { var m = imp && imp.nostreModo; if (m === "mix" || m === "solo" || m === "no") return m; return n ? "mix" : "no"; }
+  function nostreDelProfilo() { try { return leggiNostre(window.SG && SG.listaProfilo ? SG.listaProfilo("scarabocchio") : []); } catch (e) { return []; } }
+
+  // ---------- costanti ----------
+  var LW = 1000, LH = 1200;                                    // la lavagna "logica", un po' più alta che larga (sta meglio sul telefono): i punti viaggiano in queste coordinate
+  // i colori (l'ultimo, bianco, è la gomma): 12 pieni e 4 chiari per gli sfondi col secchiello (cielo, erba, rosa chiaro, crema)
+  var COLORI = ["#1d1d27", "#868e96", "#8b5a2b", "#e03131", "#fd7e14", "#fcc419", "#2f9e44", "#3bc9db", "#1971c2", "#7048e8", "#f06595", "#f5c6a0",
+    "#a5d8ff", "#b2f2bb", "#fcc2d7", "#fff3bf", "#ffffff"];
+  var NOMI_COL = ["Nero", "Grigio", "Marrone", "Rosso", "Arancione", "Giallo", "Verde", "Azzurro", "Blu", "Viola", "Rosa", "Pelle", "Cielo", "Erba", "Rosa chiaro", "Crema", "Gomma"];
+  var GOMMA = COLORI.length - 1;
+  var SPESSORI = [4, 10, 18, 32, 56];                          // 5 grandezze, dalla finissima alla grossa (in unità della lavagna), anche per la gomma
+  var NOMI_SP = ["Finissimo", "Sottile", "Medio", "Grosso", "Grossissimo"];
+  var BONUS_DIS_MOLTI = 1.5;                                   // da 6 giocatori in su chi disegna prende una volta e mezza la sua parte
+  var MEM_USCITE = "sg-scara-uscite", MEM_GIORNI = 30;         // le parole uscite (anche solo proposte) si ricordano 30 giorni sul telefono di chi tiene la partita
+  var BONUS_PRIMO = 10;                                        // a chi indovina per primo
+  var SCELTA_MS = 12000, PUNTI_MS = 6000, MAX_CHAT = 40;
+  var ULTIMI_MS = 20000;                                       // quando ha indovinato più di metà del gruppo, restano 20 secondi
+  var PAUSA_MSG = 700;                                         // al massimo un messaggio ogni 0,7 secondi a testa
+  var SESSIONE = Math.random().toString(36).slice(2, 6);       // per i nomi dei tratti: chi ricarica la pagina non riusa quelli vecchi
+  var COL_GIOC = ["#ffd43b", "#74c0fc", "#ff8787", "#8ce99a", "#e599f7", "#ffa94d", "#66d9e8", "#fcc2d7", "#b197fc", "#d8f5a2"];   // 🌙 i colori dei nomi nella chat: pastelli chiari, tutti leggibili sul fondo scuro (più di 7:1)
+  var PARTITE_SALVATE = Object.create(null);
+  var GALLERIA = { id: null, lista: [] };                      // le miniature dei disegni di questa partita (le fa ogni telefono da sé)
+
+  function nuovaPartitaScara() { return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10); }
+  function statVuoteScara() {
+    return { turniDisegnati: 0, indovinate: 0, indovinatePrimo: 0, indovinateVeloci: 0, quasi: 0,
+      disegniIndovinati: 0, disegniConTreIndovinatori: 0, indovinateDifficili: 0, paroleDifficiliDisegnate: 0,
+      paroleDifficiliIndovinate: 0, puntiIndovinando: 0, vittorie: 0, vittorieDifficili: 0, vittorieGruppo: 0 };
+  }
+  function salvaTrofeiScara(t, vm, cb) {
+    try {
+      if (!vm || vm.fase !== "fine" || !vm.partitaId || t.guarda ||
+          (t.linkParams && (t.linkParams.guarda || t.linkParams.prova)) ||
+          (t.impostazioni && t.impostazioni.prova) ||
+          !(window.SGNube && SGNube.disponibile && SGNube.disponibile() && SGNube.profilo && SGNube.profilo() && SGNube.salvaProgressi)) return;
+      var profilo = SGNube.profilo(), id = cb.myId, me = (vm.players || []).filter(function (p) { return p.id === id; })[0];
+      if (!me || !id || !String(profilo.nome || "").trim() || String(profilo.nome).trim().toLowerCase() !== String(me.nome || "").trim().toLowerCase()) return;
+      var profiloId = String(profilo.uid || profilo.nome).trim().toLowerCase();
+      var chiave = "scarabocchio|" + vm.partitaId + "|" + profiloId;
+      if (PARTITE_SALVATE[chiave]) return;
+      var chiaveLocale = "sg-scarabocchio-ultima-partita-" + profiloId;
+      try { if (window.localStorage && localStorage.getItem(chiaveLocale) === String(vm.partitaId)) { PARTITE_SALVATE[chiave] = 1; return; } } catch (e) {}
+      var s = (vm.statFine || {})[id] || {}, vittoria = (vm.classifica || []).some(function (p) { return p.id === id && p.pos === 1; });
+      var inc = [["partite", 1]];
+      Object.keys(s).forEach(function (k) { if (+s[k] > 0) inc.push([k, +s[k]]); });
+      if (vittoria) inc.push(["vittorie", 1]);
+      if (vittoria && vm.difficili && vm.paroleDifficiliDisegnate > 0) inc.push(["vittorieDifficili", 1]);
+      if (vittoria && (vm.players || []).filter(function (p) { return !p.via; }).length >= 6) inc.push(["vittorieGruppo", 1]);
+      PARTITE_SALVATE[chiave] = 1;
+      try { if (window.localStorage) localStorage.setItem(chiaveLocale, String(vm.partitaId)); } catch (e) {}
+      SGNube.salvaProgressi(null, "scarabocchio", inc,
+        [], [["ultimaPartitaTrofei", vm.partitaId]]);
+    } catch (e) {}
+  }
+
+  // ---------- le parole uscite: si ricordano 30 giorni sul telefono di chi tiene la partita (anche quelle solo proposte) ----------
+  function leggiUscite() {
+    try { var m = JSON.parse(localStorage.getItem(MEM_USCITE) || "{}"); return m && typeof m === "object" ? m : {}; } catch (e) { return {}; }
+  }
+  function segnaUscite(parole) {
+    try {
+      var m = leggiUscite(), ora = Date.now(), vita = MEM_GIORNI * 86400000, tutte = {};
+      FACILI.concat(DIFFICILI).forEach(function (w) { tutte[w] = 1; });
+      (parole || []).forEach(function (w) { if (tutte[w]) m[w] = ora; });   // le parole vostre no: hanno il loro giro
+      Object.keys(m).forEach(function (w) { if (!(ora - m[w] < vita)) delete m[w]; });
+      localStorage.setItem(MEM_USCITE, JSON.stringify(m));
+    } catch (e) {}
+  }
+  // le parole non uscite negli ultimi 30 giorni; se ne restano poche, quelle uscite da più tempo
+  function fresche(lista, mem) {
+    var ora = Date.now(), vita = MEM_GIORNI * 86400000;
+    var nuove = lista.filter(function (w) { return !(ora - (mem[w] || 0) < vita); });
+    if (nuove.length >= 6) return nuove;
+    return lista.slice().sort(function (a, b) { return (mem[a] || 0) - (mem[b] || 0); }).slice(0, Math.max(6, Math.ceil(lista.length / 3)));
+  }
+  function fmtN(n) { return String(Math.round(n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+  function mioAvatar(nome) {
+    var p = window.SGNube && SGNube.profilo && SGNube.profilo();
+    if (p && p.omino) return p.omino;
+    return window.SGOmino ? SGOmino.casuale(nome || "io") : null;
+  }
+  function avatarValido(o) { return o && typeof o === "object" && JSON.stringify(o).length < 3000 ? o : null; }
+  function intIn(v, max) { v = Math.round(+v || 0); return v < 0 ? 0 : (v > max ? max : v); }
+  function aCaso(a) { return a[Math.floor(Math.random() * a.length)]; }
+
+  // risposte: minuscole, senza accenti né punteggiatura, senza l'articolo davanti
+  function norm(s) {
+    s = String(s || "").toLowerCase();
+    try { s = s.normalize("NFD").replace(/[̀-ͯ]/g, ""); } catch (e) {}
+    s = s.replace(/[’'`]/g, " ").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+    return s.replace(/^(il|lo|la|i|gli|le|un|uno|una|l) /, "");
+  }
+  function distanza(a, b) {   // quante lettere cambiano da a a b (Levenshtein)
+    if (Math.abs(a.length - b.length) > 2) return 9;
+    var r = [], i, j;
+    for (j = 0; j <= b.length; j++) r[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      var prec = r[0]; r[0] = i;
+      for (j = 1; j <= b.length; j++) { var t = r[j]; r[j] = Math.min(r[j] + 1, r[j - 1] + 1, prec + (a[i - 1] === b[j - 1] ? 0 : 1)); prec = t; }
+    }
+    return r[b.length];
+  }
+  // le risposte buone per una parola (lei e i sinonimi), senza spazi
+  // alt = gli altri modi di dirla scritti dall'host («Le nostre parole»: "Peppe/Giuseppe")
+  function risposte(parola, alt) { return [parola].concat(SINONIMI[parola] || [], alt || []).map(function (w) { return norm(w).replace(/ /g, ""); }); }
+  // singolare <-> plurale: cambia solo la fine (gatto/gatti, mela/mele, fiore/fiori, granchio/granchi, fungo/funghi)
+  function varianti(w) {
+    var n = w.length, a = w.slice(0, -1), u = w[n - 1], out = [];
+    if (u === "o") out.push(a + "i");
+    if (u === "a") out.push(a + "e");
+    if (u === "e") out.push(a + "i");
+    if (/io$/.test(w)) out.push(a);
+    if (/[cg]o$/.test(w)) out.push(a + "hi");
+    if (/[cg]a$/.test(w)) out.push(a + "he");
+    return out;
+  }
+  function plurale(g, r) {
+    if (g.length < 4 || r.length < 4 || TUTTE[g]) return false;   // se è un'altra parola del gioco ("pesce" per "pesca") non vale
+    return varianti(r).indexOf(g) >= 0 || varianti(g).indexOf(r) >= 0;
+  }
+  // i pezzi di un messaggio: ogni parola e ogni gruppo di parole vicine (fino a 4), senza spazi
+  function pezzi(x) {
+    var w = norm(x).split(" ").filter(Boolean), out = [];
+    for (var i = 0; i < w.length; i++) for (var n = 1; n <= 4 && i + n <= w.length; n++) out.push(w.slice(i, i + n).join(""));
+    return out;
+  }
+  // "giusta" se la parola (o un sinonimo, o il plurale) è nel messaggio, anche dentro una frase; "quasi" se ci manca poco
+  function controlla(x, parola, alt) {
+    var rr = risposte(parola, alt), pp = pezzi(x), i, j;
+    for (i = 0; i < pp.length; i++) for (j = 0; j < rr.length; j++) if (pp[i] === rr[j] || plurale(pp[i], rr[j])) return "giusta";
+    for (i = 0; i < pp.length; i++) for (j = 0; j < rr.length; j++) {
+      var g = pp[i], r = rr[j];
+      if (r.length >= 4 && Math.abs(g.length - r.length) <= 2 && distanza(g, r) <= (r.length >= 9 ? 2 : 1)) return "quasi";
+    }
+    return null;
+  }
+  // la parola con le lettere nascoste ("_"), tranne quelle già scoperte; gli spazi restano spazi
+  function maschera(parola, scoperte) {
+    var s = "";
+    for (var i = 0; i < parola.length; i++) {
+      var ch = parola[i];
+      s += (ch === " " || ch === "'") ? ch : (scoperte.indexOf(i) >= 0 ? ch : "_");
+    }
+    return s;
+  }
+
+  // ---------- suoni ----------
+  function bip(f1, f2, dur, tipo, vol) {
+    var ctx = window.SG && SG.audioCtx && SG.audioCtx(); if (!ctx) return;
+    try {
+      var t0 = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = tipo || "sine"; o.frequency.setValueAtTime(f1, t0);
+      if (f2 && f2 !== f1) o.frequency.exponentialRampToValueAtTime(f2, t0 + dur);
+      g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(vol || 0.14, t0 + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      o.connect(g); g.connect(ctx.destination); o.start(t0); o.stop(t0 + dur + 0.03);
+    } catch (e) {}
+  }
+  var FX = {
+    turno: function () { bip(520, 880, 0.18, "sine", 0.12); },
+    altri: function () { bip(700, 1050, 0.12, "triangle", 0.11); },
+    mio: function () { [660, 880, 1175].forEach(function (f, i) { setTimeout(function () { bip(f, f, 0.14, "triangle", 0.16); }, i * 90); }); },   // niente vibrazione: arriva da sola, non da un tocco
+    quasi: function () { bip(440, 520, 0.12, "sine", 0.1); },
+    tic: function () { bip(900, 900, 0.05, "square", 0.04); },
+    fine: function () { bip(440, 220, 0.3, "sawtooth", 0.08); }
+  };
+
+  // ---------- stile ----------
+  var cssFatto = false;
+  function iniettaCSS() {
+    if (cssFatto) return; cssFatto = true;
+    var st = document.createElement("style");
+    st.textContent = [
+      ".schermata.sb-piena{padding:0!important;min-height:0;height:var(--alt,100dvh);overflow:hidden;background:#15123a}",
+      ".schermata.sb-piena>.testa,.schermata.sb-piena>.piede{display:none}",
+      ".schermata.sb-piena>.contenuto{height:100%;margin:0;padding:0}",
+      ".sb-scena{position:relative;height:var(--alt,100dvh);max-width:720px;margin:0 auto;display:flex;flex-direction:column;overflow:hidden;",
+        "background:radial-gradient(120% 80% at 50% 0%,#2e2670,#15123a 70%);user-select:none;-webkit-user-select:none}",
+      ".sb-barra{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:calc(4px + env(safe-area-inset-top)) 8px 4px}",
+      ".sb-esci{flex:0 0 auto;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font:inherit;font-size:1.3rem;font-weight:900;cursor:pointer}",
+      ".sb-tempo{flex:0 0 auto;min-width:60px;text-align:center;font-weight:900;font-size:.95rem;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.12)}",
+      ".sb-tempo.poco{background:#e03131;color:#fff;animation:sbPulsa .5s ease-in-out infinite alternate}",
+      ".sb-tempo[hidden]{display:none}",
+      ".sb-centro{flex:1 1 auto;min-width:0;text-align:center;font-weight:800;font-size:.92rem;line-height:1.2;overflow:hidden;overflow-wrap:normal}",
+      ".sb-centro b{color:#ffe066;font-size:1.25em;letter-spacing:.04em;text-transform:uppercase}",
+      ".sb-giro{flex:0 0 auto;font-size:.72rem;font-weight:800;opacity:.75;text-align:right;line-height:1.15}",
+      ".sb-lettere{display:inline-flex;flex-wrap:wrap;column-gap:.55em;row-gap:3px;align-items:flex-end;justify-content:center;max-width:100%}",
+      ".sb-lettere .pa{display:inline-flex;gap:.2em;align-items:flex-end;flex:0 0 auto}",   // (una parola non si spezza: si va a capo tra una parola e l'altra)
+      ".sb-lettere i{display:inline-block;width:.8em;border-bottom:3px solid #fff;font-style:normal;font-weight:900;font-size:1.14em;line-height:1.1;text-transform:uppercase;color:#ffe066;text-align:center}",
+      ".sb-lettere small{opacity:.7;font-size:.78em;align-self:center;white-space:nowrap}",
+      ".sb-lav{position:relative;flex:0 0 auto;display:flex;justify-content:center}",
+      ".sb-cv{display:block;background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.45);touch-action:none}",
+      ".sb-cv.matita{cursor:crosshair}",
+      ".sb-cv.matita.secchio{cursor:cell}",
+      ".sb-sopra{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;",
+        "padding:12px;text-align:center;background:rgba(18,14,50,.9);border-radius:14px;color:#fff;overflow:hidden}",
+      ".sb-sopra[hidden]{display:none}",
+      ".sb-tit{font-size:1rem;font-weight:800;line-height:1.3}",
+      ".sb-parola{font-size:clamp(1.4rem,7vw,2.1rem);font-weight:900;color:#ffe066;text-transform:uppercase;letter-spacing:.04em;line-height:1.1}",
+      ".sb-scelte{display:flex;flex-direction:column;gap:8px;width:min(320px,92%)}",
+      ".sb-scelte button{border:0;border-radius:14px;padding:11px;font:inherit;font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#ffe066,#f4b011);color:#3a2a00;cursor:pointer;text-transform:capitalize}",
+      ".sb-scelte button .sb-nostra{font-size:.85em;margin-left:6px}",
+      ".sb-scelte button.nostra{background:linear-gradient(135deg,#b2f2bb,#51cf66);color:#0b3a17}",
+      // «📝 Le nostre parole» nelle regole: una alla volta, ognuna con la sua ✕
+      ".sb-agg{display:flex;gap:6px;align-items:center}.sb-agg .link-campo{flex:1;min-width:0;margin:0}",
+      ".sb-esito{min-height:1.2em;margin:4px 0 0}",
+      ".sb-conta{font-size:.8rem;font-weight:800;opacity:.85;margin:6px 0 4px}",
+      ".sb-lista{display:flex;flex-wrap:wrap;gap:6px}",
+      ".sb-pw{display:inline-flex;align-items:center;gap:4px;padding:4px 4px 4px 10px;border-radius:999px;background:rgba(255,255,255,.12);font-weight:800;font-size:.85rem;max-width:100%}",
+      ".sb-pw>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
+      ".sb-x{flex:0 0 auto;width:24px;height:24px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font:inherit;font-size:.75rem;font-weight:900;cursor:pointer;touch-action:manipulation}",
+      ".sb-lista-tasti{display:flex;gap:6px;margin-top:8px}",
+      ".sb-righe{font-size:.9rem;line-height:1.45}",
+      ".sb-righe b{color:#8ce99a}",
+      ".sb-fig{width:64px;height:64px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.12)}",
+      ".sb-fig svg,.sb-chip-fig svg{display:block;width:170%;height:auto;margin:-6% 0 0 -35%}",
+      ".sb-fig svg.gettone,.sb-chip-fig svg.gettone{width:100%;height:100%;margin:0}",   // il gettone intero (non la testa ritagliata dell avatar di prima)
+      ".sb-riga{flex:0 0 auto;padding:5px 6px 2px}",
+      ".sb-strumenti{display:flex;flex-direction:column;gap:6px;align-items:stretch}",
+      ".sb-strumenti[hidden],.sb-gente[hidden]{display:none}",
+      // i 16 colori in due file da 8 (accanto annulla, ripeti, gomma e cestino); sotto le 5 grandezze e matita, linea, tondo, secchiello
+      ".sb-tavolozza{display:grid;grid-template-columns:repeat(8,minmax(0,1fr)) 40px 40px;gap:4px 4px;align-items:center;width:100%;max-width:440px;margin:0 auto}",
+      ".sb-col{display:block;width:100%;max-width:28px;aspect-ratio:1/1;justify-self:center;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:var(--c);cursor:pointer;padding:0;transition:transform .12s}",
+      ".sb-col.on{border-color:#ffe066;transform:scale(1.22);box-shadow:0 0 0 2px rgba(255,224,102,.5)}",
+      ".sb-tavolozza .sb-str{width:40px;height:30px;font-size:1rem}",
+      ".sb-attrezzi{display:flex;gap:4px;justify-content:center;align-items:center;max-width:440px;margin:0 auto;width:100%}",
+      ".sb-attrezzi .sb-sep{flex:0 0 6px}",
+      ".sb-spess,.sb-str{width:42px;height:36px;border-radius:12px;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:1.1rem;cursor:pointer;flex:0 0 auto;",
+        "display:flex;align-items:center;justify-content:center;padding:0}",
+      ".sb-attrezzi .sb-spess,.sb-attrezzi .sb-str{flex:1 1 0;min-width:0;max-width:42px;height:34px}",
+      ".sb-str:disabled{opacity:.35}",
+      ".sb-spess.on,.sb-gomma.on,.sb-modo.on{background:rgba(255,224,102,.28);box-shadow:inset 0 0 0 2px #ffe066}",
+      ".sb-spess i{display:block;border-radius:50%;background:var(--c,#1d1d27);box-shadow:0 0 0 1.5px rgba(255,255,255,.75)}",
+      ".sb-spess.s0 i{width:3px;height:3px}.sb-spess.s1 i{width:6px;height:6px}.sb-spess.s2 i{width:10px;height:10px}.sb-spess.s3 i{width:15px;height:15px}.sb-spess.s4 i{width:22px;height:22px}",
+      // chi disegna: il promemoria «niente lettere» sulla lavagna (all'inizio del turno); chi indovina: «🔤 Ha scritto!»
+      ".sb-nolett{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:3;pointer-events:none;white-space:nowrap;font-size:.82rem;font-weight:900;padding:6px 12px;border-radius:999px;",
+        "background:rgba(21,26,46,.88);color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);transition:opacity .6s}",
+      ".sb-nolett.via{opacity:0}",
+      ".sb-lett{position:absolute;top:6px;right:6px;z-index:3;border:0;border-radius:999px;padding:5px 10px;font:inherit;font-size:.74rem;font-weight:900;cursor:pointer;",
+        "background:rgba(21,26,46,.78);color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.3);touch-action:manipulation}",
+      ".sb-lett[hidden]{display:none}",
+      ".sb-lett.fatto{background:rgba(224,49,49,.9)}",
+      // la festa di chi indovina per primo: la sua faccina salta in cima alla lavagna (non copre il disegno, non si tocca)
+      ".sb-primo{position:absolute;top:10px;left:50%;z-index:6;pointer-events:none;display:flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;white-space:nowrap;",
+        "background:linear-gradient(135deg,#ffe066,#f4b011);color:#3a2a00;font-weight:900;font-size:1.15rem;box-shadow:0 10px 26px rgba(0,0,0,.45);animation:sbPrimo 2.2s ease forwards}",
+      ".sb-primo .sb-chip-fig{width:52px;height:52px;background:rgba(255,255,255,.55);animation:sbSalta .42s ease-in-out 4 alternate}",
+      ".sb-primo small{display:block;font-size:.78rem;opacity:.8}",
+      "@keyframes sbPrimo{0%{transform:translate(-50%,-30px) scale(.6);opacity:0}12%{transform:translate(-50%,0) scale(1.06);opacity:1}20%{transform:translate(-50%,0) scale(1)}85%{opacity:1}100%{transform:translate(-50%,0) scale(1);opacity:0}}",
+      "@keyframes sbSalta{from{transform:translateY(0)}to{transform:translateY(-9px)}}",
+      ".sb-scena.scrive .sb-riga{display:none}",
+      // ⌨️ tastiera aperta (12 nov 2026, serata in 8: «il disegno diventa piccolissimo»): se la lavagna viene più grande, chat a destra della lavagna
+      ".sb-scena.fianco{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto}",
+      ".sb-scena.fianco>.sb-barra{grid-column:1/-1;grid-row:1}.sb-scena.fianco>.sb-lav{grid-column:1;grid-row:2;align-self:start;padding-left:5px}",
+      ".sb-scena.fianco>.sb-chat{grid-column:2;grid-row:2;align-self:stretch;padding:2px 8px 2px 6px}.sb-scena.fianco>.sb-scrivi{grid-column:1/-1;grid-row:3}",
+      ".sb-scena.fianco>.sb-riga,.sb-scena.fianco>.sb-basso,.sb-scena.fianco>.sb-posto-targa{display:none}",
+      ".sb-scena.fianco .sb-msg{font-size:.86rem;line-height:1.25}",
+      ".sb-scena.scrive .sb-scrivi{padding:5px 8px}.sb-scena.scrive .sb-inp{padding:9px 14px}.sb-scena.scrive .sb-invia{width:42px}",
+      ".sb-gente{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}",
+      ".sb-gente::-webkit-scrollbar{display:none}",
+      ".sb-chip{flex:0 0 auto;display:flex;align-items:center;gap:5px;padding:3px 10px 3px 3px;border-radius:999px;background:rgba(255,255,255,.1);font-size:.78rem;font-weight:800;line-height:1.1}",
+      ".sb-chip.dis{background:rgba(255,224,102,.2);box-shadow:inset 0 0 0 2px #ffe066}",
+      ".sb-chip.ok{background:rgba(105,219,124,.2);box-shadow:inset 0 0 0 2px #69db7c}",
+      ".sb-chip-fig{width:30px;height:30px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.15);flex:0 0 auto}",
+      ".sb-chip-pt{font-size:.7rem;opacity:.8}",
+      ".sb-chip.dis .sb-chip-nome:after{content:' ✏️'}",
+      ".sb-chip.ok .sb-chip-nome:after{content:' ✅'}",
+      ".sb-chat{flex:1 1 auto;min-height:0;overflow-y:auto;padding:6px 12px;display:flex;flex-direction:column;gap:3px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}",
+      ".sb-msg{font-size:.92rem;line-height:1.3;word-break:break-word;user-select:text;-webkit-user-select:text}",
+      ".sb-msg.sys{color:#b9b3ef;font-size:.8rem;text-align:center}",
+      ".sb-msg.ok{color:#69db7c;font-weight:900;text-align:center}",
+      ".sb-msg.quasi{color:#ffa94d;font-weight:800;text-align:center}",
+      ".sb-scrivi{flex:0 0 auto;display:flex;gap:8px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(0,0,0,.25)}",
+      ".sb-inp{flex:1 1 auto;min-width:0;border:0;border-radius:999px;padding:12px 16px;font:inherit;font-size:16px;background:#fff;color:#1b1b24;outline:none}",
+      ".sb-inp:disabled{background:rgba(255,255,255,.18);color:#fff}",
+      ".sb-inp:disabled::placeholder{color:rgba(255,255,255,.8)}",
+      ".sb-invia{flex:0 0 auto;width:48px;border:0;border-radius:50%;background:linear-gradient(135deg,#ffe066,#f4b011);color:#3a2a00;font-size:1.2rem;font-weight:900;cursor:pointer}",
+      ".sb-invia:disabled{opacity:.35}",
+      ".sb-evviva{position:absolute;left:50%;top:45%;z-index:5;pointer-events:none;white-space:nowrap;font-size:1.5rem;font-weight:900;color:#fff;background:linear-gradient(135deg,#40c057,#2f9e44);",
+        "padding:10px 18px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:sbPop 1.8s ease forwards}",
+      ".sb-msg.sa{color:#8ce99a}",
+      ".sb-msg.sa b{color:#8ce99a!important}",
+      ".sb-basso{flex:0 0 auto;padding:6px 8px calc(6px + env(safe-area-inset-bottom));background:rgba(0,0,0,.25)}",
+      ".sb-basso[hidden],.sb-scrivi[hidden]{display:none}",
+      ".sb-posto-targa{flex:0 0 auto;height:calc(58px + env(safe-area-inset-bottom))}",   // chi guarda soltanto: la targhetta del core sta qui
+      ".sb-fine-targa{padding-bottom:calc(58px + env(safe-area-inset-bottom))}",
+      ".sb-sopra .sb-faccine{flex:0 0 auto}",
+      ".sb-riga.con-fac{display:flex;align-items:center;gap:6px}.sb-riga.con-fac>.sb-gente{flex:1 1 auto;min-width:0}",
+      ".sb-riga>.sb-faccine{flex:0 0 auto;margin:0;padding:0;background:none;box-shadow:none}.sb-riga>.sb-faccine .sl-fa-apri{width:38px;height:38px}",
+      ".sb-chip.solo{padding:5px 10px;flex-direction:column;align-items:flex-start;gap:0;justify-content:center}",
+      ".sb-podio{font-size:2rem;text-align:center;margin:0 0 6px}",
+      ".sb-perche{text-align:center;font-weight:800;margin:0 0 8px;color:#ffa94d}",
+      ".sb-gal-tit{font-weight:900;margin:14px 0 6px}",
+      ".sb-gal{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}",
+      ".sb-gal::-webkit-scrollbar{display:none}",
+      ".sb-gal button{flex:0 0 auto;width:92px;border:0;padding:0;background:none;color:inherit;font:inherit;cursor:pointer;text-align:center}",
+      ".sb-gal img{display:block;width:92px;height:110px;object-fit:cover;border-radius:10px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.35)}",
+      ".sb-gal span{display:block;font-size:.72rem;font-weight:800;line-height:1.2;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
+      ".sb-gal span:first-letter{text-transform:uppercase}",
+      ".sb-grande{position:fixed;inset:0;z-index:50;background:rgba(10,8,30,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px}",
+      ".sb-grande img{max-width:100%;max-height:calc(var(--alt,100dvh) - 120px);border-radius:14px;background:#fff}",
+      ".sb-grande div{font-weight:900;font-size:1.2rem;text-align:center}",
+      // schermi bassi: la classifica finale (con le faccine e la galleria) sta in uno schermo
+      "@media (max-height:760px){.sb-podio{font-size:1.4rem;margin:0 0 2px}.sb-gal-tit{margin:8px 0 4px}.sb-gal button{width:66px}.sb-gal img{width:66px;height:80px}.sb-gal span{font-size:.66rem}}",
+      "@keyframes sbPulsa{to{transform:scale(1.08)}}",
+      "@keyframes sbPop{0%{transform:translate(-50%,-50%) scale(.5);opacity:0}14%{transform:translate(-50%,-50%) scale(1.08);opacity:1}80%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(-50%,-70%) scale(1);opacity:0}}",
+      // ---------------------------------------------------------------------------------------------------------
+      // 🤍 BIANCO E ORO (tema: "oro"). Tutte le regole stanno sotto .oro.g-scarabocchio. Solo colori, bordi e ombre; i colori solo con
+      // le variabili --o-* (css/styles.css). Il foglio da disegno resta bianco, con un filo d'oro sottile e un'ombra morbida; i colori
+      // della matita (COLORI) e della gomma non si toccano.
+      // ---------------------------------------------------------------------------------------------------------
+      ".oro.g-scarabocchio.sb-piena{background:transparent}",
+      ".oro.g-scarabocchio .sb-scena{background:none}",
+      // la barra in alto: ‹ tondo bianco col filo d'oro, il tempo una pillola chiara (rossa negli ultimi 10 secondi), la parola in oro scuro
+      ".oro.g-scarabocchio .sb-esci{background:var(--o-carta);color:var(--o-testo);box-shadow:inset 0 0 0 1px var(--o-filo-oro),var(--o-ombra);font-weight:700}",
+      ".oro.g-scarabocchio .sb-tempo{background:var(--o-carta);color:var(--o-testo);box-shadow:inset 0 0 0 1px var(--o-filo-oro),var(--o-ombra);font-variant-numeric:lining-nums tabular-nums}",
+      ".oro.g-scarabocchio .sb-tempo.poco{background:var(--o-rosso);color:#fff;box-shadow:0 4px 12px rgba(184,67,58,.28)}",
+      ".oro.g-scarabocchio .sb-centro b{color:var(--o-oro-testo)}",
+      ".oro.g-scarabocchio .sb-giro{color:var(--o-tenue);opacity:1}",
+      ".oro.g-scarabocchio .sb-lettere i{border-bottom-color:var(--o-oro);color:var(--o-oro-testo)}",
+      ".oro.g-scarabocchio .sb-lettere small{color:var(--o-tenue);opacity:1}",
+      // il foglio da disegno: bianco, filo d'oro sottile, ombra morbida
+      ".oro.g-scarabocchio .sb-cv{box-shadow:0 0 0 1px var(--o-filo-oro),var(--o-ombra-alta)}",
+      // sopra il foglio (scelta della parola, punti del turno): un velo scuro (il vetro pieno dell'app, appena trasparente), così le scritte chiare si leggono sulla tela bianca
+      ".oro.g-scarabocchio .sb-sopra{background:rgba(21,26,46,.95);color:var(--o-testo);box-shadow:inset 0 0 0 1px var(--o-filo-oro)}",
+      ".oro.g-scarabocchio .sb-parola{font-family:var(--o-tit);font-weight:700;color:var(--o-oro-testo);font-size:clamp(1.8rem,9vw,2.6rem)}",
+      // le 3 parole da scegliere sono vetro sollevato (il tasto lampone pieno è uno solo per schermata), col filo lampone che dice «tocca»
+      ".oro.g-scarabocchio .sb-scelte button{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0)),var(--o-carta-2);color:var(--o-testo);box-shadow:inset 0 0 0 1.5px rgba(255,79,134,.55),inset 0 1px 0 rgba(255,255,255,.06),0 10px 24px -14px rgba(0,0,0,.8)}",
+      ".oro.g-scarabocchio .sb-scelte button.nostra{background:var(--o-verde-tenue);color:var(--o-testo);box-shadow:inset 0 0 0 2px var(--o-verde)}",
+      ".oro.g-scarabocchio .sb-righe{color:var(--o-testo)}",
+      ".oro.g-scarabocchio .sb-righe b{color:var(--o-verde)}",
+      ".oro.g-scarabocchio .sb-fig,.oro.g-scarabocchio .sb-chip-fig{background:var(--o-carta-2);box-shadow:inset 0 0 0 1px var(--o-filo)}",
+      // chi gioca sotto il foglio: pillole chiare; chi disegna in oro, chi ha indovinato in verde
+      ".oro.g-scarabocchio .sb-chip{background:var(--o-carta);box-shadow:inset 0 0 0 1px var(--o-filo),var(--o-ombra)}",
+      ".oro.g-scarabocchio .sb-chip.dis{background:var(--o-crema);box-shadow:inset 0 0 0 2px var(--o-oro)}",
+      ".oro.g-scarabocchio .sb-chip.ok{background:var(--o-verde-tenue);box-shadow:inset 0 0 0 2px var(--o-verde)}",
+      ".oro.g-scarabocchio .sb-chip-pt{color:var(--o-tenue);opacity:1}",
+      // gli strumenti: tasti bianchi col filo d'oro, quello scelto con il filo d'oro pieno
+      ".oro.g-scarabocchio .sb-col{border-color:rgba(255,255,255,.3)}",   // (il filo chiaro fa vedere anche il pallino nero sul fondo scuro)
+      ".oro.g-scarabocchio .sb-col.on{border-color:var(--o-oro);box-shadow:0 0 0 2px var(--o-carta),0 0 0 3.5px var(--o-oro)}",
+      ".oro.g-scarabocchio .sb-spess,.oro.g-scarabocchio .sb-str{background:var(--o-carta);color:var(--o-testo);box-shadow:inset 0 0 0 1px var(--o-filo-oro)}",
+      ".oro.g-scarabocchio .sb-spess.on,.oro.g-scarabocchio .sb-gomma.on,.oro.g-scarabocchio .sb-modo.on{background:var(--o-carta-viva);box-shadow:inset 0 0 0 2px var(--o-oro)}",
+      ".oro.g-scarabocchio .sb-nolett,.oro.g-scarabocchio .sb-lett{background:var(--o-carta-piena);color:var(--o-testo);box-shadow:inset 0 0 0 1px var(--o-filo-oro),var(--o-ombra)}",
+      ".oro.g-scarabocchio .sb-lett.fatto{background:var(--o-rosso);color:#fff}",
+      ".oro.g-scarabocchio .sb-primo{background:var(--o-oro);color:#2a1d00;box-shadow:var(--o-ombra-alta)}",
+      ".oro.g-scarabocchio .sb-spess i{box-shadow:0 0 0 1px var(--o-tenue)}",
+      // la chat
+      ".oro.g-scarabocchio .sb-msg.sys{color:var(--o-tenue)}",
+      ".oro.g-scarabocchio .sb-msg.ok{color:var(--o-verde)}",
+      ".oro.g-scarabocchio .sb-msg.quasi{color:var(--o-ambra)}",
+      ".oro.g-scarabocchio .sb-msg.sa{color:var(--o-verde)}",
+      ".oro.g-scarabocchio .sb-msg.sa b{color:var(--o-verde)!important}",
+      ".oro.g-scarabocchio .sb-scrivi,.oro.g-scarabocchio .sb-basso{background:var(--o-fondo-2);box-shadow:inset 0 1px 0 var(--o-filo)}",
+      ".oro.g-scarabocchio .sb-inp{background:var(--o-carta);color:var(--o-testo);box-shadow:inset 0 0 0 1px var(--o-filo-oro)}",
+      ".oro.g-scarabocchio .sb-inp:focus{box-shadow:inset 0 0 0 1px var(--o-oro),0 0 0 3px rgba(255,79,134,.18)}",
+      ".oro.g-scarabocchio .sb-inp:disabled{background:var(--o-fondo-2);color:var(--o-tenue)}",
+      ".oro.g-scarabocchio .sb-inp:disabled::placeholder{color:var(--o-tenue)}",
+      ".oro.g-scarabocchio .sb-invia{background:var(--o-tasto);color:var(--o-tasto-testo);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(0,0,0,.25),0 4px 10px rgba(224,34,90,.43)}",
+      ".oro.g-scarabocchio .sb-evviva{background:var(--o-verde);color:var(--o-verde-testo);box-shadow:var(--o-ombra-alta)}",   // (scritta scura sul verde: il bianco era a 2:1)
+      // la classifica finale e la galleria degli scarabocchi
+      ".oro.g-scarabocchio .sb-perche{color:var(--o-ambra)}",
+      ".oro.g-scarabocchio .sb-gal img{box-shadow:0 0 0 1px var(--o-filo-oro),var(--o-ombra)}",
+      ".oro.g-scarabocchio.sb-grande{background:rgba(9,11,22,.94);color:var(--o-testo)}",   // (il disegno ingrandito: velo scuro, come tutto il resto della notte)
+      ".oro.g-scarabocchio.sb-grande img{box-shadow:0 0 0 1px var(--o-filo-oro),var(--o-ombra-alta)}"
+    ].join("");
+    document.head.appendChild(st);
+  }
+
+  // =========================================================
+  //  LA VISTA DI GIOCO (uguale per host e ospiti)
+  //  Si costruisce una volta sola e poi si aggiorna a pezzi (niente lampeggio).
+  //  io = il mio id ("host" o quello dell'ospite)
+  //  cb: onTratto(pezzo), onAnnulla(id), onPulisci(), onScegli(i), onProva(testo), onEsci()
+  // =========================================================
+  function creaVista(t, io, cb) {
+    iniettaCSS();
+    var el = t.el, s = t.schermata({});
+    s.classList.add("sb-piena");
+    var scena = el("div", { class: "sb-scena" });
+    // barra in alto: esci · tempo · parola (o lettere) · giro
+    var tempo = el("div", { class: "sb-tempo", hidden: "hidden" });
+    var centro = el("div", { class: "sb-centro" });
+    var giro = el("div", { class: "sb-giro" });
+    var barra = el("div", { class: "sb-barra" }, [el("button", { class: "sb-esci", "aria-label": "Esci", text: "‹", onclick: function () { cb.onEsci(); } }), tempo, centro, giro]);
+    // la lavagna, con sopra i messaggi (scelta della parola, punti del turno)
+    var cv = el("canvas", { class: "sb-cv" });
+    var sopra = el("div", { class: "sb-sopra", hidden: "hidden" });
+    // «🔤 Ha scritto!»: chi indovina segnala le lettere (o i numeri) sulla lavagna; se lo dice più di metà del gruppo il turno finisce
+    var bLett = el("button", { class: "sb-lett", hidden: "hidden", "aria-label": "Ha scritto lettere sulla lavagna", onclick: function () {
+      if (bLett.classList.contains("fatto")) return;
+      bLett.classList.add("fatto"); cb.onLettere();
+    } });
+    var lav = el("div", { class: "sb-lav" }, [cv, sopra, bLett]);
+    // sotto la lavagna: gli strumenti (chi disegna) oppure chi gioca (chi indovina)
+    var strumenti = el("div", { class: "sb-strumenti", hidden: "hidden" });
+    var gente = el("div", { class: "sb-gente" });
+    var riga = el("div", { class: "sb-riga" }, [strumenti, gente]);
+    // la chat e il campo per scrivere, fisso in basso
+    var chat = el("div", { class: "sb-chat" });
+    var inp = el("input", { class: "sb-inp", type: "text", maxlength: "40", autocomplete: "off", autocorrect: "off", autocapitalize: "off", spellcheck: "false", enterkeyhint: "send", placeholder: "Scrivi in chat…" });
+    var bInvia = el("button", { class: "sb-invia", type: "submit", "aria-label": "Invia", text: "➤" });
+    var form = el("form", { class: "sb-scrivi" }, [inp, bInvia]);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var x = inp.value.replace(/\s+/g, " ").trim();
+      if (!x || inp.disabled) return;
+      inp.value = ""; cb.onProva(x);
+    });
+    inp.addEventListener("focus", function () { setTimeout(function () { window.scrollTo(0, 0); misura(); }, 80); });   // iPhone: la tastiera non deve spingere su la lavagna
+    inp.addEventListener("blur", function () { setTimeout(misura, 80); });
+    // chi disegna non scrive: al posto del campo vede chi gioca (e chi ha già indovinato)
+    var basso = el("div", { class: "sb-basso", hidden: "hidden" });
+    // chi guarda soltanto (col link): niente campo per scrivere (non può), in fondo il posto della targhetta del core "👀 Guardi · 😂 · ✕"
+    var targa = !!(t.guarda && !t.eliminazione), postoTarga = targa ? el("div", { class: "sb-posto-targa" }) : null;
+    if (targa) form.hidden = true;
+    [barra, lav, riga, chat, form, basso, postoTarga].forEach(function (n) { if (n) scena.appendChild(n); });
+    s._contenuto.appendChild(scena);
+    t.mostra(s);
+
+    // ----- strumenti -----
+    // modo: "matita" (a mano libera), "linea" (dritta, dal tocco a dove si stacca il dito), "tondo" (un cerchio o un ovale nel
+    // rettangolo tra il tocco e il dito), "secchio" (riempie una zona). La gomma è un colore: va con matita, linea e tondo.
+    var scelta = { c: 0, w: 2, modo: "matita" };
+    var tavolozza = el("div", { class: "sb-tavolozza" }), attrezzi = el("div", { class: "sb-attrezzi" });
+    var bCol = COLORI.slice(0, GOMMA).map(function (c, i) {
+      return el("button", { class: "sb-col", style: "--c:" + c, "aria-label": NOMI_COL[i], onclick: function () { scelta.c = i; aggStrumenti(); } });
+    });
+    var bGomma = el("button", { class: "sb-str sb-gomma", "aria-label": "Gomma", text: "🧽", onclick: function () { scelta.c = GOMMA; if (scelta.modo === "secchio") scelta.modo = "matita"; aggStrumenti(); } });
+    var bSp = SPESSORI.map(function (_, i) {   // cinque grandezze, per matita, linea, tondo e gomma
+      return el("button", { class: "sb-spess s" + i, "aria-label": NOMI_SP[i], onclick: function () { scelta.w = i; if (scelta.modo === "secchio") scelta.modo = "matita"; aggStrumenti(); } }, [el("i")]);
+    });
+    // le icone le disegno io (le emoji 🪣 e 📏 sui telefoni vecchi escono come quadratini): la goccia del secchiello ha il colore scelto
+    var ICONE = {
+      matita: "<svg viewBox='0 0 24 24' width='22' height='22' aria-hidden='true'><path d='M4 20l1.2-4.6L15.8 4.8a2 2 0 0 1 2.8 0l.6.6a2 2 0 0 1 0 2.8L8.6 18.8z' fill='none' stroke='currentColor' stroke-width='2' stroke-linejoin='round'/><path d='M5.2 15.4l3.4 3.4' stroke='currentColor' stroke-width='2'/><circle cx='5' cy='19' r='1.6' fill='var(--c,#fcc419)'/></svg>",
+      linea: "<svg viewBox='0 0 24 24' width='22' height='22' aria-hidden='true'><path d='M4.5 19.5 19.5 4.5' stroke='var(--c,#fcc419)' stroke-width='3' stroke-linecap='round'/><circle cx='4.5' cy='19.5' r='2' fill='currentColor'/><circle cx='19.5' cy='4.5' r='2' fill='currentColor'/></svg>",
+      tondo: "<svg viewBox='0 0 24 24' width='22' height='22' aria-hidden='true'><ellipse cx='12' cy='12' rx='8.5' ry='7' fill='none' stroke='var(--c,#fcc419)' stroke-width='3'/></svg>",
+      secchio: "<svg viewBox='0 0 24 24' width='22' height='22' aria-hidden='true'><path d='M10 3 17 10 10 17 3 10Z' fill='none' stroke='currentColor' stroke-width='2' stroke-linejoin='round'/>" +
+        "<path d='M4.2 10.8h11.6L10 16.6z' fill='var(--c,#fcc419)'/><path d='M19.5 12.6c1.2 1.8 1.9 3 1.9 3.9a1.9 1.9 0 0 1-3.8 0c0-.9.7-2.1 1.9-3.9z' fill='var(--c,#fcc419)' stroke='currentColor' stroke-width='.8'/></svg>"
+    };
+    var NOMI_MODO = { matita: "Matita", linea: "Linea dritta", tondo: "Tondo (cerchio o ovale)", secchio: "Secchiello: riempi una zona" };
+    var bModi = ["matita", "linea", "tondo", "secchio"].map(function (k) {
+      return el("button", { class: "sb-str sb-modo sb-m-" + k, "aria-label": NOMI_MODO[k], html: ICONE[k], onclick: function () { scelta.modo = k; aggStrumenti(); } });
+    });
+    var bAnn = el("button", { class: "sb-str", "aria-label": "Annulla", text: "↶", onclick: annullaMio });
+    var bRip = el("button", { class: "sb-str", "aria-label": "Ripeti", text: "↷", onclick: ripetiMio });
+    var bPul = el("button", { class: "sb-str", "aria-label": "Cancella tutto", text: "🗑️", onclick: pulisciMio });
+    bCol.slice(0, 8).forEach(function (b) { tavolozza.appendChild(b); }); tavolozza.appendChild(bAnn); tavolozza.appendChild(bRip);
+    bCol.slice(8).forEach(function (b) { tavolozza.appendChild(b); }); tavolozza.appendChild(bGomma); tavolozza.appendChild(bPul);
+    bSp.forEach(function (b) { attrezzi.appendChild(b); }); attrezzi.appendChild(el("span", { class: "sb-sep" }));
+    bModi.forEach(function (b) { attrezzi.appendChild(b); });
+    strumenti.appendChild(tavolozza); strumenti.appendChild(attrezzi);
+    function aggStrumenti() {
+      var col = scelta.c === GOMMA ? "#fff" : COLORI[scelta.c];
+      bCol.forEach(function (b, i) { b.classList.toggle("on", i === scelta.c); });
+      bGomma.classList.toggle("on", scelta.c === GOMMA);
+      bModi.forEach(function (b, i) { b.classList.toggle("on", ["matita", "linea", "tondo", "secchio"][i] === scelta.modo); b.style.setProperty("--c", col); });
+      bSp.forEach(function (b, i) { b.classList.toggle("on", scelta.modo !== "secchio" && i === scelta.w); b.style.setProperty("--c", col); });
+      cv.classList.toggle("secchio", scelta.modo === "secchio");
+      bRip.disabled = !rifare.length;
+    }
+
+    // ----- la lavagna -----
+    // Il disegno "vero" sta su una tela di misura fissa (come le coordinate, 1000x1200), uguale su tutti i telefoni:
+    // così anche il secchiello riempie le stesse zone dappertutto. Sullo schermo se ne vede una copia in scala.
+    var ctx = cv.getContext("2d"), tratti = [], mio = null, attesa = [], nTr = 0, puoi = false, cestinati = null;
+    var rifare = [];      // i miei segni annullati, per «↷ Ripeti» (si svuota col primo segno nuovo)
+    var forma = null;     // linea o tondo mentre il dito è giù: { x0, y0, x1, y1 } (si vede solo qui; parte quando si stacca il dito)
+    aggStrumenti();
+    var mieiId = io + "." + SESSIONE + ".";   // i nomi dei miei tratti (con SESSIONE: chi ricarica la pagina non riusa quelli vecchi)
+    var foto = [];   // "fotografie" della tela dopo gli ultimi secchielli: annullare riparte da lì invece che da zero
+    var tela = document.createElement("canvas"); tela.width = LW; tela.height = LH;
+    var tctx = tela.getContext("2d", { willReadFrequently: true });
+    function copia(x0, y0, x1, y1) {   // un pezzo della tela sulla lavagna che si vede
+      x0 = Math.max(0, Math.floor(x0) - 2); y0 = Math.max(0, Math.floor(y0) - 2); x1 = Math.min(LW, Math.ceil(x1) + 2); y1 = Math.min(LH, Math.ceil(y1) + 2);
+      if (x1 <= x0 || y1 <= y0) return;
+      var s = cv.width / LW;
+      ctx.drawImage(tela, x0, y0, x1 - x0, y1 - y0, x0 * s, y0 * s, (x1 - x0) * s, (y1 - y0) * s);
+    }
+    function mostraTutto() { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high"; ctx.drawImage(tela, 0, 0, cv.width, cv.height); }
+    function disegnaDa(tr, da, fermo) {   // da = da quale punto (indice nell'elenco x,y); fermo = non copiare ancora sullo schermo
+      var p = tr.p; if (!p.length) return;
+      if (tr.f) return riempi(p[0], p[1], COLORI[tr.c] || COLORI[0], fermo);
+      // linea morbida: curve che passano per i punti di mezzo, usando i punti veri come "calamite"
+      var lw = SPESSORI[tr.w] || SPESSORI[0], n = p.length / 2, s = Math.max(0, Math.floor(da / 2) - 1);
+      var x0 = p[s * 2], y0 = p[s * 2 + 1], x1 = x0, y1 = y0;
+      tctx.strokeStyle = tctx.fillStyle = COLORI[tr.c] || COLORI[0];
+      tctx.lineWidth = lw; tctx.lineCap = "round"; tctx.lineJoin = "round";
+      if (n === 1) { tctx.beginPath(); tctx.arc(p[0], p[1], lw / 2, 0, Math.PI * 2); tctx.fill(); }
+      else {
+        tctx.beginPath();
+        if (s === 0) tctx.moveTo(p[0], p[1]); else tctx.moveTo((p[s * 2] + p[s * 2 + 2]) / 2, (p[s * 2 + 1] + p[s * 2 + 3]) / 2);
+        for (var k = s + 1; k < n; k++) {
+          var x = p[k * 2], y = p[k * 2 + 1];
+          if (k < n - 1) tctx.quadraticCurveTo(x, y, (x + p[k * 2 + 2]) / 2, (y + p[k * 2 + 3]) / 2);
+          else tctx.lineTo(x, y);
+          if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+        }
+        tctx.stroke();
+      }
+      if (!fermo) copia(x0 - lw, y0 - lw, x1 + lw, y1 + lw);
+    }
+    // il secchiello: riempie la zona toccata (i pixel simili attaccati),
+    // più un pixel di bordo che copre la sfumatura delle linee
+    function riempi(x, y, colore, fermo) {
+      x = intIn(x, LW - 1); y = intIn(y, LH - 1);
+      var img = tctx.getImageData(0, 0, LW, LH), d = img.data, W = LW, H = LH;
+      var r = parseInt(colore.slice(1, 3), 16), g = parseInt(colore.slice(3, 5), 16), b = parseInt(colore.slice(5, 7), 16);
+      var s0 = (y * W + x) * 4, r0 = d[s0], g0 = d[s0 + 1], b0 = d[s0 + 2];
+      if (Math.abs(r0 - r) + Math.abs(g0 - g) + Math.abs(b0 - b) < 16) return;   // è già di quel colore
+      var TOL = 100, zona = new Uint8Array(W * H), pila = [x, y], minX = x, maxX = x, minY = y, maxY = y;
+      function simile(q) { var j = q * 4; return Math.abs(d[j] - r0) + Math.abs(d[j + 1] - g0) + Math.abs(d[j + 2] - b0) <= TOL; }
+      while (pila.length) {
+        var py = pila.pop(), px = pila.pop(), q = py * W + px;
+        while (px > 0 && !zona[q - 1] && simile(q - 1)) { px--; q--; }   // fino al bordo a sinistra
+        var su = false, giu = false;
+        for (; px < W && !zona[q] && simile(q); px++, q++) {
+          zona[q] = 1;
+          if (px < minX) minX = px; if (px > maxX) maxX = px;
+          if (py > 0) { var u = q - W; if (!zona[u] && simile(u)) { if (!su) { pila.push(px, py - 1); su = true; } } else su = false; }
+          if (py < H - 1) { var v = q + W; if (!zona[v] && simile(v)) { if (!giu) { pila.push(px, py + 1); giu = true; } } else giu = false; }
+        }
+        if (py < minY) minY = py; if (py > maxY) maxY = py;
+      }
+      var ax = Math.max(0, minX - 1), bx = Math.min(W - 1, maxX + 1), ay = Math.max(0, minY - 1), by = Math.min(H - 1, maxY + 1);
+      for (var yy = ay; yy <= by; yy++) for (var xx = ax; xx <= bx; xx++) {
+        var kk = yy * W + xx;
+        if (zona[kk] || (xx > 0 && zona[kk - 1]) || (xx < W - 1 && zona[kk + 1]) || (yy > 0 && zona[kk - W]) || (yy < H - 1 && zona[kk + W])) {
+          var j = kk * 4; d[j] = r; d[j + 1] = g; d[j + 2] = b; d[j + 3] = 255;
+        }
+      }
+      tctx.putImageData(img, 0, 0, ax, ay, bx - ax + 1, by - ay + 1);
+      if (!fermo) copia(ax, ay, bx + 1, by + 1);
+    }
+    // dopo un secchiello mi tengo una fotografia della tela (al massimo le ultime 3)
+    function scatta(j) {
+      try { foto.push({ pre: tratti.slice(0, j + 1), img: tctx.getImageData(0, 0, LW, LH) }); } catch (e) { return; }
+      if (foto.length > 3) foto.shift();
+    }
+    function fotoBuona(f) {   // i tratti fino alla fotografia sono ancora quelli?
+      if (f.pre.length > tratti.length) return false;
+      for (var k = 0; k < f.pre.length; k++) if (tratti[k] !== f.pre[k]) return false;
+      return true;
+    }
+    function ridisegna() {
+      var f = null, da = 0;
+      for (var i = foto.length - 1; i >= 0; i--) if (fotoBuona(foto[i])) { f = foto[i]; break; }
+      foto = f ? foto.slice(0, foto.indexOf(f) + 1) : [];
+      if (f) { tctx.putImageData(f.img, 0, 0); da = f.pre.length; }
+      else { tctx.fillStyle = "#fff"; tctx.fillRect(0, 0, LW, LH); }
+      for (var j = da; j < tratti.length; j++) { disegnaDa(tratti[j], 0, true); if (tratti[j].f) scatta(j); }
+      mostraTutto();
+    }
+    function nuovoPieno(tr) { if (tr.f && tratti[tratti.length - 1] === tr) scatta(tratti.length - 1); }
+    function coord(e) {
+      var r = cv.getBoundingClientRect();
+      return [intIn((e.clientX - r.left) / r.width * LW, LW), intIn((e.clientY - r.top) / r.height * LH, LH)];
+    }
+    function aggiungi(pt) {
+      var p = mio.p, n = p.length;
+      if (n && Math.abs(p[n - 2] - pt[0]) + Math.abs(p[n - 1] - pt[1]) < 3) return;   // troppo vicino all'ultimo: non serve
+      p.push(pt[0], pt[1]); attesa.push(pt[0], pt[1]);
+      disegnaDa(mio, Math.max(0, p.length - 4));
+    }
+    function spedisci() { if (!mio || !attesa.length) return; cb.onTratto({ id: mio.id, c: mio.c, w: mio.w, p: attesa }); attesa = []; }
+    function stacca() { if (!mio) return; spedisci(); mio = null; }
+    // un segno intero che parte tutto insieme (linea, tondo, «ripeti»): a pezzi da 200 punti, come i tratti a mano
+    function mandaIntero(tr) {
+      if (tr.f) return cb.onTratto({ id: tr.id, c: tr.c, w: 0, f: 1, p: tr.p });
+      for (var k = 0; k < tr.p.length; k += 400) cb.onTratto({ id: tr.id, c: tr.c, w: tr.w, p: tr.p.slice(k, k + 400) });
+    }
+    function nuovoSegno() { cestinati = null; if (rifare.length) { rifare = []; aggStrumenti(); } }   // dopo un segno nuovo il cestino e «ripeti» non valgono più
+    // i punti della forma sulla lavagna: la linea sono i suoi due capi, il tondo un giro di punti (chiuso) nel rettangolo del dito
+    function puntiForma(f) {
+      if (scelta.modo === "linea") return [f.x0, f.y0, f.x1, f.y1];
+      var cx = (f.x0 + f.x1) / 2, cy = (f.y0 + f.y1) / 2, rx = Math.abs(f.x1 - f.x0) / 2, ry = Math.abs(f.y1 - f.y0) / 2;
+      var n = Math.max(24, Math.min(90, Math.round((rx + ry) * Math.PI / 14))), p = [];
+      for (var k = 0; k <= n; k++) { var a = k / n * Math.PI * 2; p.push(intIn(cx + rx * Math.cos(a), LW), intIn(cy + ry * Math.sin(a), LH)); }
+      return p;
+    }
+    function mostraForma() {   // l'anteprima: la tela com'è più la forma, disegnata solo sullo schermo
+      mostraTutto();
+      var p = puntiForma(forma), s = cv.width / LW;
+      ctx.save(); ctx.scale(s, s);
+      ctx.strokeStyle = COLORI[scelta.c]; ctx.lineWidth = SPESSORI[scelta.w]; ctx.lineCap = ctx.lineJoin = "round";
+      ctx.beginPath(); ctx.moveTo(p[0], p[1]); for (var k = 2; k < p.length; k += 2) ctx.lineTo(p[k], p[k + 1]); ctx.stroke();
+      ctx.restore();
+    }
+    function chiudiForma(ok) {
+      if (!forma) return;
+      var f = forma; forma = null;
+      if (!ok || !puoi) return mostraTutto();   // (il turno è finito col dito giù: niente segno)
+      var tr = { id: mieiId + (++nTr), c: scelta.c, w: scelta.w, p: Math.abs(f.x1 - f.x0) + Math.abs(f.y1 - f.y0) < 8 ? [f.x0, f.y0] : puntiForma(f) };   // un tocco solo: un puntino
+      tratti.push(tr); disegnaDa(tr, 0); mostraTutto(); mandaIntero(tr);
+    }
+    cv.addEventListener("pointerdown", function (e) {
+      if (!puoi) return;
+      e.preventDefault();
+      nuovoSegno();
+      if (scelta.modo === "secchio") {   // secchiello: riempie la zona toccata col colore scelto
+        var pt = coord(e), op = { id: mieiId + (++nTr), c: scelta.c, w: 0, f: 1, p: [Math.min(pt[0], LW - 1), Math.min(pt[1], LH - 1)] };
+        tratti.push(op); disegnaDa(op, 0); nuovoPieno(op);
+        cb.onTratto({ id: op.id, c: op.c, w: 0, f: 1, p: op.p });
+        return;
+      }
+      try { cv.setPointerCapture(e.pointerId); } catch (x) {}
+      if (scelta.modo === "linea" || scelta.modo === "tondo") { var q = coord(e); forma = { x0: q[0], y0: q[1], x1: q[0], y1: q[1] }; mostraForma(); return; }
+      mio = { id: mieiId + (++nTr), c: scelta.c, w: scelta.w, p: [] }; tratti.push(mio);
+      aggiungi(coord(e));
+    });
+    cv.addEventListener("pointermove", function (e) {
+      if (forma) { e.preventDefault(); var q = coord(e); forma.x1 = q[0]; forma.y1 = q[1]; mostraForma(); return; }
+      if (!mio) return;
+      e.preventDefault();
+      var ev = (e.getCoalescedEvents && e.getCoalescedEvents()) || [];
+      if (!ev.length) ev = [e];
+      ev.forEach(function (x) { aggiungi(coord(x)); });
+    });
+    cv.addEventListener("pointerup", function () { chiudiForma(true); stacca(); });
+    cv.addEventListener("pointercancel", function () { chiudiForma(false); stacca(); });
+    cv.addEventListener("lostpointercapture", function () { chiudiForma(true); stacca(); });
+    var tSped = setInterval(spedisci, 70);   // mentre disegni, i pezzi partono ~14 volte al secondo
+    function annullaMio() {
+      if (!puoi) return;
+      stacca(); chiudiForma(false);
+      if (!tratti.length && cestinati) { tratti = cestinati; cestinati = null; ridisegna(); cb.onRipristina(); return; }   // annulla il cestino: torna tutto com'era
+      if (!tratti.length) return;
+      var tr = tratti.pop(); ridisegna(); cb.onAnnulla(tr.id);
+      rifare.push(tr); if (rifare.length > 30) rifare.shift();
+      aggStrumenti();
+    }
+    // «↷ Ripeti»: torna l'ultimo segno annullato (con un nome nuovo: per gli altri è un segno nuovo)
+    function ripetiMio() {
+      if (!puoi || !rifare.length) return;
+      stacca(); chiudiForma(false);
+      var v = rifare.pop(), tr = { id: mieiId + (++nTr), c: v.c, w: v.w, f: v.f ? 1 : 0, p: v.p.slice() };
+      tratti.push(tr); disegnaDa(tr, 0); nuovoPieno(tr); mostraTutto(); mandaIntero(tr);
+      aggStrumenti();
+    }
+    function pulisciMio() { if (!puoi || !tratti.length) return; stacca(); chiudiForma(false); cestinati = tratti; tratti = []; rifare = []; aggStrumenti(); ridisegna(); cb.onPulisci(); }
+
+    // ----- misure: la lavagna più grande possibile, lasciando spazio alla chat -----
+    function misura() {
+      if (!document.body.contains(scena)) return;
+      var W = scena.clientWidth, Ht = scena.clientHeight; if (!W || !Ht) return;
+      var scrive = document.activeElement === inp && !inp.disabled;
+      scena.classList.toggle("scrive", scrive);   // tastiera aperta: via le figurine
+      scena.classList.remove("fianco");
+      if (W !== largoParola) fittaParola();
+      var fisso = barra.offsetHeight + riga.offsetHeight + form.offsetHeight + basso.offsetHeight + (postoTarga ? postoTarga.offsetHeight : 0);
+      var hMax = Ht - fisso - (scrive ? 66 : (puoi ? 40 : 84)) - 8;   // chi disegna non scrive: a lui basta meno chat; con la tastiera almeno 3 righe di chat
+      var cw = Math.min(W - 10, 720), ch = Math.round(cw * LH / LW);
+      if (ch > hMax) { ch = Math.max(110, hMax); cw = Math.round(ch * LW / LH); }
+      if (scrive) {   // ⌨️ con la tastiera: a fianco (chat a destra, larga almeno 136) se la lavagna viene più grande
+        var hF = Ht - fisso - 8, wF = W - 10 - 136, chF = Math.round(wF * LH / LW);
+        if (chF > hF) { chF = hF; wF = Math.round(chF * LW / LH); }
+        if (wF * chF > cw * ch * 1.08) { scena.classList.add("fianco"); cw = wF; ch = chF; }
+      }
+      var dpr = Math.min(2.5, window.devicePixelRatio || 1);
+      cv.style.width = cw + "px"; cv.style.height = ch + "px"; lav.style.height = ch + "px"; sopra.style.width = cw + "px";
+      cv.width = Math.round(cw * dpr); cv.height = Math.round(cw * dpr * LH / LW);
+      mostraTutto();   // basta ricopiare la tela: il disegno non cambia
+      if (chatGiu) chat.scrollTop = chat.scrollHeight;   // la chat è cambiata di misura (tastiera): resta sull'ultimo messaggio
+    }
+    // la parola (o le lineette) sempre intera: le scritte si rimpiccioliscono finché ogni parola sta nella riga, al massimo su due righe
+    var largoParola = 0;
+    function fittaParola() {
+      centro.style.fontSize = "";
+      if (!centro.firstChild || !centro.clientWidth) { largoParola = 0; return; }   // (schermata non ancora a vista: si rifà alla prossima misura)
+      largoParola = scena.clientWidth;
+      var base = parseFloat(getComputedStyle(centro).fontSize) || 15, f = base;
+      var riga1 = Math.ceil(base * 1.25 * 1.2 + 6);
+      for (var k = 0; k < 14; k++) {
+        if (centro.scrollWidth <= centro.clientWidth + 1 && centro.scrollHeight <= riga1 * 2 + 4) break;
+        f = Math.max(8, f - 1); centro.style.fontSize = f + "px";
+      }
+    }
+    var ro = window.ResizeObserver ? new ResizeObserver(function () { misura(); }) : null;
+    if (ro) ro.observe(scena);
+    window.addEventListener("resize", misura);
+    requestAnimationFrame(misura);
+    var tMisura = setInterval(function () { if (cv.style.width) clearInterval(tMisura); else misura(); }, 300);   // pagina ancora nascosta: riprovo finché ho le misure
+    function smonta() { clearInterval(tSped); clearInterval(tTempo); clearInterval(tMisura); if (ro) ro.disconnect(); if (roChat) roChat.disconnect(); window.removeEventListener("resize", misura); }
+
+    // ----- tempo -----
+    var scad = 0, faseOra = null, ultimoTic = -1;
+    var tTempo = setInterval(function () {
+      if (!document.body.contains(scena)) return smonta();   // il core ci ha portati via (la Sala passata a un amico, «Cambia gioco»): niente tic né invii
+      if (!scad) return;
+      var r = Math.max(0, Math.ceil((scad - Date.now()) / 1000));
+      tempo.textContent = "⏱ " + r;
+      tempo.classList.toggle("poco", faseOra === "disegno" && r <= 10);
+      if (faseOra === "disegno" && r <= 5 && r > 0 && r !== ultimoTic) { ultimoTic = r; FX.tic(); }
+    }, 250);
+
+    // ----- chi gioca (sotto la lavagna, per chi indovina) -----
+    var chips = {}, omini = {};
+    function aggGente(vm) {
+      var visti = {};
+      vm.players.forEach(function (p) {
+        if (p.via) return;
+        var c = chips[p.id];
+        if (!c) {
+          c = chips[p.id] = { n: el("div", { class: "sb-chip solo" }), nome: el("div", { class: "sb-chip-nome" }), pt: el("div", { class: "sb-chip-pt" }) };   // solo nome e punti (24 nov 2026, il proprietario: «togliere le faccine… così si recupera spazio»)
+          c.n.appendChild(el("div", {}, [c.nome, c.pt])); gente.appendChild(c.n);
+        }
+        c.nome.textContent = p.id === io ? "Tu" : p.nome;
+        c.pt.textContent = fmtN(p.punti) + " pt";
+        c.n.classList.toggle("dis", p.id === vm.disegnatore && vm.fase !== "fine");
+        c.n.classList.toggle("ok", !!p.ok);
+        visti[p.id] = 1;
+      });
+      Object.keys(chips).forEach(function (id) { if (!visti[id]) { if (chips[id].n.parentNode) chips[id].n.parentNode.removeChild(chips[id].n); delete chips[id]; } });
+    }
+
+    // ----- chat -----
+    var ultimoMsg = 0, avviata = false, chatGiu = true;
+    chat.addEventListener("scroll", function () { chatGiu = chat.scrollHeight - chat.scrollTop - chat.clientHeight < 30; }, { passive: true });
+    if (window.ResizeObserver) { var roChat = new ResizeObserver(function () { if (chatGiu) chat.scrollTop = chat.scrollHeight; }); roChat.observe(chat); }
+    function riga1(testo, classe) { var n = el("div", { class: "sb-msg " + classe, text: testo }); chat.appendChild(n); return n; }
+    function inFondoChat() { while (chat.childNodes.length > 70) chat.removeChild(chat.firstChild); chat.scrollTop = chat.scrollHeight; chatGiu = true; }
+    function aggChat(vm) {
+      var inFondo = chatGiu || chat.scrollHeight - chat.scrollTop - chat.clientHeight < 50;
+      (vm.chat || []).forEach(function (m) {
+        if (m.i <= ultimoMsg) return;
+        ultimoMsg = m.i;
+        if (m.k === "msg") chat.appendChild(el("div", { class: "sb-msg" }, [el("b", { style: "color:" + (m.c || "#ffd43b"), text: m.n + ": " }), document.createTextNode(m.x)]));
+        else riga1(m.x, m.k);
+        if (avviata && m.k === "ok" && m.id !== io) FX.altri();
+      });
+      while (chat.childNodes.length > 70) chat.removeChild(chat.firstChild);
+      if (inFondo || !avviata) { chat.scrollTop = chat.scrollHeight; chatGiu = true; }
+    }
+    function evviva(testo) { var n = el("div", { class: "sb-evviva", text: testo }); lav.appendChild(n); setTimeout(function () { if (n.parentNode) n.parentNode.removeChild(n); }, 1900); }
+    // chi indovina per primo: la sua faccina salta in cima alla lavagna su tutti i telefoni (a lui anche una vibrazione)
+    function festaPrimo(vm, id, piu) {
+      var fig = el("div", { class: "sb-chip-fig" }), cfg = omini[id] || (window.SGOmino ? SGOmino.casuale(nomeDi(vm, id)) : null);
+      if (cfg && window.SGOmino) fig.innerHTML = SGOmino.svg(cfg, { quadrato: true });
+      var io1 = id === io, n = el("div", { class: "sb-primo" }, [fig, el("div", {}, [
+        el("div", { text: io1 ? "⚡ Per primo! +" + fmtN(piu) : "⚡ " + nomeDi(vm, id) + " per primo!" }),
+        el("small", { text: io1 ? "Hai indovinato prima di tutti" : "ha indovinato prima di tutti" }) ])]);
+      lav.appendChild(n);
+      setTimeout(function () { if (n.parentNode) n.parentNode.removeChild(n); }, 2300);
+      if (io1) try { navigator.vibrate && navigator.vibrate([30, 60, 50]); } catch (e) {}
+    }
+    // a chi disegna, all'inizio del turno: «niente lettere né numeri» (poi sparisce piano)
+    var nolett = null;
+    function promemoria() {
+      if (nolett && nolett.parentNode) nolett.parentNode.removeChild(nolett);
+      var n = nolett = el("div", { class: "sb-nolett", text: "✏️ Disegna senza lettere né numeri!" });
+      lav.appendChild(n);
+      setTimeout(function () { n.classList.add("via"); }, 5000);
+      setTimeout(function () { if (n.parentNode) n.parentNode.removeChild(n); }, 5800);
+    }
+
+    // ----- aggiornamento da una "foto" (vm) della partita -----
+    var ultimaFase = null, turnoVisto = null, chiaveCentro = "", mioOkPrima = false, mieiPunti = null, chiaveSopra = "", dove = "", notaVista = null, primoVisto = "";
+    function nomeDi(vm, id) { var p = vm.players.filter(function (x) { return x.id === id; })[0]; return p ? (id === io ? "Tu" : p.nome) : "…"; }
+    // a fine turno mi tengo una miniatura del disegno (per la galleria della classifica finale)
+    function salvaFoto(vm) {
+      if (!vm.partitaId || !vm.ultimo || !tratti.length) return;
+      if (GALLERIA.id !== vm.partitaId) { GALLERIA.id = vm.partitaId; GALLERIA.lista = []; }
+      if (GALLERIA.lista.some(function (g) { return g.turno === vm.turno; })) return;
+      try {
+        var c = document.createElement("canvas"); c.width = 300; c.height = 360;
+        c.getContext("2d").drawImage(tela, 0, 0, 300, 360);
+        GALLERIA.lista.push({ turno: vm.turno, parola: vm.ultimo.parola, nome: nomeDi(vm, vm.disegnatore), img: c.toDataURL("image/jpeg", 0.75) });
+      } catch (e) {}
+    }
+    function aggiorna(vm, priv) {
+      priv = priv || {};
+      var dis = vm.disegnatore === io, me = vm.players.filter(function (p) { return p.id === io && !p.via; })[0];
+      faseOra = vm.fase;
+      if (vm.turno !== turnoVisto) {   // turno nuovo: lavagna pulita
+        turnoVisto = vm.turno; tratti = []; mio = null; forma = null; attesa = []; cestinati = null; rifare = []; mioOkPrima = false; ultimoTic = -1; ridisegna(); aggStrumenti();
+        if (avviata) FX.turno();
+      }
+      if (vm.fase === "punti" && ultimaFase === "disegno") salvaFoto(vm);
+      // tempo
+      scad = (vm.fase === "scelta" || vm.fase === "disegno") ? Date.now() + (vm.rimMs || 0) : 0;
+      tempo.hidden = !scad;
+      var ok = vm.fase === "disegno" && me && me.ok;
+      // barra: cosa si vede al centro
+      var chiave, html;
+      if (vm.fase === "disegno" && dis) { chiave = "d|" + priv.parola; html = "✏️ Disegna: <b>" + esc(priv.parola || "…") + "</b>"; }
+      else if (ok && priv.parola) { chiave = "k|" + priv.parola; html = "✅ <b>" + esc(priv.parola) + "</b>"; }   // chi ha indovinato vede la parola
+      else if (vm.fase === "disegno") {
+        chiave = "i|" + vm.indizio;
+        var lett = String(vm.indizio || "").split(" ").map(function (w) { return "<span class='pa'>" + w.split("").map(function (ch) { return "<i>" + (ch === "_" ? "&nbsp;" : esc(ch)) + "</i>"; }).join("") + "</span>"; }).join("");
+        var lung = String(vm.indizio || "").split(" ").map(function (w) { return w.length; }).join(", ");
+        html = "<span class='sb-lettere'>" + lett + "<small>(" + lung + ")</small></span>";
+      }
+      else if (vm.fase === "scelta") { chiave = "s|" + dis + vm.disegnatore; html = dis ? "Scegli cosa disegnare!" : "✏️ " + esc(nomeDi(vm, vm.disegnatore)) + " sceglie…"; }
+      else if (vm.fase === "punti" && vm.ultimo) { chiave = "p|" + vm.ultimo.parola; html = "Era: <b>" + esc(vm.ultimo.parola) + "</b>"; }
+      else { chiave = "x"; html = ""; }
+      var rifai = false;
+      if (chiave !== chiaveCentro) { chiaveCentro = chiave; centro.innerHTML = html; rifai = true; }
+      var g = "Giro<br>" + vm.giro + "/" + vm.giri; if (giro.innerHTML !== g) { giro.innerHTML = g; rifai = true; }
+      if (rifai) { fittaParola(); misura(); }   // (dopo il giro: cambia lo spazio della parola)
+      // chi disegna ha gli strumenti e, al posto del campo per scrivere, chi gioca; gli altri vedono chi gioca sotto la lavagna
+      var primaPuoi = puoi;
+      puoi = vm.fase === "disegno" && dis;
+      cv.classList.toggle("matita", puoi);
+      var dv = (dis && (vm.fase === "scelta" || vm.fase === "disegno")) ? "basso" : "riga";
+      var cambiato = dv !== dove;
+      if (cambiato) {
+        dove = dv;
+        if (dv === "basso") { basso.appendChild(gente); form.hidden = true; basso.hidden = false; if (document.activeElement === inp) inp.blur(); }
+        else { riga.appendChild(gente); form.hidden = targa; basso.hidden = true; }
+      }
+      strumenti.hidden = !puoi; gente.hidden = false;
+      // chi aspetta mentre gli altri indovinano (ha già indovinato, o è appena arrivato): sotto chi gioca, le faccine
+      var conFac = vm.fase === "disegno" && !dis && (ok || !me), fRiga = conFac ? faccine() : null, faccineMosse = false;
+      if (fRiga && fRiga.parentNode !== riga) { riga.appendChild(fRiga); faccineMosse = true; }   // in fondo alla riga dei giocatori, ferma a destra (24 nov 2026): la lavagna resta grande uguale
+      else if (!conFac && fac && fac.parentNode === riga) { riga.removeChild(fac); faccineMosse = true; }
+      riga.classList.toggle("con-fac", !!(fac && fac.parentNode === riga));
+      if (puoi !== primaPuoi || cambiato || faccineMosse) misura();   // gli strumenti (o le faccine) prendono più posto delle figurine: rifaccio le misure
+      aggGente(vm);
+      // sopra la lavagna
+      var chiaveS = vm.fase + "|" + vm.turno + "|" + (dis ? (priv.opzioni || []).join(",") + "/" + (priv.nostre || []).join(",") : "") + "|" + (vm.fase === "punti" ? JSON.stringify(vm.ultimo) : "");
+      if (chiaveS !== chiaveSopra) { chiaveSopra = chiaveS; disegnaSopra(vm, dis, priv); }
+      // la chat e il campo per scrivere (chi disegna non scrive, neanche mentre sceglie)
+      aggChat(vm);
+      inp.disabled = !!(!me || (dis && (vm.fase === "scelta" || vm.fase === "disegno")));
+      bInvia.disabled = inp.disabled;
+      var ph = !me ? "Aspetta il prossimo turno…" : ok ? "Hai indovinato! ✅ Scrivi a chi la sa" : (vm.fase === "disegno" ? "Scrivi qui la tua risposta…" : "Scrivi in chat…");
+      if (inp.placeholder !== ph) inp.placeholder = ph;
+      // chi disegna: il promemoria all'inizio del suo turno (una volta per turno)
+      if (vm.fase === "disegno" && dis && notaVista !== vm.turno) { notaVista = vm.turno; promemoria(); }
+      // «🔤 Ha scritto!»: per chi gioca e non disegna, mentre si disegna (con quanti l'hanno già detto)
+      var lt = vm.lett || [], vediL = vm.fase === "disegno" && !dis && !!me && !targa && !!vm.lettServe;
+      bLett.hidden = !vediL;
+      if (vediL) {
+        var giaL = lt.indexOf(io) >= 0, txL = (giaL ? "🔤 Segnalato" : "🔤 Ha scritto!") + (lt.length ? " " + lt.length + "/" + vm.lettServe : "");
+        bLett.classList.toggle("fatto", giaL);
+        if (bLett.textContent !== txL) bLett.textContent = txL;
+      }
+      // chi ha indovinato per primo (la festa su tutti i telefoni; chi arriva o ricarica dopo non la rivede)
+      var kPrimo = vm.primo ? vm.partitaId + "|" + vm.primoK + "|" + vm.primo : "";
+      var piu = Math.max(0, ((me && me.punti) || 0) - (mieiPunti || 0));
+      if (kPrimo && kPrimo !== primoVisto && avviata && vm.fase === "disegno") festaPrimo(vm, vm.primo, piu);
+      if (kPrimo) primoVisto = kPrimo;
+      // ho appena indovinato? (se per primo, me lo dice già la festa)
+      if (ok && !mioOkPrima && avviata) { FX.mio(); if (vm.primo !== io) evviva("🎉 Hai indovinato! +" + fmtN(piu)); }
+      mioOkPrima = !!ok;
+      mieiPunti = me ? me.punti : 0;
+      if (vm.fase === "punti" && ultimaFase === "disegno" && avviata) FX.fine();
+      ultimaFase = vm.fase;
+      avviata = true;
+    }
+    function disegnaSopra(vm, dis, priv) {
+      sopra.innerHTML = "";
+      if (vm.fase === "scelta") {
+        sopra.hidden = false;
+        if (dis) {
+          sopra.appendChild(el("div", { class: "sb-tit", text: "Tocca a te! Scegli cosa disegnare" }));
+          var sc = el("div", { class: "sb-scelte" });
+          var nostre = priv.nostre || [];   // quali delle 3 sono parole vostre («📝 Le nostre parole»)
+          (priv.opzioni || []).forEach(function (w, i) {
+            var b = el("button", { class: nostre.indexOf(i) >= 0 ? "nostra" : "", text: w, onclick: function () { cb.onScegli(i); } });
+            if (nostre.indexOf(i) >= 0) b.appendChild(el("span", { class: "sb-nostra", "aria-label": "parola vostra", text: "📝" }));
+            sc.appendChild(b);
+          });
+          if (!(priv.opzioni || []).length) sc.appendChild(el("div", { class: "sb-tit", text: "…" }));
+          sopra.appendChild(sc);
+          sopra.appendChild(el("div", { class: "sb-righe", text: (nostre.length ? "📝 = una parola vostra. " : "") + "Gli altri non vedono la parola: disegnala senza scrivere!" }));
+        } else {
+          var cfg = omini[vm.disegnatore];
+          if (cfg && window.SGOmino) sopra.appendChild(el("div", { class: "sb-fig", html: SGOmino.svg(cfg, { quadrato: true }) }));
+          sopra.appendChild(el("div", { class: "sb-tit", html: "✏️ <b>" + esc(nomeDi(vm, vm.disegnatore)) + "</b> sta scegliendo cosa disegnare…" }));
+          sopra.appendChild(el("div", { class: "sb-righe", text: "Preparati a indovinare: scrivi le risposte qui sotto!" }));
+        }
+      } else if (vm.fase === "punti" && vm.ultimo) {
+        sopra.hidden = false;
+        sopra.appendChild(el("div", { class: "sb-tit", text: (vm.ultimo.lettere ? "🔤 Ha scritto sulla lavagna! La parola era" : vm.ultimo.tutti ? "Avete indovinato tutti! 🎉" : "La parola era") + (vm.ultimo.nostra ? " · 📝 una parola vostra" : "") }));
+        sopra.appendChild(el("div", { class: "sb-parola", text: vm.ultimo.parola }));
+        var righe = (vm.ultimo.righe || []).map(function (r) { return esc(r.id === io ? "Tu" : r.nome) + " <b>+" + fmtN(r.pts) + "</b>" + (r.dis ? " ✏️" : ""); });
+        sopra.appendChild(el("div", { class: "sb-righe", html: righe.length ? righe.join(" · ") : "Nessuno l'ha indovinata 😅" }));
+        if (vm.ultimo.lettere) sopra.appendChild(el("div", { class: "sb-righe", html: "🔤 Lettere sulla lavagna: <b style='color:#ff8787'>0 punti</b> a " + esc(nomeDi(vm, vm.disegnatore) === "Tu" ? "te" : nomeDi(vm, vm.disegnatore)) }));
+        if (vm.ultimo.prossimo) sopra.appendChild(el("div", { class: "sb-righe", html: "Adesso disegna: <b>" + esc(vm.ultimo.prossimo === io ? "tu!" : vm.ultimo.prossimoNome) + "</b>" }));
+      } else sopra.hidden = true;
+      // mentre si aspetta (chi disegna sceglie la parola, i punti del turno): le faccine sulla lavagna
+      if ((vm.fase === "scelta" && !dis) || (vm.fase === "punti" && vm.ultimo)) { var f = faccine(); if (f) sopra.appendChild(f); }
+    }
+    // la fila delle faccine (una sola, si sposta dove serve)
+    var fac;
+    function faccine() { if (fac === undefined) { fac = t.faccine && !targa ? t.faccine() : null; if (fac) fac.classList.add("sb-faccine"); } return fac; }   // (chi guarda: le faccine sono nella targhetta)
+    function esc(x) { return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+    return {
+      aggiorna: aggiorna,
+      omini: function (m) {
+        for (var id in m) if (m[id]) omini[id] = m[id];
+        
+      },
+      // un pezzo di tratto arrivato da chi disegna
+      tratto: function (m) {
+        var tr = null;
+        if (!m.f) for (var j = tratti.length - 1; j >= 0; j--) if (tratti[j].id === m.id) { tr = tratti[j]; break; }
+        if (!tr) { tr = { id: m.id, c: m.c, w: m.w, f: m.f ? 1 : 0, p: [] }; tratti.push(tr); }
+        var da = tr.p.length;
+        Array.prototype.push.apply(tr.p, m.p || []);
+        disegnaDa(tr, Math.max(0, da - 2));
+        nuovoPieno(tr);
+      },
+      annulla: function (id) { tratti = tratti.filter(function (tr) { return tr.id !== id; }); ridisegna(); },
+      pulisci: function () { tratti = []; ridisegna(); },
+      // il disegno intero (chi entra a metà, chi rientra, il cestino annullato); i miei tratti più nuovi restano
+      tutti: function (lista) {
+        var visti = {};
+        var nuovi = (lista || []).map(function (tr) { visti[tr.id] = 1; return { id: tr.id, c: tr.c, w: tr.w, f: tr.f ? 1 : 0, p: (tr.p || []).slice() }; });
+        tratti.forEach(function (tr) { if (!visti[tr.id] && String(tr.id).indexOf(mieiId) === 0) nuovi.push(tr); });
+        nuovi.forEach(function (tr) { var m = /\.(\d+)$/.exec(tr.id); if (String(tr.id).indexOf(mieiId) === 0 && m && +m[1] > nTr) nTr = +m[1]; });
+        tratti = nuovi; ridisegna();
+      },
+      quasi: function (x) { riga1("🔥 «" + x + "»: ci sei quasi!", "quasi"); inFondoChat(); FX.quasi(); },
+      avviso: function (x) { riga1(x, "sys"); inFondoChat(); },
+      // la chat "tra chi sa" (chi ha indovinato e chi disegna): la vedono solo loro
+      sa: function (m) { chat.appendChild(el("div", { class: "sb-msg sa" }, [el("b", { text: (m.id === io ? "Tu" : m.nome) + " 🤫: " }), document.createTextNode(m.x)])); inFondoChat(); },
+      chiudi: smonta
+    };
+  }
+
+  // ---------- la saletta d'attesa (uguale per tutti i giochi) ----------
+  function lobbyScara(t, vm, cb) {
+    var el = t.el;
+    cb._chiaveFine = null;
+    [].forEach.call(document.querySelectorAll(".sb-grande"), function (n) { n.parentNode.removeChild(n); });
+    var info = el("div", {}, [
+      el("div", { class: "etichetta", text: "Si gioca così" }),
+      el("p", { class: "modulo-nota", style: "margin-top:2px", text: "✏️ " + vm.giri + (vm.giri === 1 ? " giro (ognuno disegna una volta)" : " giri (ognuno disegna " + vm.giri + " volte)") +
+        " · ⏱ " + vm.secondi + " secondi a disegno · " + (vm.difficili ? "🤔 parole anche difficili" : "🙂 parole facili") +
+        (vm.nostre ? " · 📝 " + fmtN(vm.nostre) + (vm.nostre === 1 ? " parola vostra" : " parole vostre") + (vm.nostreModo === "solo" ? " (solo quelle)" : " (mescolate)") : "") })
+    ]);
+    t.lobby({ host: cb.sonoHost, codice: vm.codice, pronta: vm.pronta, min: 2,
+      giocatori: vm.players.map(function (p, i) { return { id: p.id, nome: p.nome, omino: p.omino || null, host: i === 0, tu: p.id === cb.myId }; }),
+      extra: [info], attesa: "Aspetta che l'host cominci: a turno disegnerete tutti! 🎨",
+      onComincia: cb.onComincia, onEsci: cb.onEsci });
+  }
+
+  // ---------- la classifica finale ----------
+  // (si ricostruisce solo se cambia qualcosa: chi entra a partita finita non la fa ridisegnare)
+  function finale(t, vm, cb) {
+    salvaTrofeiScara(t, vm, cb);
+    var cl = vm.classifica || [], gioco = cl.some(function (r) { return r.id === cb.myId; });
+    var chiave = vm.partitaId + "|" + JSON.stringify(cl) + "|" + vm.perche + "|" + gioco;
+    if (cb._chiaveFine === chiave) return;
+    cb._chiaveFine = chiave;
+    var el = t.el;
+    var s = t.schermata({ icona: "🏆", titolo: "Classifica finale" });
+    s._contenuto.appendChild(el("div", { class: "sb-podio", text: "🎨🏆🎨" }));
+    if (vm.perche === "soli") s._contenuto.appendChild(el("div", { class: "sb-perche", text: "Sono usciti tutti gli altri: partita finita." }));
+    // classifica, faccine e galleria in uno schermo: con tanti giocatori (o schermo basso) righe basse su due colonne
+    var conGal = GALLERIA.id === vm.partitaId && GALLERIA.lista.length > 0;
+    var fitta = cl.length > 6 || cl.length * 71 + 262 + (t.faccine ? 56 : 0) + (conGal ? 170 : 0) > (window.innerHeight || 640);
+    var ol = el("ol", { class: "classifica" + (fitta ? " fitta" : "") }), med = ["🥇", "🥈", "🥉"];
+    cl.forEach(function (r) {
+      ol.appendChild(el("li", { class: r.pos === 1 ? "vincitore" : "" }, [
+        el("span", { class: "pos", text: med[r.pos - 1] || (r.pos + "°") }),
+        el("span", { class: "nome", text: r.nome + (r.id === cb.myId ? " (tu)" : "") + (r.via ? " (ha lasciato)" : "") }),
+        el("span", { class: "punti", text: fmtN(r.punti) }) ]));
+    });
+    s._contenuto.appendChild(ol);
+    var targa = !!(t.guarda && !t.eliminazione);   // chi guarda soltanto (col link): faccine e uscita le dà la targhetta del core
+    if (targa) s.classList.add("sb-fine-targa");
+    var fac = t.faccine && !targa ? t.faccine() : null;   // le faccine della saletta: si festeggia (o si sfotte) tutti insieme
+    if (fac) { fac.classList.add("fine-faccine"); s._contenuto.appendChild(fac); }
+    // la galleria degli scarabocchi della partita: si tocca per vederli grandi
+    var gal = GALLERIA.id === vm.partitaId ? GALLERIA.lista : [];
+    if (gal.length) {
+      s._contenuto.appendChild(el("div", { class: "sb-gal-tit", text: "🖼️ I vostri scarabocchi" }));
+      var riga = el("div", { class: "sb-gal" });
+      gal.forEach(function (g) {
+        riga.appendChild(el("button", { "aria-label": g.parola, onclick: function () {
+          try { navigator.vibrate && navigator.vibrate(10); } catch (e) {}
+          var o = el("div", { class: "sb-grande oro g-scarabocchio sg-dal-gioco", onclick: function () { if (o.parentNode) o.parentNode.removeChild(o); } }, [
+            el("img", { src: g.img, alt: g.parola }), el("div", { text: g.parola.toUpperCase() + " · ✏️ " + g.nome }), el("p", { class: "modulo-nota", text: "Tocca per chiudere" }) ]);
+          document.body.appendChild(o);
+        } }, [el("img", { src: g.img, alt: g.parola }), el("span", { text: g.parola }), el("span", { style: "opacity:.7;font-weight:700", text: "✏️ " + g.nome })]));
+      });
+      s._contenuto.appendChild(riga);
+    }
+    // i tasti di fine uguali per tutti (Rivincita, Cambia gioco, Ci sto…) li mette il core; se no quelli di sempre
+    cb._notaFine = null;
+    var notaFuori = (vm.guardano || []).indexOf(cb.myId) >= 0 ? "Questa partita l'hai guardata 👀"
+      : targa ? "👀 Hai guardato: se l'host fa un'altra partita, entri anche tu." : "La partita è appena finita: entri nella prossima! 🎨";
+    if (!(t.tastiFine && t.tastiFine(s._piede, { host: cb.sonoHost, nuova: cb.sonoHost ? cb.onNuova : null, esci: cb.onEsci }))) {
+      if (cb.sonoHost) s._piede.appendChild(el("button", { class: "btn btn-primario", text: "↻ Nuova partita (stessi amici)", onclick: cb.onNuova }));
+      else s._contenuto.appendChild(cb._notaFine = el("p", { class: "modulo-nota", style: "text-align:center", text: gioco ? "Se l'host fa un'altra partita, torni da solo nella saletta." : notaFuori }));
+      if (!targa) s._piede.appendChild(el("button", { class: "btn btn-fantasma", text: "🏠 Esci", onclick: cb.onEsci }));
+    } else if (!cb.sonoHost && !gioco) s._contenuto.appendChild(el("p", { class: "modulo-nota", style: "text-align:center", text: notaFuori }));
+    t.mostra(s);
+  }
+  // la finestrella "Sei sicuro?" (con lo stile delle conferme dell'app); il "sì" si attiva dopo un attimo
+  function conferma(t, domanda, siTesto, siFn) {
+    if (document.querySelector(".conferma-sfondo")) return;
+    var el = t.el, sfondo;
+    function chiudi() { if (sfondo.parentNode) sfondo.parentNode.removeChild(sfondo); }
+    var si = el("button", { class: "btn btn-rosso", text: siTesto, disabled: "disabled", onclick: function () { chiudi(); siFn(); } });
+    sfondo = el("div", { class: "conferma-sfondo", onclick: function (e) { if (e.target === sfondo) chiudi(); } }, [
+      el("div", { class: "conferma-box", role: "dialog" }, [
+        el("div", { class: "conferma-domanda", text: domanda }),
+        el("div", { class: "conferma-tasti" }, [el("button", { class: "btn btn-primario", text: "Resta", onclick: chiudi }), si]) ]) ]);
+    document.body.appendChild(sfondo);
+    setTimeout(function () { si.removeAttribute("disabled"); }, 600);
+  }
+
+  // =========================================================
+  //  HOST — tiene la partita, controlla le risposte, rimanda i tratti
+  // =========================================================
+  function hostScara(t) {
+    if (!(window.SGNet && SGNet.disponibile())) return senzaRete(t);
+    var imp = t.impostazioni || {};
+    var nomeHost = (t.giocatori && t.giocatori[0]) || "Host";
+    var IO = t.mioId || "host";   // io che tengo la partita ("host", o l'amico che ha preso il posto dell'host)
+    var H = { fase: "lobby", codice: "…", pronta: false, secondi: imp.secondi || 80, giri: imp.giri || 2, difficili: !!imp.difficili,
+      players: [{ id: IO, nome: nomeHost, omino: mioAvatar(nomeHost), punti: 0, col: COL_GIOC[0] }],
+      giro: 0, idx: -1, ordine: [], turno: 0, disegnatore: null, parola: null, opzioni: null, usate: {},
+      scadenza: 0, indovinati: [], scoperte: [], guad: {}, tratti: [], chat: [], nMsg: 0, ultimo: null, classifica: null, to: null, toInd: [],
+      partitaId: null, statGiocatori: Object.create(null), paroleDifficiliDisegnate: 0, prossimi: [], perche: null, cestino: null, disegnato: false,
+      guardano: [],   // chi non è tra chi gioca (scelti nella Sala): guarda il disegno e la chat, non gioca
+      nostre: [], alt: Object.create(null), nostreModo: "no", opzNostre: [], parolaNostra: false };   // «📝 Le nostre parole» (solo l'host le conosce)
+    var vista = null;
+    // le parole del gruppo: quelle delle regole (o, se non ci sono, quelle salvate sul profilo dell'host)
+    function preparaNostre(lista, modo) {
+      H.nostre = []; H.alt = Object.create(null);
+      leggiNostre(lista).forEach(function (v) {
+        var a = v.split("/");
+        if (H.nostre.indexOf(a[0]) >= 0) return;
+        H.nostre.push(a[0]); if (a.length > 1) H.alt[a[0]] = a.slice(1);
+      });
+      H.nostreModo = H.nostre.length ? (modo === "solo" || modo === "mix" ? modo : "no") : "no";
+    }
+    var nostre0 = Array.isArray(imp.nostre) ? imp.nostre : nostreDelProfilo();
+    preparaNostre(nostre0, modoNostre(imp, nostre0.length));
+    // la partita di prima (l'host ha ricaricato la pagina o riaperto l'app: t.ripresa): si riprende da lì. Il disegno no
+    // (non si ricorda: è grosso): chi disegnava ricomincia con la stessa parola e il tempo intero; i punti restano.
+    // Gli amici non si danno per usciti: si aspettano ("attesi") e rientrano da soli; chi non torna entro 10 secondi esce
+    var R0 = t.ripresa && t.ripresa.stato, ripresa = !!(R0 && R0.fase && R0.fase !== "lobby" && R0.players), attesi = {}, tAttesi = null;
+    if (ripresa) {
+      H = R0; H.to = null; H.toInd = []; H.tratti = []; H.cestino = null; H.pronta = false;
+      H.guardano = H.guardano || []; H.prossimi = H.prossimi || []; H.chat = H.chat || [];
+      H.statGiocatori = Object.assign(Object.create(null), H.statGiocatori || {}); H.alt = Object.assign(Object.create(null), H.alt || {});
+      H.players.forEach(function (p) { if (p.id !== IO && !p.via) attesi[p.id] = 1; });
+    }
+    function pById(id) { for (var i = 0; i < H.players.length; i++) if (H.players[i].id === id) return H.players[i]; return null; }
+    function statP(id) { return H.statGiocatori[id] || (H.statGiocatori[id] = statVuoteScara()); }
+    function presenti() { return H.players.filter(function (p) { return !p.via; }); }
+    function ferma() { if (H.to) { clearTimeout(H.to); H.to = null; } H.toInd.forEach(clearTimeout); H.toInd = []; }
+    function msg(k, x, p) {
+      H.chat.push({ i: ++H.nMsg, k: k, x: x, n: p ? p.nome : null, c: p ? p.col : null, id: p ? p.id : null });
+      if (H.chat.length > MAX_CHAT) H.chat.splice(0, H.chat.length - MAX_CHAT);
+    }
+    // "⚙️ Regole" in saletta
+    t.onRegole = function (im) {
+      if (H.fase !== "lobby") return;
+      H.secondi = im.secondi || 80; H.giri = im.giri || 2; H.difficili = !!im.difficili;
+      var l = Array.isArray(im.nostre) ? im.nostre : nostreDelProfilo();
+      preparaNostre(l, modoNostre(im, l.length));
+      bd();
+    };
+    t.onRivincita = function () { if (H.fase === "fine") nuova(); };   // la Rivincita: tutti di nuovo nella saletta
+
+    var rete = SGNet.ospita("scarabocchio", {
+      onCodice: function (c) { H.codice = c; bd(); },
+      onConnesso: function () { H.pronta = true; bd(); },
+      onAddio: addio,
+      onMsg: function (id, m) {
+        if (!m || !m.t) return;
+        if (m.t === "join") return join(id, m);
+        else if (m.t === "tr") tratto(id, m);
+        else if (m.t === "annulla") annulla(id, m.id);
+        else if (m.t === "pulisci") pulisci(id);
+        else if (m.t === "ripristina") ripristina(id);
+        else if (m.t === "scegli") scegli(id, m.i);
+        else if (m.t === "prova") prova(id, m.x);
+        else if (m.t === "sync") sync(id);
+        else if (m.t === "lettere") lettere(id);
+      },
+      onErrore: function () { clearTimeout(tAttesi); t.ricorda(null); senzaRete(t); }
+    }, { ripresa: ripresa });   // (gli amici non tornano in saletta: la partita riprende)
+    if (ripresa && rete && rete.codice) H.codice = rete.codice;
+    // chi se ne va (o, dopo una ripresa, non è tornato in tempo)
+    function addio(id) {
+      delete attesi[id];
+      if (H.guardano.indexOf(id) >= 0) H.guardano.splice(H.guardano.indexOf(id), 1);
+      var p = pById(id); if (!p || p.via) return;
+      if (H.fase === "lobby") { H.players = H.players.filter(function (x) { return x.id !== id; }); ricolora(); bd(); return; }
+      p.via = true; msg("sys", "👋 " + p.nome + " ha lasciato la partita");
+      if (H.fase === "fine") return bd();
+      if (presenti().length < 2) { H.perche = "soli"; return fine(); }
+      if (id === H.disegnatore && (H.fase === "scelta" || H.fase === "disegno")) return fineTurno("via");
+      if (H.fase === "disegno" && tuttiOk()) return fineTurno("tutti");
+      bd();
+    }
+    // chi entra (o rientra con lo stesso id: pagina ricaricata, telefono riacceso)
+    function join(id, m) {
+      var p = pById(id);
+      delete attesi[id];   // (dopo una ripresa: è tornato)
+      if (p) {
+        if (p.via) {   // era stato dato per uscito: torna in partita (o nella prossima, se è finita)
+          p.via = false;
+          if (H.fase !== "fine") { msg("sys", "👋 " + p.nome + " è di nuovo qui"); if (H.ordine.indexOf(id) < 0) H.ordine.push(id); }
+          if (avatarValido(m.omino)) p.omino = avatarValido(m.omino);
+          bd();
+        } else rete.invia({ t: "vm", vm: vm() });   // ha solo bisogno della foto (niente da ridisegnare qui)
+        if (H.fase !== "lobby" && H.fase !== "fine") sync(id);   // il disegno fin qui e i suoi segreti (la parola, se disegna o l'ha indovinata)
+        // la partita è ripresa mentre disegnava: glielo dico (la lavagna è di nuovo vuota, il tempo è di nuovo tutto)
+        if (H.ridisegna === id && H.fase === "disegno" && id === H.disegnatore) { H.ridisegna = null; privato(id, { t: "avviso", x: "🔁 Ridisegna: la partita è ripresa" }); }
+        return;
+      }
+      var nome = String(m.nome || "Amico").slice(0, 16), omino = avatarValido(m.omino);
+      if (t.puoSedersi && !t.puoSedersi(id, nome)) {   // non è tra chi gioca: riceve le foto e il disegno, e guarda
+        if (H.guardano.indexOf(id) < 0) H.guardano.push(id);
+        rete.invia({ t: "vm", vm: vm() });
+        if (H.fase !== "lobby" && H.fase !== "fine") sync(id);
+        return;
+      }
+      if (H.fase === "fine") {   // partita finita: entra nella prossima (intanto vede la classifica)
+        if (!H.prossimi.some(function (x) { return x.id === id; })) {
+          if (presenti().length + H.prossimi.length >= 10) return privato(id, { t: "piena" });
+          H.prossimi.push({ id: id, nome: nome, omino: omino });
+        }
+        return rete.invia({ t: "vm", vm: vm() });
+      }
+      if (presenti().length >= 10) return privato(id, { t: "piena" });   // contano solo quelli rimasti
+      p = { id: id, nome: nome, omino: omino, punti: 0, col: COL_GIOC[H.players.length % COL_GIOC.length] };
+      H.players.push(p);
+      statP(id);
+      if (H.fase !== "lobby") { H.ordine.push(id); msg("sys", "👋 Entra in partita " + p.nome); if (vista) vista.omini(mappaOmini()); }
+      bd();
+    }
+    function ricolora() { H.players.forEach(function (p, i) { p.col = COL_GIOC[i % COL_GIOC.length]; }); }
+    function mappaOmini() { var o = {}; H.players.forEach(function (p) { o[p.id] = p.omino || null; }); return o; }
+    // a un telefono solo (parola da disegnare, "ci sei quasi"…): gli altri la ignorano
+    function privato(id, m) {
+      if (id === IO) {
+        if (!vista) return;
+        if (m.t === "quasi") vista.quasi(m.x); else if (m.t === "avviso") vista.avviso(m.x); else if (m.t === "sa") vista.sa(m);
+        return;
+      }
+      m.to = id; m.n = H.turno; rete.inviaVeloce(m);
+    }
+    function sa(id) { return H.fase === "disegno" && H.indovinati.indexOf(id) >= 0; }   // ha indovinato la parola di questo turno?
+    function priv() {   // quello che vedo solo io: la parola se disegno (o se l'ho indovinata), le 3 scelte
+      if (H.disegnatore === IO) return { parola: H.parola, opzioni: H.fase === "scelta" ? H.opzioni : null, nostre: H.fase === "scelta" ? H.opzNostre : null };
+      if (sa(IO)) return { parola: H.parola };
+      return null;
+    }
+
+    function vm() {
+      var o = { fase: H.fase, codice: H.codice, pronta: H.pronta, giro: H.giro, giri: H.giri, secondi: H.secondi, difficili: H.difficili,
+        turno: H.turno, disegnatore: H.disegnatore, chat: H.chat.slice(), partitaId: H.partitaId,
+        nostre: H.nostreModo !== "no" ? H.nostre.length : 0, nostreModo: H.nostreModo,   // quante parole vostre (le parole no: le sa solo l'host)
+        players: H.players.map(function (p) { return { id: p.id, nome: p.nome, punti: p.punti, via: !!p.via, ok: H.indovinati.indexOf(p.id) >= 0, omino: H.fase === "lobby" ? (p.omino || null) : undefined }; }) };
+      if (H.fase === "scelta" || H.fase === "disegno") o.rimMs = Math.max(0, H.scadenza - Date.now());
+      if (H.fase === "disegno") {
+        o.indizio = maschera(H.parola, H.scoperte);
+        o.primo = H.indovinati[0] || null; o.primoK = H.primoK || 0;     // chi ha indovinato per primo (la festa)
+        o.lett = (H.lett || []).slice(); o.lettServe = serveLettere();   // «🔤 Ha scritto!»: chi l'ha detto e quanti ne servono
+      }
+      if (H.fase === "punti") o.ultimo = H.ultimo;
+      if (H.fase === "fine") {
+        o.classifica = H.classifica; o.statFine = H.statGiocatori; o.paroleDifficiliDisegnate = H.paroleDifficiliDisegnate; o.perche = H.perche || null;
+        o.prossimi = H.prossimi.map(function (x) { return x.id; });   // chi è arrivato a partita finita (entra nella prossima)
+      }
+      if (H.guardano.length) o.guardano = H.guardano.slice();
+      return o;
+    }
+    // (host di riserva) chi porta avanti la partita se sparisco: prima chi guarda (non gioca: non ha niente da perdere)
+    var viciK = "";
+    function vici() { var k = H.guardano.join(","); if (k !== viciK && t.vici) { viciK = k; t.vici(H.guardano.length ? H.guardano.slice() : null); } }
+    function bd() {
+      var v = vm();
+      rete.invia({ t: "vm", vm: v });
+      ricorda(); vici();
+      if (v.fase === "lobby") { chiudiVista(); lobbyScara(t, v, cbH); }
+      else if (v.fase === "fine") { chiudiVista(); finale(t, v, cbH); }
+      else {
+        if (!vista) { cbH._chiaveFine = null; vista = creaVista(t, IO, cbH); vista.omini(mappaOmini()); }
+        vista.aggiorna(v, priv());
+      }
+    }
+    function chiudiVista() { if (vista) { vista.chiudi(); vista = null; } }
+    // la partita com'è adesso, per riprenderla se ricarico la pagina: tutto H tranne i timer e il disegno (grosso: alla
+    // ripresa si ridisegna da capo). La parola segreta resta qui (e nella copia per il vice), mai nella foto
+    function ricorda() {
+      if (H.fase === "lobby") return t.ricorda(null);
+      var s = {}; Object.keys(H).forEach(function (k) { if (k !== "to" && k !== "toInd" && k !== "tratti" && k !== "cestino") s[k] = H[k]; });
+      t.ricorda(s);
+    }
+    // la ripresa: chi sceglieva la parola sceglie di nuovo; chi disegnava ricomincia con la stessa parola, la lavagna
+    // vuota e il tempo intero (un turno nuovo: tutti i telefoni puliscono la lavagna); chi l'aveva già indovinata tiene i punti
+    function riprendi() {
+      var f = H.fase;
+      tAttesi = setTimeout(function () { Object.keys(attesi).forEach(addio); }, 10000);
+      if (f === "fine") return bd();
+      if (f === "scelta" || f === "disegno") {
+        H.turno++; H.q = 0; H.disegnato = false; H.corti = false; H.scoperte = []; H.lett = [];
+        if (f === "scelta" || !H.parola) {
+          H.fase = "scelta"; H.scadenza = Date.now() + SCELTA_MS; bd();
+          privato(H.disegnatore, { t: "priv", opzioni: H.opzioni, nostre: H.opzNostre });
+          H.to = setTimeout(function () { scegli(H.disegnatore, Math.floor(Math.random() * 3)); }, SCELTA_MS);
+          return;
+        }
+        msg("sys", "🔁 La partita è ripresa: " + ((pById(H.disegnatore) || {}).nome || "…") + " ridisegna da capo");
+        H.ridisegna = H.disegnatore;   // (glielo dico appena rientra)
+        armaDisegno(); bd();
+        privato(H.disegnatore, { t: "priv", parola: H.parola });
+        if (H.disegnatore === IO) { H.ridisegna = null; privato(IO, { t: "avviso", x: "🔁 Ridisegna: la partita è ripresa" }); }
+        return;
+      }
+      if (f === "punti") {   // il risultato del turno: ancora qualche secondo, poi il prossimo
+        bd(); H.to = setTimeout(prossimoTurno, PUNTI_MS); return;
+      }
+      prossimoTurno();
+    }
+
+    // ----- la partita -----
+    function comincia() {
+      if (H.fase !== "lobby" || presenti().length < 2) return;
+      H.players = presenti(); ricolora();
+      H.players.forEach(function (p) { p.punti = 0; });
+      var ids = H.players.map(function (p) { return p.id; });
+      H.giro = 1; H.idx = -1; H.turno = 0; H.ordine = t.mischia ? t.mischia(ids) : ids;   // chi disegna per primo: a caso
+      H.chat = []; H.usate = {}; H.classifica = null; H.perche = null; H.prossimi = []; H.partitaId = nuovaPartitaScara(); H.statGiocatori = Object.create(null); H.paroleDifficiliDisegnate = 0;
+      H.players.forEach(function (p) { H.statGiocatori[p.id] = statVuoteScara(); });
+      msg("sys", "🎨 Si comincia! Chi disegna non può scrivere, gli altri indovinano in chat.");
+      if (H.nostreModo === "solo") msg("sys", "📝 Si gioca con le vostre parole!");
+      else if (H.nostreModo === "mix") msg("sys", "📝 In mezzo ci sono anche le vostre parole!");
+      prossimoTurno();
+    }
+    // le 3 parole tra cui scegliere. Con «Le nostre parole»: mescolate = una delle 3 è vostra, solo = tutte e 3 vostre
+    // (se ne avete scritte meno di 3, le altre sono del gioco); finite le vostre, si ricomincia da capo
+    function pesca() {
+      var mem = leggiUscite();
+      var pool = fresche(FACILI.filter(function (w) { return !H.usate[w]; }), mem), dif = fresche(DIFFICILI.filter(function (w) { return !H.usate[w]; }), mem);
+      if (pool.length < 3) { FACILI.concat(DIFFICILI).forEach(function (w) { delete H.usate[w]; }); pool = FACILI.slice(); dif = DIFFICILI.slice(); }
+      var scelte = [], daNostre = [], nostre = [];
+      if (H.nostreModo !== "no") {
+        nostre = H.nostre.filter(function (w) { return !H.usate[w]; });
+        if (nostre.length < (H.nostreModo === "solo" ? 3 : 1)) { H.nostre.forEach(function (w) { delete H.usate[w]; }); nostre = H.nostre.slice(); }
+      }
+      function una(lista) { lista = lista.filter(function (w) { return scelte.indexOf(w) < 0; }); if (!lista.length) return null; var w = aCaso(lista); scelte.push(w); return w; }
+      var quanteN = H.nostreModo === "solo" ? Math.min(3, nostre.length) : (H.nostreModo === "mix" && nostre.length ? 1 : 0);
+      for (var i = 0; i < quanteN; i++) { var w = una(nostre); if (w) daNostre.push(w); }
+      while (scelte.length < 3) if (!una(scelte.length === 2 && H.difficili && dif.length ? dif : pool)) una(FACILI);   // con le parole difficili: l'ultima è difficile
+      for (var j = scelte.length - 1; j > 0; j--) { var k = Math.floor(Math.random() * (j + 1)), x = scelte[j]; scelte[j] = scelte[k]; scelte[k] = x; }   // in ordine a caso
+      H.opzNostre = []; scelte.forEach(function (w, n) { if (daNostre.indexOf(w) >= 0) H.opzNostre.push(n); });
+      return scelte;
+    }
+    function prossimoTurno() {
+      ferma();
+      for (;;) {   // il prossimo che disegna (chi è uscito si salta)
+        H.idx++;
+        if (H.idx >= H.ordine.length) { H.idx = 0; H.giro++; }
+        if (H.giro > H.giri) return fine();
+        var d = pById(H.ordine[H.idx]); if (d && !d.via) break;
+      }
+      H.turno++; H.disegnatore = H.ordine[H.idx];
+      if (t.aCheSiamo) t.aCheSiamo("Giro " + H.giro + " di " + H.giri);   // (nella Sala, per chi è fuori)
+      H.opzioni = pesca(); H.parola = null; H.parolaNostra = false; H.tratti = []; H.q = 0; H.indovinati = []; H.scoperte = []; H.guad = {}; H.ultimo = null;
+      H.cestino = null; H.disegnato = false; H.corti = false;
+      H.attesi = Math.max(1, presenti().length - 1);   // quanti possono indovinare in questo turno
+      H.molti = presenti().length >= 6;                 // in tanti chi disegna prende di più (disegna poche volte, indovina tante)
+      H.lett = [];                                      // chi ha detto «🔤 Ha scritto!» in questo turno
+      H.fase = "scelta"; H.scadenza = Date.now() + SCELTA_MS;
+      bd();
+      privato(H.disegnatore, { t: "priv", opzioni: H.opzioni, nostre: H.opzNostre });
+      H.to = setTimeout(function () { scegli(H.disegnatore, Math.floor(Math.random() * 3)); }, SCELTA_MS);
+    }
+    function scegli(id, i) {
+      if (H.fase !== "scelta" || id !== H.disegnatore) return;
+      i = intIn(i, 2);
+      ferma();
+      H.parola = H.opzioni[i]; H.usate[H.parola] = 1; segnaUscite(H.opzioni); H.parolaNostra = H.opzNostre.indexOf(i) >= 0;
+      statP(id).turniDisegnati++;
+      if (DIFFICILI.indexOf(H.parola) >= 0) { statP(id).paroleDifficiliDisegnate++; H.paroleDifficiliDisegnate++; }
+      var d = pById(H.disegnatore);
+      msg("sys", "✏️ " + (d ? d.nome : "…") + " sta disegnando");
+      armaDisegno();
+      bd();
+      privato(H.disegnatore, { t: "priv", parola: H.parola });
+    }
+    // si disegna: il tempo intero, le lettere che si scoprono col tempo, la lavagna vuota troppo a lungo
+    // (anche alla ripresa, quando chi disegnava ricomincia con la stessa parola)
+    function armaDisegno() {
+      H.fase = "disegno"; H.scadenza = Date.now() + H.secondi * 1000;
+      // col passare del tempo si scoprono alcune lettere (mai tutte)
+      var lettere = []; for (var j = 0; j < H.parola.length; j++) if (/[a-zà-ù]/i.test(H.parola[j])) lettere.push(j);
+      var quante = lettere.length >= 8 ? 3 : (lettere.length >= 5 ? 2 : (lettere.length >= 3 ? 1 : 0));
+      [0.45, 0.65, 0.82].slice(0, quante).forEach(function (f) {
+        H.toInd.push(setTimeout(function () {
+          var restano = lettere.filter(function (x) { return H.scoperte.indexOf(x) < 0; });
+          if (restano.length > 1) { H.scoperte.push(aCaso(restano)); bd(); }
+        }, H.secondi * 1000 * f));
+      });
+      // chi disegna è distratto? dopo 20 secondi con la lavagna ancora vuota si passa al prossimo
+      H.toInd.push(setTimeout(function () { if (H.fase === "disegno" && !H.disegnato && !H.indovinati.length) fineTurno("vuoto"); }, 20000));
+      H.to = setTimeout(function () { fineTurno("tempo"); }, H.secondi * 1000);
+      var tPub = setInterval(function () { if (H.fase !== "disegno") return clearInterval(tPub); guardaArrivati(); }, 2000);
+      H.toInd.push(tPub);   // (si ferma con gli altri timer del turno)
+    }
+    // chi guarda col link (👀) non manda niente all'host (il core butta i suoi messaggi), quindi non può chiedere il disegno
+    // fin qui: quando ne arriva uno nuovo (o lo stesso che ha ricaricato) durante il disegno, il disegno intero va a tutti.
+    // Chi è già in pari (stesso numero dell'ultimo pezzo) lo ignora: niente lampeggio. Chi guarda lo legge il core
+    // (sola lettura: il core non ha ancora un aiuto per questo)
+    var pubVisti = {};
+    function guardaArrivati() {
+      var pub = null; try { pub = rete && rete._sv && rete._sv.pubblico; } catch (e) {}
+      if (!pub || typeof pub !== "object") return;
+      var nuovo = false;
+      Object.keys(pub).forEach(function (id) {
+        var tt = (pub[id] && pub[id].t) || 0, prima = pubVisti[id];
+        // (chi guarda si fa sentire ogni 20 secondi: se si rifà sentire molto prima, ha ricaricato la pagina)
+        if (prima == null || (tt !== prima && tt - prima < 15000)) nuovo = true;
+        pubVisti[id] = tt;
+      });
+      if (nuovo && H.tratti.length) rete.inviaVeloce({ t: "disegno", kf: 1, da: H.disegnatore, turno: H.turno, q: H.q || 0, tratti: H.tratti });
+    }
+    // «🔤 Ha scritto!»: servono più di metà di quelli che indovinano (da 3 giocatori in su: in 2 deciderebbe uno solo)
+    function serveLettere() { var possono = presenti().length - 1; return possono >= 2 ? Math.floor(possono / 2) + 1 : 0; }
+    function lettere(id) {
+      var p = pById(id);
+      if (H.fase !== "disegno" || !p || p.via || id === H.disegnatore || !serveLettere()) return;
+      H.lett = H.lett || [];
+      if (H.lett.indexOf(id) >= 0 || tuttiOk()) return;   // (l'hanno già indovinata tutti: il turno sta per finire da solo)
+      H.lett.push(id);
+      H.lett = H.lett.filter(function (x) { var q = pById(x); return q && !q.via; });   // chi è uscito non conta più
+      if (H.lett.length >= serveLettere()) return fineTurno("lettere");
+      bd();
+    }
+    function tuttiOk() { return presenti().every(function (p) { return p.id === H.disegnatore || H.indovinati.indexOf(p.id) >= 0; }); }
+    function prova(id, x) {
+      var p = pById(id); if (!p || p.via) return;
+      x = String(x || "").replace(/\s+/g, " ").trim().slice(0, 40); if (!x) return;
+      var gioca = H.fase === "scelta" || H.fase === "disegno";
+      if (gioca && id === H.disegnatore) return;   // chi disegna non scrive (neanche mentre sceglie): non si svela niente
+      // niente raffiche: al massimo un messaggio ogni 0,7 secondi (e chi esagera lo sa)
+      var ora = Date.now();
+      if (ora - (p.ultMsg || 0) < PAUSA_MSG) {
+        if (ora - (p.ultAvviso || 0) > 3000) { p.ultAvviso = ora; privato(id, { t: "avviso", x: "Piano! 🙂 «" + x + "» non è partito: un messaggio alla volta" }); }
+        return;
+      }
+      p.ultMsg = ora;
+      if (H.fase === "disegno") {
+        if (sa(id)) {   // ha già indovinato: parla solo con chi la sa (chi ha indovinato e chi disegna)
+          var m = { t: "sa", id: id, nome: p.nome, x: x };
+          H.indovinati.concat([H.disegnatore]).forEach(function (q) { var pq = pById(q); if (pq && !pq.via) privato(q, { t: "sa", id: m.id, nome: m.nome, x: m.x }); });
+          return;
+        }
+        var esito = controlla(x, H.parola, H.parolaNostra ? H.alt[H.parola] : null);   // la parola può essere anche dentro una frase ("è un gatto!")
+        if (esito === "giusta") return indovina(p);
+        if (esito === "quasi") { statP(id).quasi++; return privato(id, { t: "quasi", x: x }); }   // "ci sei quasi" lo sa solo lui: agli altri non si svela niente
+      }
+      msg("msg", x, p); bd();
+    }
+    function indovina(p) {
+      var primo = H.indovinati.length === 0, veloci = H.scadenza - Date.now() >= H.secondi * 1000 * 0.6;
+      H.indovinati.push(p.id);
+      var pts = Math.max(1, Math.ceil((H.scadenza - Date.now()) / 1000));   // tanti punti quanti secondi mancano
+      if (primo) { pts += BONUS_PRIMO; H.primoK = H.turno; }   // chi indovina per primo: +10 (primoK: la festa una volta sola, anche dopo una ripresa)
+      p.punti += pts; H.guad[p.id] = (H.guad[p.id] || 0) + pts;
+      var sp = statP(p.id); sp.indovinate++; sp.puntiIndovinando += pts;
+      if (primo) sp.indovinatePrimo++;
+      if (veloci) sp.indovinateVeloci++;
+      if (DIFFICILI.indexOf(H.parola) >= 0) sp.indovinateDifficili++;
+      // chi disegna: la sua parte di ogni risposta giusta (se indovinano tutti, prende quanto la media di chi indovina)
+      var d = pById(H.disegnatore), pd = Math.max(1, Math.round(pts / H.attesi * (H.molti ? BONUS_DIS_MOLTI : 1)));
+      if (d) { d.punti += pd; H.guad[d.id] = (H.guad[d.id] || 0) + pd; }
+      msg("ok", "🎉 " + p.nome + " ha indovinato!" + (primo ? " Per primo! ⚡" : ""), p);
+      privato(p.id, { t: "priv", parola: H.parola });   // adesso la parola la può vedere anche lui
+      if (tuttiOk()) {   // l'hanno indovinata tutti: il turno finisce subito
+        ferma(); bd();
+        H.to = setTimeout(function () { fineTurno("tutti"); }, 1200);
+        return;
+      }
+      // l'ha indovinata più di metà del gruppo: restano 20 secondi (se ne mancavano di più).
+      // "Più di metà": in 3 il secondo che indovina non deve trovarsi il tempo già tagliato
+      var possono = presenti().length - 1;
+      if (!H.corti && possono >= 3 && H.indovinati.length * 2 > possono &&H.scadenza - Date.now() > ULTIMI_MS + 2000) {
+        H.corti = true; H.scadenza = Date.now() + ULTIMI_MS;
+        if (H.to) clearTimeout(H.to);
+        H.to = setTimeout(function () { fineTurno("tempo"); }, ULTIMI_MS);
+        msg("sys", "⏩ Ultimi 20 secondi!");
+      }
+      bd();
+    }
+    function fineTurno(motivo) {
+      if (H.fase !== "scelta" && H.fase !== "disegno") return;
+      ferma();
+      if (!H.parola) { msg("sys", "Si passa al prossimo."); return prossimoTurno(); }   // uscito prima di scegliere la parola
+      var d = pById(H.disegnatore), parola = H.parola;
+      if (motivo === "lettere" && d && H.guad[d.id]) { d.punti -= H.guad[d.id]; H.guad[d.id] = 0; }   // ha scritto sulla lavagna: il turno vale zero per lui
+      if (d && H.indovinati.length && motivo !== "lettere") {
+        statP(d.id).disegniIndovinati++;
+        if (H.indovinati.length >= 3) statP(d.id).disegniConTreIndovinatori++;
+        if (DIFFICILI.indexOf(parola) >= 0) statP(d.id).paroleDifficiliIndovinate++;
+      }
+      var righe = H.indovinati.map(function (id) { var p = pById(id); return { id: id, nome: p ? p.nome : "…", pts: H.guad[id] || 0 }; });
+      if (d && H.guad[d.id]) righe.push({ id: d.id, nome: d.nome, pts: H.guad[d.id], dis: true });
+      if (motivo === "tempo") msg("sys", "⏰ Tempo scaduto! La parola era «" + parola + "»");
+      else if (motivo === "via") msg("sys", "La parola era «" + parola + "»");
+      else if (motivo === "vuoto") msg("sys", "😴 Nessun disegno: si passa al prossimo. Era «" + parola + "»");
+      else if (motivo === "lettere") msg("sys", "🔤 Lettere sulla lavagna! Zero punti a " + (d ? d.nome : "chi disegnava") + ". Era «" + parola + "»");
+      else msg("sys", "Indovinata da tutti! Era «" + parola + "»");
+      // chi disegna dopo (per dirlo a tutti)
+      var prossimo = null, gi = H.giro, ix = H.idx;
+      for (var n = 0; n < H.ordine.length + 1; n++) {
+        ix++; if (ix >= H.ordine.length) { ix = 0; gi++; }
+        if (gi > H.giri) break;
+        var q = pById(H.ordine[ix]); if (q && !q.via) { prossimo = q; break; }
+      }
+      H.ultimo = { parola: parola, righe: righe, tutti: motivo === "tutti", lettere: motivo === "lettere", nostra: !!H.parolaNostra, prossimo: prossimo ? prossimo.id : null, prossimoNome: prossimo ? prossimo.nome : null };
+      H.fase = "punti"; H.parola = parola;
+      bd();
+      H.to = setTimeout(prossimoTurno, PUNTI_MS);
+    }
+    function fine() {
+      ferma();
+      // chi è rimasto fino alla fine prima, per punti; chi è uscito in fondo
+      var restati = presenti(), usciti = H.players.filter(function (p) { return p.via; });
+      function ordina(l) { return l.slice().sort(function (a, b) { return b.punti - a.punti; }); }
+      var ro = ordina(restati), uo = ordina(usciti);
+      H.classifica = ro.map(function (p) { return { id: p.id, nome: p.nome, punti: p.punti, pos: 1 + ro.filter(function (q) { return q.punti > p.punti; }).length }; })
+        .concat(uo.map(function (p) { return { id: p.id, nome: p.nome, punti: p.punti, via: true, pos: 1 + ro.length + uo.filter(function (q) { return q.punti > p.punti; }).length }; }));
+      H.fase = "fine"; H.disegnatore = null; H.prossimi = [];
+      bd();
+      if (t.risultato) t.risultato(H.classifica.map(function (r) { return { nome: r.nome, pos: r.pos }; }));   // per il torneo online
+    }
+    function nuova() {   // "Nuova partita": tutti tornano nella saletta, stessi amici
+      ferma();
+      H.players = presenti();
+      // chi tiene la partita è il primo (in saletta ha la corona); se l'ha presa guardando (host di riserva), si siede
+      if (!pById(IO)) { H.guardano = H.guardano.filter(function (x) { return x !== IO; }); H.players.push({ id: IO, nome: nomeHost, omino: mioAvatar(nomeHost), punti: 0 }); statP(IO); }
+      H.players.sort(function (a, b) { return (b.id === IO) - (a.id === IO); });
+      H.prossimi.forEach(function (x) { if (!pById(x.id) && H.players.length < 10) { H.players.push({ id: x.id, nome: x.nome, omino: x.omino, punti: 0 }); statP(x.id); } });   // chi è arrivato a partita finita
+      H.prossimi = []; ricolora();
+      H.players.forEach(function (p) { p.punti = 0; });
+      H.fase = "lobby"; H.giro = 0; H.disegnatore = null; H.indovinati = []; H.tratti = []; H.chat = []; H.classifica = null; H.perche = null;
+      bd();
+    }
+
+    // ----- la lavagna: i pezzi arrivano da chi disegna e ripartono per tutti -----
+    function trova(id) { for (var j = H.tratti.length - 1; j >= 0; j--) if (H.tratti[j].id === id) return H.tratti[j]; return null; }
+    function tratto(da, m) {
+      if (H.fase !== "disegno" || da !== H.disegnatore || !m || typeof m.id !== "string") return;
+      var p = Array.isArray(m.p) ? m.p : [];
+      if (!p.length || p.length > 400 || p.length % 2) return;
+      var pieno = m.f ? 1 : 0;
+      if (pieno && p.length !== 2) return;   // il secchiello è un tocco solo
+      var pul = [];
+      for (var i = 0; i < p.length; i += 2) pul.push(intIn(p[i], LW), intIn(p[i + 1], LH));
+      var tr = pieno ? null : trova(m.id);
+      if (!tr) {
+        if (H.tratti.length >= 900) return;
+        tr = { id: String(m.id).slice(0, 24), c: intIn(m.c, COLORI.length - 1), w: intIn(m.w, SPESSORI.length - 1), f: pieno, p: [] };
+        H.tratti.push(tr);
+      }
+      if (tr.p.length + pul.length > 8000) return;
+      Array.prototype.push.apply(tr.p, pul);
+      H.disegnato = true; H.cestino = null;
+      rete.inviaVeloce({ t: "tr", da: da, n: H.turno, q: ++H.q, id: tr.id, c: tr.c, w: tr.w, f: tr.f, p: pul });
+      if (da !== IO && vista) vista.tratto({ id: tr.id, c: tr.c, w: tr.w, f: tr.f, p: pul });
+    }
+    function annulla(da, id) {
+      if (H.fase !== "disegno" || da !== H.disegnatore) return;
+      var tr = trova(id) || H.tratti[H.tratti.length - 1]; if (!tr) return;
+      H.tratti = H.tratti.filter(function (x) { return x !== tr; });
+      rete.inviaVeloce({ t: "annulla", da: da, n: H.turno, q: ++H.q, id: tr.id });
+      if (da !== IO && vista) vista.annulla(tr.id);
+    }
+    function pulisci(da) {
+      if (H.fase !== "disegno" || da !== H.disegnatore) return;
+      if (H.tratti.length) H.cestino = H.tratti;   // per poterlo annullare
+      H.tratti = [];
+      rete.inviaVeloce({ t: "pulisci", da: da, n: H.turno, q: ++H.q });
+      if (da !== IO && vista) vista.pulisci();
+    }
+    // "Annulla" subito dopo il cestino: torna il disegno com'era
+    function ripristina(da) {
+      if (H.fase !== "disegno" || da !== H.disegnatore || !H.cestino || H.tratti.length) return;
+      H.tratti = H.cestino; H.cestino = null;
+      rete.inviaVeloce({ t: "disegno", da: da, turno: H.turno, q: ++H.q, tratti: H.tratti });
+      if (da !== IO && vista) vista.tutti(H.tratti);
+    }
+    // chi arriva a disegno iniziato (o si ricollega) chiede tutto il disegno
+    function sync(id) {
+      if (!pById(id) && H.guardano.indexOf(id) < 0) return;
+      rete.inviaVeloce({ t: "disegno", to: id, turno: H.turno, q: H.q || 0, tratti: H.fase === "disegno" ? H.tratti : [], omini: mappaOmini() });
+      if (id === H.disegnatore) privato(id, H.fase === "scelta" ? { t: "priv", opzioni: H.opzioni, nostre: H.opzNostre } : { t: "priv", parola: H.parola });
+      else if (sa(id)) privato(id, { t: "priv", parola: H.parola });   // l'aveva già indovinata
+    }
+
+    var cbH = {
+      sonoHost: true, myId: IO,
+      onComincia: comincia, onNuova: nuova,
+      onEsci: function () {
+        function via() { ferma(); clearTimeout(tAttesi); t.ricorda(null); chiudiVista(); rete.chiudi(); t.esci(); }
+        if (H.fase !== "lobby" && H.fase !== "fine") return conferma(t, "Chiudere la partita per tutti?", "🚪 Chiudi", via);
+        via();
+      },
+      onTratto: function (m) { tratto(IO, m); },
+      onAnnulla: function (id) { annulla(IO, id); },
+      onPulisci: function () { pulisci(IO); },
+      onRipristina: function () { ripristina(IO); },
+      onScegli: function (i) { scegli(IO, i); },
+      onProva: function (x) { prova(IO, x); },
+      onLettere: function () { lettere(IO); }
+    };
+    if (ripresa) riprendi(); else bd();
+  }
+
+  // =========================================================
+  //  OSPITE — disegna e indovina dal suo telefono
+  // =========================================================
+  function ospiteScara(t, codice) {
+    if (!(window.SGNet && SGNet.disponibile())) return senzaRete(t);
+    var el = t.el;
+    var S = { rete: null, myId: null, nome: "", vista: null, vm: null, omini: {}, priv: { turno: null, parola: null, opzioni: null }, sincro: null, piena: false, ultJoin: 0 };
+    function chiudiVista() { if (S.vista) { S.vista.chiudi(); S.vista = null; } }
+    function esci() { chiudiVista(); if (S.rete) S.rete.chiudi(); t.esci(); }
+    var cb = {
+      sonoHost: false, myId: null,
+      onEsci: function () {   // a partita in corso si chiede prima (la "‹" sta vicino al tempo: è facile toccarla per sbaglio)
+        if (S.vm && (S.vm.fase === "scelta" || S.vm.fase === "disegno" || S.vm.fase === "punti")) return conferma(t, "Vuoi lasciare la partita?", "🚪 Esci", esci);
+        esci();
+      },
+      onTratto: function (m) { if (S.rete) S.rete.invia({ t: "tr", id: m.id, c: m.c, w: m.w, f: m.f ? 1 : 0, p: m.p }); },
+      onAnnulla: function (id) { if (S.rete) S.rete.invia({ t: "annulla", id: id }); },
+      onPulisci: function () { if (S.rete) S.rete.invia({ t: "pulisci" }); },
+      onRipristina: function () { if (S.rete) S.rete.invia({ t: "ripristina" }); },
+      onScegli: function (i) { if (S.rete) S.rete.invia({ t: "scegli", i: i }); },
+      onProva: function (x) { if (S.rete) S.rete.invia({ t: "prova", x: x }); },
+      onLettere: function () { if (S.rete) S.rete.invia({ t: "lettere" }); }
+    };
+    function mandaJoin() { S.ultJoin = Date.now(); S.rete.invia({ t: "join", nome: S.nome, omino: t.mioOmino ? t.mioOmino(S.nome) : mioAvatar(S.nome) }); }
+    // sono nella foto? se no (dato per uscito, tolto alla "Nuova partita"…) richiedo di entrare, al massimo ogni 2 secondi
+    function ciSono(vm) {
+      if (t.guarda) return true;   // guardo soltanto (col link): il "join" non parte (lo toglie il core), niente da ripetere
+      var id = S.myId, io = (vm.players || []).filter(function (p) { return p.id === id; })[0];
+      if (!io && (vm.guardano || []).indexOf(id) >= 0) return true;   // non sono tra chi gioca: guardo e basta
+      if (vm.fase === "fine") return !!io || (vm.prossimi || []).indexOf(id) >= 0 || (vm.classifica || []).some(function (r) { return r.id === id; });
+      return !!io && !io.via;
+    }
+    function privDi(vm) {
+      if (!vm || S.priv.turno !== vm.turno) return null;
+      if (vm.disegnatore === S.myId) return S.priv;
+      var io = vm.players.filter(function (p) { return p.id === S.myId; })[0];
+      return io && io.ok ? { parola: S.priv.parola } : null;   // chi ha indovinato vede la parola
+    }
+    function mostra(vm) {
+      if (vm.fase === "lobby") { chiudiVista(); lobbyScara(t, vm, cb); return; }
+      if (vm.fase === "fine") { chiudiVista(); finale(t, vm, cb); return; }
+      var nuova = !S.vista;
+      if (nuova) { cb._chiaveFine = null; S.vista = creaVista(t, S.myId, cb); S.vista.omini(S.omini); }
+      S.vista.aggiorna(vm, privDi(vm));
+      if (nuova) chiediTutto();   // appena entro in partita (anche a turno iniziato) chiedo il disegno intero
+    }
+    function chiediTutto() { if (t.guarda) return; S.ultimaSync = Date.now(); S.rete.invia({ t: "sync" }); }   // (chi guarda col link: il disegno intero glielo manda l'host da solo)
+    // i pezzi di disegno sono numerati: se ne manca uno (la rete ha fatto un salto) chiedo il disegno intero
+    function controllaNumero(m) {
+      if (!S.vm || m.n !== S.vm.turno) return;
+      if (S.qN !== m.n) { S.qN = m.n; S.q = 0; S.pari = m.n; }   // turno nuovo: sono in pari se arriva il primo pezzo
+      if (m.q !== S.q + 1) { S.pari = null; if (Date.now() - (S.ultimaSync || 0) > 2000) chiediTutto(); }   // (S.pari: ho tutto il disegno di questo turno)
+      S.q = m.q;
+    }
+    function schermaNome() {
+      var s = t.schermata({ icona: "🎨", titolo: "Entra nella partita", sotto: "Stanza " + String(codice).toUpperCase(), indietro: t.esci });
+      var input = el("input", { type: "text", placeholder: "Il tuo nome", maxlength: "16", class: "link-campo" });
+      var msgN = el("div", { class: "link-avviso" });
+      s._contenuto.appendChild(input); s._contenuto.appendChild(msgN);
+      s._piede.appendChild(el("button", { class: "btn btn-primario", text: "Entra ▶", onclick: function () {
+        try { SG.audioCtx && SG.audioCtx(); } catch (e) {}
+        S.nome = (input.value || "Amico").trim() || "Amico"; msgN.textContent = "Collegamento in corso…"; collega();
+      } }));
+      t.mostra(s);
+    }
+    function attesa() {
+      var s = t.schermata({ icona: "🎨", titolo: "Entro nella partita…", sotto: "Stanza " + String(codice).toUpperCase(), indietro: esci });
+      S.msg = el("p", { class: "modulo-nota", style: "text-align:center;margin-top:24px", text: "Collegato ✅ — sto entrando nella stanza…" });
+      s._contenuto.appendChild(S.msg); t.mostra(s);
+    }
+    function collega() {
+      S.rete = SGNet.entra(codice, {
+        onAperto: function (id) {
+          S.myId = id; cb.myId = id;
+          mandaJoin();
+          attesa();
+          setTimeout(function () { if (!S.vm && S.msg) S.msg.textContent = "Non trovo la partita: controlla il codice o aspetta l'host…"; }, 8000);
+        },
+        onMsg: function (m) {
+          if (!m || !m.t) return;
+          if (m.to && m.to !== S.myId) return;   // messaggio per un altro telefono
+          if (m.t === "piena") {   // stanza piena: lo dico chiaro invece di lasciarlo a guardare
+            S.piena = true; chiudiVista(); errore(t, "La stanza è piena (10 giocatori). Aspetta che si liberi un posto o apri una partita nuova.");
+            return;
+          }
+          if (m.t === "vm") {
+            if (S.piena) return;
+            S.vm = m.vm;
+            if (m.vm.fase === "lobby") m.vm.players.forEach(function (p) { if (p.omino) S.omini[p.id] = p.omino; });
+            if (!ciSono(m.vm) && Date.now() - S.ultJoin > 2000) mandaJoin();
+            mostra(m.vm);
+          } else if (!S.vista) return;
+          else if (m.da === S.myId && (m.t === "tr" || m.t === "annulla" || m.t === "pulisci" || m.t === "disegno")) return;   // il mio disegno: ce l'ho già
+          else if ((m.t === "tr" || m.t === "annulla" || m.t === "pulisci") && S.vm && m.n < S.vm.turno) return;   // un pezzo del turno prima arrivato tardi
+          else if (m.t === "tr") { controllaNumero(m); S.vista.tratto(m); }
+          else if (m.t === "annulla") { controllaNumero(m); S.vista.annulla(m.id); }
+          else if (m.t === "pulisci") { controllaNumero(m); S.vista.pulisci(); }
+          else if (m.t === "disegno") {   // il disegno intero (anche per chi disegna e ha ricaricato la pagina)
+            if (m.omini) { for (var id in m.omini) if (m.omini[id]) S.omini[id] = m.omini[id]; S.vista.omini(S.omini); }
+            // (kf: il disegno intero mandato a tutti per chi guarda col link ed è appena arrivato: se ho già tutti i pezzi lo ignoro)
+            if (m.kf && S.pari === m.turno && S.qN === m.turno && (S.q || 0) >= (m.q || 0)) return;
+            if (S.vm && m.turno === S.vm.turno) { S.vista.tutti(m.tratti); S.qN = m.turno; S.q = m.q || 0; S.pari = m.turno; }
+          }
+          else if (m.t === "avviso") S.vista.avviso(m.x);
+          else if (m.t === "sa") S.vista.sa(m);
+          else if (m.t === "priv") {
+            if (S.priv.turno !== m.n) S.priv = { turno: m.n, parola: null, opzioni: null };
+            if (m.opzioni) { S.priv.opzioni = m.opzioni; S.priv.nostre = Array.isArray(m.nostre) ? m.nostre : null; }
+            if (m.parola) S.priv.parola = m.parola;
+            if (S.vm) S.vista.aggiorna(S.vm, privDi(S.vm));
+          }
+          else if (m.t === "quasi") S.vista.quasi(m.x);
+        },
+        // chiusa apposta dall'host (se sparisce lo dice il core): sulla classifica finale la classifica resta
+        onChiuso: function () {
+          if (S.vm && S.vm.fase === "fine") { if (cb._notaFine && document.body.contains(cb._notaFine)) cb._notaFine.textContent = "🚪 L'host ha chiuso la stanza."; return; }
+          chiudiVista(); errore(t, "La partita è stata chiusa dall'host.");
+        },
+        // (arriva solo se il primo collegamento non riesce: a partita cominciata la rete si ricollega da sola)
+        onErrore: function () { chiudiVista(); errore(t, "Problema di collegamento. Riprova."); }
+      });
+    }
+    if (t.nomeProfilo && t.nomeProfilo()) { S.nome = t.nomeProfilo(); collega(); }   // col profilo si entra da soli
+    else schermaNome();
+  }
+
+  function errore(t, testo) {
+    var s = t.schermata({ icona: "⚠️", titolo: "Ops" });
+    s._contenuto.appendChild(t.el("p", { style: "font-size:1.05rem;line-height:1.5", text: testo }));
+    s._piede.appendChild(t.el("button", { class: "btn btn-primario", text: "🏠 Torna alla home", onclick: t.esci }));
+    t.mostra(s);
+  }
+  function senzaRete(t) {
+    var s = t.schermata({ icona: "🔗", titolo: "Serve il sito pubblicato", indietro: t.esci });
+    s._contenuto.appendChild(t.el("p", { style: "font-size:1.05rem;line-height:1.5", text: "Disegna e Indovina si gioca online, ognuno dal suo telefono: funziona quando il gioco è aperto dal sito pubblicato." }));
+    s._piede.appendChild(t.el("button", { class: "btn btn-primario", text: "Ok", onclick: t.esci }));
+    t.mostra(s);
+  }
+
+  SG.registra({
+    id: "scarabocchio",
+    tema: "oro",   // 🤍 Bianco e oro: tutto il gioco è chiaro (le regole di stile stanno in fondo allo stile, sotto .oro.g-scarabocchio)
+    nome: "Disegna e Indovina",
+    icona: "🎨",
+    descrizione: "Uno disegna una parola segreta, gli altri la indovinano scrivendo in chat: prendi tanti punti quanti secondi mancano. Si gioca online, ognuno dal suo telefono. Da 2 a 10.",
+    giocatoriMin: 2, giocatoriMax: 10, difficolta: 1,
+    postiOnline: 10,   // posti online
+    riprende: true,      // se l'host ricarica a metà partita, la partita riprende (chi disegnava ricomincia con la stessa parola)
+    riserva: true,   // online: se l'host sparisce del tutto (telefono spento), un amico porta avanti la partita
+    ritardatari: "turno",   // chi arriva a partita cominciata entra subito nel giro dei disegnatori (con 0 punti)
+    modi: [],            // solo online: ognuno ha bisogno del suo schermo (la parola la vede solo chi disegna)
+    soloOnline: true,
+    etichettaGiocatori: "🔗 Online · 2–10",
+    regole: [
+      "A turno uno di voi <b>disegna</b>: sceglie una parola tra 3 e la disegna sulla lavagna. Gli altri vedono il disegno comparire in tempo reale.",
+      "Chi indovina <b>scrive la risposta in chat</b> (vale anche dentro una frase, al plurale o con un sinonimo: «è un'auto!»). Se è giusta non la vede nessuno: compare solo «Marco ha indovinato!». Se ci sei quasi, il gioco lo dice solo a te.",
+      "Punti: chi indovina prende <b>tanti punti quanti secondi mancano</b> (indovini con 57 secondi sul timer? +57), e il primo <b>+10</b>. Chi disegna prende una parte di ogni risposta giusta: <b>più amici indovinano, più punti</b> (da 6 giocatori in su una volta e mezza, perché disegna poche volte).",
+      "Quando ha indovinato più di metà del gruppo, restano <b>20 secondi</b>. Chi ha già indovinato vede la parola e può chiacchierare con chi la sa.",
+      "Chi disegna ha 16 colori (4 chiari per gli sfondi), la gomma, 5 grandezze, la <b>linea dritta</b>, il <b>tondo</b> (cerchi e ovali) e il <b>secchiello</b> per riempire una zona chiusa con un tocco. Si può annullare e ripetere, e anche il cestino si annulla.",
+      "Il tempo è poco: mentre passa si scoprono alcune lettere della parola.",
+      "Chi disegna <b>non può scrivere lettere o numeri</b> sulla lavagna. Se lo fa, gli altri toccano <b>«🔤 Ha scritto!»</b>: quando lo dice più di metà di chi indovina, il turno finisce e chi disegnava prende 0 punti (da 3 giocatori in su).",
+      "Le parole uscite non tornano per 30 giorni (le ricorda il telefono di chi apre la partita).",
+      "📝 <b>Le nostre parole</b>: nelle regole (⚙️) l'host può scrivere le parole del vostro gruppo (nomi di amici, posti, battute). Restano salvate sul suo profilo e si giocano <b>mescolate</b> alle altre (una delle 3 scelte è vostra, col 📝) o <b>solo quelle</b>.",
+      "Dopo tutti i giri vince chi ha <b>più punti</b>."
+    ],
+    // la riga "📜 Si gioca così" della saletta
+    riassunto: function (imp) {
+      imp = imp || {};
+      var n = Array.isArray(imp.nostre) ? leggiNostre(imp.nostre).length : 0, m = modoNostre(imp, n);
+      return (imp.secondi || 80) + " secondi · " + (imp.giri || 2) + ((imp.giri || 2) === 1 ? " giro" : " giri") + " · " + (imp.difficili ? "anche parole difficili" : "parole facili") +
+        (n && m !== "no" ? " · 📝 " + fmtN(n) + (n === 1 ? " parola vostra" : " parole vostre") + (m === "solo" ? " (solo quelle)" : " (mescolate)") : "");
+    },
+    impostazioni: function (box, dove, aiuti) {
+      var el = aiuti.el;
+      iniettaCSS();
+      dove.modo = "online"; dove.secondi = 80; dove.giri = 2; dove.difficili = false;
+      function riga(titolo, valori, chiave, nota) {
+        box.appendChild(el("div", { class: "etichetta", style: "margin-top:10px", text: titolo }));
+        var g = el("div", { class: "modo-griglia", style: "grid-template-columns:repeat(" + valori.length + ",1fr)" }), tasti = [];
+        function accendi(v) { dove[chiave] = v; tasti.forEach(function (x) { x.b.className = "modo-chip" + (x.v === v ? " attiva" : ""); }); }
+        valori.forEach(function (v) {
+          var b = el("button", { class: "modo-chip" + (dove[chiave] === v[0] ? " attiva" : ""), style: "justify-content:center;text-align:center", onclick: function () { accendi(v[0]); if (nota) nota(); } },
+            [el("div", {}, [el("div", { class: "mt", text: v[1] })])]);
+          tasti.push({ b: b, v: v[0] });
+          g.appendChild(b);
+        });
+        box.appendChild(g);
+        return accendi;
+      }
+      riga("Tempo per disegnare", [[60, "60 secondi"], [80, "80 secondi"], [100, "100 secondi"]], "secondi");
+      riga("Quanti giri (ognuno disegna una volta a giro)", [[1, "1 giro"], [2, "2 giri"], [3, "3 giri"]], "giri");
+      riga("Parole", [[false, "🙂 Facili"], [true, "🤔 Anche difficili"]], "difficili");
+
+      // 📝 LE NOSTRE PAROLE: restano salvate sul profilo dell'host. Si scrivono di fila ("Peppe, la vespa di Ciro, Ibiza"),
+      // così si possono copiare e passare agli amici; poi si vedono una alla volta, ognuna con la sua ✕
+      var lista = nostreDelProfilo();
+      dove.nostre = lista.slice();
+      dove.nostreModo = lista.length ? "mix" : "no";
+      box.appendChild(el("div", { class: "etichetta", style: "margin-top:14px", text: "📝 Le nostre parole" }));
+      box.appendChild(el("p", { class: "modulo-nota", text: "Le parole del vostro gruppo: nomi di amici, posti, battute. Restano salvate sul tuo profilo. Scrivile di fila, separate da una virgola (es. Peppe, la vespa di Ciro, Ibiza). Se si può dire in due modi usa la barra: Peppe/Giuseppe." }));
+      var input = el("input", { type: "text", class: "link-campo", maxlength: "2000", placeholder: "Peppe, la vespa di Ciro, Ibiza", autocomplete: "off", autocapitalize: "off", spellcheck: "false", enterkeyhint: "done" });
+      var esito = el("p", { class: "modulo-nota sb-esito" }), elenco = el("div", { class: "sb-lista" }), conta = el("div", { class: "sb-conta" });
+      var bCopia = el("button", { class: "btn btn-fantasma btn-piccolo", text: "📋 Copia tutte", onclick: function () {
+        var tx = lista.join(", ");
+        function fatto() { bCopia.textContent = "✅ Copiate!"; setTimeout(function () { bCopia.textContent = "📋 Copia tutte"; }, 1600); }
+        try { navigator.clipboard.writeText(tx).then(fatto, function () { window.prompt("Copia le vostre parole:", tx); }); } catch (e) { window.prompt("Copia le vostre parole:", tx); }
+      } });
+      var bSvuota = el("button", { class: "btn btn-fantasma btn-piccolo", text: "🗑️ Cancella tutte", onclick: function () {
+        if (!lista.length) return;
+        function via() { lista = []; salva(); disegnaLista(); }
+        if (window.SG && SG.conferma) SG.conferma("Cancellare tutte le " + fmtN(lista.length) + " parole vostre?", "Si cancellano anche dal tuo profilo.", "🗑️ Cancella", via);
+        else via();
+      } });
+      function salva() {
+        try { if (window.SG && SG.salvaListaProfilo) SG.salvaListaProfilo("scarabocchio", lista.slice()); } catch (e) {}
+        dove.nostre = lista.slice();   // così anche "⚙️ Regole" in saletta se ne accorge (e l'host le usa subito)
+      }
+      function disegnaConta() {
+        var m = dove.nostreModo, n = lista.length;
+        conta.textContent = !n ? "Ancora nessuna parola: si gioca con quelle del gioco." :
+          (n === 1 ? "1 parola vostra" : fmtN(n) + " parole vostre") +
+          (m === "no" ? " · per ora non si usano" : m === "solo" && n < 3 ? " · con «Solo le nostre» ne servono almeno 3: le altre le mette il gioco" :
+            m === "solo" ? " · più ne scrivete, meno si ripetono" : " · una delle 3 scelte è vostra");
+      }
+      function disegnaLista() {
+        while (elenco.firstChild) elenco.removeChild(elenco.firstChild);
+        lista.forEach(function (w, i) {
+          elenco.appendChild(el("span", { class: "sb-pw" }, [ el("span", { text: w.replace(/\//g, " / ") }),
+            el("button", { class: "sb-x", type: "button", "aria-label": "Cancella " + w, text: "✕", onclick: function () { lista.splice(i, 1); salva(); disegnaLista(); } }) ]));
+        });
+        bCopia.style.display = bSvuota.style.display = lista.length ? "" : "none";
+        disegnaConta();
+      }
+      function aggiungi() {
+        var nuove = String(input.value || "").split(/[,;\n]+/), messe = 0, scartate = [], prima = lista.length;
+        nuove.forEach(function (w) {
+          if (!w.trim()) return;
+          var p = pulisciNostra(w);
+          if (!p) { scartate.push(w.trim()); return; }
+          if (lista.some(function (x) { return chiaveNostra(x) === chiaveNostra(p); })) return;   // c'è già
+          if (lista.length >= MAX_NOSTRE) { scartate.push(w.trim()); return; }
+          lista.push(p); messe++;
+        });
+        input.value = "";
+        if (messe) { salva(); if (!prima && dove.nostreModo === "no") accendiModo("mix"); disegnaLista(); }   // le prime parole: si usano subito, mescolate
+        esito.textContent = (messe ? "✅ Aggiunte: " + fmtN(messe) + ". " : "") +
+          (scartate.length ? "Non valgono (solo lettere, al massimo " + MAX_LUNGA + " per parola): " + scartate.slice(0, 5).join(", ") + (scartate.length > 5 ? "…" : "") : "");
+      }
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); aggiungi(); } });
+      box.appendChild(el("div", { class: "sb-agg" }, [ input, el("button", { class: "btn btn-primario btn-piccolo", type: "button", text: "➕ Aggiungi", onclick: aggiungi }) ]));
+      box.appendChild(esito);
+      box.appendChild(conta);
+      box.appendChild(elenco);
+      box.appendChild(el("div", { class: "sb-lista-tasti" }, [ bCopia, bSvuota ]));
+      var accendiModo = riga("Le nostre parole in partita", [["mix", "🔀 Mescolate"], ["solo", "📝 Solo le nostre"], ["no", "🎨 Solo del gioco"]], "nostreModo", disegnaConta);
+      disegnaLista();
+      if (!(window.SGNet && SGNet.disponibile())) box.appendChild(el("div", { class: "link-avviso", text: "Si gioca online: funziona quando il gioco è aperto dal sito pubblicato." }));
+    },
+    avvia: function (t) {
+      if (t.linkParams && t.linkParams.stanza) return ospiteScara(t, t.linkParams.stanza);
+      return hostScara(t);
+    }
+  });
+})();
+

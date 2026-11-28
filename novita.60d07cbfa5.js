@@ -1,0 +1,5066 @@
+/* =========================================================
+   NOVITÀ — il diario di cosa viene aggiunto all'app.
+   La voce più recente va IN CIMA.
+   Ogni voce:
+     v          -> un numero di versione (serve solo a capire l'ordine)
+     data       -> quando (testo libero)
+     titolo     -> il titolo della novità
+     descrizione-> elenco di righe: cosa cambia per chi gioca
+   ========================================================= */
+window.SG_NOVITA = [
+  {
+    v: 464,
+    data: "28 novembre 2026",
+    titolo: "Mini Asta: nessun calciatore nascosto dietro un altro 👀",
+    descrizione: [
+      "👀 Nella giornata un calciatore non sparisce più dietro un altro: quando due finiscono uno davanti all'altro, uno dei due fa un passetto di lato. Possono stare vicinissimi e coprirsi un po', ma di ognuno si vede sempre più di metà.",
+      "⚽ Chi ha il pallone resta dove sta: si sposta chi gli sta attorno (prima l'arbitro e chi non fa l'azione). Così i tuoi calciatori si vedono anche quando ricevono il passaggio, e non sembra più che la passino a un avversario.",
+      "🤫 Come sempre non svela niente: fino al tiro tutto è uguale, che finisca in gol o no."
+    ]
+  },
+  {
+    v: 463,
+    data: "28 novembre 2026",
+    titolo: "Mini Asta: l'album diventa un libro da sfogliare 📖",
+    descrizione: [
+      "🏟️ La copertina è uno stadio di notte con le prime 4 di quella stagione in posa, la campione davanti: toccala e i riflettori si accendono uno dopo l'altro, poi il libro si apre. Ogni stagione ha la sua.",
+      "🛡️ L'indice è un campo visto dall'alto con gli scudetti delle squadre: d'argento, e d'oro quando una squadra è completa.",
+      "🌆 Ogni squadra ha la sua pagina coi suoi colori e la sua città dietro: il Vesuvio, il Colosseo, il Duomo, la Mole… Se la rosa è lunga le pagine sono due: nella prima portieri e difensori, nella seconda centrocampisti e attaccanti.",
+      "👆 Le pagine si sfogliano col dito, con il fruscio della carta. Le figurine che ti mancano hanno il bordo d'oro: toccale e sai chi ti manca.",
+      "✨ La figurina nuova vola e si attacca da sola la prima volta che apri l'album. Quando completi una squadra, la pagina fa festa.",
+      "🔢 Ogni figurina ha il suo numero per sempre, in ordine di ruolo e di maglia. Se un calciatore esce dal listone resta al suo posto: chi l'ha preso ce l'ha «💎 Introvabile». Chi entra dopo va in fondo alla pagina della sua squadra.",
+      "📦 A ogni partita di Mini Asta ONLINE ti arriva un pacchetto di figurine gratis (fino a 10 al giorno): si accumulano e li apri quando vuoi dall'album. Strisci per aprirlo e se dentro c'è un oro si accende! 5 figurine già scoperte: trascina il mazzetto per sbirciare i bordi delle altre, poi strisciale via una alla volta. Una è sempre nuova. Ogni stagione ha il suo pacchetto, col suo colore.",
+      "💜 Nei pacchetti ci sono anche due carte speciali: la RARA, viola, coi calciatori che all'asta non vanno mai, e la EX, nera e argento, la più rara di tutte, con chi è uscito dal listone. Se c'è una speciale il pacchetto si accende del suo colore.",
+      "🥇 Il metallo che hai preso non si perde mai. Se un calciatore oggi vale di più, la sua carta te lo dice; ricomprandolo, o trovandolo in un pacchetto, sale.",
+      "🔁 Le figurine doppie hanno il cerchietto ×2, ×3… e nell'indice c'è il filtro per vedere solo i doppioni.",
+      "📒 Figurine e pacchetti si vincono solo nelle partite online con gli amici.",
+      "📱 Gira il telefono di lato e vedi le due pagine della squadra affiancate."
+    ]
+  },
+  {
+    v: 462,
+    data: "27 novembre 2026",
+    titolo: "Mini Asta: l'album delle figurine 📒",
+    descrizione: [
+      "📒 Ogni calciatore che finisce nella tua rosa attacca la sua figurina nell'album: un album per ogni stagione, una pagina per ogni squadra.",
+      "🔎 Tocca una figurina e vedi i suoi numeri con te: media voto e fantamedia (con le partite accanto), gol, assist, cartellini, le giornate vinte con lui e la partita migliore.",
+      "💰 Anche quanto l'hai pagato: la media, il prezzo più basso e il più alto. Quelli arrivati d'ufficio sono scritti a parte.",
+      "🏆 L'album sta nei Trofei, accanto ai trofei, e nella prima schermata della Mini Asta. Le figurine nuove arrivano sul podio, mai prima."
+    ]
+  },
+  {
+    v: 461,
+    data: "27 novembre 2026",
+    titolo: "Otto copertine nuove 🖼️",
+    descrizione: [
+      "🖼️ Nella prima schermata otto giochi hanno una copertina nuova, che fa vedere a cosa si gioca: Memata, Indovina il Paese, Il Muro, Scopa, Tris, Tris Gigante, Una Vita Perfetta… Quasi e Tutti d'Accordo.",
+      "🐑 Tutti d'Accordo, Il Muro e Tris Gigante prima non avevano nessuna immagine."
+    ]
+  },
+  {
+    v: 460,
+    data: "27 novembre 2026",
+    titolo: "I giochi hanno nomi nuovi ✨",
+    descrizione: [
+      "Abbiamo dato a 13 giochi un nome più chiaro, che dice subito a cosa si gioca. Il gioco è lo stesso: trofei, statistiche, parole vostre e link vecchi restano tutti.",
+      "🎨 Scarabocchio → Disegna e Indovina",
+      "🕵️ L'Impostore → L'Infiltrato (il gioco dell'impostore)",
+      "🐑 Pecora Nera → Tutti d'Accordo",
+      "🕵️ Parola d'ordine → Parole in Codice",
+      "🟡 Drop 4 → Quattro in Fila",
+      "⚽ Calcio Biliardo → Calcio a Dischi",
+      "🍹 Da dove viene? → Indovina il Paese",
+      "🤨 Sì... però → Una Vita Perfetta… Quasi",
+      "🐎 Horto Muso → Al Galoppo!",
+      "🎡 La Ruota della Fortuna → La Ruota Fortunata",
+      "🏷️ Il Prezzo è Giusto → Indovina il prezzo",
+      "⚽ Mini Asta Fantacalcio → Mini Asta del Fanta (L'Asta coi temi resta «L'Asta»)",
+      "🏒 Glow Hockey → Air Hockey"
+    ]
+  },
+  {
+    v: 459,
+    data: "27 novembre 2026",
+    titolo: "Ogni gioco ha la sua pagina 🔎",
+    descrizione: [
+      "🔎 Revel House si fa trovare su Google: ogni gioco ha una sua pagina, con la spiegazione, la copertina e il tasto «▶ Gioca ora» che apre subito quel gioco.",
+      "📲 Le trovi tutte su revelhouse.it/giochi: comode da mandare a chi non conosce ancora un gioco, così lo legge prima della serata.",
+      "🎮 Per chi gioca non cambia niente: revelhouse.it apre l'app come sempre."
+    ]
+  },
+  {
+    v: 458,
+    data: "27 novembre 2026",
+    titolo: "La Ruota della Fortuna rifatta 🎡",
+    descrizione: [
+      "🔔 Si comincia con UNA frase lampo: chi la indovina prende 1.000 punti e gira per primo la ruota. Tra una manche e l'altra c'è ancora un gioco veloce (frase lampo, GiraMondo o CruciRuota).",
+      "📖 Prima di ogni manche e di ogni gioco veloce una finestra grande spiega cosa succede adesso, uguale per tutti: «⏩ Ho capito» per andare avanti prima.",
+      "🎡 Niente più tasto «Gira»: quando tocca a te la ruota si illumina e dondola, e la giri spingendola col dito. Un tocco non basta: più forte spingi, più gira (al massimo un giro e tre quarti), e rallenta piano piano come in TV, con lo zoom sulla lancetta che arriva prima. Niente più manina quando gira un altro.",
+      "✨ La ruota senza lampadine intorno, i numeri scritti dritti (mai più «008»), sempre intera sullo schermo; dietro, le luci dello studio che si muovono piano.",
+      "🔤 Il tabellone come in TV: le tessere si accendono una alla volta, ognuna col suo «ding».",
+      "🔢 Nei punteggi il nome intero (niente faccina) e due numeri chiari: «Manche» e «Totale». A fine manche i soldi volano nel totale. Il nome intero al posto della faccina anche nei punteggi degli altri giochi.",
+      "⌨️ La tastiera sta in basso, vicino al pollice, con una scritta sola sopra; «Risolvi» e «La so!» più piccoli, così la ruota è più grande. Niente più scritte ripetute due o tre volte.",
+      "❌ Le lettere che non ci sono si leggono intere, con una piccola ✕: niente più T che sembra un'altra lettera.",
+      "🔒 «La so!» si può usare solo se hai almeno i punti che perderesti sbagliando, e prima di bloccare ti chiede «Sei sicuro?».",
+      "⏳ La Ruota del tempo ora è una categoria delle manche: «ANNO 79», cosa è successo quell'anno? Si gira e si chiamano le lettere come sempre."
+    ]
+  },
+  {
+    v: 457,
+    data: "27 novembre 2026",
+    titolo: "La classifica di chi gioca davvero 🏆",
+    descrizione: [
+      "🏆 La classifica di tutti mostra fino a 100 giocatori (anche dopo aver tolto chi non gioca più) e scorre liscia anche sul telefono piccolo.",
+      "🕰️ Chi non apre l'app da più di 2 mesi non compare più in classifica, così restano quelli che giocano davvero (e spariscono pian piano i profili doppi di chi ha dimenticato la password). Il profilo non si cancella: gli amici lo vedono lo stesso e, appena torna, ricompare."
+    ]
+  },
+  {
+    v: 456,
+    data: "27 novembre 2026",
+    titolo: "«📖 Come si gioca» si trova subito 📖",
+    descrizione: [
+      "📖 In «Come giocate?» la scritta «Come si gioca» ora ha il libro, è più grande e sta subito sotto i riquadri, al centro: non più piccola in fondo allo schermo. Toccala e leggi le regole del gioco."
+    ]
+  },
+  {
+    v: 455,
+    data: "27 novembre 2026",
+    titolo: "Palla a Pendolo, Battaglia Navale e Taboo si riposano un po' 🎯",
+    descrizione: [
+      "🎯 Palla a Pendolo, 🚢 Battaglia Navale e 🤐 Taboo non sono più tra i giochi della prima schermata, della Sala e dei tornei: li stiamo sistemando per renderli migliori. Chi apre un link vecchio di una loro partita ci entra lo stesso."
+    ]
+  },
+  {
+    v: 454,
+    data: "27 novembre 2026",
+    titolo: "Mini Asta: le azioni sempre alla stessa velocità ⏱️",
+    descrizione: [
+      "⏱️ Nella giornata le azioni corrono sempre alla stessa velocità: niente più azioni svelte nel finale o quando si è in tanti, e poi lente all'improvviso.",
+      "🎥 Il rallentatore c'è su ogni tiro, ed è sempre lungo uguale: un po' più corto di prima, così la giornata non si allunga.",
+      "👥 Quando si è in tanti, per non allungare la giornata si accorciano un po' annunci e pause, mai l'azione.",
+      "🔁 Anche il rigore da ripetere va alla stessa velocità del primo."
+    ]
+  },
+  {
+    v: 453,
+    data: "27 novembre 2026",
+    titolo: "Mini Asta: negli scambi si vede chi è pronto e tutte le proposte ✅",
+    descrizione: [
+      "✅ Negli scambi a fine asta c'è il tasto «⚽ Si gioca»: quando hai finito di scambiare lo tocchi, e se ci ripensi lo ritocchi.",
+      "👀 In fondo tutti vedono quanti sono pronti («✅ 3 su 4 pronti») e chi; sulla rosa di chi è pronto c'è il ✅. Così si capisce subito chi vuole ancora scambiare. Chi propone uno scambio non è più pronto.",
+      "⚽ Chi tiene la partita ha «Inizia la giornata»: quando sono pronti tutti si accende e dice «✅ Tutti pronti: ⚽ Si gioca!». Decide sempre lui: la giornata non parte da sola (solo allo scadere del tempo, come prima).",
+      "📋 Scorrendo verso destra, o col tasto «📋 Proposte ▶», c'è la pagina con tutte le proposte della partita: chi a chi, cosa dà, cosa chiede e com'è andata (in corso, accettata, rifiutata, ritirata, non più valida).",
+      "🧹 In alto c'è solo «⏱ +1 minuto», per chi tiene la partita: non finisce più sopra l'orologio."
+    ]
+  },
+  {
+    v: 452,
+    data: "27 novembre 2026",
+    titolo: "Quattro copertine nuove 🎨",
+    descrizione: [
+      "📡 Stessa Lunghezza d'Onda: il quadrante col bersaglio, la scala «FREDDO» e «CALDO» e l'indizio «Tè».",
+      "🤥 La Balla Colossale: la notizia «Il sangue del polpo è…» e le risposte, due balle col naso di Pinocchio e quella vera.",
+      "✏️ Nomi, Cose e Città: la lettera «M» e il foglio con Marco, Martello, Milano e Mucca.",
+      "⚽ Calcio Biliardo: lo stadio di notte, i dischi Lampone e Ciano e il pallone che entra in porta."
+    ]
+  },
+  {
+    v: 451,
+    data: "27 novembre 2026",
+    titolo: "«Come giocate?» si legge meglio 🎮",
+    descrizione: [
+      "🔎 Nella schermata dove si sceglie come giocare i riquadri sono più alti e le scritte un po' più grandi: niente più occhi strizzati.",
+      "📏 I riquadri sono della stessa misura in tutti i giochi: mai più minuscoli in un gioco e giganti in un altro. Quando sono pochi stanno al centro dello schermo.",
+      "🧹 Sotto i riquadri non c'è più il gettone: non serviva."
+    ]
+  },
+  {
+    v: 450,
+    data: "27 novembre 2026",
+    titolo: "L'Impostore ha la copertina nuova 🎭",
+    descrizione: [
+      "🎭 Nella prima schermata L'Impostore ha un'immagine nuova: tre carte «PIZZA» uguali e una carta nera con la maschera che dice «FOCACCIA», sotto il riflettore. Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 449,
+    data: "27 novembre 2026",
+    titolo: "«Sì... però» ha la copertina nuova 🤨",
+    descrizione: [
+      "🤨 Nella prima schermata «Sì... però» ha un'immagine nuova: la carta verde «SÌ… Sai volare» e sopra, sbattuta, la carta rossa «PERÒ… solo in mutande». Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 448,
+    data: "27 novembre 2026",
+    titolo: "Calcio Biliardo: la palla più viva, con la scia ☄️",
+    descrizione: [
+      "🏓 La palla rimbalza molto di più su sponde, pali e pedine e scivola più lontano sull'erba: le azioni sono più movimentate e i gol arrivano più spesso.",
+      "☄️ Quando corre, la palla lascia una scia luminosa che segue la sua strada, rimbalzi compresi: più va forte, più si accende.",
+      "💥 Dove la palla rimbalza si accende un piccolo lampo."
+    ]
+  },
+  {
+    v: 447,
+    data: "27 novembre 2026",
+    titolo: "Black Jack e Linea del tempo hanno la copertina nuova 🃏",
+    descrizione: [
+      "🃏 Black Jack: sul tavolo verde l'asso di picche e il re di cuori, la mano perfetta, con il «21» d'oro sopra.",
+      "⏳ Linea del tempo: le carte in fila con l'anno (1492, 1879, 1969) e il biplano «????» che scende al suo posto. Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 446,
+    data: "27 novembre 2026",
+    titolo: "Scarabocchio ha la copertina nuova ✏️",
+    descrizione: [
+      "✏️ Nella prima schermata Scarabocchio ha un'immagine nuova: un gatto disegnato male sulla lavagna e la chat degli amici che provano a indovinare, «volpe», «cane»… «GATTO!». Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 445,
+    data: "26 novembre 2026",
+    titolo: "L'Asta ha la copertina nuova 🔨",
+    descrizione: [
+      "🔨 Nella prima schermata L'Asta ha un'immagine nuova: il martelletto che batte e le carte del round delle armi contro gli zombie, dalla katana «AGGIUDICATO!» per 6 crediti fino alla ciabatta infradito. Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 444,
+    data: "26 novembre 2026",
+    titolo: "Parola d'ordine ha la copertina nuova 🔵",
+    descrizione: [
+      "🔵 Nella prima schermata Parola d'ordine ha un'immagine nuova: le carte del gioco con le parole e l'indizio dei Blu, «MARE 2», che porta alle due parole girate, ONDA e PORTO. Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 443,
+    data: "26 novembre 2026",
+    titolo: "Calcio Biliardo a squadre: 2 contro 2 ⚽",
+    descrizione: [
+      "👥 Adesso si gioca anche a squadre: 2 contro 2, 2 contro 1, e con i Bot come volete (anche due di voi contro due Bot). Si tira una squadra alla volta: tu, un avversario, il tuo compagno, l'altro avversario.",
+      "🎯 A squadre ognuno ha 6 pedine e tutti possono tirarle tutte. Sopra la pedina che parte compare piccolo il nome di chi ha tirato, e l'attaccante ha la faccia di chi tocca.",
+      "🔀 Le squadre si fanno in un attimo: nella saletta online ognuno cambia squadra con la freccia e chi apre la stanza mette o toglie i Bot; sullo stesso telefono si fa nelle regole, prima di cominciare. Nella Sala, se siete in 3 o 4, la prima scelta è «👥 A squadre».",
+      "⚡ Il passaggio: se dopo il tuo tiro la palla tocca per ultima un'altra pedina della tua squadra, tiri ancora tu, con quella pedina, entro 5 secondi (l'anello d'oro si svuota). Una volta sola per turno. Si spegne nelle regole.",
+      "🏟️ Il campo è uno stadio vero: tribune piene coi colori delle squadre, prato a strisce, aree e dischetto, porte con la rete e i pali bianchi, bandierine e cartelloni luminosi ai lati.",
+      "🎨 Le squadre sono Lampone (sotto) e Ciano (sopra).",
+      "🚪 Online, se uno esce a metà partita i suoi tiri li fa il Bot; se una squadra resta senza persone, vince l'altra."
+    ]
+  },
+  {
+    v: 442,
+    data: "26 novembre 2026",
+    titolo: "Il Prezzo è Giusto ha la copertina nuova 🏷️",
+    descrizione: [
+      "🏷️ Nella prima schermata Il Prezzo è Giusto ha un'immagine nuova: lo studio TV, lo scooter in palio sulla pedana e il display del prezzo con la cifra da indovinare, «?.450 €». Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 441,
+    data: "26 novembre 2026",
+    titolo: "La Ruota della Fortuna ha la copertina nuova 🎡",
+    descrizione: [
+      "🎡 Nella prima schermata la Ruota ha un'immagine nuova: la ruota dello studio TV e il tabellone con la frase da indovinare, «R_V_L HOUS_», con le E che si accendono. Così si capisce subito a cosa si gioca."
+    ]
+  },
+  {
+    v: 440,
+    data: "26 novembre 2026",
+    titolo: "Proposte e Bug arrivano davvero 💌",
+    descrizione: [
+      "💡 «Proposte» e «🐞 Bug» in fondo alla home adesso arrivano per email a chi gestisce Revel House: scrivi la tua idea o il problema e tocca «Invia».",
+      "📶 Se l'invio non riesce, l'app te lo dice e ti dà l'indirizzo a cui scrivere."
+    ]
+  },
+  {
+    v: 439,
+    data: "26 novembre 2026",
+    titolo: "Privacy, regole e crediti 📜",
+    descrizione: [
+      "📜 In fondo alla home e nel Profilo c'è la riga «Privacy · Regole d'uso · Crediti»: tre pagine scritte semplici su cosa salviamo, come si gioca insieme e chi ha fatto foto, emoji, caratteri e suoni.",
+      "🗑️ Nel Profilo c'è «Cancella il mio profilo»: chiede conferma e la password, poi cancella per sempre profilo, scheda pubblica e richieste di amicizia, e il telefono dimentica quello che ricordava.",
+      "📸 Nei Crediti le oltre 3.000 foto dei giochi hanno autore e licenza, con la ricerca per trovarle."
+    ]
+  },
+  {
+    v: 438,
+    data: "26 novembre 2026",
+    titolo: "Mini Asta: la formazione in ordine nei campetti 🧩",
+    descrizione: [
+      "🧩 Nei campetti delle squadre all'asta la formazione è sempre in ordine, a rombo: attaccante, i due centrocampisti, il difensore e il portiere, tutti alla stessa distanza. Il difensore sta sempre al centro, davanti al portiere: niente più difensore tutto a destra o a sinistra, e niente più centrocampisti larghi come ali.",
+      "📸 La stessa formazione anche nel foglio «👕 Tutte» e nella foto delle rose da mandare su WhatsApp.",
+      "💰 Quanto hai pagato un calciatore ora si legge sulla spalla della maglia, così non copre il numero."
+    ]
+  },
+  {
+    v: 437,
+    data: "26 novembre 2026",
+    titolo: "Mini Asta: vedi sempre il tuo attacco ⚽",
+    descrizione: [
+      "⚽ Nella giornata vedi sempre almeno 2 azioni del tuo attaccante e dei tuoi centrocampisti, di due giocatori diversi: niente più giornate con solo le parate del portiere. Anche se l'azione va male, almeno ti gasi (o insulti il tuo giocatore).",
+      "⚡ Nelle giornate veloci delle «3 giornate», se manca, l'azione che vedi è di un attaccante o di un centrocampista.",
+      "⏱️ La giornata dura come prima, e punti e gol restano quelli di sempre."
+    ]
+  },
+  {
+    v: 436,
+    data: "26 novembre 2026",
+    titolo: "SPeeD GAME diventa Revel House 🏠",
+    descrizione: [
+      "🏠 L'app ha un nome nuovo, Revel House, e una faccia nuova: la casa accesa nella notte, dove dentro c'è la festa.",
+      "🌐 Abita su revelhouse.it. Se apri la vecchia app SPeeD GAME ti porta lì da sola, col tuo profilo e tutte le tue cose: non devi scrivere la password né rifare niente. I link di ieri sera (Sale, Compagnie, inviti) funzionano ancora.",
+      "📲 Poi rimetti l'app sul telefono da revelhouse.it e togli quella vecchia. Su iPhone l'app nuova si apre vuota: tocca «📦 Ho un codice di trasloco» e scrivi il codice che ti ha dato Revel House.",
+      "🔑 Nel profilo c'è «📲 Porta il profilo su un altro telefono»: un codice che vale 2 ore per entrare senza password su un altro telefono.",
+      "💬 Gli inviti su WhatsApp mostrano la casa accesa e «Revel House · giochi per le serate».",
+      "🛠️ Gara di pesca e Battaglia Navale si prendono una pausa: tornano quando saranno sistemate per bene."
+    ]
+  },
+  {
+    v: 435,
+    data: "26 novembre 2026",
+    titolo: "Mini Asta: rilanci più lisci ⚡",
+    descrizione: [
+      "⏱️ Se entri da ospite, quando tocchi per rilanciare la barra del tempo riparte subito, come per chi tiene la partita. Prima ripartiva solo quando arrivava la conferma: scendeva ancora un attimo e poi saltava su.",
+      "⚡ I rilanci vanno più lisci su tutti i telefoni: la barra del tempo riparte senza far ricalcolare tutta la pagina, e i campetti delle squadre non si risistemano più da capo a ogni offerta (in tanti, dove la pagina delle squadre cambia a quasi ogni rilancio, era il lavoro più pesante)."
+    ]
+  },
+  {
+    v: 434,
+    data: "26 novembre 2026",
+    titolo: "Trofei: basta file di avvisi 🏆",
+    descrizione: [
+      "🏆 Quando prendete tanti trofei insieme (succede spesso con la Mini Asta) vedete solo i 3 più importanti, prima quelli di livello più alto.",
+      "➕ Poi un avviso solo, «Hai sbloccato altri trofei», col numero grande di quelli in più (per esempio +7). Toccandolo fuori dalle partite si apre la pagina dei trofei.",
+      "🎁 I premi in XP e Speed Coins arrivano lo stesso per tutti i trofei. Vale in tutti i giochi."
+    ]
+  },
+  {
+    v: 433,
+    data: "26 novembre 2026",
+    titolo: "Pecora Nera: il doppio delle domande 🐑",
+    descrizione: [
+      "🐑 Pecora Nera ha 406 domande nuove: ora sono quasi 800, e non si ripetono finché non sono uscite tutte.",
+      "😏 Tra le nuove anche quelle per ridere: domande innocenti, ma qualcuno penserà subito a un'altra risposta…"
+    ]
+  },
+  {
+    v: 432,
+    data: "26 novembre 2026",
+    titolo: "Gioco nuovo: Pecora Nera 🐑",
+    descrizione: [
+      "🐑 Tutti leggono la stessa domanda («Una bibita estiva», «Se dico Gian, voi dite…») e scrivono di nascosto la risposta più scontata: vince chi pensa come gli altri!",
+      "➕ Prendi tanti punti quante persone hanno scritto la tua stessa risposta, te compreso. Chi resta da solo prende 0.",
+      "🥁 Le risposte escono una alla volta, in ordine a caso. Maiuscole, articoli, plurali e piccoli errori non contano; due risposte che sono la stessa cosa le unite voi con due tocchi.",
+      "🏁 Vince il primo che arriva al traguardo, che cambia con quanti siete. Da 3 a 10, online ognuno dal suo telefono o su un telefono solo passandovelo."
+    ]
+  },
+  {
+    v: 431,
+    data: "25 novembre 2026",
+    titolo: "Mini Asta: niente doppioni in campo, lettere intere e campetti giusti ⚽",
+    descrizione: [
+      "👥 In campo non ci sono più due calciatori uguali: chi passa, chi tira e chi batte la rimessa sono sempre persone diverse, e nella stessa squadra non ci sono mai due maglie con lo stesso numero. Vale in tutte le stagioni e in tutte le azioni.",
+      "🔤 I nomi non hanno più le lettere tagliate sotto (la «g» di Rigoni, la «p», la «q», la «y»…): sul maxischermo dell'asta, nelle squadre, nel mercato degli scambi, nei punteggi della giornata, nelle pagelle e nella scheda dei calciatori.",
+      "🏟️ Nei campetti delle squadre all'asta la riga di metà campo è finalmente a metà: si vede il campo intero, con le due porte. Attaccante e centrocampisti stanno nella metà di sopra, difensore e portiere in quella di sotto, e nessuno sta più sulla riga o sul cerchio di centrocampo (anche in «👕 Tutte» e nella foto delle rose per WhatsApp).",
+      "🏆 Nelle pagine dei trofei (di tutti i giochi) il contorno di ogni trofeo, e la luce attorno al lucchetto, hanno il colore del suo livello: bronzo, argento, oro o diamante. Sono spenti finché non lo prendi e si accendono, luminosi, quando è tuo."
+    ]
+  },
+  {
+    v: 430,
+    data: "25 novembre 2026",
+    titolo: "Mini Asta: copertina nuova e un assist più bello 👟",
+    descrizione: [
+      "🖼️ Nella prima schermata la Mini Asta ha una copertina nuova: il martelletto aggiudica la figurina d'oro, che vola nella tua formazione coi voti e i fantavoti, come nel fantacalcio.",
+      "👟 Il simbolo dell'assist è nuovo: uno scarpino che calcia, nelle pagelle, nei punteggi della giornata e nella scheda dei calciatori."
+    ]
+  },
+  {
+    v: 429,
+    data: "25 novembre 2026",
+    titolo: "Mini Asta: la pagina dei trofei come gli altri giochi 🏆",
+    descrizione: [
+      "🥉 I trofei della Mini Asta sono divisi per bronzo, argento, oro e diamante, uno per riga col suo contatore, come in tutti gli altri giochi.",
+      "👑 La corona accanto al nome dice quali servono per il Platino «Leggenda della Mini Asta». I trofei già presi restano tutti."
+    ]
+  },
+  {
+    v: 428,
+    data: "24 novembre 2026",
+    titolo: "Mini Asta: tutti i 109 trofei 🏆",
+    descrizione: [
+      "🔨 Trofei nuovi dell'asta: rialzare su te stesso, i calciatori d'ufficio, gli affari a 1 credito e, con le buste, vincere di 1 credito, gli spareggi e la ruota.",
+      "🤝 Dieci trofei degli scambi: la Legge dell'Ex, il Lupo di Wall Street, il Traditore, il Pacco Postale e gli altri.",
+      "🦉 Online anche il Gufo Certificato, l'Amuleto Umano e la Maledizione Decisiva.",
+      "🤐 Come sempre arrivano solo sul podio, quando la giornata si è vista tutta."
+    ]
+  },
+  {
+    v: 427,
+    data: "24 novembre 2026",
+    titolo: "Mini Asta: arrivano i trofei! 🏆",
+    descrizione: [
+      "🏆 90 trofei nuovi solo per la Mini Asta, con bronzo, argento, oro e diamante: i gol, una squadra per ogni club di Serie A, i portieri, i momenti rari, il finale di partita, le stagioni passate, le figurine e quelli che fanno ridere.",
+      "👑 Il Platino «Leggenda della Mini Asta»: prendi il primo livello di tutti i trofei con la corona (si può fare anche giocando sempre su un telefono solo).",
+      "🤐 Niente spoiler: i trofei arrivano solo sul podio, quando la giornata si è vista tutta. Anche le coppe di prima della Mini Asta ora arrivano lì e non più all'inizio della giornata.",
+      "📋 Nella pagina dei trofei ogni trofeo è una scheda sola coi suoi livelli e quanto ti manca."
+    ]
+  },
+  {
+    v: 426,
+    data: "24 novembre 2026",
+    titolo: "Scarabocchio: più spazio alla lavagna ✏️",
+    descrizione: [
+      "🏷️ Sotto la lavagna solo nomi e punti, senza faccine: ci stanno più giocatori insieme.",
+      "😂 Dopo aver indovinato il tasto delle reazioni sta in fondo alla riga dei giocatori: la lavagna non si rimpicciolisce più mentre gli altri disegnano.",
+      "⭕ Mentre uno sceglie e ai punti del turno, al posto della barra lunga c'è solo il tasto tondo delle reazioni."
+    ]
+  },
+  {
+    v: 425,
+    data: "24 novembre 2026",
+    titolo: "Scarabocchio: le faccine intere ✏️",
+    descrizione: [
+      "😀 Sotto la lavagna, nella festa di chi indovina per primo e mentre uno sceglie cosa disegnare si vede la faccina intera di ognuno (prima era tagliata a metà, come la testa dei vecchi avatar)."
+    ]
+  },
+  {
+    v: 424,
+    data: "24 novembre 2026",
+    titolo: "Memata: il meme vicino ai tasti, in due più veloce 😂",
+    descrizione: [
+      "✍️ Mentre scrivi il meme sta in basso, appoggiato sopra i tasti: sul telefono alto occhio e pollice restano vicini (lo spazio libero va in alto).",
+      "👥 In due niente più «Di chi sarà?»: ognuno sa già qual è il suo, quindi si vedono subito i due meme coi voti.",
+      "👀 Chi guarda o è arrivato tardi, mentre gli altri scrivono, vede i gettoni di chi gioca: la ✅ si accende su chi ha consegnato."
+    ]
+  },
+  {
+    v: 423,
+    data: "24 novembre 2026",
+    titolo: "Memata: chi arriva tardi, l'attesa e le medaglie 😂",
+    descrizione: [
+      "✋ Chi arriva a partita cominciata legge sotto il meme «Giochi dal prossimo round» (prima la scritta in alto si tagliava); se arriva all'ultimo round legge «Ultimo round: giochi dalla prossima partita», perché un round dopo non c'è.",
+      "👀 Chi guarda mentre gli altri scrivono vede le scritte al centro dello schermo, non una in cima e una in fondo.",
+      "🖼️ «modello da imgflip.com» sta attaccato sotto il meme, non più in fondo allo spazio, lontano.",
+      "🥇 Nella classifica finale le medaglie vanno per posto, come negli altri giochi: con due terzi il dopo è 5°, non un altro bronzo.",
+      "📏 La classifica finale non scorre più di qualche pixel sotto il dito."
+    ]
+  },
+  {
+    v: 422,
+    data: "24 novembre 2026",
+    titolo: "Fine partita: la riga della serata più corta 🏆",
+    descrizione: [
+      "🏆 Sullo stesso telefono, a fine partita, la riga dice «🏆 Serata:» come online (prima «Classifica della serata:»): nelle due righe ci stanno più nomi."
+    ]
+  },
+  {
+    v: 421,
+    data: "24 novembre 2026",
+    titolo: "Fine partita: medaglie per posto e la serata intera 🏆",
+    descrizione: [
+      "🥇 In tutti i giochi le medaglie vanno per posto: 1° oro, 2° argento, 3° bronzo, poi «4°». A pari merito lo stesso posto: con due secondi tutti e due l'argento e chi viene dopo è 4°. Online e sullo stesso telefono la stessa partita dà le stesse medaglie.",
+      "🏆 La riga della Classifica della serata a fine partita non si taglia più a metà di un nome: va a capo e, se non ci stanno tutti, dice «e altri 3». Online c'è sempre anche il tuo posto."
+    ]
+  },
+  {
+    v: 420,
+    data: "23 novembre 2026",
+    titolo: "📡 Stessa Lunghezza d'Onda: medaglie per posto e avatar a ventaglio",
+    descrizione: [
+      "🥇 Nella classifica finale le medaglie vanno per posto, come nelle gare: chi è pari ha lo stesso posto, la stessa medaglia e gli stessi punti nella classifica della serata. Con due secondi, tutti e due hanno l'argento e chi viene dopo è quarto.",
+      "🎯 Quando si scopre il bersaglio, in tanti gli avatar con la lancetta vicina si aprono a ventaglio: ognuno si vede bene col suo cartellino dei punti."
+    ]
+  },
+  {
+    v: 419,
+    data: "23 novembre 2026",
+    titolo: "📡 Stessa Lunghezza d'Onda: niente spoiler nella rivelazione",
+    descrizione: [
+      "🥁 Mentre suona il rullo e la tendina sta per aprirsi, i punti in alto e accanto ai nomi restano quelli di prima: cambiano solo quando si scopre il bersaglio. Prima si capiva già chi aveva fatto punti.",
+      "🎯 A squadre, col centro pieno la scommessa dell'altra squadra non vale: adesso lo dice («col centro pieno la scommessa non vale») invece di «ha sbagliato la scommessa».",
+      "✋ Chi arriva a partita cominciata legge sempre che entra dal prossimo turno, anche a squadre e mentre il sensitivo sceglie.",
+      "In alto, a inizio partita nessuno è «in testa» con 0 punti, e a pari punti c'è scritto «In 2 a 3». Mentre il sensitivo sceglie la scala si legge «sta scegliendo la scala».",
+      "Gli avatar sul bordo della mezza ruota non escono più dallo schermo, chi guarda soltanto non sente vibrare il telefono, e a fine partita la classifica in tanti non scorre più."
+    ]
+  },
+  {
+    v: 418,
+    data: "23 novembre 2026",
+    titolo: "🤨 Sì... però: dopo «Si parte» si gioca subito",
+    descrizione: [
+      "A squadre, dopo «▶ Si parte» non c'è più la schermata che ripeteva giudice e squadre: li avete appena scelti, quindi si va dritti al gioco.",
+      "Vale online e sullo stesso telefono."
+    ]
+  },
+  {
+    v: 417,
+    data: "23 novembre 2026",
+    titolo: "🤨 Sì... però: giudice e squadre anche sullo stesso telefono",
+    descrizione: [
+      "Sullo stesso telefono, a squadre, si sceglie quanti round giocare: 3, 5 o 7.",
+      "Prima di ogni round chi ha il telefono in mano mette giudice e squadre: tocca un nome e poi dove va, ⚖️ Giudice, 🟥 Squadra 1 o 🟦 Squadra 2. Si decide a voce, tutti insieme, senza passarsi il telefono.",
+      "Dopo un round le squadre di prima restano già segnate: si cambia solo chi vuole. Il giudice invece va scelto di nuovo.",
+      "Chi non viene messo da nessuna parte va nella squadra più piccola, e se manca il giudice lo sceglie il gioco tra chi l'ha fatto meno volte. Poi «▶ Si parte» e il telefono si passa solo per giocare le carte, come sempre."
+    ]
+  },
+  {
+    v: 416,
+    data: "23 novembre 2026",
+    titolo: "🤨 Sì... però: scegliete voi giudice e squadre",
+    descrizione: [
+      "Online a squadre chi organizza sceglie quanti round giocare: 3, 5 o 7.",
+      "Prima di ogni round c'è la schermata dei ruoli: ⚖️ Giudice, 🟥 Squadra 1, 🟦 Squadra 2. Ognuno tocca dove vuole andare e vede subito chi c'è dove. Il giudice è uno solo e le squadre restano pari.",
+      "Niente fretta: si parte quando chi organizza tocca «▶ Si parte». Chi non sceglie va nella squadra più piccola, e se manca il giudice lo sceglie il gioco.",
+      "Durante il round, in alto, c'è sempre scritto dove sei: «Sei nella Squadra 1» o «Sei il giudice».",
+      "Chi arriva a partita in corso guarda il round e sceglie il suo posto al giro dopo."
+    ]
+  },
+  {
+    v: 415,
+    data: "23 novembre 2026",
+    titolo: "🎡 La Ruota della Fortuna: più chiara per tutti",
+    descrizione: [
+      "📐 Nei giochi veloci e quando un altro risolve, le scritte stanno al centro dello spazio libero (sul telefono grande prima metà schermo restava vuota).",
+      "✉️ Quando chi vince sceglie la busta, tutti vedono le 5 buste chiuse e seguono la scelta.",
+      "🔒 «La so!»: la spiegazione è più corta.",
+      "📱 Sullo stesso telefono, quando cambia il turno compare in grande «Tocca a Giulia»: si capisce subito a chi passare il telefono.",
+      "👀 In tutti i giochi, chi arriva a partita cominciata legge «Partita in corso…» per qualche secondo e poi la scritta sparisce (prima restava sopra il titolo); chi era in saletta quando i posti erano finiti legge «Giocano in 4: tu guardi questa partita»."
+    ]
+  },
+  {
+    v: 414,
+    data: "23 novembre 2026",
+    titolo: "🎡 La Ruota della Fortuna: tutto in ordine",
+    descrizione: [
+      "🔢 I punteggi in alto non si tagliano più: in 4 sul telefono piccolo la faccina va accanto al nome e il numero e «in gioco» si vedono interi.",
+      "🎡 Dopo l'ultimo zoom sulla lancetta la ruota torna sempre intera (prima, se usciva l'Express o il Mistero, restava ingrandita e tagliata).",
+      "✉️ La busta: la cifra si legge solo quando la busta si apre, non più prima del rullo di tamburi.",
+      "✨ Il «+1.000» che salta fuori sta sul punteggio e non copre più le scritte; i cartelli di passaggio non coprono più la riga sotto il tabellone e, quando c'è la ruota, stanno sotto (la lancetta resta libera).",
+      "⏱️ L'orologio dei secondi sta sull'angolo del tabellone, mai sopra la tastiera o le scritte; nel riquadro della finale i nomi si leggono interi; scrivendo, il riquadro non si vede più in trasparenza sotto i tasti.",
+      "💬 Scritte giuste per ogni gioco veloce (non più «frase lampo» nella ruota del tempo, nel GiraMondo, nel Triplete e nel CruciRuota); nel Triplete dopo la prima frase si dice qual è la prossima; i titoli su due righe non cominciano più con «·»."
+    ]
+  },
+  {
+    v: 413,
+    data: "23 novembre 2026",
+    titolo: "🃏 Black Jack: si gioca subito",
+    descrizione: [
+      "Niente più presentazione all'inizio della partita: si apre il tavolo e si punta subito."
+    ]
+  },
+  {
+    v: 412,
+    data: "23 novembre 2026",
+    titolo: "🃏 Black Jack: le carte in primo piano e la sala di gala",
+    descrizione: [
+      "Quando tocca a qualcuno la telecamera va sulle sue CARTE, grandi e col filo d'oro: tutti seguono la mano di tutti e si leggono bene.",
+      "I gettoni dei giocatori sono piccoli come sedie attorno al tavolo e le carte sul tavolo sono più grandi.",
+      "La sala è più bella: buia, con una luce calda sul tavolo, il panno verde smeraldo e il bordo col filo d'oro.",
+      "In tanti (9 o 10) la telecamera passa da uno all'altro più in fretta, e i nomi e le scritte «vince/perde» non si accavallano più.",
+      "Il fumetto «🤫 Ho puntato» dell'ultima mano della gara non copre più il nome di nessuno."
+    ]
+  },
+  {
+    v: 411,
+    data: "23 novembre 2026",
+    titolo: "🃏 Black Jack: il tavolo si legge meglio",
+    descrizione: [
+      "Le carte del banco non finiscono più sotto il suo gettone, nemmeno con 5 carte.",
+      "Quando tocca a qualcuno il banco si fa piccolo nell'angolo: non copre più le carte del primo posto.",
+      "Chi guarda o aspetta legge di chi sono le carte grandi in basso («Le carte di Luca»).",
+      "Chi arriva a partita cominciata non vede più la presentazione dei giocatori sopra la mano in corso.",
+      "I nomi non escono più dai lati dello schermo e in tanti le cifre delle puntate non si accavallano."
+    ]
+  },
+  {
+    v: 410,
+    data: "22 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: l'autogol con l'azione e parate vere 🧤",
+    descrizione: [
+      "🙈 L'autogol di un vostro difensore ora si vede con tutta la sua azione (prima arrivava «di colpo»). E per non svelare niente, a volte la stessa azione finisce con lui che la spazza via.",
+      "🧤 Parate vere: quando il portiere la blocca, la respinge coi pugni, la sfiora sul palo o la toglie dai piedi, mani e pallone si toccano davvero.",
+      "🏟️ Le tribune di lato non «tremano» più quando la telecamera va verso la linea laterale (sulle rimesse), e gli spettatori sono un pizzico più veri."
+    ]
+  },
+  {
+    v: 409,
+    data: "22 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: falli, cartellini e rigori nuovi 🟨",
+    descrizione: [
+      "✋ La mano a centrocampo per fermare l'avversario che scappa, e 🤼 gli spintoni dopo un fallo, con tutti che arrivano e l'arbitro in mezzo: giallo o niente?",
+      "👕 Dopo un gol, a volte il marcatore corre a togliersi la maglia: se la toglie davvero (giallo!) o un compagno lo ferma in tempo?",
+      "🎯 I rigori nascono in modi nuovi: la trattenuta sull'angolo rivista dal VAR, il portiere che esce e stende l'attaccante, il rigore fischiato dall'arbitro e poi rivisto al monitor: confermato o tolto?",
+      "🙈 Rarissimo: il tiro rimpallato che finisce dritto sull'arbitro."
+    ]
+  },
+  {
+    v: 408,
+    data: "22 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: altre azioni nuove e parate spettacolari 🧤",
+    descrizione: [
+      "🚩 Sugli angoli la spizzata sul primo palo e il pallone che esce dall'area per il tiro al volo. E la rimessa veloce, battuta mentre gli altri si stanno ancora sistemando.",
+      "🎯 La punizione dalla fascia che sembra un cross… e va dritta in porta, e la rarissima punizione a due in area, con tutta la barriera sulla linea.",
+      "⚡ Il colpo di tacco, la traversa e la ribattuta, il flipper in area, il tiki-taka al limite, la sponda di testa e il tiro al volo, il pressing sul portiere che sta per rinviare.",
+      "🚀 Nel recupero, col portiere degli altri salito in area, il tiro da centrocampo a porta vuota; e al primo minuto il gol lampo, pochi secondi dopo il calcio d'inizio.",
+      "🧤 Parate nuove: coi pugni sopra la traversa, col braccio di richiamo, la sfiora con le dita e va sul palo, l'uscita a valanga sui piedi di chi arriva. E sulla linea i difensori salvano anche di testa o, ogni tanto, in rovesciata."
+    ]
+  },
+  {
+    v: 407,
+    data: "22 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: tante azioni nuove nella giornata ⚽",
+    descrizione: [
+      "🚩 L'angolo corto, la finta sulla punizione e il tiro sul palo del portiere o sopra la barriera.",
+      "⚡ Il dribbling sul portiere, il cross che diventa un tiro, lo scavetto da lontano, il cambio di gioco da una fascia all'altra e il contropiede che nasce dall'angolo degli altri.",
+      "😱 Il palo-palo: il pallone colpisce un palo, scorre sulla linea fino all'altro… dentro o fuori?",
+      "⏱ Il portiere che perde tempo nel finale (giallo o solo un richiamo) e 💥 la gomitata in un duello di testa, rivista al VAR: rosso, giallo o niente.",
+      "🎬 Più varietà anche nelle azioni di sempre: cross da posti diversi, uno-due sulla fascia, tre contro due, il tap-in dopo un palo o una traversa, la rincorsa del rigore. E il finale non ripete più sempre le stesse azioni.",
+      "🎯 La punizione dal limite e la goal-line non finiscono più quasi sempre in gol: si resta col fiato sospeso fino all'ultimo."
+    ]
+  },
+  {
+    v: 406,
+    data: "22 novembre 2026",
+    titolo: "L'Impostore: chi ha votato chi, e in 3 due tentativi 🕵️",
+    descrizione: [
+      "🗳️ Nello spoglio, sotto ogni nome, si vede subito chi l'ha votato («da Luca e Sara»): niente più da aspettare la fine della mano per sapere chi ti ha accusato.",
+      "🎯 In 3 l'impostore scoperto ha due tentativi per indovinare la parola: se sbaglia la prima, la parola diventa rossa e ne sceglie un'altra (la giusta resta nascosta).",
+      "🎭 Quando c'è la spia, a fine mano una riga spiega i punti: chi vota l'impostore, chi vota la spia, la spia non accusata, l'impostore che si salva.",
+      "📱 Le schermate stanno al centro dello schermo quando c'è posto (prima stavano in alto e sotto restava mezzo schermo vuoto), sullo stesso telefono e online. Negli indizi scritti resta tutto in alto, per la tastiera.",
+      "✋ Chi arriva a partita cominciata, tenendo premuto, vede solo la parola, come un cittadino: dalla mano dopo gioca. Chi guarda soltanto col link continua a vedere tutto."
+    ]
+  },
+  {
+    v: 405,
+    data: "22 novembre 2026",
+    titolo: "Il Prezzo è Giusto: via le foto sbagliate 🏷️",
+    descrizione: [
+      "📸 Altre 41 foto cambiate perché mostravano un'altra cosa: adesso il Magnum è un Magnum, la colazione è cappuccino e cornetto, il cacciucco è una zuppa di pesce, il Rolex è un Submariner, il frigorifero side by side ha le due porte, il ticket di Venezia è il ponte di Rialto e il biglietto del cinema sono le poltrone rosse della sala.",
+      "🧳 Ritorna la foto della crociera e quella di Minecraft, che non si vedevano più.",
+      "🙈 Via 19 foto che non andavano bene (documenti con una faccia vera, persone e bambini in primo piano, un prezzo scritto, foto d'epoca, cose del tutto diverse): adesso si vede la loro emoji."
+    ]
+  },
+  {
+    v: 404,
+    data: "22 novembre 2026",
+    titolo: "Il Prezzo è Giusto: foto più giuste 🏷️",
+    descrizione: [
+      "📸 Abbiamo ripassato tutte le foto dei prodotti e delle vetrine: 20 cambiate con foto più giuste, per esempio la vera bottiglia di Moët, l'Aperol pieno, lo spritz nel bicchiere, la Instax azzurra, la PlayStation 5 intera e l'iPhone Pro Max.",
+      "🆕 6 cose che non avevano la foto adesso ce l'hanno: il prosciutto di Parma, il pianoforte verticale, l'aspirapolvere Dyson, Amazon Prime, il casco integrale e un anno di pulizie.",
+      "🙈 Via 2 foto con una persona in primo piano (l'asse da stiro e il cappello di Babbo Natale): adesso si vede la loro emoji."
+    ]
+  },
+  {
+    v: 403,
+    data: "22 novembre 2026",
+    titolo: "La Rivincita: prima si scelgono le regole ↻",
+    descrizione: [
+      "↻ Online, toccando «Rivincita» a fine partita si torna tutti nella saletta con le regole di prima, ma la partita non parte più da sola col 3-2-1: chi tiene la partita può cambiare le regole nel ⚙️ e poi tocca lui «Comincia».",
+      "✨ Se le regole cambiano, gli amici in saletta leggono subito cosa è cambiato.",
+      "📱 Sullo stesso telefono e contro il Bot, «Rigioca» porta alla pagina delle regole del gioco con quelle di prima già scelte: cambi quello che vuoi e tocchi «Comincia».",
+      "🏆 Nel torneo a eliminazione e in «Chi vince resta» la partita dopo parte da sola come prima."
+    ]
+  },
+  {
+    v: 402,
+    data: "22 novembre 2026",
+    titolo: "L'Impostore: chi arriva tardi e chi guarda 🕵️",
+    descrizione: [
+      "✋ Chi arriva a partita cominciata guarda la mano (tenendo premuto vede la parola e l'impostore) e gioca dalla mano dopo, con 0 punti. Prima aspettava la fine di tutta la partita.",
+      "👀 Chi guarda soltanto (col link per guardare, o con «👀 Guarda» nella Sala) vede il segreto tenendo premuto. Prima restava fermo su «Arriva il segreto…» per tutta la partita.",
+      "🤫 Con due impostori la carta coperta è alta uguale per tutti. Prima era più alta solo per loro due: chi sbirciava il telefono del vicino capiva chi era impostore.",
+      "🎲 Con gli indizi scritti l'ordine della lista è tutto a caso. Prima l'impostore era primo della lista meno spesso degli altri, e si poteva indovinare.",
+      "📝 Scritte più chiare: la riga in alto va a capo invece di tagliarsi, chi non scrive legge «Scrivono un indizio», all'ultima possibilità le 6 parole sono spente per chi non sceglie, e «🗳️ Votiamo» dice quanti tocchi mancano."
+    ]
+  },
+  {
+    v: 401,
+    data: "22 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: figurine d'oro, d'argento e di bronzo 🥇",
+    descrizione: [
+      "🥇 Ogni calciatore ha la sua figurina: d'oro i più forti del suo ruolo, d'argento quelli buoni, di bronzo tutti gli altri. Si vede quando lo vinci all'asta e nella classifica delle rose a fine asta.",
+      "📊 Conta la quotazione, ruolo per ruolo: oggi i portieri sono d'oro da 14 in su, i difensori da 15, i centrocampisti da 19, gli attaccanti da 20. A pari quotazione sempre la stessa figurina.",
+      "📅 Anche nelle stagioni passate: ogni anno ha i suoi limiti, così i più forti di quell'anno sono d'oro.",
+      "✨ All'«AGGIUDICATO!» la figurina brilla del suo metallo. Le buste dei big restano da 18 in su, come prima."
+    ]
+  },
+  {
+    v: 400,
+    data: "21 novembre 2026",
+    titolo: "La linea del tempo: più chiara e con foto nuove 📸",
+    descrizione: [
+      "📱 Sui telefoni bassi la carta in mano è più bassa (foto più piccola, la spiegazione resta intera) e sotto l'anno non c'è più la rotella: quando tocca a te o quando rubi la linea ha più posto.",
+      "🔎 Sullo stesso telefono, rubando «uno alla volta», prima del risultato si legge sempre «Vediamo com'è andata…»: prima «In 2 vogliono rubarla!» svelava quanti avevano rubato in segreto.",
+      "📍 Quando la carta è sbagliata si legge «Il tuo posto era lontano 6 anni» (prima «Sbagliato di 6 anni!», che accanto a «Andava tra il 1985 e il 2000» sembrava dire il contrario).",
+      "👆 Finché non tocchi il posto, al posto del tasto spento c'è l'istruzione in un riquadro tratteggiato («Tocca dove va la carta», «Tocca il posto giusto»); scelto il posto diventa il tasto vero.",
+      "🧍 In «Ognuno la sua linea» e in «Tutti insieme» prima si girano i cartellini in alto, poi compare l'elenco di chi l'ha messa giusta: niente sorpresa rovinata.",
+      "🎉 I coriandoli cadono dietro le scritte: non coprono più punteggi, nomi e podio.",
+      "📸 Foto nuove: 140 carte hanno una foto più chiara (al posto di concerti al buio, console nere sul fondo scuro, foto sbagliate o che ingannavano sull'epoca) e 52 carte che non l'avevano adesso ce l'hanno."
+    ]
+  },
+  {
+    v: 399,
+    data: "21 novembre 2026",
+    titolo: "Saletta, punteggi e fine partita: tanti ritocchi 🪟",
+    descrizione: [
+      "📜 In saletta chi entra legge di nuovo le regole scelte dall'host, nel riquadro «Sei dentro!» (un tocco le apre tutte). Se l'host le cambia, per qualche secondo c'è scritto cosa è cambiato (es. «✨ Cambiate: ⚡ Tutti insieme · 7 carte»).",
+      "🎉 Chi arriva a partita cominciata legge «Sei dentro! Giochi tra poco» sotto i punteggi, non più sopra i nomi. Quando entri lo dice il gioco.",
+      "🔝 Nella fila dei punteggi che scorre il tasto ‹ sta fermo da parte: il primo giocatore non gli passa più sotto. E le lettere come la «y» di Paky hanno di nuovo la gambetta.",
+      "🏆 A fine partita la riga «Serata» va a capo e dice tutti i posti che ci stanno, sempre anche il tuo. «Avete giocato con» va a capo invece di uscire dallo schermo.",
+      "📱 «Come giocate?» sta tutta nello schermo anche sui telefoni piccoli. Nelle impostazioni «Come si gioca» sta accanto a «Comincia», così le scelte hanno più posto, e in fondo la lista sfuma se sotto ce ne sono altre."
+    ]
+  },
+  {
+    v: 398,
+    data: "21 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: le parate vanno alte 🧤",
+    descrizione: [
+      "🧤 Nella giornata, quando il portiere para senza bloccare, il pallone va alto sopra la traversa (o largo oltre il palo se il tiro era basso), in calcio d'angolo: non passa più dietro la porta né dentro la rete. Entra nella porta solo il gol.",
+      "🏟️ Anche il tiro alto non ricade più subito dietro la rete: passa sopra la porta e finisce in curva."
+    ]
+  },
+  {
+    v: 395,
+    data: "21 novembre 2026",
+    titolo: "Il Prezzo è Giusto: i giochi a premi coi loro disegni 🏷️",
+    descrizione: [
+      "🎨 Ogni gioco a premi ha il suo disegno al posto dell'emoji, nello stile dell'app: le frecce di Più o meno, la montagna dell'Alpinista, la mano di È troppo!, i chiodini del Plinko, il carrello, la cassaforte, i dadi, il bersaglio e gli altri. Si vedono nella scelta, nelle regole e in alto mentre si gioca, anche senza rete.",
+      "🌙 Le schede per scegliere il gioco a premi sono scure come il resto dell'app (prima erano bianche).",
+      "👀 Nell'Offerta con le offerte a vista la regola è scritta chiara: «si può offrire 1 € più di un altro» (10 centesimi sui prezzi piccoli; prima «occhio al +1 €», che capiva solo chi conosce il programma). Anche nelle regole del gioco.",
+      "🛍️ La Vetrina finale, mentre si presenta un pezzo alla volta, sta al centro dello schermo, non più tutta in alto con mezzo schermo vuoto sotto. I pezzi restano grandi come prima, un pezzo da solo nella sua riga sta al centro, e quelli già usciti scivolano piano al loro posto.",
+      "💡 Nei giochi a premi il pannello non ripete il nome del gioco, che è già scritto in alto: al suo posto una frase che ricorda cosa fare (es. «⬆️ Dal meno caro al più caro» in Mettili in ordine, «💸 Fermalo al momento giusto» in È troppo!)."
+    ]
+  },
+  {
+    v: 394,
+    data: "21 novembre 2026",
+    titolo: "La linea del tempo: tanti ritocchi 📜",
+    descrizione: [
+      "🎨 Nel risultato di «⚡ Tutti insieme» il riquadro dell'anno è rosso se l'hai sbagliata (prima era sempre verde). Chi guarda vede verde e coriandoli solo se qualcuno l'ha messa giusta, con «✅ Giusta per 2 su 4» o «❌ Nessuno l'ha messa giusta» al posto dell'anno ripetuto: anche in «🧍 Ognuno la sua linea» e sullo stesso telefono.",
+      "⏩ Quando arriva la carta nuova non resta più sullo schermo il «⏩ Avanti» della carta di prima con «Si va avanti tra 0…».",
+      "🧍 Ognuno la sua linea: sotto la carta «Messe bene: 3 su 10» (prima «Nella tua linea: 0 su 10» anche con le due carte di partenza già in linea); nello spareggio si legge cosa succede («la prossima carta la giocano solo loro»); chi ha finito legge «Tocca chi vuoi guardare» e «Sta scegliendo… · messe bene 4 su 5». Le regole dicono che si parte con due carte.",
+      "🤫 Le spiegazioni non dicono più l'età («Ha 18 anni»): da lì si risaliva all'anno. Riscritte 15 carte, tra cui Pausini, Morandi, Nada, Pelé, Comaneci e Tiger Woods.",
+      "📸 Foto nuove: la Coca-Cola col suo inventore John Pemberton (prima una bottiglia di oggi, che ingannava sull'epoca) e la Pascalina intera e chiara (prima era su fondo nero).",
+      "👋 Chi arriva tardi legge «Entri al prossimo giro» anche mentre si guarda il risultato; chi guarda soltanto non legge più «sbrigati!»; in saletta gli amici leggono «Aspetta che Paky faccia partire la partita».",
+      "📐 Con poche carte la linea sta al centro dello spazio libero, non tutta in alto. Nell'elenco dei risultati e in «📍 Andava qui» nomi e titoli vanno a capo invece di tagliarsi («Luca (tu)»). In alto il ✅/❌ non copre più l'ultima lettera del nome e il tasto «‹» non lascia vedere sotto il punteggio che scorre.",
+      "📱 Sullo stesso telefono, mentre il telefono passa a chi può rubare, sotto non resta «Tocca a te» col tempo che corre; durante il risultato non resta acceso un giocatore sbagliato."
+    ]
+  },
+  {
+    v: 393,
+    data: "21 novembre 2026",
+    titolo: "Il Prezzo è Giusto: regole chiare e tanti ritocchi 🏷️",
+    descrizione: [
+      "🎁 Prima di ogni gioco a premi la spiegazione ha tre riquadri: «👉 Come si gioca», «💡 Esempio» e «🏆 Punti». Resta più a lungo, tra 24 e 28 secondi a seconda del gioco (prima 10): chi non l'ha mai giocato capisce bene, chi lo conosce tocca «⏩ Avanti».",
+      "✋ È troppo!: chi si è già fermato si vede solo dopo che ti sei fermato anche tu. Prima il primo che si fermava faceva capire agli altri che il prezzo vero era lì vicino.",
+      "🎡 Ruota del 100: finito il tuo giro compare «Hai fatto 45 · aspettiamo gli altri…» col conto alla rovescia (prima sembrava tutto fermo).",
+      "👋 Chi arriva a puntata cominciata legge dove entra davvero: alla prossima Offerta, alla Ruota o alla Vetrina, oppure «La puntata sta finendo: giochi dalla prossima».",
+      "📱 Niente più scritte coperte o tagliate: la barra in basso e la targhetta di chi guarda lasciano sempre il loro posto, i titoli lunghi vanno su due righe, il carrello mostra tutti i premi interi, i punti dei risultati stanno nella riga giusta e il nome di chi vince non si accorcia mai in «P…», sul telefono basso la spiegazione dei giochi a premi si stringe invece di tagliarsi, in tanti la foto dell'Offerta si abbassa perché si vedano tutte le offerte, in Più o meno la scheda non sale più sul titolo, i nomi dei prodotti non si spezzano a metà («salvadana-io»), il prezzo a cifre ha il punto e la virgola al loro posto.",
+      "🧩 Ritocchi: in 5 o più i tasti dei giochi a premi hanno più spazio, i riquadri alti tengono foto e scritte insieme al centro, il luogo non si ripete («…un trullo di Alberobello · ad Alberobello», «Il 730 fatto al CAF · al CAF»), frasi giuste per tutti (non più «Ti sei fermato» o «Sei caduto»), cinque foto sbagliate sistemate (la bici Bianchi ora è celeste), nell'Alpinista le pedine partono a ventaglio (prima in 6 erano un mucchio solo), nel carrello in tanti foto e premi prendono tutta la larghezza del riquadro."
+    ]
+  },
+  {
+    v: 392,
+    data: "20 novembre 2026",
+    titolo: "Parola d'ordine: squadre e chat più chiare 🔤",
+    descrizione: [
+      "👥 Nella saletta ogni squadra ha il suo riquadro, uno accanto all'altro: in alto il capo con la 👑, sotto gli altri. La tua squadra è accesa del suo colore e in fondo alle altre c'è «Entra nei Rossi»: un tocco e cambi squadra. Nella tua c'è «👑 Faccio io il capo».",
+      "🎨 Il cerchio di ognuno prende il colore della sua squadra, nella saletta e in partita: niente più cerchi rossi nei Blu. Sul palco quelli della stessa squadra stanno vicini.",
+      "💬 In partita la striscia in basso dice «Chat della partita · Apri ▲» e mette in fila gli indizi di tutte le squadre, col numero e il loro colore, e quante parole hanno fatto trovare (✓). Toccandola si apre la chat intera, con gli indizi colorati della loro squadra.",
+      "🗨️ In tutte le salette i fumetti («Tocca il tuo avatar per le reazioni», «Ciao Marco! 👋») non coprono più i nomi degli altri."
+    ]
+  },
+  {
+    v: 391,
+    data: "20 novembre 2026",
+    titolo: "La Balla Colossale: i ritocchi 🤥",
+    descrizione: [
+      "✍️ La balla può essere lunga fino a 50 lettere, e sotto il campo vedi da subito, ben leggibile, quante ne restano: «50 lettere», «ancora 12 lettere»… fino a «niente più lettere».",
+      "📏 Niente più cose ingrandite per riempire lo schermo: classifica e podio stanno in alto con «Avanti» subito sotto, la scelta dell'argomento al centro, le balle lunghe si leggono intere senza coprire niente.",
+      "👀 Chi guarda col link vede tutta la rivelazione, senza la targhetta sopra; chi non vota legge le risposte grandi quanto c'è posto.",
+      "🔢 In tanti, nei riquadri in alto resta solo il simbolo (✅, ✍️) quando la parola non ci sta; nei premi a pari merito ci sono tutte le faccine.",
+      "🏁 A fine partita online, in tutti i giochi, i tasti stanno subito sotto la classifica (non più in fondo allo schermo)."
+    ]
+  },
+  {
+    v: 390,
+    data: "20 novembre 2026",
+    titolo: "La Balla Colossale rifatta 🤥",
+    descrizione: [
+      "🎭 La rivelazione è uno spettacolo: prima le balle a cui non ha creduto nessuno, poi le altre una alla volta al centro, dalla meno votata alla più votata. Per ognuna escono le facce di chi ci è cascato, il timbro BALLA! e chi l'ha scritta, coi punti che volano sul suo punteggio.",
+      "✅ La verità arriva sempre per ultima, col timbro VERO!, e la parola giusta si stampa dentro il giornale.",
+      "🏆 Dopo ogni round la classifica vera: posizioni, frecce di chi sale e chi scende, quanto ha preso ognuno e la frase del momento («Giulia passa in testa!»). Prima dell'ultimo round l'annuncio della Balla Finale a punti tripli.",
+      "🥇 Alla fine il podio coi primi tre e i premi della serata (Re delle balle, Detective, Credulone, Balla d'oro) tutti in una schermata.",
+      "💯 Punti da quiz televisivo: la verità vale 200, ogni amico ingannato 100 (nella Balla Finale 600 e 300). Chi vince è lo stesso di prima: cambia solo come si leggono.",
+      "🗳️ Al voto il foglio è pieno (dietro non si legge più il giornale), la notizia sta sempre in alto e le risposte sono più grandi; la tua è spenta.",
+      "📱 Sul telefono piccolo con la tastiera aperta «Fatto!» non copre più la balla, e chi ricarica la pagina dopo aver scritto rilegge la sua balla."
+    ]
+  },
+  {
+    v: 389,
+    data: "20 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: la telecamera come in TV 🎥",
+    descrizione: [
+      "🎥 Nella giornata la telecamera è larga mentre l'azione si costruisce, nei calci piazzati e col campo fermo: si leggono tutti i nomi dei vostri calciatori in area e attorno («c'è il mio in mezzo!»). Al momento del tiro si avvicina piano, così porta, palo e traversa restano grandi; poi torna larga all'azione dopo.",
+      "🚩 Sul calcio d'angolo la telecamera resta ferma sull'area finché arriva il cross (prima andava verso chi batte e tornava indietro); chi batte lo dice l'etichetta al bordo."
+    ]
+  },
+  {
+    v: 388,
+    data: "19 novembre 2026",
+    titolo: "La Ruota della Fortuna rifatta 🎡",
+    descrizione: [
+      "📋 Il tabellone non si muove mai: sta sempre in alto, della stessa misura, con le tessere color crema e la cornice della Notte vivace. La categoria è più grande e si legge sempre tutta. Subito sotto i punteggi, anche loro sempre lì: il TOTALE in grande e, a parte, i soldi «in gioco» di questa manche.",
+      "🎡 Mentre pensi la ruota è media; quando gira diventa intera e grande, e 1,5 secondi prima della fine la telecamera va vicino alla lancetta: i pallini passano uno a uno. Succede sempre nello stesso momento, così non svela dove si ferma. La luce si accende esattamente sullo spicchio vinto.",
+      "🔤 Per scegliere la lettera la ruota sparisce e arriva la tastiera in ordine alfabetico, con le lettere grandi e le vocali gialle; per risolvere la tastiera QWERTY, sempre quella del gioco. Le lettere già chiamate sono spente e non si toccano.",
+      "💥 Alla Bancarotta sul punteggio compare «−1.800»: si vede cosa hai perso. A fine manche chi ha risolto, quanto incassa, chi perde i soldi in gioco e la classifica, senza buchi vuoti.",
+      "🤖 I Bot girano la ruota più in fretta: la suspense lunga resta per i giri delle persone."
+    ]
+  },
+  {
+    v: 387,
+    data: "19 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i cross li fanno i terzini 🏃",
+    descrizione: [
+      "🏃 Nella giornata le azioni dalla fascia (cross dal fondo, sovrapposizioni, uno-due sulla fascia, palla bassa dalla linea di fondo) tra i difensori le fanno solo i terzini: il terzino destro arriva dalla destra, il sinistro dalla sinistra. I difensori centrali fanno l'assist da centrali: lancio lungo dalla difesa, lancio in profondità, filtrante, contropiede, sponda di testa."
+    ]
+  },
+  {
+    v: 386,
+    data: "19 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: la mischia prima del calcio d'angolo 🚩",
+    descrizione: [
+      "🚩 Prima di un calcio d'angolo o di una punizione vicino all'area la telecamera inquadra l'area con tutta la mischia e i nomi dei vostri calciatori, così si vede chi aspetta il pallone (al bordo un'etichetta dice da che parte si batte). Quando parte il pallone la telecamera lo segue come prima."
+    ]
+  },
+  {
+    v: 385,
+    data: "19 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: lo stadio pieno 🏟️",
+    descrizione: [
+      "🏟️ Nella giornata come in TV ora c'è lo stadio: dietro la porta la curva con le gradinate piene di tifosi, ai lati le tribune e i cartelloni a bordo campo. I tifosi hanno i colori della squadra di casa della partita che stai guardando, con un piccolo settore ospiti in un angolo.",
+      "⚽ A inizio giornata lo stadio si riempie (con tifosi di tutte le squadre della giornata che salgono le scalinate), alla fine si svuota piano e la gente scende verso le uscite.",
+      "🔎 La telecamera è più larga (meno zoom) e uguale quando si attacca verso l'alto e verso il basso, così vedi anche chi c'è attorno all'azione; lo stadio è una fascia sopra la porta e il campo ha più spazio; i calciatori davanti alla porta non sono più mezzi trasparenti."
+    ]
+  },
+  {
+    v: 384,
+    data: "19 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: la giornata vista come in TV 📺",
+    descrizione: [
+      "📺 La giornata dopo l'asta si guarda come in TV: il campo in prospettiva, con la telecamera che segue l'azione. Quando si attacca verso il basso la vedi da dietro la porta, quando si attacca verso l'alto da dietro chi attacca, con la porta davanti a te.",
+      "🥅 La porta vera, in piedi, con le misure giuste rispetto ai calciatori: pali e traversa con lo spessore e la rete con la sua profondità. Adesso si capisce a colpo d'occhio se il pallone prende il palo, la traversa, se va fuori di poco o se entra (e quando sbatte sul legno, il palo trema).",
+      "🏷️ I nomi dei calciatori sono più piccoli e non si coprono più, e le scritte grandi (GOL!, PALO!, PARATA!) non stanno mai sopra la porta."
+    ]
+  },
+  {
+    v: 383,
+    data: "19 novembre 2026",
+    titolo: "Le ruote: pallini d'oro uguali dappertutto 🎡",
+    descrizione: [
+      "🎡 I pallini della Ruota della Fortuna, di «Scegliamo insieme» e della Ruota del 100 ora sono uguali a quelli della ruota dello spareggio della Mini Asta: d'oro, lucidi, con la loro ombra, più grandi e più facili da vedere.",
+      "🔊 Il tic resta sempre sul pallino che passa sotto la freccia, anche quando la ruota va velocissima."
+    ]
+  },
+  {
+    v: 382,
+    data: "19 novembre 2026",
+    titolo: "Le ruote: il tic solo sui pallini 🎡",
+    descrizione: [
+      "🎡 Nella Ruota della Fortuna, nella ruota di «Scegliamo insieme» e nella Ruota del 100 del Prezzo è Giusto ora si vedono anche i pallini piccoli a metà di ogni spicchio, accanto a quelli grandi tra uno spicchio e l'altro.",
+      "🔊 Il tic suona solo quando un pallino passa sotto la freccia, mai più nel vuoto: quando la ruota rallenta si sentono i colpi uno per uno, pallino dopo pallino, fino all'ultimo."
+    ]
+  },
+  {
+    v: 381,
+    data: "19 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: la ruota dello spareggio coi pallini 🎡",
+    descrizione: [
+      "🎡 Sulla ruota che decide i pari ora si vedono i pallini d'oro: uno grande dove cambia lo spicchio e uno piccolo a metà. Il tic suona esattamente quando la lancetta passa su un pallino, grande o piccolo, mai nel vuoto: quando la ruota rallenta si sente ogni pallino che passa."
+    ]
+  },
+  {
+    v: 380,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: pari al massimo? Subito la ruota 🎡",
+    descrizione: [
+      "🎡 Nell'asta a buste, se l'offerta più alta è pari e nessuno dei pari può alzare (hanno già offerto il loro massimo), non si fa più lo spareggio a busta, che non serviva a niente: si va subito alla ruota, con la scritta «Tutti al massimo: decide la ruota!». Se almeno uno dei pari può alzare, lo spareggio resta come prima."
+    ]
+  },
+  {
+    v: 379,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: le buste si aprono a caso ✉️👑",
+    descrizione: [
+      "✉️ Nell'asta a buste le buste non si aprono più dalla più bassa alla più alta (l'ultima era sempre quella che vinceva): dopo chi passa si aprono una alla volta in ordine a caso, tutte con lo stesso tempo.",
+      "👑 Sulla busta più alta finora compare la corona «in testa»: chi è in testa può essere superato da una busta dopo.",
+      "🥁 L'ultima busta, qualunque sia, viene avanti grande contro quella con la corona, col rullo di tamburi: può vincere, pareggiare o perdere."
+    ]
+  },
+  {
+    v: 378,
+    data: "18 novembre 2026",
+    titolo: "Il tuo colore resta tuo per tutta la serata 🎨",
+    descrizione: [
+      "🎨 Il colore del tuo gettone non cambia più durante la serata: neanche quando qualcuno entra, esce, ricarica la pagina o torna.",
+      "👑 Se chi tiene la Sala esce e la Sala passa a un amico, i colori restano uguali. Chi torna ritrova il suo.",
+      "🆕 Chi arriva dopo si adatta: se il suo colore è già preso prende il suo secondo, se no il primo libero. Il tuo non te lo porta via nessuno."
+    ]
+  },
+  {
+    v: 377,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: le pagelle sempre nelle stesse pagine 📄",
+    descrizione: [
+      "📄 Le pagelle (all'intervallo e alla fine) si dividono in pagine sempre allo stesso modo: fino a 6 giocatori stanno sempre tutte in una pagina (se serve, righe e simboli si stringono un po'); con di più, le pagine sono sempre le stesse su quel telefono, qualunque bonus ci sia. Prima a volte in 5 venivano 3 + 2 pagine anche se il posto c'era."
+    ]
+  },
+  {
+    v: 376,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: la scheda dei calciatori in ordine e i punti più grandi 📋",
+    descrizione: [
+      "📋 Toccando il quadretto di un amico durante la giornata, la finestra coi suoi calciatori è in ordine su ogni telefono (anche iPhone): una riga per calciatore con ruolo, figurina, nome e squadra, voto e fantavoto sotto «VOTO» e «FANTAVOTO» scritti una volta sola, i bonus coi simboli delle pagelle e la stagione sotto il titolo. Prima su iPhone le righe finivano una sopra l'altra.",
+      "🔎 Nei quadretti in alto con i punti di ognuno non c'è più la faccina: di chi è lo dicono il colore e il nome, e nome e punti sono più grandi.",
+      "🏷️ I nomi dei calciatori in campo non coprono più la barra del minuto in alto."
+    ]
+  },
+  {
+    v: 375,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: la stagione scelta parte sempre 🔧",
+    descrizione: [
+      "🔄 Se l'app era aperta da prima di un aggiornamento, una stagione del passato (per esempio la 2019-20) poteva restare su «non arriva»: adesso l'app si ricarica da sola una volta e l'asta parte."
+    ]
+  },
+  {
+    v: 374,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: il vostro portiere ha sempre il suo nome 🧤",
+    descrizione: [
+      "🧤 Quando il portiere che avete comprato esce dalla porta (sale in area nell'ultimo assalto, va a saltare sul calcio d'angolo, segna di testa, esce sui falli e sui cartellini) ha il nome e il colore di chi l'ha comprato, come gli altri vostri: prima sembrava un calciatore di nessuno."
+    ]
+  },
+  {
+    v: 373,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: contro chi gioca già dal primo calciatore 🆚",
+    descrizione: [
+      "🆚 Online, sui telefoni degli amici il primo calciatore dell'asta non diceva contro chi gioca (dal secondo sì): ora la riga «🆚» c'è da subito, anche con le stagioni passate e anche per chi ricarica la pagina a metà asta."
+    ]
+  },
+  {
+    v: 372,
+    data: "18 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: le facce vere dei calciatori più forti 🧑",
+    descrizione: [
+      "📷 Immobile, Lautaro, Osimhen, Leão, Dybala, Kvaratskhelia e gli altri calciatori più importanti (e ne arrivano altri) hanno la faccia presa dalla loro foto: pelle, capelli, taglio e barba come nella realtà, in tutte le stagioni."
+    ]
+  },
+  {
+    v: 371,
+    data: "17 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i campioni che mancavano nelle stagioni passate ⭐",
+    descrizione: [
+      "⭐ All'asta delle stagioni passate adesso ci sono anche i nomi forti che avevano giocato solo metà stagione con quella squadra: per esempio Ibrahimović nel Milan 2020-21 e 2021-22, Kolo Muani nella Juve e Giménez nel Milan 2024-25, Raspadori nel Napoli 2024-25, De Bruyne nel Napoli e Malen nella Roma 2025-26.",
+      "📏 Entra chi aveva una quotazione finale da 16 in su e almeno 10 partite con quella squadra: 27 calciatori in più in tutto, con la loro altezza e il numero di maglia quando è sicuro.",
+      "✈️ Chi a gennaio ha lasciato la Serie A (all'estero o in Serie B) non c'è più in quella stagione, né all'asta né in campo: per esempio Kvaratskhelia e Morata nel 2024-25, Higuaín e Boateng nel 2018-19, il Papu Gómez nel 2020-21. Chi a gennaio ha solo cambiato squadra in Serie A gioca con quella dove ha finito."
+    ]
+  },
+  {
+    v: 370,
+    data: "17 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i battitori veri delle stagioni passate 🎯",
+    descrizione: [
+      "🚩 Nelle stagioni dalla 2015-16 alla 2022-23 chi batte angoli e punizioni è chi li batteva davvero quell'anno: per esempio Cristiano Ronaldo le punizioni nella Juve 2018-19, Milik nel Napoli, Kolarov nella Roma.",
+      "🎯 Dalla 2017-18 alla 2022-23 anche il secondo e il terzo rigorista sono quelli veri; il primo resta chi ne ha tirati di più quell'anno.",
+      "🔄 Chi ha cambiato squadra a gennaio batte per la squadra dove ha finito la stagione."
+    ]
+  },
+  {
+    v: 369,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i capelli in campo come sulle figurine ✂️",
+    descrizione: [
+      "⚽ In campo, dove i calciatori si vedono di profilo, i capelli non scendono più fino agli occhi come un casco: la fronte resta libera, l'orecchio pure, con la basetta sottile davanti. Come sulle figurine.",
+      "💇 Restano coperti solo dove deve essere: la frangia e il taglio a scodella sulla fronte, i capelli lunghi sulle orecchie."
+    ]
+  },
+  {
+    v: 368,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: la riga di lato e il mullet rifatti ✂️",
+    descrizione: [
+      "✂️ La riga di lato adesso si vede: una riga netta da una parte e i capelli pettinati verso l'altra, con più volume da quel lato.",
+      "🦁 Il mullet ha tutta la parte lunga dietro, da un orecchio all'altro, con le punte sul collo: prima si vedevano solo due ciuffi ai lati. Davanti e ai lati resta corto, con le orecchie libere."
+    ]
+  },
+  {
+    v: 367,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: ricci, mossi e dreadlocks raccolti con le orecchie libere ✂️",
+    descrizione: [
+      "✂️ Anche i ricci, i mossi, i dreadlocks raccolti e le treccine raccolte lasciano libere le orecchie: i ricci restano pieni sopra e ai lati, i mossi hanno le punte all'insù sopra l'orecchio, i raccolti non hanno più ciocche che scendono ai lati."
+    ]
+  },
+  {
+    v: 366,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i tagli dei calciatori rifatti ✂️",
+    descrizione: [
+      "✂️ I tagli più usati sono rifatti come li portano i calciatori veri: le orecchie restano libere, le basette sono sottili, niente più capelli a casco.",
+      "👀 Ogni taglio si riconosce anche sulle figurine piccole: il rasato è quasi pelle, gli sfumati alti hanno i lati chiari e il blocco sopra, i medi sono pettinati di lato con la riga, i corti col ciuffo hanno il ciuffo alzato, i ricci corti hanno i riccioli piccoli sopra.",
+      "🔍 Le facce nell'editor e sulle figurine si disegnano alla risoluzione vera del telefono: più nitide."
+    ]
+  },
+  {
+    v: 365,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: sui calci piazzati tutti in area ⚽",
+    descrizione: [
+      "⚽ Sugli angoli, le punizioni e le azioni in area chi attacca va tutto in area o al limite, coi vostri calciatori pronti a colpire: non si sa chi segnerà. Dietro restano solo uno o due difensori (i più bassi più spesso). Chi difende sta tutto nella sua area, tranne la punta che aspetta il contropiede.",
+      "🏷️ Con tanti vostri calciatori vicini, i nomi non si coprono più tra loro e non coprono la porta né il pallone. Nelle azioni manovrate i vostri attaccanti stanno al limite dell'area, pronti a ricevere."
+    ]
+  },
+  {
+    v: 364,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: il pressing alto rivisto 🔥",
+    descrizione: [
+      "🔥 «PRESSING ALTO» davanti alla porta adesso vuol dire solo gol, tiro o fallo, e i gol col pressing escono un po' più spesso: finisce in gol come le altre azioni.",
+      "👏 Quando uno dei vostri ruba il pallone pulito, si vede come un'entrata nella metà campo degli altri (può finire col giallo o con la palla rubata), poi si riparte: niente più tiri che non entrano mai."
+    ]
+  },
+  {
+    v: 363,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: nel pressing alto chi ruba palla tira 🏃",
+    descrizione: [
+      "🏃 Nel pressing alto, quando uno dei vostri ruba il pallone pulito al difensore, adesso fa due passi verso la porta e TIRA: parata, fuori, palo o salvataggio sulla linea (niente punti in più: resta il voto più alto per il recupero).",
+      "🎬 Il pressing alto ha una scena sola e una scritta sola, «🔥 PRESSING ALTO», che finisca in gol, in un tiro, in un fallo o in un pallone rubato: fino al contrasto non si capisce come va a finire."
+    ]
+  },
+  {
+    v: 362,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: buste insieme su tutti i telefoni e mercato più leggibile ⏱️",
+    descrizione: [
+      "⏱️ Se l'orologio di un telefono cambia ora da solo a partita in corso, l'app se ne accorge e si rimette subito in pari con chi tiene la partita: le buste si aprono nello stesso istante per tutti (prima quel telefono poteva andare avanti o indietro di qualche secondo).",
+      "🔄 Nel mercato degli scambi, quando siete in tanti, le rose non diventano mai più piccole della misura minima: si scorre un po' di più."
+    ]
+  },
+  {
+    v: 361,
+    data: "16 novembre 2026",
+    titolo: "La linea del tempo: la spiegazione si legge prima, e si parte con due carte 🗓️",
+    descrizione: [
+      "📖 La spiegazione della carta adesso si legge PRIMA di scegliere dove metterla, sulla carta in mano, sotto il titolo. Abbiamo ricontrollato tutte le 1.920 spiegazioni: quelle che facevano capire l'anno (anni scritti, «trent'anni dopo», «durante il Covid»…) sono state riscritte.",
+      "🃏🃏 La linea parte con due carte invece di una, in ogni modo di gioco (a turno, tutti insieme, «Ognuno la sua linea», online e sullo stesso telefono): chi gioca per primo non ha più una scelta troppo facile.",
+      "📅 La scritta nella casella dell'anno non si taglia più: sui telefoni piccoli diventa più corta da sola."
+    ]
+  },
+  {
+    v: 360,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: si vede l'azione che porta al rigore 🤕",
+    descrizione: [
+      "🤕 Prima del rigore adesso si vede l'azione che lo provoca: chi lo subisce entra in area palla al piede e viene steso, oppure il tiro finisce sul braccio di un difensore. L'arbitro fischia e indica il dischetto, poi il rigore come sempre.",
+      "📺 Quando il rigore lo decide il VAR si vede il contatto e si continua a giocare, poi arriva «IL VAR RICHIAMA L'ARBITRO»: l'azione è la stessa sia quando il rigore viene dato sia quando no."
+    ]
+  },
+  {
+    v: 359,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i simboli delle pagelle disegnati, come nel fantacalcio vero ⚽",
+    descrizione: [
+      "⚽ Sotto ogni calciatore un simbolo per ogni bonus e malus, ripetuto quante volte serve, come nel fantacalcio vero: due gol sono due palloni, due gol subiti due porticine (niente più numeri).",
+      "🎨 I simboli sono disegnati da noi (pallone, scarpino, cartellini, porticina, lucchetto, guanto): si vedono uguali su iPhone e Android, più grandi di prima. Quando sono tanti si rimpiccioliscono un po' e vanno a capo, mai tagliati."
+    ]
+  },
+  {
+    v: 358,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: nelle pagelle si vedono tutti i bonus e i malus 🧾",
+    descrizione: [
+      "🧾 Sotto ogni calciatore adesso si vedono tutti i bonus e i malus: anche gli assist 👟 e i cartellini 🟨 🟥, che prima non comparivano.",
+      "🔢 I simboli sono più grandi e col numero: ⚽×2 per due gol, 🥅−2 per due gol subiti (prima era una fila di porticine minuscole). Il conto torna sempre: voto più simboli fa il fantavoto."
+    ]
+  },
+  {
+    v: 357,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: arrivano le altre stagioni 🕰️",
+    descrizione: [
+      "📅 In «Stagione», nelle regole della Mini Asta, oltre a «Oggi» e alla 2017-18 adesso ci sono anche: 2022-23, 2018-19, 2015-16, 2016-17, 2020-21, 2021-22, 2019-20, 2023-24, 2024-25, 2025-26. La sceglie chi apre la partita e vale per tutti.",
+      "📊 Sempre da fantacalcio.it: i calciatori nella squadra dove hanno finito quella stagione, la quotazione finale, i loro numeri di quell'anno (gol, assist, cartellini, rigori) e l'altezza. All'asta chi ha giocato davvero, con almeno un portiere per squadra; le squadre di allora coi loro gol fatti e subiti e i rigoristi veri.",
+      "🧑 Lo stesso calciatore ha la stessa faccia in tutte le stagioni: quando ne sistemi una vale per tutti gli anni (e se quell'anno aveva un'altra faccia, si può fare solo per quell'anno).",
+      "🏷️ All'asta e nella giornata la scritta con l'anno, così si capisce subito che stagione è.",
+      "🏆 Le «3 giornate» per ora sono spente: si gioca sempre una giornata (torneranno dopo una prova)."
+    ]
+  },
+  {
+    v: 356,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: si gioca anche con la Serie A 2017-18 🕰️",
+    descrizione: [
+      "📅 Nelle regole della Mini Asta c'è «Stagione»: «Oggi» (come sempre) oppure «2017-18». La sceglie chi apre la partita e vale per tutti.",
+      "⚽ Con la 2017-18 si rivive quell'anno: Higuain e Dybala alla Juve, il Napoli di Sarri con Mertens, Insigne, Callejon e Hamsik, Icardi e Immobile capocannonieri, e le squadre di allora (Benevento, Crotone, SPAL, Chievo, Verona…).",
+      "📊 Tutto da fantacalcio.it: i calciatori nella squadra dove hanno finito la stagione, con la quotazione finale e i loro numeri di quell'anno (gol, assist, cartellini, rigori). All'asta 203 calciatori: quelli che hanno giocato davvero, con almeno un portiere per squadra, più i nomi famosi che quell'anno hanno giocato poco: Bernardeschi, Milik, Rafinha, Pazzini, Schick, Simy, Diabaté, Meret e Brignoli.",
+      "👕 Le maglie e i numeri di maglia di quell'anno, e i rigoristi veri di allora. Chievo e Verona hanno lo stesso stadio, come Inter e Milan: mai in casa nella stessa giornata (il derby sì).",
+      "🏷️ All'asta e nella giornata la scritta «⚽ Serie A 2017-18», così si capisce subito che anno è. Coppe e statistiche restano insieme a quelle di sempre."
+    ]
+  },
+  {
+    v: 355,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: chi subisce il rigore 🤕",
+    descrizione: [
+      "🤕 Nei rigori adesso si vede chi ha subito il fallo: è ancora a terra nella lunetta e si rialza prima del tiro. Se è uno dei vostri calciatori ha il suo nome sopra la testa (niente punti per il rigore procurato, come nel fantacalcio vero). Il rigore si vede come sempre quando qualcuno ha chi lo tira o il portiere.",
+      "🎯 Il rigore lo batte sempre il rigorista vero. Ma se il fallo l'ha subito il secondo o il terzo rigorista della squadra, una volta su tre lo tira lui."
+    ]
+  },
+  {
+    v: 354,
+    data: "16 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i nomi di nuovo, e ogni squadra dalla sua parte del campo ⚽",
+    descrizione: [
+      "🏷️ Si vede di nuovo il nome di chi porta palla anche se non è di nessuno (era sparito con l'ultima novità): adesso piccolo sopra la testa, bianco, diverso dalle etichette colorate dei vostri calciatori, e mai sopra la porta.",
+      "🎯 Anche chi batte il rigore o la punizione ha il suo nome, dall'inizio fino al calcio.",
+      "⚽ Come nel calcio vero: in ogni partita un sorteggio decide da che parte attacca ogni squadra nel primo tempo, e nel secondo tempo si cambia lato. Prima nello stesso tempo una squadra attaccava una volta la porta di sopra e una volta quella di sotto.",
+      "🧤 Se avete il portiere, il rigore contro di lui si vede sempre: anche quando chi tira la manda fuori o sul palo (prima quel rigore non si vedeva)."
+    ]
+  },
+  {
+    v: 353,
+    data: "16 novembre 2026",
+    titolo: "Il gettone di vetro in tutta l'app ✨",
+    descrizione: [
+      "🪟 Il gettone di vetro della saletta adesso c'è ovunque: in «Come giocate?» galleggia sulla sua pedana luminosa, e nel profilo, nella Sala, nelle classifiche e in alto dentro i giochi c'è il disco di vetro col bordo del tuo colore.",
+      "🎨 In alto nei giochi ognuno ha il colore del suo gettone, l'emoji si vede intera e non c'è più il doppio anello.",
+      "🏆 Sul podio della Linea del tempo niente più cerchione giallo: al primo resta una luce d'oro.",
+      "🔍 Dove il gettone è grande l'emoji è nitida."
+    ]
+  },
+  {
+    v: 352,
+    data: "15 novembre 2026",
+    titolo: "La saletta prima della partita: gettoni di vetro sul piedistallo ✨",
+    descrizione: [
+      "🏛️ Nella saletta ognuno ha il suo gettone di vetro che galleggia sopra una pedana luminosa del suo colore, con un fascio di luce: più bello e più vivo del cerchio piatto di prima.",
+      "➕ Quando siete in pochi il palco non resta vuoto: ci sono i posti liberi col «+». Toccane uno per invitare gli amici.",
+      "🔍 Le emoji nella saletta adesso sono nitide (prima erano piccole e ingrandite, quindi sgranate).",
+      "⬇️ Chi entra scende sulla sua pedana con un piccolo rimbalzo.",
+      "✅ Chi è pronto non alza più la manina gialla: nel suo gettone si accendono una lineetta verde e un bollino con la ✓, e ognuno tiene il suo colore."
+    ]
+  },
+  {
+    v: 351,
+    data: "15 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: arbitro vero, difesa vera e pagelle finali in ordine 📋",
+    descrizione: [
+      "👨‍⚖️ L'arbitro si muove come un arbitro vero: segue l'azione da dietro e di lato, con calma, corre solo quando serve e mai più veloce dei giocatori; niente più giravolte. Dopo il gol si ferma e va piano verso il centro.",
+      "🦵 Niente più difensore appiccicato al portiere mentre l'azione è ancora a centrocampo: la difesa sta alta e in linea, e il difensore torna sul palo correndo all'indietro solo quando l'attacco arriva negli ultimi 30 metri.",
+      "📋 Le pagelle finali come quelle del primo tempo: tutto lo schermo, niente campo sotto, più rose in una pagina, i calciatori in fila con voto, fantavoto e bonus, mai sovrapposti. Dalla rosa che ha fatto meno a quella che ha fatto di più, col posto accanto al totale."
+    ]
+  },
+  {
+    v: 350,
+    data: "15 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: l'altezza conta nei colpi di testa, e i difensori segnano un po' di più ⚽",
+    descrizione: [
+      "🧱 I difensori segnano un po' di più: prima facevano circa 6 gol su 100, adesso circa 9 (in Serie A sono anche di più, ma non esageriamo). Tra difensori conta la quotazione, come sempre.",
+      "🎯 I loro gol arrivano soprattutto di testa: sul calcio d'angolo, sulla punizione dalla fascia, sul cross e sulla rimessa lunga, oppure sulla ribattuta in area. Quasi mai in slalom o in contropiede.",
+      "🤞 Anche i tiri sbagliati dei difensori arrivano dalle stesse azioni: quando il tuo difensore va di testa sull'angolo può essere gol o no, non si sa prima.",
+      "📏 L'altezza conta: chi è alto segna più spesso di testa su cross e calci d'angolo, chi è basso più spesso con tiri da fuori, dribbling e rasoterra. Chi segna lo decidono sempre il ruolo e la quotazione: l'altezza cambia solo come.",
+      "🧱 I gol in più dei difensori vanno soprattutto ai difensori alti, di testa sull'angolo.",
+      "🗣️ Le frasi tipo «svetta più in alto di tutti» escono solo per chi è alto davvero (da 1,88 m in su): a uno basso che segna di testa tocca una frase normale.",
+      "🤞 Anche i colpi di testa sbagliati vanno ai più alti, come quelli buoni: il gigante che salta non vuol dire gol.",
+      "⚖️ I punti medi e quanto vince la rosa più forte restano quelli di prima."
+    ]
+  },
+  {
+    v: 349,
+    data: "15 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: barbe e capelli più veri 🧔",
+    descrizione: [
+      "🧔 Le barbe dei calciatori sono rifatte: la barba di qualche giorno è un velo di puntini, quella corta e quella piena seguono la mascella col bordo che sfuma sulla guancia, i baffi sono una striscia sotto il naso, il pizzetto è un pizzetto vero sul mento (non più una pallina) e «baffi e pizzetto» sono uniti ai lati della bocca.",
+      "💇 I capelli sono fatti di tanti fili sottili nel verso della pettinatura, con l'attaccatura che sfuma sulla fronte: niente più righe chiare a pettine né lucido da casco. Il ciuffo è un ciuffo alzato, i ricci sono più fitti, i capelli lunghi non sembrano più delle cuffie.",
+      "✅ Ogni calciatore ha la barba e il taglio di prima, solo disegnati meglio: le correzioni già fatte restano."
+    ]
+  },
+  {
+    v: 348,
+    data: "15 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: fuorigioco vero, guardalinee e rimesse 🚩",
+    descrizione: [
+      "🚩 Il fuorigioco c'è solo dove ha senso: palla filtrante, lancio in profondità e la nuova fuga da centrocampo. Mai su punizioni, angoli, rimesse o ribattute.",
+      "📏 Quando parte il passaggio tutta la difesa sale in linea e l'attaccante è lì con lei: se era oltre lo dice solo il VAR, col fermo immagine e le due linee (azzurra il difensore, rossa l'attaccante).",
+      "🚩 Ci sono i guardalinee: dopo un gol in fuorigioco alzano la bandierina e l'arbitro fischia; poi il VAR annulla o convalida.",
+      "🏃 La fuga da centrocampo: la difesa è alta, l'attaccante scappa da solo coi difensori alle spalle.",
+      "🙌 Le rimesse laterali: corte vicino all'area o lunghe in mezzo all'area, con chi batte che lancia con due mani sopra la testa.",
+      "👨‍⚖️ L'arbitro segue l'azione anche dove prima non c'era.",
+      "🎬 Nel replay del gol della giornata non c'è più la fascia di rete in fondo allo schermo; il nome del portiere sta sopra la testa.",
+      "🃏 Nei quadretti i bonus partono subito dopo i punti e si vedono tutti, anche se sono tanti (quelli uguali si sovrappongono a ventaglio); niente più 👏 per l'intervento pulito.",
+      "📋 Le pagelle del primo tempo usano tutto lo schermo: in 4 stanno in una pagina sola.",
+      "🔄 Negli scambi niente più campo: ogni squadra è un rettangolo col colore di chi la possiede, coi calciatori in fila per ruolo e la quotazione; ci stanno tutte in una schermata anche in 8.",
+      "🔄 Negli scambi i tasti di chi tiene la partita si capiscono: «⏱ +1 minuto» e «⚽ Si gioca!».",
+      "🏆 Finita l'asta (e gli scambi) le rose si scoprono in una schermata sola, a figurine e in formazione, dalla più scarsa (in basso a destra) alla più forte (in alto a sinistra), con la quotazione totale; lo schermo sale da solo, poi si gioca. Al posto della sfilata una alla volta.",
+      "⚽ Nella giornata il campo è più grande: niente riga in alto (‹ e ⏭ stanno nella barra del minuto), le partite giù in fondo, e a rigori e punizioni il tasto del gufo e del portafortuna sta sempre in basso sul campo e il loro conto piccolo in alto a destra.",
+      "⏱ Sparita la scritta del tempo in basso."
+    ]
+  },
+  {
+    v: 347,
+    data: "14 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: niente più finali già scritti 🙈",
+    descrizione: [
+      "📺 Il VAR dopo un gol a volte lo annulla e a volte lo convalida: «✅ GOL CONVALIDATO!» e solo allora arrivano i punti.",
+      "📺 Quando il VAR richiama l'arbitro per un rigore, a volte il rigore non c'è: «❌ NIENTE RIGORE!».",
+      "✋ Fallo tattico, proteste, «si butta in area» e nervi tesi non vogliono più dire per forza giallo: a volte l'arbitro lascia correre.",
+      "🏃 Il fallo da ultimo uomo a volte è rosso e a volte solo giallo; «era già ammonito» a volte finisce col rosso e a volte si salva.",
+      "😱 Dopo un rigore parato, anche la ribattuta può finire in gol o con un'altra parata.",
+      "I punti sono quelli di prima: cambia solo che la scritta non svela più come va a finire."
+    ]
+  },
+  {
+    v: 346,
+    data: "14 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: quattro ritocchi 🧹",
+    descrizione: [
+      "🎬 Nel replay del gol della giornata non c'è più la rete sopra il campo quando il gol è nella porta di sopra.",
+      "🧍 Quando si scoprono le rose non c'è più l'avatar a bordo campo col cartellino del valore.",
+      "🧤 Quando il portiere prende gol c'è scritto −1, il gol subito, e a parte «Porta inviolata persa»: il punteggio scende di 2 come prima, ma ora si capisce perché.",
+      "⭕ Nel tabellone della classifica e delle formazioni il cerchietto è centrato."
+    ]
+  },
+  {
+    v: 345,
+    data: "14 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: ognuno al suo posto, e azioni per tutti ⚽",
+    descrizione: [
+      "🧭 Nella giornata ogni calciatore fa il suo mestiere: i ruoli precisi di Fantacalcio.it (quelli del Mantra) dicono chi è mediano, centrale, trequartista, ala o punta.",
+      "🛡️ Gli interventi in difesa li fanno soprattutto difensori e mediani; ali e trequartisti poco, le punte quasi mai. Niente più attaccanti a fare entrate davanti alla loro area.",
+      "🟨 I cartellini restano quelli veri, ma una punta, un'ala o un trequartista li prende da attaccante: fallo in pressing nella metà campo degli altri, proteste, simulazione o fallo di reazione. Il pressing a volte finisce col giallo e a volte con la palla rubata: dall'annuncio non si capisce.",
+      "🎯 Ognuno vede almeno 3 azioni dei suoi calciatori nella giornata (almeno 1 in ognuna delle due giornate veloci delle «3 giornate»). Possono finire in gol, parata, palo o fuori, come tutte le altre.",
+      "🏷️ In campo chi ha il pallone, se non è di nessuno, ha il suo nome, piccolo e bianco sotto i piedi: compare quando prende palla e svanisce quando passa o tira. Anche il portiere quando para o prende gol. I vostri calciatori tengono la loro etichetta grande.",
+      "⚖️ L'equilibrio è quello di prima: la rosa più forte vince quanto prima, e i punti sono gli stessi."
+    ]
+  },
+  {
+    v: 344,
+    data: "13 novembre 2026",
+    titolo: "Ognuno ha la sua emoji 3D e il suo colore ⚡",
+    descrizione: [
+      "😀 Al posto dell'avatar ora ognuno ha un gettone: un cerchio del suo colore con dentro la sua emoji 3D. Si sceglie una volta (anche chi ha già il profilo) e si cambia quando vuoi dal profilo.",
+      "🎨 Scegli 2 colori in ordine: se un amico nella stessa serata ha già il tuo 1° colore, prendi il 2°. Così in partita ognuno ha un colore diverso, uguale su tutti i telefoni e per tutta la serata.",
+      "⚡ Le emoji 3D sono uguali su ogni telefono, iPhone e Android: niente più personaggi neri o storti.",
+      "🪶 L'app è più leggera: si apre e parte più in fretta, e il «pronto» nella saletta non va più a scatti (il gettone fa un saltello, si accende del suo colore e compare la ✋).",
+      "🔍 Le emoji sono più di mille (animali, oggetti, cibo, sport, mezzi, simboli…): si cercano scrivendo in italiano, anche solo un pezzo di parola: «razzo», «leone», «spada».",
+      "🤖 Anche i Bot hanno la loro emoji e il loro colore, sempre gli stessi: Matt è 🦁."
+    ]
+  },
+  {
+    v: 343,
+    data: "13 novembre 2026",
+    titolo: "Sistemati i difetti visti in serata 🔧",
+    descrizione: [
+      "🧍 Gli avatar coi capelli «Boccoli» si vedono dappertutto: in Chi di Noi? la carta della zia non è più vuota.",
+      "🕵️ L'Impostore: le regole partono dalla cosa più semplice; al voto gli indizi si leggono interi; il segno ✅/❌ di chi ha votato giusto non sparisce coi nomi lunghi; con due impostori l'altro non vede più le 6 parole dell'ultima possibilità; il voto non resta aperto all'infinito se uno continua a cambiarlo.",
+      "😂 Memata e 📡 Stessa Lunghezza d'Onda: in due, se uno blocca il telefono la partita non si chiude più da sola: lo si aspetta. Nei meme l'ultima lettera non si taglia più, e le scritte minuscole si leggono anche sotto il meme.",
+      "🤨 Sì... però: il giudice ha tutto il tavolo per leggere, le carte non scendono sotto una misura leggibile e si capisce chi è in quale squadra e chi è il capo.",
+      "🏠 La Sala: le targhette dei nomi in saletta non finiscono più sull'avatar sbagliato; chi teneva la partita e torna dopo essere sparito ritrova il suo posto con «Rientra ▶»; «Avete giocato con» coi nomi interi.",
+      "🃏 Black Jack: gli annunci grandi vanno a capo e la vincita si legge; la fine partita non è più tagliata; il tavolo è più leggero sui telefoni lenti. ♣️ Poker: fiori in verde nelle carte piccole, per non confonderli con le picche. A chi guarda una partita a due la scritta in alto sparisce dopo pochi secondi e non copre più il punteggio.",
+      "🤥 La Balla Colossale: al voto la notizia resta sempre sullo schermo, anche sul telefono piccolo; la classifica del round in tanti non è più coperta; niente più barre strane nelle virgolette; chi riaccende il telefono mentre gli altri votano vota anche lui.",
+      "🏆 A fine partita, anche in 8 sul telefono piccolo, i tasti «Rivincita» e «Cambia gioco» restano sempre in vista.",
+      "🏷️ Il Prezzo è Giusto: nella Spesa, in Mettili in ordine, nella Prova del 5 e in Togli la cifra la faccina in alto ha di nuovo la testa; in 8 i nomi in classifica si leggono interi.",
+      "📜 La linea del tempo: «240 a.C.» non diventa più «240 …». 💣 La Patata: la scritta dice di toccare in alto, dove sono i giocatori. 🎡 La Ruota: chi blocca il telefono non perde più i soldi della manche.",
+      "❌⭕ Tris e Tris Gigante: se l'avversario blocca il telefono, il tavolo resta e si legge «⏳ Aspettiamo Giulia 📱»: quando riaccende si continua. 🚢 Battaglia Navale: «il Cacciatorpediniere», «l'Incrociatore».",
+      "⚙️ Le scelte fatte prima della partita non si azzerano più se apri «Come si gioca». 🐎 Horto Muso: al traguardo il posto giusto, non più «1°» per tutti.",
+      "🎡 La Ruota della Fortuna: la tastiera c'è solo sul telefono di chi deve scegliere o scrivere le lettere. Quando si gira la ruota prende tutto lo spazio sotto il tabellone, sempre intera e grande quanto ci sta, anche sul telefono piccolo, e non copre mai le scritte. Il giro ha più suspense: la linguetta si piega sui pioli col suo tic sempre più lento, a volte si ferma a un soffio dalla Bancarotta o dal premio grosso, lo spicchio vinto si illumina e il telefono vibra un attimo. Le lettere chiamate che non ci sono stanno rosse e sbarrate sotto il tabellone; dove la ruota non serve il tabellone diventa più grande.",
+      "🗣️ Taboo: la fine partita non esce più dallo schermo e nei tre round il riassunto non svela le carte che tornano nel cesto. 🔨 L'Asta dei temi: il tasto della busta mostra una cifra sola."
+    ]
+  },
+  {
+    v: 342,
+    data: "13 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: fino a 12 giocatori 👥",
+    descrizione: [
+      "👥 La Mini Asta Fantacalcio ora si gioca fino a 12 (prima 10).",
+      "🏟️ Nella giornata, in alto, al massimo 8 punteggi: da 9 in su vedi i 7 più avanti (il tuo c'è sempre) e l'ottavo è «👥 Gli altri». Toccalo e vedi la classifica di tutti; se qualcuno degli altri ha un calciatore in campo, si accende col 👟.",
+      "📐 Nel mercato degli scambi le rose sono tutte grandi uguali e la tua è la prima. La schermata si divide da sola in base a quanti siete: in 2 le due rose prendono tutto lo schermo, una sotto l'altra; da 3 in su due per riga (in 3 resta un posto vuoto a destra), grandi fino alle partite; fino a 8 stanno tutte in una schermata coi nomi che si leggono bene.",
+      "📜 Le rose non diventano mai troppo piccole: quando siete tanti (su un telefono normale da 9 in su) si scorrono col dito, e le partite restano ferme sotto. In fondo alla lista una scritta «⬇ altre rose» ti dice che ce ne sono ancora.",
+      "👆 Mentre scegli i calciatori le rose non si spostano più: «📨 Proponi» sale sopra le partite e si chiude quando hai proposto. Se devi scegliere quale tuo calciatore dare (per esempio tra due centrocampisti), li trovi anche lì come tasti, senza tornare su alla tua rosa.",
+      "🎬 Quando a fine partita si rivede il momento che ha deciso la giornata, ora c'è scritto «IL MOMENTO CHE HA DECISO» e non più «IL GOL DELLA GIORNATA».",
+      "📏 Altezze: Gueye è alto 185 cm (prima era sbagliata) e c'è anche Mendy, 196 cm. Ora tutti i 335 calciatori hanno la loro altezza vera."
+    ]
+  },
+  {
+    v: 341,
+    data: "13 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: gli scambi a fine asta 🔄",
+    descrizione: [
+      "🔄 Finita l'asta, prima di scoprire le rose, tutti entrano nel mercato: in alto la tua rosa, sotto le rose degli altri (4 per pagina) e tutte le partite della giornata, così sai contro chi gioca il calciatore che vuoi prendere.",
+      "👆 Tocchi i calciatori che vuoi di un altro e i tuoi dello stesso ruolo si scelgono da soli; se ne hai più di uno (per esempio due centrocampisti) lampeggiano e scegli tu quale dai.",
+      "📨 «Proponi»: all'altro arriva un avviso con la tua proposta, «✅ Accetta» o «❌ Rifiuta». Se accetta i calciatori cambiano rosa volando al loro posto, e lo scambio si annuncia in grande a tutti. Le rose restano sempre giuste: portiere per portiere, e lo stesso numero di difensori, centrocampisti e attaccanti.",
+      "⏱️ Il mercato dura 3 minuti col conto sempre in vista; chi tiene la partita lo chiude prima o dà un minuto in più. Si spegne nel ⚙️ («🔄 Scambi a fine asta»); sullo stesso telefono c'è la versione semplice.",
+      "🙈 L'overall non si vede più: si vedono di nuovo le quotazioni (anche nel mercato, accanto a ogni calciatore). L'overall resta solo dietro le quinte, per decidere quanto sono forti le squadre in partita.",
+      "⚽ Dopo gli scambi niente sfilata delle rose: si sono già viste tutte nel mercato, quindi si va dritti alla giornata.",
+      "🎨 Con «Gioca ancora» ognuno tiene lo stesso colore dei suoi calciatori, partita dopo partita.",
+      "🔀 Le partite della giornata non si ripetono mai: ogni telefono ricorda le ultime giornate sorteggiate e una nuova ne ha al massimo una uguale.",
+      "🎬 Il replay del gol della giornata resta nella metà campo dove è stato fatto il gol (prima, un gol nella metà di sopra si rivedeva in quella di sotto).",
+      "📏 Altre 35 altezze vere: ora ce l'hanno 334 calciatori su 335."
+    ]
+  },
+  {
+    v: 340,
+    data: "13 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: dopo la serata vera ⚽",
+    descrizione: [
+      "🆚 L'overall dell'avversario si vede SEMPRE intero, con 1 e con 3 giornate e su ogni telefono: se non c'è posto si accorcia il resto (i nomi in sigla), mai il numero.",
+      "⏱️ Quando il banditore parla il suo fumetto sta sotto la barra del tempo: il conto alla rovescia dell'asta non si copre più.",
+      "🃏 Nella formazione finale i calciatori si scoprono dal più scarso al più forte.",
+      "📋 Nelle pagelle del primo tempo tutti i voti hanno la stessa misura, e bonus e malus si vedono sempre interi.",
+      "📊 Nei quadretti della giornata il totale è più piccolo e le icone dei bonus e dei malus ci stanno tutte.",
+      "⭐ Nuova regola nel ⚙️: «L'overall all'asta». Di partenza resta segreto fino alla fine, come prima; se la accendete, l'overall di ogni calciatore si vede già sul maxischermo mentre è all'asta e, comprato, nella rosa e nella formazione.",
+      "📏 In campo i calciatori hanno la loro altezza vera (differenze leggere: Woltemade, il gigante, si vede più alto degli altri). Solo l'aspetto: la partita non cambia."
+    ]
+  },
+  {
+    v: 339,
+    data: "12 novembre 2026",
+    titolo: "La tastiera non rovina più i giochi ⌨️",
+    descrizione: [
+      "⌨️ Quando si apre la tastiera per scrivere, la pagina resta ferma: niente più vuoto da far scorrere sotto la tastiera, in tutti i giochi.",
+      "🤥 La Balla Colossale: mentre scrivi la balla la notizia resta GRANDE e riempie lo schermo sopra il campo, con la tua balla già dentro; «Fatto» sta accanto a dove scrivi.",
+      "🎨 Scarabocchio: con la tastiera aperta la lavagna resta grande e la chat le sta accanto; la chat va da sola sull'ultimo messaggio (se non stai leggendo più su) e la parola, anche lunga, si vede sempre tutta.",
+      "🤨 Sì... però: il foglio per scrivere la tua carta sta tutto sopra la tastiera, coi tasti a vista.",
+      "😂 Memata e 🕵️ L’Impostore: con la tastiera aperta il meme e gli indizi degli altri restano più grandi (le righe che servono meno tornano chiudendo la tastiera)."
+    ]
+  },
+  {
+    v: 338,
+    data: "12 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: tutto leggibile anche sul telefono piccolo 📱",
+    descrizione: [
+      "🚫 Online, durante la giornata, chi tiene la partita non ha più «Salta ⏭»: prima lo portava da solo al podio e vedeva chi aveva vinto mentre gli amici guardavano ancora la partita. Ora si arriva al podio tutti insieme (restano ⏩ e «Avanti ▶»).",
+      "🏆 Il podio non finisce più sopra il maxischermo: i gradini si rimpiccioliscono quanto serve, anche in 8 e con le 3 giornate, e il tasto «🏅 I premi della giornata» resta libero. A pari punti si legge perché ha vinto il primo (la rosa più forte, o più crediti avanzati).",
+      "📋 Nelle pagelle voto e fantavoto non si attaccano più («5,5 | 5,5», mai «5,55,5»).",
+      "⚽ Sul telefono piccolo le rose sotto il maxischermo mostrano i nomi interi col prezzo, senza maglie una sopra l'altra.",
+      "📜 Le frasi lunghe sulla riga gialla del maxischermo scorrono invece di finire coi puntini.",
+      "🆚 Con le 3 giornate gli avversari si leggono tutti e tre con le sigle («🆚 GEN 77 · FRO 81 · TOR 79») e il nome della squadra resta intero; le scritte 🎯 🦶 🚩 non coprono più l'avversario.",
+      "🔝 In alto prima quanti calciatori sono stati presi («13/15 presi · Centrocampista all'asta»), il fumetto del banditore sparisce quando arriva il calciatore dopo, il cartello «📋 D'UFFICIO» non copre più prezzo e frase.",
+      "📺 Nel gol in TV la frase va a capo e il risultato ha una riga sua; nella barra della partita, se i nomi non ci stanno, le sigle. In 5 o più sul telefono piccolo il campo della giornata è più largo.",
+      "🎙️ Le frasi dell'«AGGIUDICATO!» sono le stesse su tutti i telefoni; «1 💰 avanzato».",
+      "⚙️ Nelle regole le scelte Sì/No stanno una accanto all'altra (il foglio è molto più corto) e «🎙️ Battute del banditore» c'è anche senza la giornata. In saletta «Si gioca così» si legge tutto.",
+      "📖 Le regole parlano dell'overall (quanto vale davvero ogni calciatore) e non più delle quotazioni vere. Sullo stesso telefono «Comincia l'asta» è sempre in fondo allo schermo e sulla busta di carta ci sono avversario e 🎯 🦶 🚩."
+    ]
+  },
+  {
+    v: 337,
+    data: "12 novembre 2026",
+    titolo: "I giochi a tutto schermo: via lo studio TV 📺",
+    descrizione: [
+      "📺 La Ruota della Fortuna, La Balla Colossale, Il Prezzo è Giusto, La linea del tempo, Nomi Cose e Città, La Patata Bollente e Parola d'ordine non hanno più lo studio col pubblico, i podi e la telecamera: il gioco prende tutto lo schermo e si legge meglio.",
+      "⚡ Le partite partono subito e il telefono non si blocca più all'inizio: sui telefoni lenti la prima notizia della Balla arrivava dopo 30 secondi, ora dopo 7.",
+      "🧑‍🤝‍🧑 In alto i punteggi di tutti, con la faccina piccola. All'inizio una presentazione veloce di chi gioca, alla fine chi vince e la classifica coi tasti di sempre.",
+      "🎡 La Ruota: il tabellone sempre in alto; sotto, la ruota grande quando si gira e la tastiera grande quando si scelgono le lettere (le vocali da comprare sono azzurre). Quando si risolve, le lettere vanno dritte nelle caselle.",
+      "💣 La Patata: chi gioca sta in alto, in grande: si tocca per passare la bomba."
+    ]
+  },
+  {
+    v: 336,
+    data: "12 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: 16 azioni nuove e parate vere 🧤",
+    descrizione: [
+      "🎬 Nella giornata 16 azioni nuove: il cross al secondo palo, il colpo di testa in tuffo, il portiere che esce sul cross, la porta vuota, il tre contro uno, il filtrante, la palla dal fondo all'indietro, il tiro a giro sul palo lontano, il tiro murato in calcio d'angolo, il portiere che non trattiene, il tiro al volo, il pressing alto, la punizione dalla fascia messa in mezzo, la punizione rasoterra sotto la barriera e la papera del portiere.",
+      "⌚ Quando un tiro prende la traversa e rimbalza sulla linea decide la goal-line technology: GOL o non è entrata, per pochi centimetri.",
+      "🧤 Le parate sono vere e diverse: il portiere la blocca in tuffo o in alto, para col piede, la toglie dall'incrocio in calcio d'angolo, e quando si tuffa arriva davvero sul pallone.",
+      "🦵 Il salvataggio sulla linea è diventato raro (prima usciva un tiro sbagliato su otto), e il difensore sul palo non sta più fermo come una statua.",
+      "👕 Tutti quelli che fanno l'azione hanno la faccia e il numero veri, anche chi passa e chi difende quando non sono di nessuno. E il tuo calciatore che fa l'azione non ha più un «doppione» al suo posto in formazione.",
+      "📺 Sul gol annullato per fuorigioco il VAR mostra il fermo immagine del passaggio, con chi ha segnato cerchiato di rosso."
+    ]
+  },
+  {
+    v: 335,
+    data: "11 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: in campo i titolari veri 👕",
+    descrizione: [
+      "👕 In campo ogni squadra schiera i suoi titolari al loro posto: nel Milan Pulisic e Moreira sulle fasce ai lati di Ramos, nell'Inter Dimarco esterno a tutta fascia, l'attaccante più forte sempre di punta.",
+      "🎯 Chi tira, se non è di nessuno, è uno dei titolari della sua squadra."
+    ]
+  },
+  {
+    v: 334,
+    data: "11 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: ogni squadra col suo modulo 🧩",
+    descrizione: [
+      "🧩 Ogni squadra gioca col suo modulo vero: l'Inter col 3-5-2, la Roma col 3-4-2-1, il Milan col 4-3-3… In campo i difensori stanno dietro, gli attaccanti davanti, e i tuoi calciatori al loro posto: un attaccante non finisce in difesa.",
+      "💪 L'overall di una squadra è quello della sua formazione più forte nel suo modulo, anche con chi è infortunato (l'Inter con Lautaro e Thuram).",
+      "⚔️ Ogni squadra ha attacco, centrocampo e difesa (l'Inter 92, 84 e 84): nella giornata il suo attacco sfida la difesa avversaria e i centrocampi si sfidano tra loro. Chi ha un grande attacco segna di più, chi ha una grande difesa subisce meno.",
+      "🟨 I falli si vedono al posto giusto: l'attaccante prende il giallo per un fallo in attacco, il difensore quasi sempre nella sua metà campo.",
+      "➕ Al Parma e al Venezia arrivano Britschgi e Haps, solo per il campo: gli esterni che mancavano al loro 3-5-2."
+    ]
+  },
+  {
+    v: 333,
+    data: "11 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: un rigorista per ogni squadra 🎯",
+    descrizione: [
+      "All'asta torna Geubbels, il rigorista del Lecce: ora ogni squadra ha almeno un rigorista da comprare. Camarda invece gioca solo in campo, col Milan."
+    ]
+  },
+  {
+    v: 332,
+    data: "11 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: in campo tutti veri 🎯",
+    descrizione: [
+      "🎯 Chi tira è sempre un calciatore vero, con la sua faccia e il suo numero, anche se non l'ha comprato nessuno: sul dischetto va il rigorista vero (Berardi per il Sassuolo), sulle punizioni chi le batte.",
+      "➕ 18 calciatori nuovi solo per il campo, così ogni squadra ha 11 titolari veri e ci sono tutti i battitori. All'asta non escono.",
+      "💪 Ogni squadra ha il suo overall, la media dei suoi 11 migliori: all'asta lo leggi accanto all'avversaria, «🆚 Inter (86)».",
+      "⚽ Nella giornata conta soprattutto l'overall delle squadre: le più forti vincono più spesso, ma chiunque può segnare, anche il più scarso."
+    ]
+  },
+  {
+    v: 331,
+    data: "11 novembre 2026",
+    titolo: "L'Asta dei temi: la passerella dei kit, tutta di sera 🔨",
+    descrizione: [
+      "🌙 Tutte le schermate dell'Asta dei temi (inizio del round, scelta della carta, busta chiusa, carta maledetta, il foglio «🃏 Carte» e il voto) hanno i colori della notte come il resto dell'app: niente più blu di prima.",
+      "🃏 Gli oggetti hanno una carta nuova: l'emoji grande dentro un medaglione che prende la luce del round. Se un telefono un po' vecchio non sa disegnare un'emoji, compare ✨ al posto del quadratino vuoto.",
+      "🧱 Quando un oggetto viene venduto gli altri restano fermi: stessa grandezza, stesso posto. Al posto di quello venduto resta il suo spazio vuoto. Sui telefoni alti le carte riempiono lo schermo.",
+      "⭐ Alla fine i kit sfilano in passerella: uno alla volta, a tutto schermo, con tutti gli oggetti in grande. Mentre il kit è lì, tutti gli altri gli danno da 1 a 5 stelle (online in segreto; sullo stesso telefono come i giudici dei talent, ognuno accanto al suo nome). Vince la media più alta. In classifica, sotto ogni nome, gli oggetti del suo kit.",
+      "✉️ Quando si aprono tante buste insieme stanno su due colonne, così si vede anche l'oggetto vinto.",
+      "⚽ Mini Asta Fantacalcio: alla scoperta delle rose niente più «ti ti ti» prima delle figurine."
+    ]
+  },
+  {
+    v: 330,
+    data: "10 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: il maxischermo intero e le figurine che suonano 🃏",
+    descrizione: [
+      "Sul maxischermo dell'asta non si taglia più niente: il sacchetto 💰 accanto al prezzo è più piccolo e «🆚 Frosinone» sta nella riga del ruolo e della squadra.",
+      "🃏 Alla scoperta delle rose ogni figurina che si gira ha il suo suono, e l'ultima, il colpo più caro, suona più forte. Prima si sentiva solo la prima."
+    ]
+  },
+  {
+    v: 329,
+    data: "10 novembre 2026",
+    titolo: "Nuovo gioco: 🧱 Il Muro",
+    descrizione: [
+      "Un quiz a squadre, tutte insieme e con le stesse domande, ognuno dal suo telefono (nella Sala). Da 4 a 10 giocatori, in squadre da 2 o 3.",
+      "🚪 Chi sta nella stanza risponde in segreto alla domanda. ⬇️ Chi sta giù non la vede: vede solo l'argomento e le risposte, e scommette su quanto la sa il compagno scegliendo quante palline far cadere (fino a 3) e da dove.",
+      "Poi la rivelazione col rullo di tamburi: chi ha risposto giusto fa cadere le palline nel 🏆 Muro dei vincitori e guadagna punti, chi ha sbagliato nel 💀 Muro dei perdenti e li perde. In mezzo vale di più!",
+      "🔥 Le ultime 3 domande valgono doppio. 🔄 A rotazione (in saletta) i ruoli si scambiano a ogni domanda.",
+      "Quasi 700 domande in 12 argomenti, da accendere e spegnere nelle regole ⚙️. È nuovo: provatelo con gli amici e diteci com'è!"
+    ]
+  },
+  {
+    v: 328,
+    data: "10 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: all'asta solo chi gioca 🔨",
+    descrizione: [
+      "All'asta non escono più i calciatori con la quotazione più bassa: i difensori da 4 in giù, i centrocampisti e gli attaccanti da 5 in giù. I portieri restano tutti, e resta Camarda.",
+      "⚽ Nella giornata dopo l'asta giocano lo stesso con la loro squadra, con la loro faccia e il loro numero."
+    ]
+  },
+  {
+    v: 327,
+    data: "10 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: le buste si aprono senza scatti ✉️",
+    descrizione: [
+      "✉️ Le buste che si aprono e l'«AGGIUDICATO!» subito dopo non vanno più a scatti, su Android e su iPhone: le faccine sulle buste e nelle squadre si preparano prima, mentre si scrivono le offerte, e la figurina che vola è già pronta.",
+      "⏱️ Chi ha vinto la busta resta a schermo un secondo in meno: si passa prima all'«AGGIUDICATO!».",
+      "📋 Il calciatore che va d'ufficio entra nella rosa solo quando ci vola la figurina: prima compariva subito, spariva e poi ci rivolava."
+    ]
+  },
+  {
+    v: 326,
+    data: "10 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: il banditore che sfotte e le figurine da scoprire 🎙️🃏",
+    descrizione: [
+      "🎙️ Il banditore: nei momenti giusti dell'asta un fumetto sotto il maxischermo sfotte chi offre (chi rialza da solo, la guerra tra due, il campione preso per 1, nessuno che lo vuole…). Si spegne nel ⚙️ con «Battute del banditore».",
+      "🃏 Alla fine le rose arrivano con le figurine girate: si scoprono una alla volta e il colpo più caro per ultimo. Il numero grande è la media degli overall della rosa, sotto il totale."
+    ]
+  },
+  {
+    v: 325,
+    data: "10 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: capelli più veri e calciatori in forma ✂️",
+    descrizione: [
+      "Ogni taglio di capelli ha la sua forma: si vede la fronte, l'attaccatura, la riga, le onde, le treccine, e le ciocche seguono la pettinatura. I ricci corti sono più pieni, i dreadlocks e le treccine raccolti hanno i dread e le trecce veri, il codino si vede dietro il collo.",
+      "I calciatori a mezzo busto hanno il fisico da atleta: petto largo e vita stretta.",
+      "I guanti dei portieri sono più grandi, col polsino stretto come quelli veri.",
+      "⭐ L'overall: ogni calciatore ha il suo voto da 68 a 93. Durante l'asta resta segreto (sulla figurina che vola c'è un «?») e si scopre alla fine, nella formazione fatta di figurine. Va con la quotazione dentro il suo ruolo (il portiere più forte è 89 come il difensore più forte) e il valore della rosa è la media degli overall.",
+      "💰 Quotazioni aggiornate al listone di Fantacalcio.it del 10 novembre, e 10 calciatori nuovi all'asta: Perez K., Fabbian, Basic, Ehizibue, Daffara, Alaba, Liberali, Ghilardi, Zeballos e Birligea."
+    ]
+  },
+  {
+    v: 324,
+    data: "9 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: le facce dei calciatori dove si guarda 🧑",
+    descrizione: [
+      "Nella formazione finale ogni calciatore è a mezzo busto, con la sua faccia e la sua maglia, e ognuno ha la sua posa: braccia conserte, mani sui fianchi, pollice in su, dito alla tempia, pugno alzato. Le braccia sono tutte d'un pezzo, dalla spalla alla mano. I portieri hanno i guanti grandi e imbottiti 🧤.",
+      "Quando segna uno dei vostri, nella striscia del gol c'è lui a mezzo busto.",
+      "Nelle pagelle accanto a ogni voto c'è il calciatore.",
+      "Le facce cambiano con la posa: chi alza il pugno urla, chi fa il pollice in su ride, chi ha le braccia conserte è serio. I capelli corti ora sono da calciatore, con la fronte libera.",
+      "Anche la figurina che vola all'«AGGIUDICATO!» ha il calciatore a mezzo busto con la sua posa.",
+      "Nella giornata i quadretti in alto hanno il nome intero, i punti e sotto, su una riga loro, le icone dei bonus e dei malus più grandi: si vedono bene anche in tanti. L'assist è una scarpetta da calcio e i cartellini sono rettangolini come quelli veri.",
+      "Nei risultati delle altre partite c'è il trattino tra le due squadre (JUV - SAS).",
+      "⭐ La figurina d'oro: i calciatori più forti (che valgono da 18 in su) hanno la figurina dorata, che brilla quando vola all'«AGGIUDICATO!»."
+    ]
+  },
+  {
+    v: 323,
+    data: "9 novembre 2026",
+    titolo: "Tris Gigante: nove tris dentro un tris ❌⭕",
+    descrizione: [
+      "❌ Gioco nuovo nella categoria «1 contro 1»: il tabellone è un tris grande fatto di 9 tris piccoli. Chi fa tris in un campo piccolo lo vince; vince la partita chi fa tris di campi (se non ci riesce nessuno, chi ne ha vinti di più).",
+      "🧠 «Classica»: la casella dove giochi decide il campo dell'altro (X in alto a destra? L'altro gioca nel campo in alto a destra). Il campo dove si deve giocare è acceso e una freccia parte dall'ultima mossa.",
+      "🎲 «Campo a caso»: dopo ogni mossa una luce passa sui campi e si ferma su quello dove gioca l'altro. Online la luce fa la stessa strada su tutti i telefoni.",
+      "🤖 Contro il Bot (Facile, Medio e Difficile, che è tosto davvero), in due sullo stesso telefono o online: chi è in più guarda, e c'è anche nel torneo a eliminazione e in «👑 Chi vince resta».",
+      "❓ Alla prima partita una spiegazione corta con un esempio che si muove: si chiude con un tocco. Il «?» in basso la riapre."
+    ]
+  },
+  {
+    v: 322,
+    data: "9 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: calciatori più belli, in campo e sulle figurine 🃏",
+    descrizione: [
+      "In campo i calciatori hanno la testa un po' più grande, con l'ombra sotto il mento e sotto i capelli, e un contorno leggero che li stacca dal prato: si riconoscono meglio anche da lontano.",
+      "Le figurine sono da album vero: luce dietro il calciatore, la curva dello stadio sullo sfondo, lo scudetto della squadra e il nome sulla fascia colorata.",
+      "Sulle figurine il viso ha luce e ombre morbide e occhi veri, i capelli sono a ciocche, il colletto della maglia è fatto bene e la barba folta segue la mascella senza coprire le guance."
+    ]
+  },
+  {
+    v: 321,
+    data: "8 novembre 2026",
+    titolo: "Mini Asta Fantacalcio: i calciatori veri in campo e la figurina 🃏",
+    descrizione: [
+      "🃏 All'«AGGIUDICATO!» esce la figurina del calciatore: la sua testa, la maglia vera della sua squadra col numero vero sul petto e il nome. Resta un attimo in grande e poi vola nel campetto di chi l'ha preso, dove diventa la magliettina col prezzo come prima.",
+      "⚽ Nella giornata i vostri calciatori hanno la LORO testa (pelle, capelli e barba veri) invece della faccina di chi li ha comprati. Di chi sono lo dicono il colore dell'etichetta col nome e l'alone colorato sotto i piedi.",
+      "👥 Gli altri in campo non sono più comparse a caso: sono i calciatori veri di quella squadra che nessuno ha comprato, ognuno nel suo ruolo e col suo numero vero (senza nome sopra: non fanno mai punti).",
+      "🎨 I colori dei giocatori sono più diversi tra loro (giallo, azzurro, magenta, bianco, arancione…), così in campo si riconosce subito chi è di chi. Tolta la regola «In campo, di chi è»: basta il colore.",
+      "📋 Il calciatore che va d'ufficio adesso si legge: resta in vista 3 secondi con le sue scritte e «Va a Giulia per 1», poi arriva il timbro.",
+      "🆚 «Contro chi giocano» è acceso di partenza: sotto il calciatore all'asta vedi già contro chi gioca nella giornata."
+    ]
+  },
+  {
+    v: 320,
+    data: "7 novembre 2026",
+    titolo: "Il camerino: l'avatar in grande 🔍",
+    descrizione: [
+      "🧍 Nel camerino il tuo avatar adesso è grande, circa metà dello schermo, e sta sullo sfondo di tutto il camerino. Le scelte sono in un foglio sotto: tiralo su per vederne di più, giù per vedere l'avatar più grande.",
+      "🔍 La telecamera si avvicina da sola a quello che stai cambiando: il viso, i capelli, la maglia, i pantaloni, le scarpe, le cose in mano. Con zaino, mantello e ali l'avatar si gira un attimo di spalle. In un angolo resta l'avatar intero in piccolo; un tocco sul palco e torna intero.",
+      "✌️ Doppio tocco o due dita per avvicinarti dove vuoi; col dito lo sposti. Da lontano un dito di lato (o il tasto 🔄) lo gira: davanti e di spalle.",
+      "👕 I capi sono in una griglia da tre, coi gruppi in alto (Giacche, Maglioni, Magliette…): un tocco e ci arrivi. Colore, 2° colore, fantasia e stoffa stanno in una riga sola.",
+      "👔 Nelle miniature di felpe, maglioni e magliette non c'è più la cravatta disegnata sopra (né il papillon o la medaglia)."
+    ]
+  },
+  {
+    v: 319,
+    data: "7 novembre 2026",
+    titolo: "La saletta: gli avatar in grande 🧍",
+    descrizione: [
+      "🧍 Nella saletta prima della partita gli avatar si vedono interi e molto più grandi: in pochi riempiono la stanza, in tanti si mettono su due o tre file, chi sta dietro un po' più in alto, così si vedono tutti.",
+      "🧹 Sotto la stanza niente più scritte: via «Pronti 2 su 3» coi pallini (basta la spunta verde sugli avatar), la riga «Si gioca così» e la fila delle faccine. In fondo ci sono «i» (come si gioca), «Regole» e «Comincia»; chi entra ha «Regole» e «Sono pronto!».",
+      "😂 Le reazioni ci sono ancora: tocca il TUO avatar e le faccine si aprono a ventaglio sopra la testa. Durante e alla fine delle partite c'è un tondino col tuo viso: un tocco e si aprono lì.",
+      "📸 Linea del tempo: «I nostri ricordi» adesso stanno dentro «Regole».",
+      "🔤 Parola d'ordine: le parole sul tabellone sono tutte della stessa grandezza (quella in cui ci sta la più lunga), per chi indovina e per il capo. E nei tondini delle squadre si vede bene la faccia."
+    ]
+  },
+  {
+    v: 318,
+    data: "7 novembre 2026",
+    titolo: "Avatar: vestiti nuovi, fantasie e un camerino tutto nuovo 👕",
+    descrizione: [
+      "👕 I vestiti degli avatar sono disegnati di nuovo, in stile moda: la felpa col cappuccio, il maglione a trecce, la camicia, la giacca col taschino, il chiodo di pelle con le zip (al posto del bomber), i jeans col risvolto, i pantaloni classici con la piega e i cargo con le tasche. Adesso si riconoscono a colpo d'occhio.",
+      "🎨 Più colori: 27 per i vestiti e i pantaloni, 16 per le scarpe, divisi a gruppi. Ogni capo arriva già col suo colore più bello; se il colore lo scegli tu, resta quello.",
+      "🌈 Secondo colore, fantasie e stoffe: coste, colletti e revers di un altro colore; righe, quadri, pois, mimetica, jeans e hawaiana; lana, pelle, raso e paillettes.",
+      "✋ Mani con 5 dita vere, la cravatta lunga che entra nella giacca e nella camicia, scarpe più grandi, collane e orecchini che si vedono, e il vestito da solo, senza i jeans sotto.",
+      "✨ Il camerino è nuovo: l'avatar su un palco con la luce, le schede Corpo, Viso, Testa, Sopra, Sotto, Scarpe ed Extra, colori e fantasie sempre a portata di dito, anteprime grandi divise a gruppi e «🎲 a caso» per ogni scheda.",
+      "👗 I look sono rifatti (Casual, Elegante, Sportivo, Rock, Estate, Inverno, Festa) e ci sono i nuovi «Colori che stanno bene»: abbinamenti pronti, basta un tocco.",
+      "🙂 Il tuo avatar resta tuo: cambiano il disegno dei vestiti, le mani e le scarpe, ma i colori e i capi che avevi scelto sono gli stessi. Fantasie e colori nuovi li metti tu, se vuoi."
+    ]
+  },
+  {
+    v: 317,
+    data: "7 novembre 2026",
+    titolo: "La Ruota della Fortuna come in TV, ma meglio 🎡",
+    descrizione: [
+      "🎡 La ruota sta sul pavimento dello studio, davanti ai concorrenti, come nel programma vero: niente più maxischermo in mezzo. Quando tocca girare la telecamera va sopra la ruota e la vedi dall'alto, grande.",
+      "👆 Si gira col dito: la trascini e la lasci andare. Più forte la lanci, più gira (e può girare anche all'indietro). Gli altri vedono la mano del tuo colore che spinge un piolo; anche il Bot la lancia con la sua mano.",
+      "😱 Alla fine rallenta piano piano: la lancetta batte su ogni chiodo, il tic si fa sempre più lento, la telecamera si avvicina alla lancetta col rullo di tamburi, e può fermarsi a un soffio dal confine. Se passa piano sulla Bancarotta il pubblico fa «ooh».",
+      "🌈 La ruota è nuova: colori pieni e accesi (rosso, arancio, giallo, verde, azzurro, viola, rosa), cerchio d'oro con le lampadine che corrono mentre gira, numeri grandi, spicchi speciali che si riconoscono subito.",
+      "🔤 All'inizio è il tabellone a scrivere «LA RUOTA DELLA FORTUNA», casella per casella. La campanella dei giochi veloci sta sotto il tabellone; le buste e la finale in un riquadro nello studio.",
+      "🎬 Prima di ogni manche c'è un gioco veloce, ogni volta diverso: la frase lampo, ⏳ La ruota del tempo (vedi un anno: cosa è successo?), 🌍 GiraMondo (una parola straniera curiosa: cosa vuol dire?), 🎯 il Triplete (tre frasi sullo stesso tema, e chi le fa tutte e tre prende 2.000 in più) e 🧩 il CruciRuota (quattro parole sul tema, una per riga: prenoti e scrivi quelle che sai).",
+      "🔒 «La so!»: mentre gioca un altro puoi scrivere la soluzione in segreto e bloccarla, ma solo all'inizio, finché è scoperto meno del 40% delle lettere. Il tasto ti dice quanto vale in quel momento (500 a tabellone vuoto, poi sempre meno). Nessuno la vede: a fine manche, se era giusta prendi quei punti, se era sbagliata ne perdi metà. Così anche chi aspetta gioca.",
+      "✖️2 Sulla ruota c'è lo spicchio Raddoppia: i soldi della manche diventano il doppio.",
+      "🏆 La finale è per tutti: dopo l'ultima manche giocate tutti insieme, ognuno sul suo telefono, Bot compresi. Tre tabelloni con la stessa frase per tutti: prima le tue lettere (scegli in segreto 3 consonanti e una vocale), poi il Testacoda (si vedono la prima e l'ultima lettera di ogni parola), poi il Rubasecondi (chiami le lettere che vuoi, ma ogni lettera che non c'è ti toglie 3 secondi). Chi risolve prima prende di più, da 500 a 1.500 punti a tabellone: la classifica può ancora cambiare. Online e contro i Bot.",
+      "✉️ Alla fine chi vince la partita, se non è un Bot, sceglie una busta tra cinque: da 500 a 5.000 Speed Coins (contro i Bot e sullo stesso telefono valgono un decimo). A pari merito, una busta a testa. Anche sullo stesso telefono.",
+      "📖 Più di 3.000 frasi in 35 argomenti (15 nuovi, come «Al bar», «Cose della mamma», «Cosa stai facendo?»), più 192 anni, 148 parole straniere e 130 cruciverba. Il telefono ricorda tutte le frasi già uscite, e online anche quelle già viste dagli amici che giocano con te: non tornano.",
+      "⌨️ In basso c'è sempre la tastiera come quella del telefono (Q W E R T Y), uguale per tutti: le lettere già chiamate sono colorate se ci sono e barrate se non ci sono. Per chiamare una lettera la tocchi e si accende: tutti vedono quale stai scegliendo; la tocchi di nuovo (o «✓ Chiama») e la chiami. Le vocali si comprano toccandole direttamente.",
+      "✍️ Quando qualcuno risolve, gli altri vedono le lettere comparire sul tabellone mentre le scrive. Finché non hai scritto niente puoi tornare indietro; dopo la prima lettera no, e se finisce il tempo vale quello che hai scritto.",
+      "💰 Sotto il tabellone, per ognuno, i soldi di questa manche in grande e il totale piccolo («tot 3.500»): a fine manche chi risolve incassa e gli altri ripartono da 0. La Bancarotta toglie solo i soldi della manche, mai il totale. Il giro finale si apre con la campana; online si hanno 15 secondi per ogni mossa."
+    ]
+  },
+  {
+    v: 316,
+    data: "7 novembre 2026",
+    titolo: "🎬 Lo Studio TV: luci da prima serata",
+    descrizione: [
+      "🌗 Il pubblico ora sta nella penombra, coi contorni accesi dai colori del gioco: il palco e i concorrenti si vedono meglio.",
+      "🏆 Alla fine della puntata chi vince ha la sua festa: parete d'oro, fari che si incrociano, coriandoli e pubblico in piedi con le braccia alzate.",
+      "🧘 Con «riduci movimento» acceso sul telefono niente coriandoli né fari che si muovono."
+    ]
+  },
+  {
+    v: 315,
+    data: "6 novembre 2026",
+    titolo: "🧍 La Sala: più spazio agli avatar",
+    descrizione: [
+      "🔍 Nella Sala e nella saletta dei giochi gli avatar sono molto più grandi: con 8 amici circa il 40% in più.",
+      "✂️ Tolto il tasto «Chiudi» in alto: il nome del gioco sta sempre su una riga, anche «Mini Asta Fantacalcio».",
+      "📏 Codice della sala, «Invita gli amici», faccine, «Pronti», «Sei dentro!» e tasti un po' più piccoli: c'è ancora tutto, ma lo spazio va agli avatar."
+    ]
+  },
+  {
+    v: 314,
+    data: "6 novembre 2026",
+    titolo: "⚽ Mini Asta Fantacalcio: voti giusti e buste con la suspense",
+    descrizione: [
+      "🗳️ Voti più giusti: chi non segna e non fa assist prende al massimo 7 (e solo se gioca bene), mai più 7,5 senza aver fatto niente.",
+      "❌ Un tiro sbagliato (fuori, palo, traversa, salvato sulla linea) abbassa il voto di mezzo punto: dopo un errore, senza gol né assist, al massimo 6,5.",
+      "🧤 Il portiere non scende mai sotto il 6, nemmeno se prende gol (può essere colpa della difesa): 5,5 solo con un errore suo. Ogni parata gli alza il voto. Il +1 della porta inviolata e il −1 per ogni gol preso restano a parte, come prima.",
+      "⚽ Gol e assist alzano il voto come nel fanta vero: un gol 7, una doppietta 8.",
+      "🃏 Busta chiusa: le buste ora stanno sul tavolo, col pallone sulla punta e la faccina di chi l'ha scritta. Le luci si abbassano (il campo si vede sempre), parte il battito, chi passa gira col cartellino rosso, poi si girano una alla volta dalla più bassa.",
+      "🥁 Le ultime due vengono avanti testa a testa, rullo di tamburi… e si aprono nello stesso istante su tutti i telefoni: chi vince si illumina d'oro."
+    ]
+  },
+  {
+    v: 313,
+    data: "6 novembre 2026",
+    titolo: "⚽ Mini Asta Fantacalcio: il meteo più tranquillo",
+    descrizione: [
+      "🌦️ In una giornata al massimo UNA partita ha un meteo diverso (pioggia, nebbia o neve, a seconda della città): tutte le altre col sole. Niente più neve da una parte e pioggia dall'altra nella stessa giornata.",
+      "☀️ Tolto il sole forte (luce calda e ombre sul campo): distraeva dalla partita."
+    ]
+  },
+  {
+    v: 312,
+    data: "6 novembre 2026",
+    titolo: "⚽ Mini Asta Fantacalcio: lo stadio si sente davvero",
+    descrizione: [
+      "🔊 Nella giornata i suoni sono veri, registrati negli stadi: il brusio della folla (piano dal fischio d'inizio, sempre più forte dal 75'), il boato del gol con la curva che canta e batte i tamburi, l'«ooh» sulle occasioni sprecate, il fischietto vero dell'arbitro, il calcio al pallone, la rete, il palo e l'applauso al fischio finale.",
+      "🤫 Prima di ogni rigore e punizione lo stadio si zittisce.",
+      "🧍 I calciatori in campo sono più belli: ombra morbida, luce e ombra sul corpo, capelli diversi, calzettoni coi colori veri della squadra, scarpini colorati, spalle larghe e un filo più grandi.",
+      "🏟️ Via i tifosi che dopo il gol entravano nel campo e coprivano l'area di rigore: il campo resta sempre libero.",
+      "❄️ Il meteo dipende dalla città di chi gioca in casa: la neve solo al nord (più spesso a Torino e Bergamo), la nebbia solo nella pianura del nord, la pioggia di più a Genova, Udine, Como e Venezia e poco al sud.",
+      "☀️ Quando c'è il sole forte il campo si scalda: luce calda dall'angolo, il riflesso del sole e le ombre del tetto dello stadio. Al sud sempre, nelle altre città una volta su tre.",
+      "🏷️ Nuova regola nel ⚙️ (spenta di partenza): «In campo, di chi è». Accesa, sotto il nome del calciatore compare piccolo il nome di chi l'ha comprato.",
+      "🎡 Busta chiusa: quando dopo lo spareggio siete ancora pari gira una ruota vera, coi nomi su tanti spicchi alternati. Rallenta piano piano e fino all'ultimo non si capisce di chi è; online si ferma nello stesso istante su tutti i telefoni."
+    ]
+  },
+  {
+    v: 311,
+    data: "6 novembre 2026",
+    titolo: "🎨 Avatar disegnati per tutti",
+    descrizione: [
+      "🎨 Gli avatar hanno un disegno nuovo: proporzioni vere, capelli a ciocche, occhi e volti più curati. Il tuo avatar è lo stesso di prima, solo disegnato meglio.",
+      "🔍 Lo schermo non si ingrandisce più per sbaglio: né col doppio tocco né col pizzico."
+    ]
+  },
+  {
+    v: 310,
+    data: "6 novembre 2026",
+    titolo: "⚽ Mini Asta Fantacalcio: maglie vere e giornata da TV",
+    descrizione: [
+      "👕 All'asta la maglia è girata: dietro c'è il numero VERO di quest'anno e il nome del calciatore (Yildiz 10, Nico Paz 10, Lautaro 10…). Se un numero non è sicuro c'è solo il nome.",
+      "📺 Quando segna uno dei vostri calciatori arriva da sotto la banda come in TV: maglia col numero, minuto, nome, risultato e la faccina di chi l'ha comprato. Poi il «+3» vola sul suo quadretto.",
+      "🔢 In campo i vostri calciatori hanno il loro numero vero sulla maglia. Chi segna esulta in tanti modi diversi (a volte l'aeroplanino, a volte in scivolata in ginocchio) e i compagni corrono ad abbracciarlo.",
+      "🏟️ Dopo il gol la curva fa festa coi colori della squadra: bandiere, fumogeni e tabelloni luminosi ai lati del campo.",
+      "🌦️ Ogni partita ha il suo meteo: di solito sole, a volte pioggia, nebbia o neve (col pallone arancione). Cambia solo l'aspetto, mai i risultati.",
+      "🎬 Il gol della giornata si rivede da dietro la porta, con la rete in primo piano.",
+      "🏅 Sul podio ci sono «I premi della giornata» (il migliore in campo, il bidone, la saracinesca, il più fortunato, il turista) e la 📸 foto del campione da mandare su WhatsApp.",
+      "👟 L'assist è vero: nella mischia e nella doppia parata l'assist va a chi fa davvero l'ultimo passaggio prima del gol, non più a chi aveva crossato prima dei rimpalli.",
+      "🧤 Il portiere para meglio: si carica sulle gambe, vola teso con le mani sul pallone, si vede il colpo sulla parata, cade a terra e si rialza.",
+      "🆚 Nuova regola nel ⚙️ (spenta di partenza): «Contro chi giocano». Le partite si sorteggiano già all'inizio dell'asta e sotto ogni calciatore c'è il suo avversario."
+    ]
+  },
+  {
+    v: 309,
+    data: "6 novembre 2026",
+    titolo: "⚽ Mini Asta Fantacalcio: la porta inviolata c'è da subito",
+    descrizione: [
+      "🔒 Nella giornata dopo l'asta ogni portiere parte già con il +1 della porta inviolata: lo vedi nei punti in alto dal fischio d'inizio.",
+      "🧤 Al primo gol che prende la sua squadra il +1 se ne va, insieme al −1 del gol subito, con la scritta «Porta inviolata persa».",
+      "Così la classifica dal vivo, la 👑 e i conti della Zona Cesarini sono giusti in ogni momento, e dopo il fischio finale non cambia più niente.",
+      "Vale anche nelle 🏆 3 giornate, online e sullo stesso telefono."
+    ]
+  },
+  {
+    v: 308,
+    data: "6 novembre 2026",
+    titolo: "🎨 Avatar disegnati: in prova",
+    descrizione: [
+      "Stiamo provando un disegno nuovo degli avatar, più curato: proporzioni vere, luce e volumi, mani con le dita che stringono davvero le cose (il microfono, la tazza per il manico, il palloncino che galleggia col filo).",
+      "Nei giochi di carte gli avatar stanno seduti al tavolo con le mani sul panno: Black Jack, Scopa, Scopa in 4 e Scopone. All'Asta stanno seduti sulle sedie.",
+      "Il tuo avatar resta lo stesso: cambia solo il modo in cui è disegnato. Per ora lo vedono solo due account di prova: quando è pronto arriva a tutti."
+    ]
+  },
+  {
+    v: 307,
+    data: "5 novembre 2026",
+    titolo: "⚡ L'app si apre molto più in fretta",
+    descrizione: [
+      "La prima schermata arriva in pochi secondi anche con la rete del telefono: all'apertura si scarica circa un quinto di prima.",
+      "Ogni gioco arriva la prima volta che lo tocchi («Arriva il gioco…») e poi resta sul telefono, anche senza rete.",
+      "Quando aggiorniamo l'app si riscarica solo il gioco cambiato, non più tutto.",
+      "Online la saletta aspetta un attimo chi non ha ancora il gioco, così si parte tutti insieme."
+    ]
+  },
+  {
+    v: 306,
+    data: "4 novembre 2026",
+    titolo: "L'Impostore: 10 temi nuovi, 1.350 coppie di parole",
+    descrizione: [
+      "🕵️ 518 coppie di parole nuove in 10 temi: ⚽ Calcio, 🏖️ Estate e vacanze, 📱 Internet e social, 📼 Anni '80, '90 e 2000, 🏛️ Storia e miti, 🦸 Supereroi, fumetti e videogiochi, 💼 Lavoro e soldi, 🎵 Musica e cantanti, 🏡 Vita di tutti i giorni e 🌶️ Serata. In tutto ora sono 1.350.",
+      "🌶️ La Serata (appuntamenti, ex, cocktail, matrimoni: un po' piccante ma mai volgare) parte spenta: si gioca solo se chi apre la partita la sceglie tra le categorie, nelle «Altre scelte». Toccandola si aggiunge a tutte le altre.",
+      "Le parole già uscite continuano a non tornare per un bel po'."
+    ]
+  },
+  {
+    v: 305,
+    data: "4 novembre 2026",
+    titolo: "🔨 L'Asta: due temi nuovi",
+    descrizione: [
+      "📺 Il Reality Show: all'asta ci sono il concorrente, la prova della settimana, l'alleato e il colpo di scena. C'è chi si prende lo stratega e l'immunità e chi resta col concorrente che litiga con le telecamere e la mamma che racconta le figuracce in diretta.",
+      "⏳ Il Viaggio nel Tempo: scegli l'epoca, cosa portarti, chi incontrare e come tornare. Dal Rinascimento a Firenze con Leonardo da Vinci al Big Bang visto da molto vicino, dalla macchina del tempo con l'autopilota a quella coi pezzi dell'IKEA da montare.",
+      "Ognuno ha più di 260 carte e i suoi tre scenari per il voto finale: si scelgono nelle regole, tra i temi."
+    ]
+  },
+  {
+    v: 304,
+    data: "4 novembre 2026",
+    titolo: "🥔 La Patata Bollente: 240 categorie nuove",
+    descrizione: [
+      "🥔 200 categorie nuove per tutti, come «Cose che si trovano nel divano», «Scuse per non lavare i piatti», «Cose che fanno i nonni», «Superstizioni» e «Cose in un luna park». Ora sono quasi 500: in una serata lunga ritornano molto meno.",
+      "🧠 40 categorie difficili in più, come «Capoluoghi di regione», «Proverbi italiani» e «Animali estinti», per chi le accende nelle regole: ora sono 87."
+    ]
+  },
+  {
+    v: 302,
+    data: "3 novembre 2026",
+    titolo: "😏 Black Jack: il banco vi prende in giro",
+    descrizione: [
+      "Nei momenti forti il banco dice la sua in un fumetto, col vostro nome: chi sballa (anche a 22, per un punto), chi punta tutto, chi perde tre mani di fila, chi resta quasi a zero, chi divide e perde tutte e due le mani…",
+      "E quando vincete voi (Black Jack, vincita grossa, 5 carte) il banco fa l'offeso. Quando sballa lui ha sempre una scusa: resta il migliore, s'intende.",
+      "Più di 90 battute diverse, da amici al bar: escono ogni 2-3 mani al massimo, spariscono da sole in pochi secondi e non fermano il gioco. Online le vedono tutti uguali.",
+      "Non vi piacciono? Si spengono nelle regole ⚙️ con «😏 Battute del banco»."
+    ]
+  },
+  {
+    v: 301,
+    data: "2 novembre 2026",
+    titolo: "✉️ Mini Asta Fantacalcio: l'asta a busta chiusa",
+    descrizione: [
+      "Nel ⚙️ c'è «💰 Come si compra»: l'asta di sempre coi rilanci, «✉️ Tutta a buste» o «✉️ Buste solo per i big» (a busta i calciatori più forti, gli altri all'asta normale).",
+      "A busta ognuno scrive in segreto quanto offre, o passa. Si aprono le buste tutte insieme, dalla più bassa alla più alta, con un attimo di suspense sull'ultima: vince l'offerta più alta e paga quello che ha scritto.",
+      "A pari offerta non vince chi è stato più veloce: c'è lo spareggio a busta solo tra chi era pari (almeno 1 in più, o resti dov'eri). Se siete ancora pari, decide la ruota, uguale su tutti i telefoni.",
+      "Online hai 15 secondi per scrivere (10 nello spareggio). Sullo stesso telefono vi passate il telefono come nei temi."
+    ]
+  },
+  {
+    v: 300,
+    data: "2 novembre 2026",
+    titolo: "🏷️ Il Prezzo è Giusto: 11 foto nuove",
+    descrizione: [
+      "Altri 11 premi hanno la loro foto vera al posto del disegnino: la panna da cucina, la tastiera Logitech, la visita dall'oculista, la lezione di yoga, la seduta di fisioterapia, la barba dal barbiere, i leggings, l'assicurazione dell'auto, la tribuna di Monza e il LEGO Titanic."
+    ]
+  },
+  {
+    v: 299,
+    data: "2 novembre 2026",
+    titolo: "🖼️ Immagini nuove nella home",
+    descrizione: [
+      "Palla Matta, Una parola sola, Memata e Da dove viene? hanno finalmente la loro immagine nella prima schermata, nello stesso stile degli altri giochi.",
+      "La Mini Asta Fantacalcio ha un'immagine nuova: il pallone sul podio del banditore, col martelletto d'oro."
+    ]
+  },
+  {
+    v: 298,
+    data: "2 novembre 2026",
+    titolo: "⚽ Mini Asta Fantacalcio: la giornata senza spoiler",
+    descrizione: [
+      "Nelle azioni della giornata non si capisce più prima del tiro come andrà a finire: fino al tiro tutto si muove uguale, che sia gol, parata, palo o fuori.",
+      "C'è sempre un difensore sul palo: prima c'era solo quando poi la salvava sulla linea.",
+      "Il passettino del portiere prima del tiro non dice più da che parte andrà il pallone.",
+      "Nel contropiede il portiere a volte esce anche quando non è gol: può fermarti in uscita, o ti fa tirare da posizione difficile. E anche il tiro da centrocampo, rarissimo, ora può finire fuori o essere parato."
+    ]
+  },
+  {
+    v: 297,
+    data: "2 novembre 2026",
+    titolo: "⚽ Mini Asta Fantacalcio: listone nuovo e un portiere per squadra",
+    descrizione: [
+      "Il listone è quello del 2026/27: entrano 48 calciatori (tutti quelli da 10 in su e chi da 7 a 9 gioca davvero, come Pobega, Zalewski, Koopmeiners, Douglas Luiz e Osmajic). Escono Milik e Kelly.",
+      "All'asta esce un solo portiere per squadra: se va all'asta Martinez dell'Inter, Provedel non esce più. Così nella giornata non ci sono mai due portieri vostri con la stessa porta.",
+      "Sul maxischermo «🎯 RIGORISTA», «🦶 PUNIZIONI» e «🚩 ANGOLI» hanno sempre il numero (1°, 2° o 3° della squadra) e la scritta intera, anche quando un calciatore fa tutte e tre le cose. Stanno a destra, piccole, una sotto l'altra: la maglia resta grande.",
+      "Chi batte le punizioni e gli angoli è aggiornato: al Lecce Gallo, al Genoa gli angoli li batte Messias."
+    ]
+  },
+  {
+    v: 296,
+    data: "2 novembre 2026",
+    titolo: "🃏 Black Jack: lo zoom su di te più pulito",
+    descrizione: [
+      "Il tuo punteggio adesso sta sotto le carte: la pila delle fiches non lo copre più, nemmeno dopo Raddoppia o Dividi.",
+      "La scritta in alto («Tocca a…») non è più coperta dalle carte del banco, che stanno subito sotto, e coi nomi lunghi non viene tagliata.",
+      "Quando la telecamera è su chi gioca, nome e monete li trovi una volta sola nella scritta in alto. Con tanti giocatori le tue carte restano sempre dentro lo schermo."
+    ]
+  },
+  {
+    v: 295,
+    data: "1 novembre 2026",
+    titolo: "🤥 La Balla Colossale: la prima pagina, la Balla Finale e tante notizie nuove",
+    descrizione: [
+      "La notizia ora è il titolo della prima pagina di un giornale, «Il Colossale», col pezzo mancante in giallo. Niente più scrittura a mano: risposte e titoli si leggono al volo.",
+      "🔥 La Balla Finale: l'ultima notizia ha due pezzi mancanti. Si inventano tutti e due e vale il triplo: chi è indietro può ancora vincere.",
+      "🎯 Sceglie chi è ultimo: prima di ogni notizia chi è ultimo in classifica sceglie l'argomento tra tre (🐾 Animali, 🏛️ Storia, 🍝 Italia…). Si può spegnere nelle regole.",
+      "Le notizie sono quasi il doppio (746, più 67 per la Balla Finale), controllate una per una: via quelle che si indovinavano dalla domanda, e le balle della redazione più credibili."
+    ]
+  },
+  {
+    v: 294,
+    data: "1 novembre 2026",
+    titolo: "📺 Lo studio TV nuovo: luci, parete LED e pavimento che riflette",
+    descrizione: [
+      "Lo studio dei game show (La Balla Colossale, La Ruota della Fortuna, La Patata Bollente, Il Prezzo è Giusto, La linea del tempo, Nomi, Cose e Città, Parola d'ordine) è tutto nuovo, da prima serata.",
+      "Dietro al maxischermo c'è una parete LED che si muove piano a tempo di musica e prende i colori del gioco: oro e arancio per la Ruota, fuoco per la Patata, verde acqua per Nomi, Cose e Città…",
+      "Sotto il maxischermo una scalinata illuminata; i concorrenti stanno dietro a banconi di vetro col nome che si accende quando tocca a loro, e il pavimento lucido riflette tutto, concorrenti compresi.",
+      "Le luci seguono il gioco da sole: i fari dall'alto si girano su chi ha il turno, la parete si accende del colore di chi fa punti, la sala si abbassa all'«ohhh» del pubblico, nella Patata chi salta in aria ha il lampo rosso e chi vince ha la parete d'oro e tutti i fari addosso.",
+      "Il gioco non cambia: domande, tabelloni e carte stanno sul maxischermo come prima, e mentre si gioca lo studio si ferma (anche sui telefoni meno potenti va liscio)."
+    ]
+  },
+  {
+    v: 293,
+    data: "1 novembre 2026",
+    titolo: "🎨 Scarabocchio: disegnare col dito è più facile",
+    descrizione: [
+      "Chi disegna ha 16 colori (4 nuovi, chiari, per fare il cielo, l'erba e gli sfondi col secchiello) e 5 grandezze, dalla finissima per i dettagli alla grossissima per riempire.",
+      "Strumenti nuovi: la linea dritta (si tocca dove comincia e si stacca il dito dove finisce) e il tondo per cerchi e ovali. Mentre muovi il dito li vedi solo tu; agli altri arrivano quando lo stacchi.",
+      "C'è anche «↷ Ripeti»: rimette il segno che hai appena annullato.",
+      "Niente lettere sulla lavagna: a chi disegna lo ricorda una scritta all'inizio del turno. Chi indovina può toccare «🔤 Ha scritto!»: se lo dice più di metà del gruppo il turno finisce e chi disegnava prende 0 punti (da 3 giocatori in su).",
+      "Chi indovina per primo fa festa su tutti i telefoni: la sua faccina salta in cima alla lavagna (e a lui il telefono vibra).",
+      "In tanti (da 6 in su) chi disegna prende una volta e mezza la sua parte: disegna poche volte e così il disegno conta di più.",
+      "Le parole uscite non tornano per 30 giorni: serata dopo serata escono sempre parole nuove."
+    ]
+  },
+  {
+    v: 292,
+    data: "1 novembre 2026",
+    titolo: "🃏 Black Jack: le regole da esperti",
+    descrizione: [
+      "Nelle regole del Black Jack c'è la sezione «🎰 Regole da esperti», chiusa: si apre con un tocco. Di partenza tutto è come prima.",
+      "Tre scommesse extra come al casinò, ognuna col suo interruttore accanto alla puntata: «🃏 21+3» (le tue due carte con la carta scoperta del banco: colore, scala, tris, scala colore), «👑 Stesso seme» (le prime due carte dello stesso seme, re e donna pagano 45 volte) e «💥 Il banco sballa» (più carte gli servono per sballare, più paga). Le vincite sono giuste: il banco tiene pochissimo.",
+      "Le varianti del casinò: il banco che tira sul 17 morbido, 1, 2, 6 o 8 mazzi, il raddoppio solo su 9-10-11, niente raddoppio dopo Dividi, dividere di nuovo gli Assi, niente resa, 5 carte senza sballare che vincono sempre. Il consiglio della mossa giusta si adatta da solo.",
+      "Quando vinci più scommesse alla stessa carta, gli annunci arrivano uno dopo l'altro."
+    ]
+  },
+  {
+    v: 291,
+    data: "1 novembre 2026",
+    titolo: "🃏 Black Jack: tavolo nuovo e la gara con le Speed Coins",
+    descrizione: [
+      "Tavolo da casinò di notte: panno verde smeraldo col filo d'oro, carte più grandi e leggibili, fiches di tutti i tagli (da 10 a 100.000) che scivolano sul tavolo. Le carte del banco restano sempre in vista accanto alla sua faccia.",
+      "Tasti delle mosse nuovi: ognuno col suo colore (Carta verde, Stai rosso, Raddoppia oro, Dividi azzurro, Assicura viola) e la mossa consigliata si accende.",
+      "Per puntare c'è una lineetta da trascinare: a sinistra la puntata minima, a destra tutte le tue monete. Se punti più di metà delle tue Speed Coins il gioco ti chiede un secondo sì.",
+      "Nuova mossa «🏳️ Resa»: con le prime due carte ti ritiri e riprendi metà puntata, come al casinò.",
+      "Nuova scommessa «👯 Coppia», come la «Perfect Pairs» dei casinò: accendi l'interruttore accanto alla puntata e scommetti la puntata minima che le tue prime due carte siano una coppia. Paga subito, anche se poi la mano va male: 6 volte con due colori diversi, 15 con lo stesso colore, 25 se sono identiche. Si spegne nelle regole.",
+      "Il gioco spiega le regole del casinò quando succedono: «🎩 Il banco tira sempre fino a 17» e «Assi divisi: una carta per asso».",
+      "🏆 Gara della serata: online si gioca con le Speed Coins. Ognuno paga la quota, tutti partono con le stesse fiches e il montepremi va ai primi. Chi resta senza fiches può rientrare. La classifica è sempre in alto, a metà c'è il giro di boa, le ultime 3 mani la puntata minima raddoppia e l'ultima si punta in segreto: le puntate si scoprono tutte insieme.",
+      "A fine partita i titoli: 🍀 Il Fortunato, 🎲 Lo Spericolato, 💥 Lo Sballone, 🏳️ Il Prudente, 🧊 Il Ragioniere e 🎩 L'amico del banco. E quando qualcuno fa Black Jack o punta tutto, lo vedono tutti in grande."
+    ]
+  },
+  {
+    v: 290,
+    data: "31 ottobre 2026",
+    titolo: "😂 Memata: più meme da cambiare",
+    descrizione: [
+      "Nelle regole si sceglie quanti meme può cambiare ognuno in tutta la partita: 1, 3, 5, 10, 50 o senza limite. Sul tasto «🔄 Cambia» c'è il numero che resta.",
+      "Per scrivere: «Avanti ▶» passa al riquadro dopo, «📤 Invia meme» manda il meme quando hai finito.",
+      "La rivelazione è più svelta: il rullo di tamburi dura meno."
+    ]
+  },
+  {
+    v: 289,
+    data: "31 ottobre 2026",
+    titolo: "😂 Memata: il gioco dei meme",
+    descrizione: [
+      "Gioco nuovo, online nella Sala della serata, da 2 a 10 amici: a ogni round ti arriva un meme famoso coi riquadri vuoti. Tocca un riquadro, scrivi la tua battuta e guardi subito come viene.",
+      "Non ti ispira? Una volta per round tocca «🔄 Cambia meme».",
+      "Poi i meme passano uno alla volta senza nome e si votano: 😂 fortissimo, 🙂 carino, 😐 meh. Alla rivelazione, col rullo di tamburi, si scopre chi li ha scritti.",
+      "L'ultimo round è lo stesso meme per tutti, a punti doppi. Alla fine il ⭐ meme della serata si manda su WhatsApp con un tocco.",
+      "Oltre 1.000 meme veri, i più usati in rete: non tornano subito, il gioco si ricorda quelli già usciti."
+    ]
+  },
+  {
+    v: 288,
+    data: "31 ottobre 2026",
+    titolo: "📲 La prima schermata ancora più pulita",
+    descrizione: [
+      "Se usi SPeeD GAME dal browser, in alto a destra c'è «📲 Installa l'app»: tienila sul telefono e si apre con un tocco, come le altre app. Chi l'ha già installata vede le sue monete.",
+      "Tolte dalla prima schermata le righe «Riapri la Sala di ieri» e «Giocato di recente»: il gruppo fisso c'è già, è la vostra Compagnia. Così i giochi arrivano subito.",
+      "Nella Sala e nella Serata a punti i giochi si scelgono con le stesse tessere della prima schermata, due per riga."
+    ]
+  },
+  {
+    v: 287,
+    data: "30 ottobre 2026",
+    titolo: "🏆 3 giornate, 🦉 il gufo e lo stadio che trema",
+    descrizione: [
+      "🏆 Nel ⚙️ della Mini Asta Fantacalcio ora si possono giocare 3 giornate di fila con le stesse rose. Le prime due si vedono veloci, solo i momenti dei vostri calciatori, con la classifica dopo ognuna; la terza è intera, con la Zona Cesarini. Vince chi fa più punti sommati e, se all'ultima cambia chi comanda: 💥 RIBALTONE!",
+      "🦉 Gufa! / 🍀 Portafortuna (online): a ogni rigore e a ogni punizione compare un tasto. Se chi tira è tuo fai il portafortuna, se no lo gufi: fino a 5 tocchi, con gufetti e quadrifogli che volano dal tuo quadretto. Dopo il tiro si scopre se la gufata è riuscita, e a fine partita c'è il titolo «🦉 Il gufo della serata». Sullo stesso telefono: 🤞 dita incrociate.",
+      "Lo stadio si sente: dal 75' il battito del cuore che accelera, il brusio della folla che cresce, il silenzio prima di ogni rigore e di ogni punizione, il boato più forte sui gol del finale e i flash dei telefonini sugli spalti.",
+      "Al fischio finale i punteggi in alto sono già quelli veri.",
+      "Le azioni svelano ancora meno: quando si vede solo il vostro calciatore che passa la palla può finire in gol oppure no, l'autogol di un vostro difensore si vede di colpo e il rigore arriva dalla stessa parte comunque vada."
+    ]
+  },
+  {
+    v: 286,
+    data: "30 ottobre 2026",
+    titolo: "🎬 Le azioni da finale nella giornata del fanta",
+    descrizione: [
+      "Dal 75' arrivano le azioni da finale: la mischia in area, la palla lunga col colpo di testa, il tiro a giro all'incrocio, la doppia parata del portiere, l'assedio con tre o quattro tiri di fila e, dall'85', l'ultimo assalto col portiere che sale in area sul calcio d'angolo. In una giornata non si vedono mai due volte uguali.",
+      "Le azioni non svelano come vanno a finire: fino al tiro sono identiche, che sia gol o no.",
+      "Tiri e rigori più vari: prima andavano spesso dalla stessa parte e i rigori finivano quasi sempre alti.",
+      "Anche nelle occasioni si vede chi fa il passaggio, come nei gol."
+    ]
+  },
+  {
+    v: 285,
+    data: "30 ottobre 2026",
+    titolo: "⏳ La Zona Cesarini nella giornata del fanta",
+    descrizione: [
+      "Dal 75' scatta la Zona Cesarini: barra rossa, campo che si scalda, il cronometro che corre e il cartello del recupero. Come nel calcio vero, nel finale e nel recupero succede di più: dal 75' arriva quasi un gol su tre dei vostri calciatori.",
+      "Ognuno vede sul suo quadretto cosa gli serve: 📌 sei in testa, 🔥 ti serve un gol, 💪 due, 🙏 un miracolo. La 👑 sta su chi è in testa e ogni sorpasso si annuncia.",
+      "📻 «Interrompo! Gol a San Siro»: i gol degli altri campi arrivano come alla radio.",
+      "I voti si muovono in diretta, con le freccine: il punteggio in alto è quello vero.",
+      "Il fischio finale si fa aspettare e, se la giornata si decide nel finale, si rivede «🎬 Il momento che ha deciso».",
+      "La rosa più forte vince un po' più spesso: i campioni segnano di più e i risultati sono meno pazzi. La fortuna resta.",
+      "Il rallentatore prima del tiro c'è sia sui gol sia sui non gol: non svela più come va a finire.",
+      "Online, sui telefoni più bassi di quello di chi tiene la partita, le pagelle del primo tempo non restano più aperte sopra il campo."
+    ]
+  },
+  {
+    v: 283,
+    data: "30 ottobre 2026",
+    titolo: "Sì... però: il capo, la luce del verdetto e quasi 400 carte nuove 🤨",
+    descrizione: [
+      "👑 Online ogni squadra ha un capo, che cambia a ogni round. Tocca le carte che ti piacciono: sulla carta compare la tua faccina e i compagni la vedono. Poi decide il capo. Se il tempo finisce, vanno le carte con più faccine.",
+      "👆 Le carte si possono segnare anche mentre gioca l'altra squadra: quando tocca a voi, sono già pronte.",
+      "⚖️ Il giudice tocca la squadra e conferma. Poi, su tutti i telefoni insieme, la luce passa da uno scenario all'altro e si ferma su chi ha vinto, e gli avatar dei vincitori saltano. Il telefono fa festa a chi vince e dà un colpo a chi perde.",
+      "⭐ Il giudice tocca la carta che l'ha convinto: alla fine della partita si rivedono tutte, le carte della serata.",
+      "✋ Chi arriva a partita in corso sceglie la sua squadra ed entra subito. Fa il giudice anche lui: la partita si allunga di un round.",
+      "🃏 Quasi 400 carte nuove, di vita di tutti i giorni (1.004 in tutto). E il telefono di chi tiene la partita ricorda quelle già uscite: non tornano subito.",
+      "🥊 All'inizio di ogni round, su tutti i telefoni, il giudice e le squadre con gli avatar grandi; gli avatar ci sono anche in testa agli scenari e nella classifica del round."
+    ]
+  },
+  {
+    v: 282,
+    data: "29 ottobre 2026",
+    titolo: "L'Asta e la Mini Asta Fantacalcio: due giochi ⚽🔨",
+    descrizione: [
+      "La Mini Asta Fantacalcio ha la sua tessera nella prima schermata, con la sua foto: si apre subito, senza passare dall'Asta. L'Asta resta quella coi temi. Trofei e statistiche di prima restano tutti, e le partite del fantacalcio contano ancora per i trofei dell'Asta.",
+      "Online la giornata dopo l'asta si vede su tutti i telefoni nello stesso istante, anche su quello di chi tiene la partita: nessuno vede come va a finire prima degli altri. Regge anche con la rete lenta, con gli iPhone e con chi ricarica la pagina.",
+      "Online il ⏩ e «Salta» li tocca chi tiene la partita, e valgono per tutti.",
+      "Il maxischermo dello stadio ha scritte pulite, col carattere dell'app: calciatore, squadra, rigoristi, battitori e prezzo si leggono bene anche sui telefoni piccoli.",
+      "La giornata è vestita di notte: riquadri di vetro scuro, il minuto e «Avanti ▶» color lampone. Campo, spalti e calciatori sono quelli di sempre."
+    ]
+  },
+  {
+    v: 281,
+    data: "29 ottobre 2026",
+    titolo: "Stessa Lunghezza d'Onda: la ruota nuova 📡",
+    descrizione: [
+      "La mezza ruota è diventata un apparecchio vero, grande quanto lo schermo: sopra il quadrante con i lumini sul bordo, sotto la scala e la parola del sensitivo. Mentre il sensitivo pensa, sulla tendina gira un radar.",
+      "🥁 La rivelazione è più emozionante: rullo di tamburi, i lumini si accendono uno dopo l'altro, poi la tendina gira via. Il telefono vibra coi punti: tre colpi per un centro, un colpo lungo se è fuori.",
+      "🤝 «Tutti insieme» anche online: una lancetta sola, tutti contro il gioco, e alla fine il voto alla compagnia. Ognuno fa il sensitivo una volta per giro.",
+      "✋ Chi arriva a partita cominciata entra dal turno dopo con 0 punti e fa anche lui il sensitivo. Nella Sala c'è anche «👀 Guarda», per guardare senza giocare.",
+      "155 scale nuove, scritte per noi (per esempio «Scarpetta vietata ↔ Scarpetta obbligatoria» o «Al tavolo dei bambini ↔ A capotavola»). In tutto sono più di 700. Le carte già uscite non tornano per molte partite."
+    ]
+  },
+  {
+    v: 280,
+    data: "29 ottobre 2026",
+    titolo: "Chi di Noi? di notte e tanti ritocchi 🌙",
+    descrizione: [
+      "Chi di Noi? è blu notte come il resto dell'app: battute, voti e classifica in vetro scuro. E dopo il voto delle battute «Chi ha scritto cosa?» mostra di nuovo chi le ha scritte.",
+      "Parola d'ordine: a fine partita «🤔 Cosa intendevi?» e «🎭 Titoli» sono scuri come il tavolo.",
+      "L'Asta: sullo stesso telefono giochi col tuo avatar vero; sui telefoni piccoli il fumetto del banditore non copre più «passo»; nello stadio del fanta «Salta» e «Foto» sono in vetro scuro.",
+      "Sì però: accanto al Giudice c'è l'avatar giusto.",
+      "Tris: il fumetto del Bot non copre più il nome. Ruota della Fortuna: mentre risolvi la scritta non tocca più il nome sul leggio. Calcio Biliardo: sui telefoni piccoli il tasto dei suoni non copre l'avversario. Palla Matta: il numero delle palline si legge anche sopra la luna.",
+      "Nei menu si dice sempre «Contro il Bot» (Scopa, Tris, Drop 4 e Calcio Biliardo dicevano «Contro il computer»).",
+      "Sui telefoni piccoli la saletta e la Sala con «Chi vince resta» stanno tutte nello schermo.",
+      "Nella Sala online il gioco si sceglie come nella prima schermata: due per riga, con le stesse tessere."
+    ]
+  },
+  {
+    v: 279,
+    data: "29 ottobre 2026",
+    titolo: "Una prima schermata più comoda 📱",
+    descrizione: [
+      "I giochi si scelgono più in fretta: le tessere sono più basse, senza la descrizione, con la foto, il nome, la categoria e quanti si gioca. In una schermata ne entrano molti di più.",
+      "In basso c'è il menu, sempre sotto il pollice: Giochi, Novità, Trofei, Classifica e il tuo Profilo. Si passa da uno all'altro con un tocco.",
+      "In alto restano il nome, le tue monete, «Gioca online» e le categorie.",
+      "La città per ora si riposa: l'app si apre più leggera."
+    ]
+  },
+  {
+    v: 278,
+    data: "29 ottobre 2026",
+    titolo: "Avatar nuovi per tutti e altri cinque giochi di notte 🌙",
+    descrizione: [
+      "Gli avatar hanno un aspetto nuovo, più curato: niente contorni neri, occhi più veri, luce morbida e colori un po' più vivi. Ognuno resta la stessa persona di prima, con i suoi vestiti e i suoi accessori.",
+      "Horto Muso si corre di sera: cielo blu notte con la luna, tribuna coi fari accesi e prato verde scuro. Il tasto FRUSTA! è lampone.",
+      "Palla a Pendolo si gioca di notte: cielo stellato, la luna che si specchia nel mare, la palla che brilla e il mirino azzurro.",
+      "In Chi di Noi? le scene e le carte stanno in cornici di vetro scuro, e la carta che scegli si accende.",
+      "L'Asta coi temi si fa in una sala di sera, con la luce calda sul banco; chi ha l'offerta più alta si riconosce dal lampone. Lo stadio del fantacalcio resta com'era.",
+      "Parola d'ordine ha il tavolo blu notte e le carte color crema; le carte girate hanno i colori e i disegni delle squadre di sempre, e la nera il teschio."
+    ]
+  },
+  {
+    v: 276,
+    data: "29 ottobre 2026",
+    titolo: "Anche le partite si vestono di notte 🌙",
+    descrizione: [
+      "Quasi tutti i giochi ora hanno lo stile dell'app: fondo blu notte, riquadri di vetro scuro e tasti lampone, dalla prima mossa alla classifica finale.",
+      "Scopa, Scopa 2 contro 2 e Scopone si giocano in una stanza di sera, con le pareti blu notte e una luce calda sul tavolo.",
+      "Nello studio TV (Balla Colossale, Nomi Cose e Città, Patata Bollente, Ruota della Fortuna, Il Prezzo è Giusto) pannelli, tasti e scritte hanno i colori della notte. La ruota della Ruota ha i colori nuovi e nella Patata c'è una bomba vera con la miccia, che si illumina quando manca poco.",
+      "Le attese, gli avvisi e i podi di fine partita sono uguali in tutti i giochi, con le medaglie nei colori dei trofei.",
+      "Parola d'ordine per ora resta com'era: arriverà più avanti."
+    ]
+  },
+  {
+    v: 275,
+    data: "29 ottobre 2026",
+    titolo: "SPeeD GAME si veste di notte 🌙",
+    descrizione: [
+      "L'app ha un aspetto tutto nuovo: blu notte, riquadri di vetro scuro e il lampone come colore dei tasti principali, con un carattere moderno e pulito.",
+      "Dietro le schermate c'è uno sfondo che si muove piano: luci morbide e qualche scintillio. Quando scorri si spostano un po', come se ci fosse profondità. Durante le partite si ferma, e se il telefono ha «riduci movimento» resta fermo.",
+      "La prima schermata è più ordinata: il tuo profilo col livello e le monete, quattro tasti tondi (Novità, La città, Trofei, Classifica), le categorie su una riga e le foto dei giochi grandi come locandine. «📲 Installa l'app» ora è in fondo, vicino a Proposte e Bug.",
+      "Nella saletta d'attesa ognuno ha il suo colore, sotto i piedi e sulla targhetta col nome.",
+      "Nei trofei bronzo, argento, oro, diamante e platino ora si riconoscono a colpo d'occhio.",
+      "Le partite per ora restano come prima: arriveranno nel nuovo stile un gioco alla volta."
+    ]
+  },
+  {
+    v: 274,
+    data: "27 ottobre 2026",
+    titolo: "SPeeD GAME si veste di bianco e oro ✨",
+    descrizione: [
+      "L'app ha un aspetto nuovo, più elegante: fondo avorio, scritte scure e ben leggibili, tasti e dettagli in oro, titoli con un carattere da invito.",
+      "Sono nel nuovo stile la prima schermata, il profilo, i trofei, la classifica, la Sala della serata, «Come giocate?», le impostazioni dei giochi e la saletta d'attesa: gli avatar ora aspettano in una sala chiara con un arco dorato.",
+      "Sui tasti, al posto delle emoji, ci sono simboli dorati puliti; nelle scelte dei giochi, nei trofei e nelle faccine le emoji restano colorate.",
+      "Le partite per ora restano come prima: arriveranno anche loro nel nuovo stile, un gioco alla volta."
+    ]
+  },
+  {
+    v: 273,
+    data: "26 ottobre 2026",
+    titolo: "L'Impostore: blocca pure il telefono 📱",
+    descrizione: [
+      "Online, chi legge la parola e poi blocca il telefono mentre si parla resta in partita: accanto al suo nome compare 📱. Prima, se lo facevano in tanti, dopo 20 secondi la partita finiva da sola per tutti.",
+      "Quando si scrivono gli indizi o si vota, il gioco aspetta chi ha il telefono bloccato: sugli altri telefoni si legge «⏳ Aspettiamo Giulia 📱» (ditelo a voce: un telefono bloccato non si può svegliare). Il voto dura al massimo un minuto e mezzo e si chiude appena hanno votato tutti.",
+      "Riaprendo il telefono si ritrova subito la propria parola. Esce dalla partita solo chi tocca «Esci», o chi non si fa vedere per una mano intera."
+    ]
+  },
+  {
+    v: 272,
+    data: "26 ottobre 2026",
+    titolo: "La Linea del tempo: 🧍 Ognuno la sua linea",
+    descrizione: [
+      "🧍 Un modo nuovo, ispirato a Hitster: ognuno ha la sua linea e parte con una carta sua. A ogni giro esce la stessa carta per tutti e ognuno la mette nella SUA linea, in segreto: se è giusta resta, se è sbagliata va via.",
+      "🏁 Vince chi arriva per primo a 10 carte messe bene (nelle regole si sceglie da 5 a 15 con una lineetta). Se si arriva primi insieme c'è lo ⚔️ spareggio: giocano solo loro e tutti gli altri guardano.",
+      "👀 Si va avanti fino al podio: chi ha finito tocca gli avatar degli altri e guarda la loro linea e dove mettono la carta.",
+      "Si gioca online, tutti insieme, e anche sullo stesso telefono passandoselo a ogni carta."
+    ]
+  },
+  {
+    v: 271,
+    data: "26 ottobre 2026",
+    titolo: "La Linea del tempo: chi arriva tardi entra al giro dopo",
+    descrizione: [
+      "✋ Online, se un amico arriva a partita cominciata non deve più guardare fino alla fine: entra al giro dopo, con 0 punti e le carte che restano agli altri (in «⚡ Tutti insieme» dalla carta dopo). Intanto legge «✋ Entri al prossimo giro».",
+      "Nella Sala chi è fuori vede a che punto è la partita («Giro 2 di 5», «Carta 3 di 10»)."
+    ]
+  },
+  {
+    v: 270,
+    data: "26 ottobre 2026",
+    titolo: "La Linea del tempo: le foto vere sulle carte 📸",
+    descrizione: [
+      "📸 Quasi tutte le carte hanno la loro foto vera, in tutte le categorie: il quadro di Annibale con gli elefanti, la stele di Rosetta, il primo Game Boy, la moka, Fellini e Audrey Hepburn, Modugno e Sfera Ebbasta, Maradona e Valentino Rossi… 1.842 foto, guardate una per una.",
+      "La foto si vede sulla carta che devi piazzare e, più piccola, sulle carte della linea. Nessuna foto ti dice l'anno: quelle con la data scritta sono state scartate.",
+      "Per film, canzoni e serie la foto è di chi le ha fatte (attori, registi, cantanti, conduttori) o del posto, mai la locandina o la copertina. Se la rete è lenta e la foto non arriva, la carta resta solo scritta."
+    ]
+  },
+  {
+    v: 269,
+    data: "26 ottobre 2026",
+    titolo: "La Linea del tempo: 🔄 cambia carta",
+    descrizione: [
+      "🔄 Ti è uscita una carta di cui non sai niente? Una volta a partita, al tuo turno, tocchi «🔄 Cambia» sulla carta e ne peschi un'altra, col tempo che riparte. Gli altri vedono «🔄 Paky cambia carta!».",
+      "Vale quando si gioca a turno (sullo stesso telefono e online); in «⚡ Tutti insieme» la carta è la stessa per tutti e non si cambia."
+    ]
+  },
+  {
+    v: 268,
+    data: "26 ottobre 2026",
+    titolo: "La Linea del tempo: 📆 scegli l'epoca",
+    descrizione: [
+      "📆 Prima di cominciare scegli gli anni delle carte: «Tutta la storia», «Prima del 1900», «Il Novecento» o «Dal 1980 a oggi». Accanto a ogni scelta vedi quante carte ci sono, con le categorie che hai scelto.",
+      "✏️ «Scegli tu gli anni»: trascini le due maniglie su una linea (per esempio dal 476 al 1800) e con ‹ › aggiusti l'anno. Se negli anni scelti ci sono troppo poche carte, te lo dice.",
+      "Online la sceglie chi apre la stanza nel ⚙️, e gli amici la leggono nella riga delle regole («📆 il Novecento»)."
+    ]
+  },
+  {
+    v: 267,
+    data: "26 ottobre 2026",
+    titolo: "La Linea del tempo: ✋ Rubala, come in Hitster",
+    descrizione: [
+      "✋ Niente più 👍 e 👎: quando un amico mette la carta, se pensi che abbia sbagliato tocchi il posto dove va davvero e la rubi. Se aveva sbagliato e tu hai indovinato il posto prendi 100 punti e la carta entra nella linea; se no perdi 50 punti. Chi non è sicuro tocca «👍 Passo» e non rischia niente.",
+      "🤫 Online si ruba in segreto: chi ha rubato e dove si scopre solo quando la carta si gira. Se in due scegliete lo stesso posto e avete ragione, prendete 100 punti tutti e due: nessuna gara a chi tocca prima.",
+      "📱 Sullo stesso telefono si ruba tutti insieme (chi vuole tocca il suo avatar e poi il posto) o uno alla volta, passandosi il telefono. 🔥 Sull'ultima carta di ognuno anche i furti valgono doppio.",
+      "Il vecchio «Rubala con l'anno», con l'anno esatto e i gettoni, non c'è più: lo sostituisce questa regola."
+    ]
+  },
+  {
+    v: 266,
+    data: "25 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: una schermata sola, grande e pulita 🖼️",
+    descrizione: [
+      "✅ La Prova del 5 e 🧹 Togli la cifra come la Spesa: i prodotti non si vedono più sopra e poi di nuovo sotto. C'è una lista sola, che arriva fin sotto il titolo, con la foto, il nome, la descrizione e il cartellino o le cifre da toccare.",
+      "🖼️ Nei giochi con un oggetto solo (È troppo!, Più o meno, La Cassaforte, Il Gioco dei Dadi, Il Mirino, L'Alpinista) la scheda del prodotto è grande e riempie lo schermo: foto più grande, nome e descrizione più grandi.",
+      "🧹 Mentre giochi, sopra non si ripete più quello che hai già sotto: niente cifre mescolate doppie nella Cassaforte, niente dadi doppi, niente prezzo doppio in È troppo!. Chi guarda, e tu dopo «Fatto», vedete tutto come prima.",
+      "📸 51 foto vere in più (1.312 in tutto): ora solo 81 oggetti su più di mille hanno ancora l'emoji. Due premi della Vetrina sono diventati precisi: le décolleté Pollini Aurora e la lampada Artemide Tolomeo."
+    ]
+  },
+  {
+    v: 265,
+    data: "24 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: una lista sola, e in due chi perde non prende punti 🛒",
+    descrizione: [
+      "🛒 Nella Spesa e in Mettili in ordine i prodotti non si vedono più due volte (sopra e poi di nuovo sotto): c'è una lista sola, larga, con la foto, il nome e la descrizione, dove si gioca. Sopra restano le cose da sapere («Spendi tra 20 € e 22 €», chi ha finito).",
+      "📱 Sui telefoni alti le righe sono più grandi, con le foto e le scritte più grandi.",
+      "🏷️ In due, chi perde l'Offerta, la Ruota o la Vetrina non prende più punti: prima il secondo posto valeva sempre qualcosa, e in due il secondo è chi ha perso. Da tre giocatori in su il secondo prende ancora i suoi punti, come prima."
+    ]
+  },
+  {
+    v: 264,
+    data: "24 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: ricontrollati i prezzi di prima 🔍",
+    descrizione: [
+      "🔍 I prodotti e le vetrine che c'erano dall'inizio sono stati ricontrollati uno per uno coi prezzi veri di oggi (prezzo pieno da scaffale, mai quello in offerta): 89 corretti. Per esempio l'olio extravergine (10,99 €), il Roma Pass di 72 ore (62,90 €), il MacBook Air (1.249 €), la Renault Clio nuova (18.900 €) e il prosciutto di Parma intero (290 €).",
+      "🆕 Alcuni modelli che non si vendono più sono diventati quelli di oggi: AirPods 5, Phon Dyson Supersonic Nural, casco Nolan N20-2 Visor. Lo champagne e il Brunello della spesa ora si comprano al supermercato, come dice la categoria.",
+      "🗑️ Tolti due prodotti senza un prezzo unico credibile: la calcolatrice tascabile «senza marca» e la tenda al Twiga."
+    ]
+  },
+  {
+    v: 263,
+    data: "24 ottobre 2026",
+    titolo: "Il Prezzo è Giusto online: l'ultimo tocco conta sempre ⏱️",
+    descrizione: [
+      "⏱️ Online, la barra del tempo sul tuo telefono finisce un attimo prima: così l'offerta o la mossa fatta all'ultimissimo istante arriva in tempo anche con la rete lenta (prima poteva andare persa).",
+      "🔄 Chi ricarica la pagina a metà ritrova subito il tempo giusto: prima la sua barra poteva restare indietro rispetto a quella degli altri."
+    ]
+  },
+  {
+    v: 262,
+    data: "24 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: oggetti grandi, sempre con la descrizione 🖼️",
+    descrizione: [
+      "🖼️ Gli oggetti ora sono riquadri grandi, con la foto, il nome e la descrizione, e riempiono tutto lo schermo invece di righe basse e lunghe. Sui telefoni alti le foto diventano più grandi, su quelli piccoli i riquadri si stringono, ma la descrizione resta sempre intera.",
+      "🛍️ Nella Vetrina finale la descrizione c'è sempre, anche mentre scrivi la tua offerta: così sai che l'ombrellone a Rimini è per una settimana intera.",
+      "📊 In Mettili in ordine i cinque prodotti stanno tutti sopra, con la descrizione, nell'ordine in cui li hai messi tu (1 = il meno caro). Quello che tocchi si illumina: non serve più toccarli uno per uno per leggere cosa sono.",
+      "🛒 La Spesa, ✅ La Prova del 5, 🧹 Togli la cifra, ✋ È troppo!, 🟡 Plinko e 🧗 L'Alpinista: anche lì ogni oggetto ha la sua descrizione, e la ritrovi quando si scoprono i prezzi."
+    ]
+  },
+  {
+    v: 261,
+    data: "24 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: 4 giochi a premi nuovi 🎲🎯✅🧹",
+    descrizione: [
+      "🎲 Il Gioco dei Dadi (dalla versione italiana): un dado per ogni cifra del prezzo. Per ognuna dici se la cifra vera è più alta, uguale o più bassa del dado. La prima cifra vale di più!",
+      "🎯 Il Mirino: una finestrella sale lungo la scala dei prezzi. Tocca «Stop!» quando pensi che il prezzo ci sia dentro: dentro vale 600, vicino qualcosa di meno.",
+      "✅ La Prova del 5 (dalla versione italiana): cinque prodotti col cartellino. Per ognuno dici se il prezzo è giusto o sbagliato, ma quanti sono giusti non si sa!",
+      "🧹 Togli la cifra: in tre prezzi c'è una cifra di troppo (mai la prima né l'ultima). Toccala e vedi subito che prezzo viene fuori.",
+      "🎁 Ora i giochi a premi sono 11: chi vince l'Offerta sceglie tra due, e si gioca tutti insieme, ognuno dal suo telefono."
+    ]
+  },
+  {
+    v: 260,
+    data: "23 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: quasi il doppio dei prodotti e 72 vetrine nuove 🛍️",
+    descrizione: [
+      "🏷️ I prodotti da indovinare passano da 499 a 953, una cinquantina in più per ogni categoria: dalla Philadelphia al polpo fresco, dallo spritz al Caffè Florian alla tagliata a Firenze, dalla Kawasaki Z900 al Cartier Tank, dall'abbonamento ATAC alla zeppola di San Giuseppe. Ora si possono fare tante partite prima di rivedere le stesse cose.",
+      "🔍 I prezzi sono quelli veri di oggi: cercati su internet e poi ricontrollati UNO PER UNO da un secondo controllo severo (prezzo pieno da scaffale, mai quello in offerta). Le curiosità che escono col prezzo sono state verificate.",
+      "🛍️ Le vetrine passano da 28 a 100: la luna di miele alle Maldive, il pizzaiolo di casa, Natale a New York, il pianista, la Cinquecento d'epoca, il Carnevale di Rio, la vita in campagna, Harry Potter a Londra e tante altre. Così la Vetrina finale (e la misteriosa!) non si ripetono più dopo poche partite.",
+      "🏷️ Ogni vetrina ha il suo premio grosso, qualche premio medio e quello piccolo e simpatico, con la descrizione e il prezzo vero di oggi (i premi più cari e di marca ricontrollati su internet).",
+      "📸 Anche i premi nuovi hanno la loro foto vera, scelta e controllata una per una."
+    ]
+  },
+  {
+    v: 259,
+    data: "23 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: si guarda e si entra a puntata in corso 👀",
+    descrizione: [
+      "🎁 Vetrina misteriosa: alla fine si scoprono solo le vetrine che qualcuno ha scelto. Se tutti tengono la prima, la misteriosa resta un mistero (e potrà uscire in un'altra partita); se tutti prendono la misteriosa, si scopre solo quella. Tutte e due solo se sono state scelte entrambe.",
+      "👀 Il Prezzo è Giusto si può guardare senza entrare, come gli altri giochi: «👀 Guarda» nella Sala o il link per guardare. Vedi tutta la puntata, con le faccine e il ✕ nella targhetta in basso, senza scrivere il nome e senza togliere il posto a nessuno.",
+      "▶ Chi arriva a puntata cominciata tocca «Entra» nella Sala e gioca dal prossimo oggetto (o dalla Ruota, o dalla Vetrina), partendo da 0 punti. Nel frattempo guarda.",
+      "📍 Nel riquadro della Sala chi non gioca legge a che punto è la puntata: «L'Offerta 2 di 3», «Gioco a premi: L'Alpinista», «La Ruota del 100», «La Vetrina finale»…"
+    ]
+  },
+  {
+    v: 258,
+    data: "23 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: la Vetrina misteriosa 🎁 e schermi più pieni",
+    descrizione: [
+      "📱 Niente più spazi vuoti: sui telefoni alti le schermate si allargano da sole. Foto, scritte e righe diventano più grandi finché c'è posto (la Vetrina, la classifica, il prezzo svelato, il carrello finale), e la foto del prodotto dietro il sipario è più grande. Sui telefoni piccoli resta tutto come prima.",
+      "📝 I premi della Vetrina hanno la loro descrizione («Dalla vestizione al taglio della torta, con l'album»…), come i prodotti dell'Offerta.",
+      "🔎 Se alla Ruota del 100 vincete in due a pari merito, l'indizio sulla Vetrina arriva a tutti e due, non più a uno solo a caso.",
+      "🎁 Nella Vetrina finale ora c'è anche la VETRINA MISTERIOSA, come in «OK, il prezzo è giusto!» di una volta. Dopo aver visto la vetrina, ognuno sceglie in segreto: «Tengo questa» oppure «La misteriosa», che scopri solo dopo averla presa.",
+      "🤔 Prendi quella che sai prezzare meglio: se nella vetrina c'è una barca e non hai idea di quanto costi, cambia! Poi offri sul totale della tua vetrina.",
+      "📏 Le vetrine sono diverse, quindi vince chi ci va più vicino in percentuale, sempre senza superare il prezzo. Punti come prima: 450 al primo, 225 al secondo, 110 al terzo.",
+      "⭐ VINCI TUTTO (entro il 3%) vale +1.000 e ti porti a casa anche l'altra vetrina.",
+      "🎬 Alla fine si scoprono i prezzi della prima vetrina, poi «…e la vetrina misteriosa era…» con i suoi pezzi e i suoi prezzi. Nelle offerte di tutti vedi chi aveva preso la misteriosa (🎁)."
+    ]
+  },
+  {
+    v: 257,
+    data: "23 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: due giochi a premi nuovi e la Ruota dal vivo 🛒🔐🎡",
+    descrizione: [
+      "🛒 Nuovo gioco a premi, La Spesa (come nel programma): 5 prodotti del supermercato senza prezzo. Scegli quanti pezzi di ognuno mettere nel carrello per spendere tra 20 e 22 €. Dentro la fascia 600 punti, poco fuori un po' meno; alla cassa i carrelli di tutti corrono sulla stessa pista verso il totale.",
+      "🔐 Nuovo gioco a premi, La Cassaforte: le cifre del prezzo di un premio sono mescolate. Toccale per scambiarle e rimettile in ordine: 60 punti per ogni cifra al posto giusto e +400 se la cassaforte si apre.",
+      "🎡 La Ruota del 100 si guarda dal vivo: sul maxischermo c'è la ruota di ognuno e gira davvero mentre lui spinge, anche quella dei tuoi amici. Il numero si vede solo quando la ruota si ferma (prima lo vedevi subito, e la sorpresa spariva). Chi si ferma guarda girare quelle degli altri invece di aspettare davanti a uno schermo fermo.",
+      "👀 Fino a 4 ruote per schermata; in 5 o più si cambia pagina con le frecce, e la pagina va da sola su chi sta girando.",
+      "⏩ Le regole dei giochi a premi non ti tengono più fermo: c'è «Avanti». Col Bot e sullo stesso telefono basta un tocco; online si parte quando lo tocca più della metà di chi gioca (in 2 tutti e due, in 3 ne bastano due, in 4 o 5 tre). Se nessuno lo tocca, si parte da soli come prima."
+    ]
+  },
+  {
+    v: 256,
+    data: "22 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: le foto vere e punti più giusti 📸⚖️",
+    descrizione: [
+      "📸 Al posto dei disegnini ora vedi la FOTO VERA di quello che devi prezzare: la Nutella, la Vespa, la Fiat Pandina, la pastiera, il Colosseo… Quasi 600 foto, scelte e controllate una per una (niente cartellini col prezzo!). Le trovi nella scheda dell'Offerta, nei giochi a premi, nelle righe della Vetrina e nel carrello finale.",
+      "⚖️ Abbiamo giocato decine di migliaia di puntate finte per sistemare i punti: ora chi conosce meglio i prezzi vince più spesso, e la fortuna fa festa ma non decide la partita da sola. Chi è primo dopo le manche vince circa 2 volte su 3: il finale può ancora ribaltare tutto, ma non quasi sempre.",
+      "🎡 La Ruota del 100: 200 punti a chi ci va più vicino (100 al secondo, 50 al terzo). CENTO vale +300, e nel giro bonus il 100 dà altri +300, gli spicchi verdi +150. Prima un CENTO fortunato valeva +1.000 e poteva cancellare tre manche giocate bene.",
+      "🛍️ La Vetrina finale: 450 punti al più vicino (225 al secondo, 110 al terzo). «VINCI TUTTO!» vale +1.000 ed è più difficile: devi arrivare entro il 3% del totale.",
+      "🎁 I giochi a premi valgono tutti più o meno uguale, così chi vince l'Offerta sceglie quello che gli piace, non quello che regala più punti. 🧗 L'Alpinista: 550 meno 15 per ogni passo. 📊 Mettili in ordine: 70 per ogni posto giusto (+100 se sono tutti giusti). ✋ È troppo!: fermarsi al primo prezzo sopra vale 600, poi 450, 350, 250, 150; un prezzo troppo presto 200, due 100.",
+      "🟡 Plinko: ogni prezzo indovinato in «Occhio al prezzo» vale +50 punti e un gettone; le caselle sono 10 · 25 · 50 · 0 · 200 · 0 · 50 · 25 · 10. Prima la casella da 500 regalava tanti punti per pura fortuna."
+    ]
+  },
+  {
+    v: 255,
+    data: "22 ottobre 2026",
+    titolo: "📈 Mini asta Fantacalcio: rigoristi, battitori, angoli e quotazioni di oggi",
+    descrizione: [
+      "📈 Le quotazioni di tutti i calciatori dell'asta sono quelle di oggi del listone 2026/27 di Fantacalcio.it: a fine asta il valore delle rose è quello vero di adesso.",
+      "🎯 Sul tabellone dell'asta si vede chi tira i rigori (anche il 2° e il 3° rigorista), chi batte le punizioni (🦶 BATTITORE) e chi batte gli angoli (🚩 ANGOLI), presi da questa stagione e controllati su più siti: solo calciatori che giocano davvero.",
+      "⚽ Nella giornata dopo l'asta i gol su punizione li segna chi le batte davvero e gli assist sui calci d'angolo li fa chi li batte: comprarli conviene.",
+      "😤 «Entrata dura» non vuol dire più per forza giallo: circa una volta su due è un'entrata pulita (👏 prende solo il pallone) e il voto sale di mezzo punto.",
+      "⚽ Nella giornata dopo l'asta i tuoi attaccanti non stanno più in difesa mentre la loro squadra attacca: se i posti davanti sono presi da chi fa l'azione, si mettono in un posto libero più avanti o a centrocampo."
+    ]
+  },
+  {
+    v: 254,
+    data: "22 ottobre 2026",
+    titolo: "⚽ La giornata: punteggi in alto e calciatori più veri",
+    descrizione: [
+      "📊 In alto i punteggi di ognuno a quadrettini (faccina, nome e punti) e sotto il campo i risultati delle partite: il campo è più grande e resta in verticale anche quando siete in tanti.",
+      "📣 Negli annunci la squadra che attacca si legge in grande, sul colore della sua maglia («PER L'INTER»): non la confondi più con l'altra squadra dove magari hai i tuoi calciatori.",
+      "🏃 Corrono senza scatti e le gambe vanno a tempo coi passi; si vede il calcio col piede e il colpo di testa caricato; la scivolata entra coi piedi avanti.",
+      "🤕 Chi si tuffa o cade finisce davvero a terra e poi si rialza; chi segna corre a esultare con le braccia al cielo e due saltelli, e la telecamera lo segue.",
+      "🧤 Il portiere aspetta il tiro a gambe larghe, coi guanti; la barriera salta ognuno a modo suo e il pallone le passa sopra; l'arbitro alza il cartellino con un braccio solo, più grande e prima.",
+      "⚽ Il pallone vola alto quanto deve, lascia la scia nei tiri, in rete gonfia il fondo e fa un rimbalzino; il rallentatore entra ed esce piano; rigori, angoli e punizioni partono senza attese.",
+      "↔️ Anche col campo in orizzontale i tuffi e le cadute si vedono giusti (prima uno si capovolgeva)."
+    ]
+  },
+  {
+    v: 253,
+    data: "22 ottobre 2026",
+    titolo: "🕵️ Parola d'ordine tutta nuova",
+    descrizione: [
+      "🎨 Tabellone nuovo, più grande e sempre in vista: carte chiare, e le parole girate prendono il colore e il disegno della squadra (▲ righe i Rossi, ● puntini i Blu, ■ quadretti i Verdi), così si distinguono anche per chi confonde i colori. La parola nera ha il teschio. La chat è una striscia sotto il tabellone: toccala per aprirla.",
+      "👆 Come su Codenames: un tocco segna una parola, un altro tocco toglie il segno, e per girarla c'è il tasto «👆 Gira». In alto c'è sempre scritto il tuo ruolo («Sei nei Rossi · indovini tu», «Sei il capo dei Blu»).",
+      "✍️ L'indizio: il numero lo sceglie il capo (nessuno è già acceso) e mentre scrive può toccare le sue parole, così il numero si mette da solo. Vale anche un nome fino a 3 parole (SAN GENNARO, NEW YORK) e c'è lo «0» («nessuna delle nostre c'entra»). Se l'indizio somiglia a una parola del tabellone (CANESTRO con CANE) il gioco ti chiede se è un'altra parola; ASTRONAVE con NAVE sul tabellone invece non vale.",
+      "🏁 Fine partita: subito il tabellone svelato e la rivincita pronta. Ognuno ha il suo titolo scherzoso (💣 L'artificiere, 🎯 Il cecchino, 🧠 Il telepate…) e c'è 📸 la foto della partita da mandare nel gruppo. Durante la partita ogni mossa si spiega con una scritta grande («😬 BOCCA era dei Blu!», «⭐ la parola d'oro!»).",
+      "📚 Parole: via i mazzi a tema, ora c'è un mazzo solo di 1.539 parole tutte da giocare (con le migliori dei temi: PUNIZIONE, BOMBER, SMORFIA, COPIONE…) e il 🌶️ Serata con 251. Due parole troppo simili non escono mai insieme e una parola non torna per 30 giorni.",
+      "🚪 Se il capo esce dalla partita apposta, i compagni possono fare subito il capo (se va solo su WhatsApp lo aspettate come sempre). A 3 squadre, dopo la parola nera ne arriva una nuova: il pericolo resta fino alla fine. Chi apre la partita può lasciarla a un amico, e toccando la clessidra la ferma per tutti.",
+      "🤖 Contro il Bot: il Bot scopre la sua parola in un attimo e, se vincete, fate tanti punti quante parole gli mancavano."
+    ]
+  },
+  {
+    v: 252,
+    data: "23 ottobre 2026",
+    titolo: "⚽ La giornata: parate al rallentatore e pagelle con calma",
+    descrizione: [
+      "🧤 Parate, pali, traverse e salvataggi sulla linea si vedono al rallentatore e da più vicino: si capisce cosa succede.",
+      "📋 Le pagelle finali escono più piano e poi aspettano: chi tiene la partita (o chi ha il telefono) va avanti con «Avanti ▶», gli amici leggono «⏳ Aspettiamo Paky…» e vanno avanti con lui. Lo stesso alle pagelle del primo tempo.",
+      "⚡ Niente più pause col campo vuoto: i risultati delle partite dove nessuno ha giocatori si aggiornano in alto mentre guardi le azioni.",
+      "🏃 Più fluida: durante i rilanci e negli ultimi secondi dell'asta il telefono fa meno fatica.",
+      "🤝 Online le pagelle restano allineate anche tra telefoni grandi e piccoli; se chi tiene la partita salta al podio, esce o ricarica, gli amici vanno avanti da soli col loro «Avanti ▶».",
+      "👆 Toccare la tua riga per vedere i tuoi calciatori funziona sempre (prima, dopo la prima volta, non rispondeva più).",
+      "⚽ Più realismo: chi è espulso non segna più; ogni tanto anche contro i vostri portieri arriva un tiro che non entra (così «azione pericolosa» non vuol dire per forza gol); la ribattuta del rigore si vede subito dopo la parata; «🃏 POKER!» per 4 gol.",
+      "🎬 Sistemate tante piccole cose nelle scene: la rovesciata, i tuffi del portiere, il «palo e dentro», il pallonetto, l'autogol dal calcio d'angolo, l'orologio del recupero, le scritte lunghe sui telefoni stretti."
+    ]
+  },
+  {
+    v: 251,
+    data: "22 ottobre 2026",
+    titolo: "⚽ La giornata: i suoni dello stadio e il tasto ⏩",
+    descrizione: [
+      "🔊 I suoni dello stadio: il colpo al pallone, il palo, la rete che si gonfia, l'«ooh» della folla sui tiri sbagliati, il boato sui gol e il fischietto dell'arbitro (inizio, fine primo tempo, fine partita, falli e rigori).",
+      "⏩ Sopra il campo c'è il tasto Veloce: tutto va al doppio della velocità (il telefono se lo ricorda).",
+      "📋 Le pagelle del primo tempo restano finché non tocchi «Avanti ▶» (al massimo 25 secondi). Al fischio finale «Avanti ▶» mostra subito tutta la pagella e passa alla prossima.",
+      "🔢 Nelle pagelle del primo tempo il fantavoto è grande come il voto, accanto: a sinistra il voto, a destra il fantavoto (col giallo, il gol o il gol subito già contati).",
+      "⏱️ Più svelta: dopo un gol la scritta resta meno, meno attese tra un momento e l'altro, pagelle e gol della giornata più rapidi."
+    ]
+  },
+  {
+    v: 250,
+    data: "22 ottobre 2026",
+    titolo: "⚽ La giornata: gli omini in campo e tante azioni nuove",
+    descrizione: [
+      "🏃 Al posto dei cerchietti ci sono gli omini in piedi, con le maglie vere (le righe di Inter, Milan, Juve…), e la telecamera segue l'azione da vicino. I tuoi calciatori hanno la tua faccina come testa.",
+      "⚽ Tanti modi di segnare: cross e colpo di testa, calcio d'angolo, uno-due, contropiede (scarta anche il portiere), pallonetto, tiro da fuori, slalom, punizione sopra la barriera, tap-in sulla respinta. Il pallone si alza davvero: lo vedi dall'ombra a terra.",
+      "😱 Colpi di scena: rigore parato e ribattuta, gol annullato dal VAR, rigore assegnato dal VAR, rigore da ripetere, palo e dentro, deviazioni, salvataggi sulla linea, traverse, secondo giallo, gialli per simulazione e proteste, rosso per fallo da ultimo uomo.",
+      "🌟 Ogni tanto le rarità: rovesciata, gol da centrocampo, gol direttamente dal calcio d'angolo, rigore a cucchiaio, il portiere che segna di testa all'ultimo minuto. Si vedono da vicino e al rallentatore.",
+      "🎙️ Frasi sempre diverse, il recupero (90'+3), «DOPPIETTA!» e «TRIPLETTA!», e al fischio finale «🎬 Il gol della giornata» rivisto al rallentatore."
+    ]
+  },
+  {
+    v: 249,
+    data: "21 ottobre 2026",
+    titolo: "⚽ La giornata: i tuoi calciatori si riconoscono subito",
+    descrizione: [
+      "🎨 Ognuno ha il suo colore: sul campo i tuoi calciatori hanno la tua faccina dentro la maglia della squadra e il nome su un'etichetta del tuo colore.",
+      "👟 In classifica la tua riga si accende quando hai calciatori in campo e dice chi sono.",
+      "📋 Tocca la tua riga (o quella di un amico) per vedere i 5 calciatori con il voto e i bonus di adesso.",
+      "🧤 Il portiere e la porta in alto non escono più dal campo."
+    ]
+  },
+  {
+    v: 248,
+    data: "21 ottobre 2026",
+    titolo: "⚽ La giornata dopo l'asta: con calma, e con le pagelle",
+    descrizione: [
+      "🐢 Tutto più lento: prima ti dice cosa succede («⚡ Azione pericolosa per il Napoli», «🎯 Rigore per il Napoli») senza svelare come finisce, poi vedi l'azione con calma e alla fine l'esito resta sullo schermo.",
+      "👀 In alto niente nomi dei calciatori: i nomi stanno solo sul campo, e solo dei calciatori che avete comprato (tutti quelli delle due squadre, con la faccina di chi li ha). Se due di voi hanno il Napoli, fino al tiro non si sa chi segna. Tolta la scritta con i nomi delle persone sopra il campo: ora la porta si vede sempre.",
+      "🤫 I gol delle squadre dove nessuno ha un calciatore cambiano solo i risultati in alto, in silenzio.",
+      "🏟️ Durante la giornata il campo è più grande (in verticale) e i risultati di tutte le partite si leggono meglio.",
+      "📋 Voti come nel fantacalcio vero: tutti partono da 6 e poi si sale o si scende (anche 5,5, 5 e più di rado 4,5). Il portiere di solito prende 6, più 1 se non prende gol (l'imbattibilità). A fine primo tempo vedi le pagelle di tutti; al fischio finale le pagelle vere, una rosa alla volta, da chi ha fatto meno a chi ha fatto di più."
+    ]
+  },
+  {
+    v: 247,
+    data: "21 ottobre 2026",
+    titolo: "⚽ La giornata dopo l'asta: gli stadi giusti",
+    descrizione: [
+      "🏟️ Inter e Milan (San Siro) e Roma e Lazio (l'Olimpico) non giocano mai in casa nella stessa giornata, come nella realtà. Il derby tra loro può uscire."
+    ]
+  },
+  {
+    v: 246,
+    data: "21 ottobre 2026",
+    titolo: "⚽ Mini asta Fantacalcio: dopo l'asta si gioca la giornata!",
+    descrizione: [
+      "🏟️ Scoperte le quotazioni, si gioca una giornata di Serie A finta, come nel fantacalcio vero: i tuoi calciatori giocano con le loro squadre contro chi capita, e tu prendi i loro punti.",
+      "📊 Le 20 squadre si sorteggiano in 10 partite e i risultati dipendono da attacco e difesa veri dell'anno scorso. In alto vedi tutti i risultati che cambiano a ogni gol.",
+      "🎯 I rigori li tirano i rigoristi veri di quest'anno, con la loro percentuale: all'asta il maxischermo ti dice chi è il rigorista. I cartellini dipendono da quanti ne ha presi davvero ognuno.",
+      "🎬 Sul campetto vedi i momenti dei tuoi calciatori: gol, assist, pali, parate, rigori, cartellini, gol subiti. Quando ci sono due di voi è una sfida: «⚔️ Paky contro Giulia».",
+      "🏆 Punti del fantacalcio: voto in pagella + gol +3, assist +1, giallo −0,5, rosso −1, rigore sbagliato −3, autogol −2; il portiere gol subito −1, porta inviolata +1, rigore parato +3. Vince chi fa più fantapunti.",
+      "⚙️ Se preferisci com'era prima, nel ⚙️ «⚽ La giornata dopo l'asta: No» e vince la rosa che vale di più."
+    ]
+  },
+  {
+    v: 245,
+    data: "21 ottobre 2026",
+    titolo: "⚽ Mini asta Fantacalcio: tutte le squadre sott'occhio",
+    descrizione: [
+      "👀 Nello stadio ora vedi 4 squadre alla volta, ognuna col suo campetto: maglie, nomi sui colori della squadra, crediti e fin dove può arrivare. In 2 le squadre sono più grandi, una accanto all'altra.",
+      "🟨 La squadra di chi ha l'offerta più alta si illumina d'oro col cartellino del prezzo. La maglia trasparente del calciatore all'asta compare in tutte le squadre che ne hanno ancora bisogno: vedi subito chi è in corsa.",
+      "📄 Se siete più di 4 si cambia pagina con le frecce (in 7: 4 squadre e poi 3); la pagina va da sola dove c'è chi ha appena offerto.",
+      "🙂 Sullo stesso telefono la panchina sotto ha solo le faccine: tocchi la tua per offrire, come prima. Online si offre coi tasti e la panchina non c'è più: più spazio alle squadre."
+    ]
+  },
+  {
+    v: 244,
+    data: "21 ottobre 2026",
+    titolo: "⚽ Mini asta Fantacalcio: la formazione in grande",
+    descrizione: [
+      "🏟️ Al centro dello stadio ora c'è il campo grande con la formazione: maglie molto più grandi e il nome di ogni calciatore sui colori della sua squadra, con accanto quanto è stato pagato.",
+      "🧑‍💼 Il tuo avatar sta in piedi a bordo campo come l'allenatore: quando fai un'offerta alza il cartellino col prezzo, accanto alla sua squadra. Se qualcuno rilancia, in campo entra lui con la sua formazione.",
+      "👕 Dove andrebbe il calciatore all'asta lo vedi subito: la sua maglia in trasparenza nel posto libero. Quando è aggiudicato, la maglia vola dal maxischermo al suo posto e l'allenatore salta di gioia.",
+      "🪑 Tutti gli avatar stanno nella panchina sotto il campo, coi crediti e i posti che mancano: lì tocchi il tuo per offrire, come prima.",
+      "🏆 Anche alla fine la rosa di ognuno si scopre sul campo grande, col valore vero sopra ogni maglia."
+    ]
+  },
+  {
+    v: 243,
+    data: "20 ottobre 2026",
+    titolo: "Gioco nuovo: 🍹 Da dove viene?",
+    descrizione: [
+      "📸 Esce la foto vera di un piatto o di un drink, spesso da paesi lontanissimi: discutete e date una risposta sola. Da che paese viene?",
+      "🧭 Avete 3 tentativi: dopo ogni errore il gioco vi dice quanto siete lontani e dove andare, da 🔥 Fuoco! a ❄️ Lontanissimo, con la freccia (es. «🥶 Freddo · 6.200 km ↙️»).",
+      "🧂 Gli indizi arrivano a poco a poco: prima gli ingredienti, dopo il primo errore come si prepara, dopo il secondo il nome. Alla fine la scheda col paese, la bandiera e una curiosità.",
+      "🏆 3 punti al primo tentativo, 2 al secondo, 1 al terzo. «🤝 Tutti in squadra» per fare più punti possibile, oppure «⚔️ Due squadre» sullo stesso piatto.",
+      "📱 Online ognuno dal suo telefono (anche nella Sala della serata): a ogni piatto un capitano scrive la risposta e gli altri vedono cosa scrive. Oppure un telefono solo in mezzo al tavolo.",
+      "🍽️ 247 schede in quattro menù: 🍹 Drink, 🍜 Piatti, 🍰 Dolci e 🌮 Street food, da tutti i continenti. Nel ⚙️ scegliete il menù e quante portate (5, 8 o 10)."
+    ]
+  },
+  {
+    v: 242,
+    data: "20 ottobre 2026",
+    titolo: "Stessa Lunghezza d'Onda parte in 🎯 Classico",
+    descrizione: [
+      "🎯 Di partenza si gioca come l'originale: il bersaglio è a caso e l'indizio lo inventa il sensitivo. «🤔 Cosa ne pensi?» e «Misto» restano da scegliere nel ⚙️.",
+      "Se sul tuo telefono avevi già scelto un modo, resta quello: per cambiarlo basta toccarlo una volta nel ⚙️."
+    ]
+  },
+  {
+    v: 241,
+    data: "20 ottobre 2026",
+    titolo: "Gioco nuovo: ☝️ Una parola sola",
+    descrizione: [
+      "☝️ A turno uno indovina: gli altri vedono la parola misteriosa e scrivono di nascosto un indizio di una parola sola. Ma attenti: gli indizi uguali si cancellano! 💥 «Paky e Luca: stessa idea!»",
+      "🔍 Prima di mostrarli, chi ha scritto ha qualche secondo per cancellare anche i quasi uguali (pane e panino). Poi gli indizi si girano uno alla volta e chi indovina ha un tentativo solo, o passa.",
+      "🏆 A punti: +3 a chi indovina, +1 a ogni indizio rimasto e ⭐ +2 all’indizio che ha aiutato di più (lo sceglie chi ha indovinato). Ognuno indovina lo stesso numero di volte.",
+      "🤝 Oppure «Tutti insieme», come l’originale: una squadra sola e 13 parole. Quante ne indovinate?",
+      "📱 Online ognuno dal suo telefono (anche nella Sala della serata) o sullo stesso telefono passandovelo. Da 3 a 10 giocatori, 600 parole in tre mazzi: 🟢 Facile, 🟡 Media e 🌶️ Serata."
+    ]
+  },
+  {
+    v: 240,
+    data: "20 ottobre 2026",
+    titolo: "Parola d'ordine: il capo che esce si aspetta 👑",
+    descrizione: [
+      "⏳ Se il capo che deve dare l'indizio esce un attimo (WhatsApp, telefono bloccato…), la sua squadra lo aspetta e basta: «⏳ aspettiamo il capo, Paky…». Il capo non cambia più da solo dopo un minuto.",
+      "👑 Se dopo 3 minuti non è ancora tornato, i compagni possono scegliere di prendere il suo posto con «Faccio io il capo». Se in squadra non c'è nessun altro, tocca alla squadra dopo.",
+      "🔁 Quando torna è di nuovo lui il capo, con la sua mappa segreta."
+    ]
+  },
+  {
+    v: 239,
+    data: "20 ottobre 2026",
+    titolo: "Calcio Biliardo: tiri a tutta forza anche dal bordo ⚽",
+    descrizione: [
+      "👆 Una pedina vicino al bordo si tira a tutta forza: toccala e lasciala (resta scelta, con l'anello bianco), poi trascina da un punto libero del campo. Prima il dito finiva fuori dallo schermo prima della forza massima.",
+      "✋ Ci hai ripensato? Torna col dito dove eri partito e lascia: il tiro non parte. Per cambiare pedina basta toccarne un'altra.",
+      "📱 Il tiro dalla pedina arriva alla forza piena prima del bordo dello schermo (lì su Android c'è il gesto «indietro» che rubava il dito)."
+    ]
+  },
+  {
+    v: 238,
+    data: "20 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: Ruota, Plinko e più tempo per le regole 🎡",
+    descrizione: [
+      "🎡 La Ruota del 100 si gira trascinando il dito in giù O in su, e gira dalla parte della spinta. Il tuo numero compare sul maxischermo solo quando la ruota si ferma (prima si vedeva subito, con la ruota ancora in corsa), e si aspetta che l'ultima ruota si fermi prima di andare avanti.",
+      "🟡 Plinko: in «Occhio al prezzo», se dopo aver scelto un prezzo tocchi anche l'altro, il secondo tocco non conta più e le domande vanno avanti (prima la domanda dopo restava bloccata).",
+      "📖 Più tempo per i giochi a premi: chi ha vinto l'Offerta ha 15 secondi per leggere i due giochi e sceglierne uno, e prima di giocare la regola resta sul maxischermo 10 secondi, con «Si comincia tra…».",
+      "🔼🔽 Più o meno: dopo un prezzo sbagliato il tastierino si svuota e il prezzo si riscrive da capo (quelli già provati restano lì sopra). Anche nell'Offerta, se il prezzo era già preso, si riparte da zero."
+    ]
+  },
+  {
+    v: 237,
+    data: "18 ottobre 2026",
+    titolo: "Chi perde la rete torna a giocare 📶",
+    descrizione: [
+      "🔁 Nella Sala, se un amico perde la rete o spegne il telefono per un po' e poi ricarica la pagina, torna dritto nella partita al suo posto, coi suoi punti (in Palla Matta anche con le sue palline), invece di restare nella Sala ad aspettare la prossima. A chi ha aperto la partita sparisce subito «Aspettiamo…» e si va avanti.",
+      "📶 Vale anche se intanto chi ha aperto la partita ha ricaricato la pagina, e chi ricarica subito dopo un buco di rete non viene più tolto dalla partita per sbaglio qualche secondo dopo (restava «Aspettiamo…» anche se era lì).",
+      "🎯 Palla a Pendolo: chi torna a partita in corso si riprende il suo personaggio, che intanto muoveva il Bot."
+    ]
+  },
+  {
+    v: 236,
+    data: "18 ottobre 2026",
+    titolo: "Più gente, più festa 🎉",
+    descrizione: [
+      "👀 Guarda qualsiasi partita, anche già cominciata: dal link della partita o col tasto «👀 Guarda» nella Sala. In basso hai «👀 Guardi · 😂 · ✕»: con 😂 mandi le faccine a chi gioca, con ✕ smetti di guardare. Alla partita dopo entri anche tu, da solo.",
+      "✋ Chi arriva tardi gioca prima: nella Balla Colossale, Scarabocchio, Nomi Cose e Città, Parola d'ordine e Sì però entra dal round dopo (con 0 punti), nel Black Jack e nel Poker dalla mano dopo; negli altri giochi guardi ed entri alla prossima partita. Nella Sala trovi «▶ Entra» o «👀 Guarda» e c'è scritto a che punto è la partita («🎮 Si gioca a Balla · Round 3 di 5»). (Non ancora in Stessa Lunghezza d'Onda, Chi di Noi?, Scopone, L'Impostore e Il Prezzo è Giusto.)",
+      "👑 Chi vince resta: nei giochi a due della Sala (Tris, Drop 4, Battaglia Navale, Scopa, Calcio Biliardo), quando siete almeno in tre, scegli «👑 Chi vince resta» in «Chi gioca?». Chi vince resta al tavolo, gli altri aspettano in coda e chi perde va in fondo; col pareggio resta il campione. La sfida dopo parte da sola in 8 secondi, e alla fine resta scritto il record della serata («🔥 4 di fila»).",
+      "🗳️ Scegliamo insieme: chi tiene la Sala lo accende nel ⚙️. L'app propone 3 giochi, tutti votano per 20 secondi e poi gira la ruota, uguale su tutti i telefoni: più voti vuol dire più spicchi, ma anche il gioco senza voti può uscire. Il gioco parte per tutti.",
+      "🟢 Gli amici online: in home vedi chi dei tuoi amici è nell'app («🟢 Giulia è nell'app · 📨 Chiama») e nella Sala c'è «➕ Invita gli amici». All'amico arriva un avviso con «Entra» che lo porta nella tua Sala, anche se aveva l'app chiusa (vale 10 minuti). Se non vuoi farti vedere, spegni «🟢 Fatti vedere online» in Classifica → Amici."
+    ]
+  },
+  {
+    v: 235,
+    data: "18 ottobre 2026",
+    titolo: "L'Impostore: la partita non si perde 🔁",
+    descrizione: [
+      "Se a chi ha aperto la partita si ricarica la pagina o si chiude l'app, riaprendola la partita riprende da dove era: stessi punti, stessa mano e la stessa parola segreta sul telefono di ognuno. Gli amici leggono «🔁 Paky è tornato: la partita riprende da dove era».",
+      "Gli indizi già scritti e i voti già dati restano, e si continua col tempo che mancava (mai troppo poco). Se l'impostore scoperto stava scegliendo la parola, la scelta resta sua. Se si stava guardando la fine della mano, i punti non si danno due volte.",
+      "Se il telefono di chi ha aperto la partita si spegne del tutto, dopo pochi secondi un amico porta avanti la partita («👑 Ora la partita la tiene Giulia»; se qualcuno sta guardando, la tiene lui). Chi torna rientra a giocare col suo posto e la sua parola."
+    ]
+  },
+  {
+    v: 234,
+    data: "18 ottobre 2026",
+    titolo: "Scopone: la partita non si perde 🔁",
+    descrizione: [
+      "Se a chi ha aperto la partita si ricarica la pagina o si chiude l'app, riaprendola la mano continua da dove era: le stesse carte in mano a tutti, lo stesso tavolo, le stesse prese e gli stessi punti, e tocca a chi toccava. Gli amici leggono «🔁 Paky è tornato: la partita riprende da dove era».",
+      "Se si stava guardando il riepilogo della mano, si resta lì e i punti non si danno due volte; poi la mano dopo parte come sempre.",
+      "Se il telefono di chi ha aperto la partita si spegne del tutto, dopo pochi secondi un amico seduto al tavolo porta avanti la partita dal suo posto («👑 Ora la partita la tiene Giulia»). Chi torna si riprende il suo posto e le sue carte; se non torna, al suo posto gioca un Bot."
+    ]
+  },
+  {
+    v: 233,
+    data: "18 ottobre 2026",
+    titolo: "Chi di Noi?: la partita non si perde 🔁",
+    descrizione: [
+      "Se a chi ha aperto la partita si ricarica la pagina o si chiude l'app, riaprendola la partita riprende da dove era: stessi punti, stesso posto e stessa domanda, e gli amici leggono «🔁 Paky è tornato: la partita riprende da dove era». Le risposte, le battute e i disegni già mandati restano, e chi stava disegnando non perde niente.",
+      "Qualche secondo di respiro e poi si continua col tempo che mancava (mai troppo poco). Se si stavano scoprendo i voti, i punti non si danno due volte.",
+      "Se il telefono di chi ha aperto la partita si spegne del tutto, dopo pochi secondi un amico porta avanti la partita («👑 Ora la partita la tiene Luca») e chi torna rientra a giocare col suo posto.",
+      "📸 Le foto restano solo vostre: non finiscono mai nella copia della partita, e le facce che si vedevano restano a schermo."
+    ]
+  },
+  {
+    v: 232,
+    data: "18 ottobre 2026",
+    titolo: "Stessa Lunghezza d'Onda: la partita non si perde 🔁",
+    descrizione: [
+      "Se a chi ha aperto la partita si ricarica la pagina o si chiude l'app, riaprendola la partita riprende da dove era: stessi punti, stesso turno, stesso sensitivo col suo bersaglio, e gli amici leggono «🔁 Paky è tornato: la partita riprende da dove era».",
+      "Prima qualche secondo col tempo fermo («🔁 Si riprende!»), poi si continua: la parola scelta, la lancetta e le lancette già bloccate restano dov'erano, e il tempo riparte da quello che mancava (mai troppo poco). Se si stava guardando dov'era il bersaglio, la rivelazione si rivede senza dare i punti due volte.",
+      "Se il telefono di chi ha aperto la partita si spegne del tutto, dopo pochi secondi un amico porta avanti la partita («👑 Ora la partita la tiene Luca») e chi torna rientra a giocare col suo posto e la sua squadra."
+    ]
+  },
+  {
+    v: 231,
+    data: "18 ottobre 2026",
+    titolo: "La Balla Colossale: notizie vere controllate ✅",
+    descrizione: [
+      "Tutte le notizie vere della Balla Colossale sono state ricontrollate su due fonti: una ventina sistemate, tolte quelle che erano solo leggende (per esempio non è vero che il Canada ha più laghi del resto del mondo: è vero solo per quelli grandi)."
+    ]
+  },
+  {
+    v: 230,
+    data: "18 ottobre 2026",
+    titolo: "L'Asta: 5 temi nuovi 🔨",
+    descrizione: [
+      "Cinque temi nuovi da mettere insieme all'asta: 💒 Il Matrimonio da Sogno, 🚌 La Gita Scolastica, 📦 Il Trasloco, 🎤 La Serata Karaoke e ⛺ Il Campeggio.",
+      "Ognuno ha 4 round e più di 260 carte, dalle migliori ai disastri (la torta nuziale crollata in diretta, il prof con la verifica in pullman, il divano che non passa dalla porta), e il suo scenario per il voto finale."
+    ]
+  },
+  {
+    v: 229,
+    data: "18 ottobre 2026",
+    titolo: "Le immagini nuove dei giochi 🖼️",
+    descrizione: [
+      "In home 14 giochi hanno la loro immagine nuova, tutte nello stesso stile: L'Asta, La Linea del tempo, Parola d'ordine, La Balla Colossale, Calcio Biliardo, Il Prezzo è Giusto, Chi di Noi?, Stessa Lunghezza d'Onda, L'Impostore, Sì… però, Scarabocchio, Taboo, Nomi Cose e Città e La Patata Bollente. Le altre arrivano presto."
+    ]
+  },
+  {
+    v: 228,
+    data: "17 ottobre 2026",
+    titolo: "Il Prezzo è Giusto: la partita non si perde 🔁",
+    descrizione: [
+      "Se a chi ha aperto la partita si ricarica la pagina o si chiude l'app, riaprendola la partita riprende da dove era: stessi punti, stessi premi nel carrello, e gli amici leggono «🔁 Paky è tornato: la partita riprende da dove era».",
+      "Se l'offerta, la Ruota o la Vetrina erano a metà, dopo qualche secondo con la classifica («🔁 Si riprende!») si rifanno da capo; se si stava scoprendo il prezzo, si rivede la rivelazione (niente punti doppi).",
+      "Se il telefono di chi ha aperto la partita si spegne del tutto, dopo pochi secondi un amico porta avanti la partita («👑 Ora la partita la tiene Luca») e chi torna rientra a giocare col suo posto e i suoi punti."
+    ]
+  },
+  {
+    v: 227,
+    data: "17 ottobre 2026",
+    titolo: "Gioco nuovo: Il Prezzo è Giusto! 🏷️",
+    descrizione: [
+      "Quanto costa? Si indovina il prezzo di cose vere: la spesa, il caffè al bar, lo smartphone, la Vespa, una settimana al mare… Quasi 500 prodotti con i prezzi medi in Italia del 2026.",
+      "Si gioca nello studio della TV, da 2 a 8 amici online (ognuno dal suo telefono, tutti insieme, anche nella Sala della serata), sullo stesso telefono a turno e «🤖 Contro il Bot» (parte subito: due tocchi e sei nello studio con 3 Bot, come in TV).",
+      "📺 Come in TV: si apre il sipario, compare il prodotto e avete 20 secondi per scrivere il prezzo. Vince chi ci va più vicino senza superarlo. Le offerte si vedono arrivare: puoi fare il cattivo e dire 1 € in più di un amico (il pubblico fischia 😈). Se sforate tutti, si rifà una volta.",
+      "Chi vince l'Offerta sceglie il gioco a premi tra due (🔼🔽 Più o meno, 🧗 L'Alpinista, 📊 Mettili in ordine, ✋ È troppo! e 🟡 Plinko) e si gioca tutti insieme; poi 🎡 la Ruota del 100, dove girate tutti insieme («CENTO! CENTO! CENTO!»), e 🛍️ la Vetrina finale: se ci andate vicinissimo, VINCI TUTTO! Alla fine il carrello con quello che vi portate a casa.",
+      "🎯 Solo il prezzo: esce un oggetto, 20 secondi, vince chi ci va più vicino (sopra o sotto) e chi lo indovina preciso prende il bonus. L'ultimo oggetto vale doppio.",
+      "Chi ospita sceglie il formato, quanto dura (⚡ Veloce, 📺 Puntata, 🌙 Serata lunga), le offerte a vista o segrete e le categorie dei prodotti."
+    ]
+  },
+  {
+    v: 226,
+    data: "17 ottobre 2026",
+    titolo: "Le novità, di nuovo in lista 📜",
+    descrizione: [
+      "Dal menu, «🆕 Novità» apre di nuovo la lista semplice di tutte le novità, come prima. In città restano sulla bacheca della piazza, con la città dietro."
+    ]
+  },
+  {
+    v: 225,
+    data: "17 ottobre 2026",
+    titolo: "L'Asta più bella 🔨",
+    descrizione: [
+      "Si rilancia a salto: +1 o +3 nei temi, +1, +2 o +5 nel fantacalcio. Chi ha l'offerta più alta può sempre rialzare da solo (è strategia!): due tocchi di fila sono +2, anche velocissimi e con la rete lenta, e la tua offerta compare subito sul tabellone.",
+      "Sotto ogni avatar vedi i crediti e fin dove può arrivare («20 💰 · max 16»); nel fantacalcio anche i posti che gli mancano (🧤🛡️🎽⚽).",
+      "Nei temi 4 round diversi: 🔨 normale, ✉️ busta chiusa (tutti offrono in segreto e le buste si aprono insieme), 📦 lotto doppio (2 carte in un colpo) e 🎁 pacco a sorpresa (si scopre solo quando qualcuno lo vince). Chi vuole l'asta di sempre sceglie «Tutti normali» nelle regole.",
+      "🧨 La carta maledetta (la accende l'host): una volta a partita esce una carta che nessuno vuole, a turno paghi per scansarla o te la prendi.",
+      "Alla fine esce la carta-scenario («Arrivano gli zombie: chi sopravvive?») e ognuno dà con un tocco la sua ⭐ al kit migliore che non è il suo; i kit stanno sempre tutti nello schermo, anche in tanti.",
+      "Il banditore sfotte («Follia!», «rialza da solo!»), a fine partita arrivano i titoli scherzosi (💸 Lo sprecone, 🧊 Il braccino corto, 🎯 Il cecchino dell'ultimo secondo…) e 📸 la foto della tua rosa o del tuo kit da mandare su WhatsApp."
+    ]
+  },
+  {
+    v: 224,
+    data: "17 ottobre 2026",
+    titolo: "Parola d'ordine ancora più bella 🕵️",
+    descrizione: [
+      "💭 A fine turno si scopre a cosa pensava il capo; 🤔 «Cosa intendevi?»: dopo l'indizio il capo segna di nascosto le parole che aveva in mente, e a fine partita si rivedono gli indizi uno per uno col premio 🧠 alla squadra più in sintonia.",
+      "🎬 Ritmo «Show» o «⚡ Veloce», e ⏳ il «Tempo per indovinare» (1 o 2 minuti, doppio al primo indizio, la clessidra diventa rossa negli ultimi 10 secondi).",
+      "🏆 La serata a squadre («Rossi 2 – 1 Blu»); alla rivincita l'host sceglie «Capo nuovo», «Stessi capi» o «🔀 Squadre a caso». Nella stessa serata le parole non si ripetono.",
+      "📝 Le parole vostre le portano tutti gli amici, e si sceglie quante usarne (5, 10, metà o tutte).",
+      "Mazzi nuovi: «⚽ Serie A e Fanta» (soprannomi delle squadre, stadi, allenatori, campioni e le parole dell'asta) e «🌶️ Serata» (malizioso ma senza volgarità, lo accende l'host).",
+      "🤖 Siete solo in 2 o 3? Giocate tutti insieme «Contro il Bot»: dopo ogni vostro turno il Bot scopre una sua parola."
+    ]
+  },
+  {
+    v: 223,
+    data: "17 ottobre 2026",
+    titolo: "La Linea del tempo: l'anno si vede sempre 📅",
+    descrizione: [
+      "542 carte nuove in tutte le categorie: ora sono 1.920, ognuna controllata con due fonti (e corretti anche anni e titoli di quelle che c'erano).",
+      "Quando sbagli, la carta si gira e vedi l'anno vero («Sbagliato di 12 anni!» o «😬 Per un pelo»), e «📍 Andava qui» ti fa vedere dove doveva stare. I posti sulla linea dicono gli anni («Tra il 1982 e il 1994»).",
+      "📅 Dimmi l'anno: dopo il posto, se vuoi, scegli anche l'anno (esatto +100, a 1 o 2 anni +30). ✋ Rubala con l'anno (nel ⚙️): mentre voti scrivi l'anno esatto e, se chi gioca sbaglia, la carta è tua.",
+      "📸 I nostri ricordi: in saletta scrivete fatti vostri con l'anno («Il viaggio a Ibiza», 2019): diventano carte, e il tuo lo giocano gli altri.",
+      "Le carte già uscite non tornano per un bel po'. Online da 5 in su si parte ⚡ Tutti insieme e appena toccate tutti «⏩ Avanti» si va avanti. 🔥 L'ultima carta di ognuno vale doppio."
+    ]
+  },
+  {
+    v: 222,
+    data: "17 ottobre 2026",
+    titolo: "Taboo: tre round e la rubata 🗣️",
+    descrizione: [
+      "🧺 Tre round: le stesse carte si giocano tre volte, prima spiegando, poi con una parola sola, poi solo a gesti. Tra un round e l'altro c'è la classifica, e «⏩ Avanti» fa partire subito se lo tocca più di metà.",
+      "🫳 Rubata!: se il tempo finisce con una carta in gioco, l'altra squadra ha 5 secondi per dirla e prendersi il punto. Si accendono nelle regole, sullo stesso telefono e online."
+    ]
+  },
+  {
+    v: 221,
+    data: "17 ottobre 2026",
+    titolo: "Poker come in TV 📊",
+    descrizione: [
+      "Quando qualcuno va all-in e le carte si girano, accanto a ogni giocatore vedi quante possibilità ha di vincere, e cambiano a ogni carta che esce; al river chi vince si illumina (Texas Hold'em, si spengono nelle regole).",
+      "💣 Nel Torneo della serata l'host può accendere la Mano bomba: una mano ogni 5 o 10 tutti mettono la stessa puntata nel piatto, escono subito le prime tre carte e si punta da lì."
+    ]
+  },
+  {
+    v: 220,
+    data: "17 ottobre 2026",
+    titolo: "Sì… però: ognuno per sé 🙋",
+    descrizione: [
+      "Nuovo modo «Ognuno per sé»: niente squadre, ognuno ha la sua mano, gioca in segreto 2 Bonus sul suo scenario e 1 Malus su quello del vicino. Gli scenari si svelano uno alla volta e il giudice sceglie il migliore.",
+      "🃏 Carta bianca: una volta a partita scrivi tu una carta, Bonus o Malus, e sul tavolo compare con la tua firma. Online, a fine round si riparte subito se più di metà tocca «⏩ Avanti»."
+    ]
+  },
+  {
+    v: 219,
+    data: "17 ottobre 2026",
+    titolo: "L'Impostore a eliminazione 🔪",
+    descrizione: [
+      "Nuovo modo 🔪 A eliminazione (nel ⚙️, «Come si vota»): il più votato esce e si scopre chi era («Luca era un cittadino 😇»); chi resta fa un altro giro con la stessa parola, finché l'impostore è fuori o restate in due. Al secondo pareggio c'è il ballottaggio, e chi esce guarda e manda le faccine.",
+      "👥 Da 7 giocatori si gioca anche con due impostori: l'host sceglie se si conoscono oppure no. Sullo stesso telefono, online e nella Sala."
+    ]
+  },
+  {
+    v: 218,
+    data: "17 ottobre 2026",
+    titolo: "Scopa 2 vs 2 e Scopone: il messaggio al compagno 🤫",
+    descrizione: [
+      "🤫 Messaggio al compagno (si accende nel ⚙️): online, un tasto vicino alla mano manda al tuo compagno una frase pronta come «Ho il settebello» o «Lascia, ci penso io». La legge solo lui, gli altri vedono solo 🤫. Al massimo 2 a mano.",
+      "🏅 Il migliore in campo: a fine mano, in ogni coppia, la medaglia a chi ha portato di più («🏅 Luca: 2 scope e il settebello»).",
+      "Nello Scopone «👫 Paky e Luca: 3 vinte, 1 persa» per tutta la giornata e 🔁 Rivincita a coppie scambiate; nella Scopa 2 vs 2 online «⏩ Avanti» a fine mano: se lo tocca più di metà si riparte subito."
+    ]
+  },
+  {
+    v: 217,
+    data: "17 ottobre 2026",
+    titolo: "Ruota della Fortuna: lo spicchio Mistero ❓",
+    descrizione: [
+      "Nelle ultime due manche c'è lo spicchio Mistero: se ci cadi e la consonante c'è, puoi aprirlo. Metà delle volte +10.000, metà Bancarotta!",
+      "✍️ Le frasi della compagnia: nelle regole scegliete «Anche le nostre» e scrivetene fino a 5; online anche chi guarda può mandarne una con «✍️ Scrivi una frase», che esce con la sua firma.",
+      "A fine manche si riparte subito se più di metà tocca «⏩ Avanti»."
+    ]
+  },
+  {
+    v: 216,
+    data: "17 ottobre 2026",
+    titolo: "Stessa Lunghezza d'Onda: le nostre scale 📝",
+    descrizione: [
+      "Nelle regole scrivete le scale del vostro gruppo («Pizza al ristorante ↔ Pizza a casa»): restano sul profilo, si copiano agli amici e in partita escono mescolate alle altre (o solo quelle) con la firma «📝 della compagnia».",
+      "Online, dopo ogni rivelazione si va avanti subito se lo tocca più di metà."
+    ]
+  },
+  {
+    v: 215,
+    data: "17 ottobre 2026",
+    titolo: "Gara di pesca: l'obiettivo della gara 🎯",
+    descrizione: [
+      "L'host sceglie l'🎯 obiettivo: più chili, il pesce più lungo, più specie diverse o più pesci. La classifica dal vivo mostra quello che conta, e il cronista lo dice quando qualcuno passa in testa."
+    ]
+  },
+  {
+    v: 214,
+    data: "16 ottobre 2026",
+    titolo: "La rete salta, la partita no 🔁",
+    descrizione: [
+      "Se a chi ha aperto la partita si ricarica la pagina o si chiude l'app, riaprendola la partita riprende da dove era: stessi punti, stesse carte, stesso turno. Gli amici restano al loro posto e leggono «🔁 Paky è tornato: la partita riprende da dove era». Vale in quasi tutti i giochi online (non ancora in Stessa Lunghezza d'Onda, Chi di Noi?, Scopone e L'Impostore).",
+      "Se invece sparisce del tutto (telefono spento, batteria finita), nei giochi lunghi dopo pochi secondi un amico porta avanti la partita: «👑 Ora la partita la tiene Luca». Quando chi è sparito torna, rientra a giocare col suo posto; se intanto la partita è già finita, riaprendo l'app torna alla home e legge «🏁 La partita è finita mentre eri via». Nei giochi a due no: l'unico amico è l'avversario, e vedrebbe le tue carte.",
+      "Anche nella Sala della serata: se chi tiene la Sala ricarica a metà gioco, il gioco riprende con lo stesso codice, e il duello tra due amici continua.",
+      "📶 Se l'ufficio postale della rete che usiamo non risponde, l'app ne usa un secondo da sola e si gioca lo stesso.",
+      "🚢 Battaglia Navale: chi ricarica ritrova sempre le sue navi, anche a metà sistemazione e anche se a ricaricare è chi ha aperto la partita."
+    ]
+  },
+  {
+    v: 213,
+    data: "16 ottobre 2026",
+    titolo: "Gioco nuovo: Chi di Noi? 🫵",
+    descrizione: [
+      "Il nostro «Dimmi chi sei!»: da 3 a 10 amici online, ognuno dal suo telefono. In 20 posti buffi (la spiaggia, il matrimonio, la nave dei pirati…) a turno uno va sotto torchio, vestito per il posto, e gli altri dicono cosa pensano di lui.",
+      "Quattro tipi di domande: Immagini (scegli il personaggio o la cosa che gli somiglia di più), Scrivi (la battuta migliore, con le risposte della casa se non ti viene niente), Disegna (col dito e con gli adesivi da trascinare, girare e ingrandire, anche sulla sua faccia) e Chi di noi (tutti votano chi del gruppo…).",
+      "Si fanno punti votando come gli amici (il voto di chi è sotto torchio vale doppio), +100 alla battuta o al disegno più votato, 3 jolly a testa e TUTTI D'ACCORDO +100 a tutti. I voti si svelano uno alla volta con le facce di chi ha votato.",
+      "📸 La foto vera: entrando ti fai un selfie con la sagoma (occhi sulle lineette, 3-2-1) o scegli una foto dalla galleria, oppure usi il tuo avatar. Poi scegli uno dei 10 filtri buffi: Originale, Sdoppiamento, Specchio, Occhioni Anime, Mascellone Gigachad, Faccia Liquida, Testa a Cono, Faccia da Uovo, Nasone da Strega, Testa Schiacciata. La tua faccia sta sull'avatar col costume del posto per tutta la partita.",
+      "Le foto viaggiano chiuse a chiave: le vede solo chi è entrato col link della serata (chi scrive il codice vede gli avatar), non restano sui telefoni degli altri e spariscono quando si esce. Chi apre la partita può scegliere «🙂 Solo avatar».",
+      "Gran finale «Passa il ritratto!», titoli di fine partita (Il Bersaglio, Mente del Gruppo, Il Cecchino…), podio e la figurina da salvare. 1.413 domande, e il gioco si ricorda quelle già uscite."
+    ]
+  },
+  {
+    v: 212,
+    data: "16 ottobre 2026",
+    titolo: "I giochi di sempre, ancora meglio 🛠️",
+    descrizione: [
+      "🤥 La Balla Colossale: «😂 Che balla!» per ridere delle balle più belle (la Balla d'oro del round vale un punto in più) e il round «👥 Parliamo di te», con 140 domande sugli amici: chi è di turno scrive la verità e gli altri si inventano le balle. Nelle regole scegli quanti round e di cosa si parla.",
+      "🖍️ Scarabocchio: «📝 Le nostre parole». Chi apre la partita scrive le parole del gruppo (nomi di amici, posti, battute) e si giocano mescolate alle altre o da sole.",
+      "✍️ Nomi, Cose e Città: lo ✋ STOP come sulla carta. Chi riempie tutte le caselle ferma tutti e agli altri restano 10 secondi.",
+      "🥔 Patata Bollente: la «🤫 Miccia segreta». Scoppia a caso tra 20 e 60 secondi, nessuno vede il tempo e alla fine si scopre quanto durava.",
+      "📜 Linea del tempo online: il modo «⚡ Tutti insieme». La stessa carta per tutti nello stesso momento, punti in più al più veloce e l'ultima carta vale doppio: nessuno aspetta il suo turno.",
+      "🪜 Scalinata: la scala grande fino a 8 giocatori, così giocano tutti invece di guardare.",
+      "🃏 Poker: chi vince perché gli altri lasciano può toccare «🃏 Fai vedere!» e mostrare se era un BLUFF. Poker e Black Jack hanno il «🏆 Torneo della serata»: tutti partono con 1.000 fiches finte (le Speed Coins non si toccano) e vince chi ne ha di più.",
+      "🏇 Horto Muso: il «🏆 Gran Premio», 3 corse a punti con l'ultima che vale doppio.",
+      "🃏 Scopa: si gioca anche in tre, ognuno per sé (contro 2 Bot o online). Nella Sala in tre c'è «In tre: giocate tutti». Se uno si distrae per un minuto, il Bot gioca una carta al posto suo.",
+      "💬 Faccine e frasi durante la partita in Scopa, Tris, Drop 4, Battaglia Navale e Calcio Biliardo.",
+      "🃏 Scopone online in 4: ognuno dal suo telefono, a coppie, i posti vuoti li fanno i Bot. Le coppie si scelgono o si sorteggiano. Regole nuove anche contro i Bot: la Napola e la scopa all'ultima carta.",
+      "🕵️ L'Impostore online: ognuno vede la sua parola sul suo telefono, gli indizi si scrivono di nascosto e si svelano tutti insieme, poi il voto segreto e l'ultima possibilità dell'impostore. Si può giocare anche nella Sala della serata.",
+      "🤐 Taboo anche «📱 Su questo telefono», il classico: chi spiega tiene il telefono e un avversario dietro di lui guarda la carta e preme BUZZ.",
+      "In tanti giochi online «⏩ Avanti» parte subito se lo tocca più di metà, e le domande «Vuoi uscire?» usano la finestra dell'app."
+    ]
+  },
+  {
+    v: 211,
+    data: "16 ottobre 2026",
+    titolo: "La Compagnia: ritrovarsi senza mandare il link 📌",
+    descrizione: [
+      "📌 La Compagnia è il link fisso del vostro gruppo e vale per sempre. Dalla Sala tocca «📌 Fanne la nostra Compagnia», scegli nome ed emoji (es. 🍻 Quelli del giovedì) e gli amici già dentro ti seguono da soli, senza perdere i punti. Fissate il link nel gruppo: vale tutte le sere. Il codice è di 6 lettere e si scrive anche in «🔑 Ho un codice».",
+      "In home la tessera della Compagnia ti dice chi è già dentro («🟢 Paky e Luca sono dentro · Entra ›»): un tocco e sei nella Sala. Nei giochi online c'è anche «Online con «Quelli del giovedì»»: due tocchi e giochi.",
+      "Il primo che arriva apre la serata («Apri la serata ›») e gli altri finiscono nella sua Sala. Anche se due toccano insieme, la Sala è una sola.",
+      "Se chi tiene la Sala se ne va, la Sala passa a un amico e la serata continua, con gli stessi amici e la stessa Classifica della serata. Chi esce può scegliere «👑 Passa la Sala a Giulia»; se il telefono si spegne, dopo poco la prende un amico da solo (se era solo uscito un attimo per mandare il link, gli amici aspettano di più). La partita a metà si rifà, ma i duelli tra due amici e Parola d'ordine vanno avanti. Nel Torneo a eliminazione si aspetta chi l'ha aperto.",
+      "🔁 Riapri la Sala di ieri sera: in home, con i nomi di chi c'era. Stesso codice per 24 ore, così gli amici col link di ieri entrano da soli.",
+      "👥 Giocato di recente: in home e a fine partita vedi con chi hai giocato («👥 Avete giocato con: Luca ➕»), con ➕ per chiedergli l'amicizia.",
+      "In «📌 Le tue compagnie» rimandi il link, cambi nome ed emoji o ne togli una. Con il profilo le compagnie ti seguono anche sull'altro telefono.",
+      "Sistemati Black Jack, Scarabocchio, Gara di pesca, La Balla Colossale e Scopa: quando si cambia gioco o la Sala passa a un amico non resta più niente sotto (sfondo verde, tic dei secondi, musica)."
+    ]
+  },
+  {
+    v: 210,
+    data: "15 ottobre 2026",
+    titolo: "Gioco nuovo: Stessa Lunghezza d'Onda 📡",
+    descrizione: [
+      "A turno uno fa il sensitivo. Sul quadrante c'è una scala con due estremi (Sopravvalutato ←→ Sottovalutato, Da bambini ←→ Da adulti…) e un punto segreto che vede solo lui. Gli altri spostano la lancetta per trovarlo: centro pieno 4 punti, poi 3, poi 2.",
+      "🤔 «Cosa ne pensi?»: esce una parola (o la scegli tu) e il sensitivo la piazza dove la pensa lui. Gli altri devono capire cosa pensa davvero: la Carbonara è sopravvalutata?! 🎯 «Classico»: il punto esce a caso e il sensitivo inventa un indizio che stia proprio lì.",
+      "Si gioca a squadre, con una lancetta comune che tutti vedono muoversi in diretta e la scommessa dell'altra squadra (più a sinistra o più a destra?), oppure ognuno per sé. Si gioca online, ognuno dal suo telefono, e anche sullo stesso telefono.",
+      "551 scale in 16 temi (li scegli tu prima di cominciare) e 910 parole: mai abbinamenti scontati, solo quelli che fanno discutere."
+    ]
+  },
+  {
+    v: 209,
+    data: "15 ottobre 2026",
+    titolo: "Una Sala per tutta la serata: il link si manda una volta 🎉",
+    descrizione: [
+      "Tocca «Online» in un gioco (o «🔗 Gioca online» in home) e si apre la tua Sala: un codice di 4 lettere per tutta la serata. Mandi il link una volta sola e gli amici ti seguono da soli in ogni gioco, senza toccare niente.",
+      "«🔑 Ho un codice» ha 4 caselle: scrivi le lettere e alla quarta sei dentro. Funziona anche incollando il link.",
+      "In saletta vedi chi sta arrivando («Arrivano: 3 su 4»), con la sagoma di chi manca. Se uno tarda c'è «▶ Comincia senza Marco»; chi arriva a partita cominciata la guarda ed entra alla prossima.",
+      "Gli amici leggono le regole che hai scelto («📜 Si gioca così»), e se le cambi lo vedono subito.",
+      "A fine partita «↻ Rivincita»: se ci sono tutti si riparte da soli col 3-2-1. Gli amici toccano «👍 Ci sto!» e chi ha aperto la Sala vede quanti ci stanno.",
+      "«🎮 Cambia gioco»: scegli il prossimo e gli amici ti seguono da soli. Dalla fine di un gioco all'inizio del prossimo bastano 3 tocchi, agli amici zero.",
+      "Se siete più dei posti (Ruota, Scalinata…) chi apre sceglie «Chi gioca?»: già scelto chi ha giocato meno, gli altri guardano la partita con le faccine.",
+      "Nei giochi a due (Tris, Drop 4, Scopa…) con 3 o più amici parte il ⚔️ Torneo a eliminazione: tutti giocano insieme, poi semifinale e finale. Le coppie a caso, oppure «✋ Scegliete voi»: ognuno tocca il posto libero e si siede dove e con chi vuole. Chi resta in più gioca col Bot, che se vince va avanti anche lui! Oppure «🤺 Una sfida»: scegli tu chi gioca, gli altri guardano.",
+      "🏆 Classifica della serata: è accesa da sola, i punti di tutti i giochi della Sala si sommano, a fine partita vedi subito chi è in testa («🏆 Serata: Paky 1° · Luca 2°…») e alla fine si premia il campione della serata. Anche sullo stesso telefono: più giochi di fila con lo stesso gruppo e i punti si sommano da soli («🏆 Serata a punti» in home).",
+      "I bot sono personaggi fissi, uguali in tutti i giochi: Matt, Angela, Rosa, Peppe, Gina, Totò, Ciro e Lella, ognuno col suo avatar e la sua bravura. Nei tasti si sceglie sempre «Bot»."
+    ]
+  },
+  {
+    v: 208,
+    data: "15 ottobre 2026",
+    titolo: "Il tuo profilo e il tuo avatar, per tutti 👋",
+    descrizione: [
+      "La prima volta che apri SPeeD GAME ti accoglie il benvenuto: scegli il nome (tocca 🎲 per uno buffo) e una password. Poi il tuo avatar: «Sei lui o lei?», scegli il look che ti piace e tocchi «✅ Fatto» (con «✏️ Personalizza di più» lo cambi in tutto).",
+      "Se arrivi dal link di un amico, prima ti fai il profilo e poi entri da solo nella sua stanza o nella sua Sala: il benvenuto ti dice già chi ti aspetta.",
+      "Chi ha già il profilo su quel telefono entra e basta, anche aprendo un link: nessuna domanda, dritto nella partita. Così tutti giocano col loro nome e il loro avatar.",
+      "Cambi telefono? Tocca «Hai già un profilo? Entra» e scrivi nome e password. Se il telefono ti riconosce ma serve la password, te la chiede una volta sola, col nome già scritto.",
+      "Senza internet il profilo non si può creare: lo dice chiaro, con «🔄 Riprova». Chi ha già il profilo entra lo stesso."
+    ]
+  },
+  {
+    v: 207,
+    data: "15 ottobre 2026",
+    titolo: "Tutti i giochi controllati uno per uno 🛠️",
+    descrizione: [
+      "Abbiamo giocato e controllato a fondo tutti i 26 giochi: centinaia di errori corretti e tantissime parole, carte e domande in più.",
+      "L'Impostore: c'è la SPIA, che riceve una parola simile a quella degli altri (mare/lago). Chi apre la partita sceglie se la spia sa di esserlo oppure no. 653 coppie di parole in 14 categorie.",
+      "La linea del tempo: 5 categorie nuove (Musica italiana, TV e cartoni, Videogiochi, Sport e campioni, Vita all'italiana), più di 1.300 avvenimenti.",
+      "L'Asta: due temi nuovi, La Notte di Halloween 🎃 e Il Natale in Famiglia 🎄, e tante carte nuove negli altri.",
+      "Taboo: le carte sono passate da 300 a 1.372, divise per difficoltà. La Patata Bollente: da 72 a 345 categorie, con quelle difficili da accendere.",
+      "La Balla Colossale: 401 notizie, ultimo round a punti doppi e premi a fine serata. Nomi, Cose e Città: categorie da serata, 4 pacchetti a tema e più di 1.000 parole riconosciute.",
+      "Parola d'ordine: 4 mazzi a tema, molte più parole e «👑 Faccio io il capo» se il capo esce. Palla Matta: 2 capitoli nuovi (I dolci e Il luna park).",
+      "Glow Hockey si gioca anche in due sullo stesso telefono, e scegli a quanti gol si vince. Calcio Biliardo: due formazioni nuove, Rombo e Muro. Tris: arriva il «Tris che sparisce».",
+      "Black Jack e Poker: online c'è il tempo per decidere, e chi ricarica la pagina ritrova il suo posto al tavolo. Scopa: Bot ha tante battute nuove.",
+      "Fine partita: un pareggio non conta più come vittoria, le medaglie a pari merito sono giuste e con tanti giocatori la classifica sta tutta nello schermo.",
+      "Il telefono non vibra più da solo (pesce preso alla gara, fanfara della vittoria): vibra solo quando tocchi tu."
+    ]
+  },
+  {
+    v: 206,
+    data: "15 ottobre 2026",
+    titolo: "La Ruota della Fortuna come in TV 🎡",
+    descrizione: [
+      "🔔 Prenota: ogni manche comincia con la frase lampo. Le lettere compaiono da sole e chi la sa preme «Prenoto!». Chi indovina prende 1.000 e comincia la manche. Online vince chi è più veloce sul suo telefono, non chi ha internet migliore.",
+      "🚂 Express: uno spicchio nuovo. Puoi prenderlo e chiamare consonanti senza girare, 1.000 l'una… ma se sbagli una lettera è Bancarotta! Quando vuoi: «✋ Mi fermo e risolvo».",
+      "⚡ Round veloce: l'ultima manche. La ruota gira una volta sola, ognuno chiama una lettera e ha 5 secondi per dire «Risolvo!».",
+      "🏆 Finale del campione: chi vince gioca da solo per una busta di Speed Coins. Ci sono già R S T L N E, scegli 3 consonanti e una vocale e hai 10 secondi per risolvere.",
+      "Le frasi sono più di 1.500 in 20 categorie. I round nuovi si accendono e si spengono nelle regole."
+    ]
+  },
+  {
+    v: 205,
+    data: "15 ottobre 2026",
+    titolo: "La saletta viva: ci si diverte già prima di cominciare 🎉",
+    descrizione: [
+      "Chi arriva fa «pling» e compare il fumetto «Ciao Luca! 👋». Chi esce saluta.",
+      "«✋ Sono pronto!» accende la spunta verde. Chi ha aperto la stanza vede «Pronti 3 su 4» e può far partire la partita da sola quando sono tutti pronti.",
+      "Faccine 👋 😂 😱 🔥 👏 😴: il tuo avatar le fa su tutti i telefoni, anche mentre guardate una partita e sulla classifica finale.",
+      "Chi perde la rete diventa grigio con 📶. Chi ha aperto la stanza può far uscire qualcuno (tocco lungo sull'avatar) e chiudere la porta 🔒.",
+      "Si parte tutti insieme col 3-2-1-Via!, uguale su tutti i telefoni. In saletta c'è una musichetta (🎵 / 🔇)."
+    ]
+  },
+  {
+    v: 204,
+    data: "15 ottobre 2026",
+    titolo: "Online: niente più partite bloccate 📶",
+    descrizione: [
+      "Se nessuno tocca «Avanti», dopo pochi secondi si va avanti da soli: il numero sul tasto fa il conto alla rovescia (Linea del tempo, Scalinata, Asta, Balla, Nomi Cose e Città, Scopa e gli altri).",
+      "Chi blocca lo schermo o risponde su WhatsApp non viene più buttato fuori: quando torna ritrova il suo posto, i punti e le carte.",
+      "Se a chi ha aperto la stanza si ricarica la pagina o si chiude l'app, la stanza si riapre con lo stesso codice e gli amici rientrano da soli. Nella Linea del tempo e nella Scalinata la partita riprende proprio da dove era.",
+      "Se la rete salta un attimo compare «📶 Mi ricollego…» invece di chiudere la partita.",
+      "Il link di un amico vale una volta sola: niente più stanze vecchie. «✅ Sei dentro!» compare solo quando sei entrato davvero.",
+      "Nei giochi a due (Tris, Drop 4, Scopa, Battaglia Navale, Calcio Biliardo) chi è in più guarda la partita, e lo sa. Nella Sala chi esce da un gioco non viene più risucchiato dentro."
+    ]
+  },
+  {
+    v: 203,
+    data: "13 ottobre 2026",
+    titolo: "Fantacalcio: il calciatore che nessuno vuole torna nel mazzo 🔁",
+    descrizione: [
+      "Se nessuno offre per un calciatore, torna in fondo al mazzo e intanto escono gli altri: puoi rischiare e aspettare quello dopo. Non viene mai dato a caso la prima volta.",
+      "Solo quando tutti quelli rimasti di un ruolo sono stati rifiutati 2 volte, vanno a caso, per 1 credito, a chi ne ha ancora bisogno. Prima il maxischermo avvisa: \"Ultima chiamata\"."
+    ]
+  },
+  {
+    v: 202,
+    data: "13 ottobre 2026",
+    titolo: "L'Asta tutta nuova: la sala d'aste e lo stadio del fantacalcio 🔨⚽",
+    descrizione: [
+      "L'asta normale si vede dalle spalle del banditore: davanti a lui il pubblico seduto in file, chi più avanti e chi più indietro, e chi offre alza la paletta col suo numero. Sulla parete il pannello con l'oggetto e il prezzo.",
+      "Negli ultimi 3 secondi il banditore conta \"5 e uno… 5 e due… 5 e tre…\" e poi batte il martello: aggiudicato!",
+      "Il fantacalcio si gioca in uno stadio di sera: sul maxischermo esce il calciatore con la maglia e i colori della sua squadra, in tribuna gli avatar alzano la paletta, e sotto c'è il tuo campetto con la formazione. Quando compri un calciatore la sua maglia vola al suo posto in campo.",
+      "Niente più voti con le stelle nel fantacalcio: alla fine si scoprono le quotazioni vere dei calciatori e vince la rosa che vale di più. Le rose si svelano una alla volta, dalla meno preziosa alla più preziosa, col contatore che sale. A pari valore vince chi ha più crediti avanzati.",
+      "Chi ha già l'offerta più alta può rialzare toccando di nuovo: si sale più in fretta. Passare non fa ripartire il tempo.",
+      "Online, se il telefono di qualcuno si spegne a metà partita non perde la squadra: intanto passa da solo, e quando rientra riprende a giocare."
+    ]
+  },
+  {
+    v: 201,
+    data: "13 ottobre 2026",
+    titolo: "Le sfide del giorno 🎯",
+    descrizione: [
+      "Ogni giorno 3 sfide nuove, uguali per tutti: una al laghetto o agli scavi e due nei giochi che puoi fare anche contro il computer (Scopa, Black Jack, Glow Hockey, Calcio Biliardo, Battaglia Navale, Drop 4, Poker…).",
+      "Ogni sfida fatta vale monete e XP: tocca \"Ritira!\". Se le fai tutte e 3 si apre anche il forziere con 1.000 monete e 200 XP.",
+      "Le trovi in città, nel primo pulsante a sinistra: il numero rosso ti dice quante ne mancano. A mezzanotte arrivano quelle nuove."
+    ]
+  },
+  {
+    v: 200,
+    data: "13 ottobre 2026",
+    titolo: "La città si gira a piedi, il Casinò nuovo e la casa come The Sims 🏙️🎰🏡",
+    descrizione: [
+      "In città adesso cammini col tuo avatar: tocca un punto e ci va, tocca un edificio e ci entra. Tocca due o tre volte lo stesso punto e va più veloce, fino a correre.",
+      "Il Casinò è un salone enorme visto dall'alto: roulette, slot, poker, sala VIP, bingo, scommesse, bar col palco, ristorante e tanta gente. Ti siedi al tavolo di Black Jack o di Poker e si gioca; col tasto \"Tutti i giochi\" scegli e l'avatar ci corre da solo. Le altre attrazioni arrivano presto.",
+      "La tua casa è nuova, come The Sims: la vedi dall'alto, costruisci i muri dove vuoi, scegli pavimenti e carta da parati, compri i mobili e li metti nella stanza, e la giri da tutti e quattro i lati. Fuori c'è il giardino con l'orto e gli alberi da frutto da annaffiare.",
+      "Il Negozio della città apre il catalogo della casa: scegli il mobile, lo provi nella stanza e paghi solo quando confermi."
+    ]
+  },
+  {
+    v: 199,
+    data: "13 ottobre 2026",
+    titolo: "In città, le cose da fare oggi ❗",
+    descrizione: [
+      "A sinistra nella città ci sono i pulsanti delle attività del giorno: la pesca con le esche che ti restano, gli scavi coi colpi, le novità da leggere e il bonus di XP della prima partita.",
+      "Quando c'è qualcosa da fare il pulsante pulsa e il numero rosso salta; quando hai finito vedi tra quanto tornano le esche e i colpi (a mezzanotte).",
+      "E se un trofeo è quasi tuo, compare anche lui: ti dice quanto ti manca."
+    ]
+  },
+  {
+    v: 198,
+    data: "13 ottobre 2026",
+    titolo: "Le novità si leggono sulla bacheca della piazza 📌",
+    descrizione: [
+      "Toccando Novità ti avvicini alla bacheca della piazza: le novità sono foglietti appuntati sul sughero, con la città sfocata dietro.",
+      "I foglietti che non hai ancora letto hanno l'etichetta rossa NUOVO."
+    ]
+  },
+  {
+    v: 197,
+    data: "13 ottobre 2026",
+    titolo: "Partite online più solide e app più veloce 📶",
+    descrizione: [
+      "Se a chi ospita la partita salta la rete per un attimo, le sue mosse non si perdono più: partono appena la rete torna, e gli altri ritrovano la partita al punto giusto. Lo stesso per chi è entrato con il codice.",
+      "Collegarsi a una stanza è più veloce: quando il collegamento tarda, l'app ne prova subito un altro e tiene quello che risponde per primo (niente più attese di qualche secondo).",
+      "Tornando nell'app dopo averla lasciata (per esempio per mandare il link su WhatsApp) ti ricolleghi subito, e un telefono rimasto senza rete viene scoperto prima.",
+      "L'app si apre più in fretta: è diventata molto più leggera da scaricare."
+    ]
+  },
+  {
+    v: 196,
+    data: "13 ottobre 2026",
+    titolo: "Avatar più curati, e al laghetto le mani tengono la canna 🎣",
+    descrizione: [
+      "Al laghetto il tuo avatar impugna davvero la canna: il pugno la stringe e il braccio la segue, si alza quando carichi il lancio e quando tiri il pesce.",
+      "Avatar ritoccati in tutti i dettagli: stivali e stivaletti larghi come le gambe in ogni corporatura, scarpe col tacco giuste anche per chi è robusto, l'oggetto in mano che segue la mano quando cammini."
+    ]
+  },
+  {
+    v: 195,
+    data: "11 ottobre 2026",
+    titolo: "Nuovo gioco: La Balla Colossale 🤥",
+    descrizione: [
+      "Nello Studio TV c'è un nuovo game show: sul maxischermo esce una notizia vera ma incredibile, con un pezzo mancante.",
+      "Ognuno scrive in segreto una balla per completarla: deve sembrare vera! Poi sul tabellone compaiono tutte le risposte, una alla volta, e ognuno vota quella che crede vera (la propria non si può votare).",
+      "Sul tabellone appaiono gli avatar di chi ha votato cosa, poi si scopre tutto: dalle balle meno votate alla più votata, e la verità per ultima. Il timbro dice BALLA! o VERO! e si vede chi l'ha scritta.",
+      "+2 punti a chi trova la verità, +1 a chi ha scritto una balla per ogni amico che ci è cascato.",
+      "Si gioca sullo stesso telefono passandolo di mano, oppure online: ognuno scrive e vota dal suo telefono, tutti insieme, col tempo che scorre.",
+      "Da 3 a 8 giocatori, 3, 5 o 7 notizie a partita. Le notizie non si ripetono finché non le avete viste tutte."
+    ]
+  },
+  {
+    v: 194,
+    data: "11 ottobre 2026",
+    titolo: "La Preistoria agli scavi, e ogni reperto ha la sua storia 📜",
+    descrizione: [
+      "Il campo degli scavi non sparisce più a mezzanotte: lo ritrovi com'era anche il giorno dopo. Quando trovi tutti e 3 i reperti nascosti, la professoressa Ida te ne prepara subito uno nuovo.",
+      "La Preistoria ha 4 reperti nuovi: l'amigdala (la prima ascia di pietra), la zanna di mammut, l'ambra con dentro una zanzara e la pittura delle caverne col bisonte e l'impronta della mano.",
+      "Ridisegnati da capo la punta di freccia (ora è pietra scheggiata vera), il molare di mammut e l'ammonite. Le crepe dei reperti rovinati ora sono sottili e frastagliate, come crepe vere.",
+      "Ogni reperto ha una breve storia vera da leggere: la trovi sulla carta quando lo tiri fuori, e nel museo basta toccarlo per riaprirla."
+    ]
+  },
+  {
+    v: 193,
+    data: "11 ottobre 2026",
+    titolo: "Il T-rex è sepolto agli scavi 🦖",
+    descrizione: [
+      "Agli scavi è sepolto lo scheletro di un T-rex, diviso in 4 pezzi: il cranio, le costole con le braccine, il bacino con la zampa e la coda. Sono rari: circa un reperto su sette è un pezzo di dinosauro.",
+      "I pezzi sono grandi e disegnati come veri fossili: ossa color avorio, i buchi del cranio, i denti, le macchie della pietra. Tirarli fuori senza far franare la terra è una bella sfida.",
+      "Quando li hai tutti e 4, lo scheletro intero viene montato sul piedistallo del museo e ricevi 8.000 Speed Coins!"
+    ]
+  },
+  {
+    v: 192,
+    data: "11 ottobre 2026",
+    titolo: "Scavi visti dall'alto 🏺",
+    descrizione: [
+      "Il campo degli scavi ora si vede dall'alto: riempie lo schermo e tutti i quadrati sono grandi uguali, comodi da toccare anche in fondo.",
+      "In cima ci sono le rovine, la tenda e la professoressa Ida; i suoi consigli ora sono in basso, sopra i tasti. Il tuo avatar è un po' più grande."
+    ]
+  },
+  {
+    v: 191,
+    data: "11 ottobre 2026",
+    titolo: "Gli scavi antichi 🏺⛏️",
+    descrizione: [
+      "Fuori città, oltre il laghetto, c'è un sito archeologico con le colonne, la tenda e la professoressa Ida. Toccalo in città per andarci.",
+      "Il campo è diviso coi picchetti e lo spago. Tocchi un quadrato e il tuo avatar ci va col badile e scava: se intorno non c'è niente compaiono le ❌, se c'è qualcosa vicino pianta la bandierina ✅. A volte un coccio sulla terra fa da indizio.",
+      "Quando trovi qualcosa lo devi tirare fuori: il piccone è veloce ma fa franare la terra e può crepare il reperto, il pennello è lento ma sicuro. Se frana, tieni solo quello che è già fuori.",
+      "16 reperti da trovare tra Preistoria, Antico Egitto, Antica Grecia e Antica Roma: dal chiodo arrugginito al teschio di dinosauro, fino alla leggendaria maschera d'oro del faraone. Più è raro, più è in fondo e fragile.",
+      "Il primo di ogni reperto va nel museo. Completa un'epoca e ricevi 2.000 Speed Coins. Gli altri li vendi o li tieni nello zaino.",
+      "6 colpi al giorno gratis, col campo nuovo ogni mattina. Se ne vuoi altri: 5 colpi per 500 monete."
+    ]
+  },
+  {
+    v: 190,
+    data: "11 ottobre 2026",
+    titolo: "Capelli tutti nuovi 💇",
+    descrizione: [
+      "I ricci sono rifatti da capo: niente più puntini. Ora hanno una chioma morbida col bordo a nuvola e le spirali, e sembrano capelli veri: ricci corti, afro, afro alto, riccioletti, caschetto riccio, ricci lunghi, ricci raccolti…",
+      "I boccoli ora scendono a molla, attorcigliati come veri boccoli.",
+      "Spettinati, arruffati e spike non hanno più i triangoli a corona: ciuffi morbidi che si alzano.",
+      "Tutti i capelli lisci hanno più volume: l'ombra lungo i bordi e le ciocche che scendono.",
+      "8 tagli nuovi. Per lui: a spazzola, alla Cesare, codino alto e rocker. Per lei: bob asimmetrico, sfilato, principessa (frangia dritta) e lunghi con la frangia a tendina."
+    ]
+  },
+  {
+    v: 189,
+    data: "11 ottobre 2026",
+    titolo: "A casa degli amici 🏠👋",
+    descrizione: [
+      "Ora puoi andare a trovare gli altri! In Classifica tocca un giocatore e poi \"🏠 Vai a casa sua\": vedi le sue stanze come le ha arredate, col suo avatar che gira per casa, l'acquario coi suoi pesci e le luci che ha lasciato accese.",
+      "A casa degli altri si guarda e basta: non si sposta niente e non si compra niente.",
+      "Anche la tua casa la vedono gli amici così com'è: ogni volta che la sistemi si aggiorna da sola.",
+      "Casinò e Circolo: le insegne dei tavoli e delle porte sono tutte della stessa grandezza, con la scritta al centro e messe in ordine (due ai lati, quella del tavolo in fondo al centro). Anche l'insegna grande della sala di ogni gioco ha la stessa misura per tutti.",
+      "Il negozio si apre più veloce: gli oggetti si disegnano mentre scorri. Il fumetto della commessa ora è sopra la sua testa."
+    ]
+  },
+  {
+    v: 188,
+    data: "11 ottobre 2026",
+    titolo: "Il negozio si fa grande 🛍️🎃",
+    descrizione: [
+      "Più di 80 oggetti nuovi, divisi per tipo: Divani, Sedie, Tavoli, Armadi, Letti, Luci, Giochi, Bar, Cucina, Bagno, Piante, Quadri, Decorazioni e Acquari. In basso tocchi il reparto e ci vai subito.",
+      "Come nei Sims ti puoi fare l'angolo bar in casa: bancone, sgabelli, macchina dei gelati, distributore di bibite, popcorn, zucchero filato e macchina dell'espresso. L'avatar ci va e si prende il gelato, la bibita o il caffè.",
+      "Reparto Giochi: juke-box con la musica, flipper, biliardino, cabinato arcade, console, computer, giradischi e la cassa con le luci.",
+      "Reparto Halloween all'ingresso, solo fino al 2 novembre: zucche che si accendono, fantasmino che galleggia, pipistrelli, ragnatela col ragno, calderone che bolle, scheletro e la carta da parati \"Notte di Halloween\". Quello che compri resta tuo anche dopo.",
+      "Tanti mobili hanno più colori: divani, poltrone, armadi, letti, sgabelli e tappeti. Scegli il colore quando lo compri. In casa tocchi il mobile e poi 🎨: per un colore nuovo paghi solo il cambio colore, e i colori che hai già preso li rimetti gratis.",
+      "Ora puoi rivendere quello che non ti serve a metà prezzo: tocchi il mobile in Arreda e poi 🪙 due volte, oppure il 🪙 sulla sua scheda nel baule.",
+      "Nelle stanze allargate anche le pareti di lato hanno la carta da parati che hai messo, e il soffitto prende il suo colore. Con il cielo stellato anche il soffitto è pieno di stelle.",
+      "Nuove carte da parati (pois, perline di legno, onde, damasco d'oro) e nuovi pavimenti (bianco e nero da bar, parquet di noce, piastrelle rosa, erba sintetica)."
+    ]
+  },
+  {
+    v: 187,
+    data: "11 ottobre 2026",
+    titolo: "Il laghetto tutto nuovo 🌅🎣",
+    descrizione: [
+      "Il laghetto è rifatto da capo: nuvole che scorrono, uccelli di giorno, stelle e stelle cadenti di notte, montagne nella foschia e il bosco sulla riva.",
+      "Sott'acqua i raggi di luce oscillano, i riflessi danzano sul fondo, passano i banchi di pesciolini e le alghe si muovono. Sul fondo trovi sassi, conchiglie, un tronco e un'anfora.",
+      "Il tuo avatar si piega indietro per caricare il lancio e la canna si piega davvero quando il pesce tira. Mentre carichi vedi dove arriverà il lancio.",
+      "Quando abbocca compare il ❗ sopra la testa. Il pesce vicino al pontile si scopre coi suoi colori e salta fuori dall'acqua al rallentatore. La carta si gira, e quelle dei pesci epici e leggendari brillano.",
+      "Di sera si accende la lanterna del pontile. A volte piove, e i pesci abboccano più spesso. Uccellini di giorno e grilli di notte, con il tasto 🔊 per spegnerli."
+    ]
+  },
+  {
+    v: 186,
+    data: "11 ottobre 2026",
+    titolo: "Nuovo gioco: Gara di pesca 🎣👥",
+    descrizione: [
+      "Tutti nello stesso laghetto, ognuno dal suo telefono, per 2, 3 o 5 minuti: vince chi pesca più chili!",
+      "Canna e lombrichi uguali per tutti e senza limite. Ogni pesce vale il suo peso, quindi i pesci grossi del largo fanno la differenza.",
+      "In alto vedi il tempo e la classifica dal vivo, e un avviso quando qualcuno prende un pesce raro.",
+      "Si apre dal laghetto (tasto \"Gara con gli amici\") o tra i Minigiochi. Alla fine si rigioca con gli stessi amici."
+    ]
+  },
+  {
+    v: 185,
+    data: "11 ottobre 2026",
+    titolo: "Pesca: attrezzi e acquari 🎒🐠",
+    descrizione: [
+      "Al laghetto c'è il tasto 🎒 Attrezzi: canne migliori (da lago, in carbonio, d'oro) che reggono di più gli strattoni e ti danno più tempo quando il pesce abbocca.",
+      "Esche speciali: quella colorata attira più pesci rari, quella luminosa gli epici e i leggendari. Scegli tu quale usare.",
+      "Nel negozio, tra le decorazioni, ci sono due acquari nuovi: quello del pescatore (5 pesci fino a 80 cm) e quello gigante (10 pesci di qualsiasi misura).",
+      "Mettilo in casa e toccalo: il tuo avatar ci va vicino e scegli quali pesci del cesto metterci dentro. Nuotano davvero, ognuno col suo disegno!"
+    ]
+  },
+  {
+    v: 184,
+    data: "11 ottobre 2026",
+    titolo: "Si pesca al laghetto! 🎣",
+    descrizione: [
+      "In fondo alla città, nel parco, c'è il laghetto col pontile: toccalo per andare a pescare con il tuo avatar.",
+      "Tieni premuto per caricare il lancio e lascia: più lontano lanci, più l'acqua è profonda e i pesci sono rari. Sott'acqua vedi le ombre dei pesci.",
+      "Il galleggiante trema quando un pesce assaggia: tocca solo quando va giù davvero! Poi la lotta: tieni premuto per tirare e molla quando il filo diventa rosso o vedi ❗.",
+      "19 pesci da collezionare nell'album, dai comuni ai leggendari. Alcuni escono solo di giorno, al tramonto o di notte, con l'ora vera. E ogni tanto peschi uno scarpone, una bottiglia col messaggio o un forziere!",
+      "Ogni pesce lo vendi per Speed Coins o lo tieni nel cesto. Hai 10 esche al giorno; altre si comprano."
+    ]
+  },
+  {
+    v: 183,
+    data: "11 ottobre 2026",
+    titolo: "Palla Matta: la sfida con gli amici 🔴👥",
+    descrizione: [
+      "Nuova sfida da 2 a 4: online, ognuno dal suo telefono, oppure sullo stesso telefono passandovelo.",
+      "Stesso tavolo per tutti e un tiro a testa. I pezzi presi spariscono per tutti, ma i punti vanno a chi ha tirato. Chi prende l'ultimo arancione fa la Febbre Matta. Alla fine vince chi ha più punti.",
+      "Ognuno ha il suo aiutante: online lo scegli nella saletta, sullo stesso telefono prima del tuo primo tiro.",
+      "Online vedi dal vivo il cannone di chi sta mirando e ogni tiro esattamente uguale a lui. Chi non tira per 45 secondi tira da solo.",
+      "Chi apre la stanza sceglie il livello oppure lo fa uscire a caso, e si può rigiocare subito: le vittorie di ognuno restano segnate.",
+      "Il cannone non punta più dove tocchi: lo giri trascinando il dito da qualsiasi punto dello schermo, piano piano per i ritocchi e veloce per girarlo tanto."
+    ]
+  },
+  {
+    v: 182,
+    data: "11 ottobre 2026",
+    titolo: "Palla Matta: tre capitoli e i mattoncini 🚀🌳🐠",
+    descrizione: [
+      "18 livelli nuovi in tre capitoli: lo spazio (pianeti, razzo, galassia, disco volante), la natura (montagne, albero, fiore, arcobaleno) e il mare (pesce, medusa, polpo, forziere). Ogni capitolo ha il suo sfondo.",
+      "Come in Peggle, oltre ai pioli ci sono i mattoncini, messi in fila e in curva a formare le figure. Anche i mattoncini possono essere arancioni.",
+      "Tavoli molto più pieni: quasi 100 pezzi per livello. Gli arancioni partono da 12 nel primo livello e arrivano a 25 negli ultimi.",
+      "Se la pallina resta incastrata, dopo un attimo si rompono i pezzi già accesi che la bloccano e lei riparte.",
+      "Il tavolo è uguale su tutti i telefoni: serve per la sfida online con gli amici, che arriva presto."
+    ]
+  },
+  {
+    v: 181,
+    data: "11 ottobre 2026",
+    titolo: "Palla Matta: mira più comoda 🎯",
+    descrizione: [
+      "Tieni premuto (o trascina) per mirare: lasciando il dito la pallina non parte più. Per tirare dai un tocco veloce.",
+      "La Palla di fuoco funziona come in Peggle: il piolo verde la carica e parte al tiro dopo, attraversando tutti i pioli. Mentre miri vedi la sua strada in arancione."
+    ]
+  },
+  {
+    v: 180,
+    data: "11 ottobre 2026",
+    titolo: "Nuovo gioco: Palla Matta 🔴",
+    descrizione: [
+      "Dal cannone in alto spari una pallina che rimbalza sui pioli: trascina il dito per mirare (i puntini mostrano la strada) e lascia per tirare.",
+      "Fai scoppiare tutti i pioli arancioni con 10 palline. Più arancioni prendi, più vale ogni piolo: x2, x3, x5, fino a x10.",
+      "Il piolo viola vale 500 punti; i verdi attivano il tuo aiutante: Bomba, Multipalla, Mira lunga o Palla di fuoco. Il secchio che si muove in fondo ti ridà la pallina.",
+      "Con l'ultimo arancione: rallentatore e Febbre Matta, coi secchi da 10.000 a 50.000 punti e l'Inno alla gioia.",
+      "12 livelli da sbloccare, con 3 stelle e il record per ognuno. È nella Sala giochi. Presto anche la sfida con gli amici."
+    ]
+  },
+  {
+    v: 179,
+    data: "10 ottobre 2026",
+    titolo: "Trofei per Horto Muso e Scarabocchio 🏇🎨",
+    descrizione: [
+      "Horto Muso: 20 trofei, dalle prime corse ai podi, fino alle vittorie contro i bot più bravi e alle sfide online.",
+      "Scarabocchio: 20 trofei per chi disegna e per chi indovina: parole indovinate al volo, disegni capiti da tanti, parole difficili, vittorie con la stanza piena.",
+      "Contano le partite giocate col profilo da adesso in poi, una volta sola per partita."
+    ]
+  },
+  {
+    v: 178,
+    data: "10 ottobre 2026",
+    titolo: "In casa l'avatar cammina davvero 🚶",
+    descrizione: [
+      "Quando l'avatar attraversa la casa alza i piedi a turno e dondola le braccia.",
+      "Tieni premuto su un mobile: si apre «Arreda» e lo sposti subito col dito, senza passare dal tasto."
+    ]
+  },
+  {
+    v: 177,
+    data: "10 ottobre 2026",
+    titolo: "Trofei per tipo e città più comoda 🏆",
+    descrizione: [
+      "Nei trofei, sotto ogni gioco vedi quanti ne hai di ogni tipo: 🥉 bronzo, 🥈 argento, 🥇 oro, 💎 diamante e 💠 platino. Anche dentro ogni gioco, in cima.",
+      "Nella città si entra toccando anche l'edificio, non solo il nome. Prima, la sera e di notte, funzionava solo il nome.",
+      "Tenendo il dito su una scritta non si seleziona più il testo e non esce il menu del copia e incolla."
+    ]
+  },
+  {
+    v: 176,
+    data: "10 ottobre 2026",
+    titolo: "Giorni di fila 🔥",
+    descrizione: [
+      "Ogni giorno in cui entri nell'app col tuo profilo conta: se entri anche domani sono 2 giorni di fila, poi 3… Se salti un giorno si riparte da 1.",
+      "Premi: a 7 giorni di fila 500 Speed Coins, a 30 giorni 2.000 e ogni 100 giorni 5.000.",
+      "I giorni di fila si vedono nella città accanto al livello (🔥) e nelle tue statistiche, col tuo record."
+    ]
+  },
+  {
+    v: 175,
+    data: "10 ottobre 2026",
+    titolo: "Le tue statistiche 📊",
+    descrizione: [
+      "Nel tuo profilo c'è il tasto «📊 Le tue statistiche»: per ogni gioco partite, vinte, perse, % di vittorie, tempo giocato e serie migliore di vittorie di fila.",
+      "In alto il tempo giocato in tutto e il tuo gioco preferito. Il Black Jack tiene anche le sue mani di sempre.",
+      "Nei giochi coi punti c'è anche il tuo record: il punteggio più alto che hai fatto.",
+      "Contano le partite giocate col profilo da oggi in poi.",
+      "Il bot ora si chiama semplicemente Bot, in tutti i giochi.",
+      "Nel negozio gli oggetti speciali hanno una frase in più quando li tocchi."
+    ]
+  },
+  {
+    v: 174,
+    data: "10 ottobre 2026",
+    titolo: "La tua casa e il negozio 🏠🛍️",
+    descrizione: [
+      "Nella città si apre la Casa: tre stanze tutte tue (Soggiorno con l'angolo cottura, Camera e Bagno). Si parte con roba scadente, il bello si compra. Serve il profilo: la casa si salva lì e non si perde cambiando telefono.",
+      "Tocca il pavimento e il tuo avatar ci va. Tocca le cose e le usa: dorme nel letto con la coperta fino al mento, si siede su divani e sedie, apre il frigo, fa la doccia cantando, il bagno nella vasca con la schiuma, accende TV e lampade, tira lo sciacquone.",
+      "Dall'armadio aperto si cambia look.",
+      "Con «✏️ Arreda» si sposta tutto col dito. I mobili si girano anche di fianco, le cose piccole si appoggiano sopra i mobili, i quadri si appendono anche sulle pareti di lato. Si cambiano carta da parati e pavimento.",
+      "Le stanze si possono allargare pagando (Media, Grande, Enorme): poi si scorrono col dito a destra e a sinistra.",
+      "Apre il Negozio, nella città o dalla casa: si scorre col dito tra i reparti. Ogni oggetto ha il prezzo scritto sotto. Si paga con le Speed Coins e quello che compri va nel baule di casa. C'è anche il Mercatino dell'usato, a poco."
+    ]
+  },
+  {
+    v: 173,
+    data: "10 ottobre 2026",
+    titolo: "Trofei per altri 5 giochi 🏆",
+    descrizione: [
+      "Arrivano 19 trofei ciascuno per L'Asta, Nomi Cose e Città, Parola d'ordine, La Patata Bollente e Sì... però.",
+      "Si va dalla prima partita alle sfide più dure: 25 vittorie di squadra in Parola d'ordine, 300 parole approvate in Nomi Cose e Città, 100 carte vinte all'asta, 3 vittorie di fila alla Patata.",
+      "Anche questi danno XP e Speed Coins. Contano le partite giocate da qui in avanti, con il profilo."
+    ]
+  },
+  {
+    v: 172,
+    data: "10 ottobre 2026",
+    titolo: "Parola d'ordine si anima 🎬",
+    descrizione: [
+      "All'inizio della partita lo studio presenta tutti: prima ogni squadra al suo bancone, che esulta, poi i capi sui podi col loro nome. Poi la telecamera va sul capo che comincia.",
+      "Parola giusta: la telecamera va sulla squadra, che esulta col braccio alzato e fa due saltelli.",
+      "Parola sbagliata: la telecamera va sul capo, che si arrabbia («💢 Ma no!»). Con la parola nera, invece, esplode.",
+      "Sistemato un problema degli iPhone: quando il capo scriveva l'indizio, lo studio si rimpiccioliva, sotto restava il blu vuoto e la telecamera si spostava. Ora resta tutto fermo."
+    ]
+  },
+  {
+    v: 171,
+    data: "10 ottobre 2026",
+    titolo: "La città si allunga e Parola d'ordine migliora 🏙️",
+    descrizione: [
+      "La città ora è più lunga e si scorre su e giù col dito. In fondo c'è una fila nuova: il Circolo ha il suo posto tutto per sé, accanto a un parco con gli alberi e la panchina. Nessun edificio ne copre più un altro.",
+      "I nomi degli edifici adesso stanno appoggiati sul tetto di ognuno, non più sospesi in aria.",
+      "Uscendo da un edificio torni nel punto della città dove eri arrivato.",
+      "Parola d'ordine: ognuno può segnare più parole insieme, e su ogni parola segnata si vede sempre la faccina di chi l'ha scelta.",
+      "Parola d'ordine: la parola d'oro non fa più ricominciare il turno. Chi la trova continua a indovinare con lo stesso indizio, senza consumare un tentativo."
+    ]
+  },
+  {
+    v: 170,
+    data: "9 ottobre 2026",
+    titolo: "Trofei per Palla a Pendolo e Ruota della Fortuna 🏆",
+    descrizione: [
+      "Palla a Pendolo: 18 trofei, sia da lanciatore sia sulla trave. Il più duro: buttare giù tutti e tre i bot Difficili in 6 secondi.",
+      "Ruota della Fortuna: 18 trofei tra giri, consonanti, frasi risolte e manche da 5.000 punti. I più rari: battere i bot Difficili senza mai fare Bancarotta, o vincendo tutte le manche.",
+      "Anche questi danno XP e Speed Coins. Contano le partite giocate da qui in avanti, con il profilo."
+    ]
+  },
+  {
+    v: 169,
+    data: "9 ottobre 2026",
+    titolo: "Il Casinò in prima persona e il nuovo Circolo 🎲",
+    descrizione: [
+      "Nel Casinò ora entri dalla scalinata e vedi tutto il salone: il lampadario, il bar con l'insegna, le slot e tanti tavoli pieni di gente. A sinistra i tavoli del Black Jack, a destra quelli del Poker. Tocchi un tavolo e ci cammini incontro fino a sederti.",
+      "In città c'è un edificio nuovo, il Circolo, coi muri gialli e le persiane verdi. Dentro c'è un atrio con le porte aperte: da una si intravede la Sala delle Carte (Scopa, Scopa 2 contro 2 e Scopone), dall'altra la Sala dei Giochi da Tavolo (Tris, Drop 4 e Battaglia Navale).",
+      "La porta del giardino per ora è chiusa: presto ci saranno bocce, freccette e calcio balilla.",
+      "In basso ci sono sempre i nomi di tutti i giochi dell'edificio, per andare dritti al tavolo. Finita la partita torni al tavolo dov'eri.",
+      "Nell'Arena restano i giochi sportivi: Glow Hockey e Calcio Biliardo."
+    ]
+  },
+  {
+    v: 168,
+    data: "9 ottobre 2026",
+    titolo: "Arriva la Ruota del giorno 🎡",
+    descrizione: [
+      "Al posto del regalo fisso, una volta al giorno giri la ruota: può uscire da 500 a 5.000 Speed Coins oppure da 250 a 2.000 XP.",
+      "Ogni spicchio ha la stessa probabilità di uscire: i due premi grossi sono 5.000 monete e 2.000 XP.",
+      "La trovi in basso nella città (tasto 🎡 Ruota) e nel Black Jack e nel Poker quando ti mancano le monete. Torna disponibile ogni giorno a mezzanotte.",
+      "Ora l'app si aggiorna subito: quando esce una novità basta chiuderla e riaprirla."
+    ]
+  },
+  {
+    v: 167,
+    data: "9 ottobre 2026",
+    titolo: "Trofei per Battaglia Navale, Poker e Taboo 🏆",
+    descrizione: [
+      "Battaglia Navale: 18 trofei. Colpisci e affonda le navi, batti il computer Difficile e vinci online. Il più duro: battere il Difficile 3 volte di fila.",
+      "Poker: 29 trofei, sia per il Texas Hold'em sia per quello all'italiana. Si vincono mani, si rilancia, si cambiano carte e si punta al full, al colore e al poker.",
+      "Taboo: 18 trofei. Fai indovinare le carte alla tua squadra, chiama i BUZZ agli avversari e prova a far indovinare 10 carte di fila in un turno.",
+      "Anche questi trofei danno XP e Speed Coins. Contano solo le partite giocate da qui in avanti, con il profilo."
+    ]
+  },
+  {
+    v: 166,
+    data: "9 ottobre 2026",
+    titolo: "La città non è più in prova 🏙️",
+    descrizione: [
+      "Via la scritta «beta»: in home il tasto ora si chiama semplicemente «La città».",
+      "In alto nella città vedi il tuo avatar, il nome, il livello con la barra degli XP e le tue Speed Coins. Toccandoli apri il tuo profilo.",
+      "In basso c'è il tasto del regalo del giorno: quando è pronto brilla e lo ritiri da lì, altrimenti ti dice tra quanto arriva il prossimo.",
+      "Ci sono già i tasti di Casa, Clan e Negozio: per ora sono chiusi, arrivano presto."
+    ]
+  },
+  {
+    v: 165,
+    data: "9 ottobre 2026",
+    titolo: "Ogni trofeo ora dà XP e Speed Coins 🏆🪙",
+    descrizione: [
+      "Quando sblocchi un trofeo prendi XP e monete in base al livello: bronzo 100, argento 250, oro 600, diamante 1.500 e Platino 3.000 (sia XP sia monete).",
+      "Anche i trofei che avevi già valgono: la prima volta che apri l'app arriva un regalo con i premi di tutti i trofei presi finora."
+    ]
+  },
+  {
+    v: 164,
+    data: "9 ottobre 2026",
+    titolo: "Trofei di Calcio Biliardo ⚽",
+    descrizione: [
+      "Arrivano 20 trofei: si parte con la prima partita e i primi gol, poi si punta a battere Bot, vincere online e segnare con tiri speciali.",
+      "I trofei più rari premiano chi batte Bot Difficile 5 volte, chi lo batte senza subire gol e chi arriva a 250 gol."
+    ]
+  },
+  {
+    v: 163,
+    data: "9 ottobre 2026",
+    titolo: "Calcio Biliardo: la tua faccia in campo, partita a tempo e rigori ⚽",
+    descrizione: [
+      "L'attaccante, il calciatore più avanzato, ha la faccia del tuo avatar. Quando segni, il tuo avatar esulta in mezzo al campo coi coriandoli del colore della squadra.",
+      "Nuova partita a tempo: 2, 3 o 5 minuti con l'orologio in alto. Se finisce pari si va ai rigori: 3 a testa e poi a oltranza. Tira solo l'attaccante e il portiere si tuffa a caso.",
+      "Scegli la formazione: Classica, Catenaccio (più difesa) o All'attacco. Online ognuno la sceglie in saletta, e Bot sceglie la sua a sorpresa.",
+      "Torneo a eliminazione: Calcio Biliardo ora c'è anche nei tornei della Sala, e chi non gioca guarda le partite in diretta.",
+      "Online, chi entra quando i due posti sono già presi guarda la partita in diretta, senza suoni.",
+      "Quando prendi il palo o sbagli un rigore, la folla fa «uuuh» per davvero."
+    ]
+  },
+  {
+    v: 162,
+    data: "9 ottobre 2026",
+    titolo: "Calcio Biliardo: suoni veri dello stadio 📣",
+    descrizione: [
+      "Al posto dei suoni fatti al computer ora ci sono registrazioni vere: i cori dei tifosi sotto la partita, le urla quando si segna, il calcio al pallone e il colpo sul palo.",
+      "Si scaricano solo quando giochi a Calcio Biliardo. Col tasto 🔊 in alto a destra li spegni."
+    ]
+  },
+  {
+    v: 161,
+    data: "9 ottobre 2026",
+    titolo: "Calcio Biliardo: lo stadio si sente 🏟️",
+    descrizione: [
+      "Suoni del pallone: il colpo quando lo calci, i calciatori che si scontrano, le sponde e il palo.",
+      "Sotto c'è la folla dello stadio. Col tasto 🔊 in alto a destra spegni i suoni.",
+      "Tiri forti anche dai bordi: più tiri indietro il dito, più la telecamera si alza e il campo si rimpicciolisce. Vicino al bordo dello schermo la forza piena arriva prima che il dito esca dallo schermo."
+    ]
+  },
+  {
+    v: 160,
+    data: "9 ottobre 2026",
+    titolo: "Calcio Biliardo tutto nuovo ⚡",
+    descrizione: [
+      "Palla più calma: il tiro è meno forte e la palla corre meno, sembra più calcio e meno biliardo. E alla fine si ferma in fretta, senza strisciare piano piano.",
+      "Le porte sono un filo più larghe, così i gol arrivano lo stesso.",
+      "Le squadre ora sono gialli e blu, e sui calciatori c'è il fulmine di SPeeD GAME.",
+      "Il campo è molto più grande e la palla si vede meglio. Le porte hanno il colore di chi le difende.",
+      "Mentre tiri indietro il dito vedi la freccia a puntini e un anello che si riempie: verde piano, rosso a tutta forza.",
+      "Nome, avatar e gol di ognuno stanno in una targhetta piccola vicino alla sua porta."
+    ]
+  },
+  {
+    v: 159,
+    data: "9 ottobre 2026",
+    titolo: "Nuovo gioco: Calcio Biliardo ⚽",
+    descrizione: [
+      "Il calcio coi dischi: ognuno ha 5 calciatori. A turno ne tocchi uno, tiri indietro il dito come una fionda e lasci: più tiri indietro, più forte parte.",
+      "I calciatori colpiscono la palla e rimbalzano sui bordi, come al biliardo. Vince chi arriva per primo ai gol scelti (1, 3 o 5).",
+      "Si gioca contro Bot (facile, medio o difficile), in due sullo stesso telefono (uno per lato, il telefono in mezzo) oppure online, ognuno dal suo telefono: online vedi sempre la tua squadra in basso.",
+      "Lo trovi anche nell'Arena della città."
+    ]
+  },
+  {
+    v: 158,
+    data: "4 ottobre 2026",
+    titolo: "Una moneta sola: le Speed Coins 🪙",
+    descrizione: [
+      "Fiches e monete ora sono la stessa cosa: al Black Jack e al Poker giochi con le tue Speed Coins, che al tavolo diventano fiches.",
+      "Chi aveva già delle fiches non perde niente: si sono sommate alle monete. E chi in tutto aveva meno di 1.000 monete è salito a 1.000.",
+      "Chi crea il profilo da adesso parte con 1.000 Speed Coins. Il regalo ora è di 1.000 monete al giorno: si ritira una volta al giorno e torna a mezzanotte.",
+      "Più XP: ora li danno anche Glow Hockey, lo Scopone e il Black Jack e il Poker contro il computer (quando ti alzi dal tavolo dopo almeno una mano)."
+    ]
+  },
+  {
+    v: 157,
+    data: "4 ottobre 2026",
+    titolo: "Il Casinò dentro: una sala per ogni gioco 🎰",
+    descrizione: [
+      "Entrando nel Casinò dalla città sei nella sala del Black Jack: in fondo c'è il tavolo con la gente che gioca con le fiches.",
+      "Scorri col dito (o usa le frecce) per passare da una sala all'altra: Scopa, Scopa 2 vs 2, Scopone e Poker. Ogni sala ha il nome del gioco in grande e una cosa tutta sua: il quadro del Settebello, le bandierine delle squadre, la lavagna coi punti, l'insegna al neon.",
+      "In basso ci sono i nomi di tutti i giochi del Casinò: toccane uno e vai subito nella sua sala.",
+      "Tocca il tavolo per giocare. Finita la partita torni nella stessa sala."
+    ]
+  },
+  {
+    v: 156,
+    data: "4 ottobre 2026",
+    titolo: "Tris e Drop 4 al centro 🎯",
+    descrizione: [
+      "Il tavolo di Tris e Drop 4 ora sta al centro dello schermo, non più attaccato in alto con tanto vuoto sotto.",
+      "A fine partita «Rivincita» ed «Esci» compaiono in basso, senza spostare il tavolo."
+    ]
+  },
+  {
+    v: 155,
+    data: "4 ottobre 2026",
+    titolo: "XP anche nelle partite veloci ⚡",
+    descrizione: [
+      "Ogni partita finita ora dà sempre XP, almeno 5, anche se dura pochi secondi: Tris, Drop 4 e tutte le partite contro il computer, a qualsiasi difficoltà.",
+      "Da lì vale la regola di sempre: 1 XP per ogni secondo di partita, +50% se vinci. Una partita a Tris di 20 secondi vale circa 20 XP, 30 se la vinci.",
+      "Contro il computer ora gli XP arrivano anche nei giochi che ti chiamano «Tu» invece che col nome del profilo."
+    ]
+  },
+  {
+    v: 154,
+    data: "4 ottobre 2026",
+    titolo: "Nella città si entra! 🏙️🚪",
+    descrizione: [
+      "Nella nuova città (il tasto «NEW CITY · beta» accanto a Novità) ora si toccano gli edifici: la città fa zoom e si entra.",
+      "Il Casinò ha i giochi di carte su un panno verde, lo Studio TV quiz e parole, la Sala giochi i minigiochi, l'Arena le sfide 1 contro 1 e il Locale i giochi di gruppo.",
+      "Tocchi un gioco e si apre la finestra «Come giocate?» con i modi di quel gioco. Finita la partita, torni nell'edificio.",
+      "La Sala Trofei porta ai tuoi trofei e alla classifica, il Bar alla Sala online, al Torneo e a «Ho un codice», la piazza alle Novità.",
+      "In alto vedi sempre le tue Speed Coins."
+    ]
+  },
+  {
+    v: 153,
+    data: "4 ottobre 2026",
+    titolo: "Livelli, XP e Speed Coins ⭐🪙",
+    descrizione: [
+      "Chi ha il profilo ora sale di livello giocando: a fine partita compare in alto quanti XP hai preso.",
+      "Gli XP dipendono da quanto dura la partita: 1 XP per ogni secondo (al massimo 30 minuti a partita), +50% se vinci e +250 XP alla prima partita del giorno. Così ogni gioco vale per il tempo che ci passi.",
+      "I primi livelli volano: dopo 2 o 3 partite sei già al livello 5 e in circa un'ora di gioco arrivi al 10; poi ogni livello chiede un po' di più. Ogni livello nuovo regala Speed Coins, la nuova moneta del gioco: livello × 50 (arrivando al livello 10 ne prendi 500).",
+      "Il livello massimo è 50: dopo il 50 scatta il Prestigio. Si riparte dal livello 1, le monete restano e ne arrivano 5.000 in regalo. Le stelline ★ accanto al livello dicono quante volte hai fatto il Prestigio.",
+      "Livello e monete li vedi nel tasto del tuo profilo in home; toccandolo trovi la barra degli XP e tutte le regole."
+    ]
+  },
+  {
+    v: 152,
+    data: "4 ottobre 2026",
+    titolo: "Arriva la nuova città 🏙️🚧",
+    descrizione: [
+      "In home, accanto a Novità, c'è il cartello giallo e nero «NEW CITY · open soon»: toccalo e sbirci la città che stiamo costruendo.",
+      "Presto la home diventerà una città: il Casinò per i giochi di carte, lo Studio TV per quiz e parole, la Sala giochi per i minigiochi, l'Arena per le sfide 1 contro 1, il Locale per le feste, la Sala Trofei con le classifiche, il Bar dove ci si trova con gli amici e la piazza delle novità.",
+      "La città segue l'ora vera: di giorno è chiara, al tramonto si accendono i lampioni e di notte brillano le finestre, le insegne e i fari dello stadio.",
+      "Per ora si guarda e basta: ci sono ancora i lavori in corso!"
+    ]
+  },
+  {
+    v: 151,
+    data: "4 ottobre 2026",
+    titolo: "Parola d'ordine nello studio TV 📺",
+    descrizione: [
+      "Parola d'ordine ora si gioca nello studio, come gli altri giochi di Quiz & parole: i capi stanno in alto sui loro podi, i compagni di squadra in basso dietro un bancone grande, il tabellone sul maxischermo.",
+      "Quando il capo dà l'indizio la telecamera va su di lui e la parola esce da una vignetta sopra la sua testa.",
+      "Quando uno della squadra gira una parola, la telecamera va su di lui al bancone e la dice nella vignetta; poi la casella trema, il pubblico fa «ooooh» e dopo un paio di secondi si scopre se è giusta.",
+      "Il tabellone è nuovo, pulito e chiaro: in alto le squadre con le faccine (il capo con la corona), l'indizio grande, e sotto la chat della partita con gli indizi e le parole girate.",
+      "Si può scegliere anche il tabellone da 20 parole, con le caselle più grandi e partite un po' più corte."
+    ]
+  },
+  {
+    v: 150,
+    data: "3 ottobre 2026",
+    titolo: "Entra con un codice 🔑 e avatar più ordinato",
+    descrizione: [
+      "In ogni gioco online ora scegli: «Online: apro io la stanza» oppure «Online: ho un codice». Se ti hanno invitato, scrivi il codice (o incolla il link) ed entri nella loro stanza, senza diventare tu l'host.",
+      "Il messaggio d'invito ora contiene anche il codice: chi ha già l'app la apre, tocca «🔑 Ho un codice» e lo scrive. Il link resta per chi non ce l'ha.",
+      "In home il tasto si chiama «🔑 Ho un codice: entro in una stanza».",
+      "Editor dell'avatar più ordinato: ogni scheda ha le sue sottocategorie in alto. Per esempio in Vestiti trovi Look pronti, Parti superiori, Parti inferiori e Scarpe; in Accessori In testa, Occhiali, Orecchini, Al collo e Borsa.",
+      "Il tasto 🎲 ora cambia a caso solo la sottocategoria aperta (per esempio solo le scarpe)."
+    ]
+  },
+  {
+    v: 149,
+    data: "3 ottobre 2026",
+    titolo: "Nuovo gioco: Parola d'ordine 🕵️",
+    descrizione: [
+      "Come Codenames: sul tabellone ci sono 25 parole. Il capo di ogni squadra (👑) sa quali sono le vostre e dà un indizio di una parola sola più un numero, per esempio «Caldo, 2».",
+      "La squadra ne discute: quando tocchi una parola ci compare sopra il tuo avatar, e la giri toccandola di nuovo. Attenti alla parola nera: chi la gira perde!",
+      "Si gioca a 2 squadre, oppure a 3 squadre se siete almeno in 6: chi gira la parola nera esce e gli altri continuano.",
+      "📝 Le tue parole: soprannomi, posti, parole del vostro gruppo. Le scrivi tutte di fila separate da virgola e spazio (es. Peppe, Ibiza, Kebab), restano salvate sul tuo profilo e ne finiscono fino a 5 in ogni tabellone. Poi le vedi una per una e le cancelli con la ✕; con «Copia tutte» le passi agli amici.",
+      "⭐ Parola d'oro (si può spegnere): tra le parole di nessuno una è d'oro, e non lo sa nessuno, nemmeno i capi. Chi la gira, invece di perdere il turno, gioca un altro turno.",
+      "Ognuno sceglie la sua squadra nella saletta, chi vuole fa il capo, e a ogni nuova partita il capo passa al compagno.",
+      "Se uno esce e rientra, torna nella sua squadra; chi arriva a metà entra subito in gioco. Se il capo esce, un compagno può prendere il suo posto.",
+      "🔄 Host di riserva: se chi ha aperto la stanza va su WhatsApp, blocca il telefono o gli si chiude l'app, dopo pochi secondi un altro giocatore prende il suo posto e la partita va avanti. Quando l'host torna, rientra come giocatore normale nella sua squadra. I giocatori di riserva sono due, così regge anche se ne escono due insieme.",
+      "Se esci un attimo la tua squadra non perde il turno: se il capo ha già dato l'indizio, i compagni continuano a indovinare; se invece manca proprio chi serve, si aspetta che torni.",
+      "Il telefono controlla gli indizi: non vale dare una parola che è sul tabellone (neanche al plurale). A fine partita si vede di chi era ogni parola.",
+      "Si gioca online, ognuno dal suo telefono, da 4 a 12 giocatori. Lo trovi in Quiz & parole."
+    ]
+  },
+  {
+    v: 148,
+    data: "2 ottobre 2026",
+    titolo: "Nuovo gioco: La Ruota della Fortuna 🎡",
+    descrizione: [
+      "Come il quiz della TV: giri la ruota, chiami una consonante e guadagni quello che dice lo spicchio per ogni lettera che c'è. Con almeno 300 compri una vocale, e quando pensi di saperla risolvi la frase.",
+      "Ci sono Bancarotta (perdi i soldi della manche), Passa (perdi il turno) e il Jolly, che ti salva il turno la volta dopo.",
+      "Si gioca nello studio del game show: la telecamera va sulla ruota quando gira e sul concorrente di turno, il pubblico applaude o fa \"ohhh\", e il tabellone con la frase resta sempre in vista in alto.",
+      "Più di 700 frasi in 12 categorie: proverbi, modi di dire, film, canzoni italiane, personaggi famosi, luoghi, cibo, sport, animali e altro.",
+      "Da 2 a 4 alla ruota: contro i bot (il primo è Bot), sullo stesso telefono o online, ognuno dal suo telefono. Online l'host può riempire i posti vuoti coi bot.",
+      "Prima di cominciare scegli quante manche (3, 4 o 5) e quanto sono bravi i bot. Vince chi alla fine ha messo da parte più soldi.",
+      "La trovi nella categoria Quiz & parole."
+    ]
+  },
+  {
+    v: 147,
+    data: "2 ottobre 2026",
+    titolo: "Collegamento più solido: si rientra nella partita 🔁",
+    descrizione: [
+      "Se a un amico si blocca il telefono, cambia app o la pagina si ricarica, rientra nella partita al suo posto: con le sue carte, i suoi punti e il suo turno.",
+      "Durante le partite online e nella Sala lo schermo resta acceso: il telefono non si blocca da solo mentre aspetti il tuo turno.",
+      "Se l'host esce un attimo dall'app (per esempio per mandare il link), gli altri lo aspettano fino a 2 minuti e vedono \"⏳ Aspettiamo l'host…\".",
+      "Meno batteria: quando nessuno tocca lo schermo per un po' gli avatar si riposano, e il collegamento manda meno messaggi.",
+      "Se l'app si riapre da capo, in alto nella pagina iniziale c'è il tasto \"🔁 Rientra nella partita\" (si può togliere con la ✕).",
+      "Vale anche per la Sala online e per il torneo a eliminazione: chi rientra ritrova la sua sfida.",
+      "Unica eccezione per ora: nella Battaglia navale le navi di chi è entrato stanno sul suo telefono, quindi se la sua pagina si ricarica la partita va rifatta."
+    ]
+  },
+  {
+    v: 146,
+    data: "2 ottobre 2026",
+    titolo: "Nuovo gioco: il Poker con le carte francesi ♠️",
+    descrizione: [
+      "Due poker in uno: il Texas Hold'em (2 carte tue e 5 in mezzo per tutti) e il Poker all'italiana (5 carte, poi le cambi).",
+      "Contro il computer (scegli quanti bot e quanto sono bravi, il primo è Bot) oppure online, ognuno dal suo telefono: l'host può riempire i posti vuoti coi bot.",
+      "Si gioca con le stesse fiches del Black Jack: ti siedi con al massimo 1.000, e quello che vinci o perdi resta nel tuo profilo. Se le finisci, ti risiedi con altre fiches o ritiri il bonus.",
+      "Quando tocca a te: Passa, Chiama, Punta o Rilancia (con le scelte veloci: metà piatto, piatto, all-in) oppure Lascia.",
+      "Online ognuno vede solo le sue carte; alla fine si scoprono quelle di chi è arrivato in fondo. L'host può chiudere il tavolo e vedere chi ha guadagnato di più."
+    ]
+  },
+  {
+    v: 145,
+    data: "1 ottobre 2026",
+    titolo: "Scopa, Scopa 2 vs 2 e Scopone: scegli a quanti punti 🃏",
+    descrizione: [
+      "Prima di cominciare scegli i punti da raggiungere: una mano sola, 7, 11 o 21. Oppure scrivi tu un numero da 1 a 99.",
+      "Online si cambia anche nella saletta (⚙️ Regole). Nel torneo a eliminazione di Scopa lo sceglie l'host e vale per tutte le partite.",
+      "Se si arriva ai punti a pari merito si gioca un'altra mano. Con una mano sola può finire pari.",
+      "I trofei della partita intera contano solo nelle partite da almeno 11 punti.",
+      "Correzione: lo Scopone per ora si gioca contro il computer (tu e 3 bot)."
+    ]
+  },
+  {
+    v: 144,
+    data: "1 ottobre 2026",
+    titolo: "Il numero giusto di giocatori su ogni gioco 👥",
+    descrizione: [
+      "Sotto ogni gioco c'è scritto per quanti è: per esempio Battaglia navale da 1 a 2, Scopone e Scopa 2 vs 2 da 1 a 4, Palla a pendolo da 1 a 4.",
+      "Sui giochi a due c'è scritto anche il torneo: fino a 10 amici."
+    ]
+  },
+  {
+    v: 143,
+    data: "1 ottobre 2026",
+    titolo: "Torneo a eliminazione per i giochi a due 🏆",
+    descrizione: [
+      "In \"Come giocate?\" di Tris, Drop 4, Battaglia navale e Scopa c'è il Torneo a eliminazione: mandi un link solo e giocate fino a 10.",
+      "Tutti entrano in panchina e ognuno, host compreso, tocca il girone in cui vuole giocare. Chi resta in panchina viene messo a caso nei posti liberi.",
+      "Ogni girone è una sfida a due: chi vince il girone 1 sfida chi vince il 2, e così via fino alla finale. Se uno resta solo, gioca contro il bot medio.",
+      "Le partite si aprono da sole sul telefono di chi gioca. Se finisce pari si rigioca; se una partita si blocca, l'host decide chi passa.",
+      "Chi non sta giocando può guardare in diretta le partite degli altri (👀 Guarda), anche quelle contro il bot. Nella Battaglia navale si vedono i colpi, mai le navi.",
+      "Il tabellone si apre quando vuoi col tasto 🏆, anche durante la tua partita."
+    ]
+  },
+  {
+    v: 142,
+    data: "1 ottobre 2026",
+    titolo: "Nuovo gioco online: Taboo 🤐",
+    descrizione: [
+      "Da 4 a 16 persone nella stessa stanza: l'host può dividere le squadre a caso o spostare i giocatori a mano.",
+      "A turno uno spiega a voce la parola senza pronunciare le cinque vietate. La squadra avversaria vede la carta e può fare BUZZ; i compagni vedono solo tempo e punti.",
+      "Parola indovinata: +1 punto. BUZZ: −1 punto. Si possono saltare fino a tre carte per turno.",
+      "L'host sceglie turni da 60, 90 o 120 secondi e da 1 a 4 giri. Il mazzo contiene 300 carte italiane senza ripetizioni nella partita."
+    ]
+  },
+  {
+    v: 141,
+    data: "30 settembre 2026",
+    titolo: "Entrare e restare in partita: molto più facile 🔗",
+    descrizione: [
+      "Chi apre il link entra anche se la stanza dell'host non era ancora pronta: il telefono riprova da solo finché non è dentro.",
+      "Se blocchi lo schermo o vai un attimo su un'altra app (per esempio WhatsApp), non vieni più tolto dalla partita: hai 20 secondi per tornare, e quando torni sei ancora dentro.",
+      "Se è l'host a sparire un attimo (per esempio per mandare il link), gli amici lo aspettano invece di uscire.",
+      "Torneo e Sala online: si entra dal link anche senza profilo, basta scrivere il nome. Passando da un gioco all'altro il gioco di prima si chiude bene, niente più errori a sorpresa.",
+      "La Patata Bollente: per passare la bomba basta toccare il concorrente dove vuoi, anche il banco col nome, e un tocco solo (su iPhone a volte non passava)."
+    ]
+  },
+  {
+    v: 140,
+    data: "30 settembre 2026",
+    titolo: "Scarabocchio: secchiello, punti a tempo, 12 colori e lavagna più grande",
+    descrizione: [
+      "Chi indovina prende tanti punti quanti secondi mancano: indovini con 57 secondi sul timer, prendi 57 punti.",
+      "12 colori: nero, grigio, marrone, rosso, arancione, giallo, verde, azzurro, blu, viola, rosa e color pelle, più la gomma.",
+      "Tre grandezze (sottile, medio, grosso), sia per disegnare che per cancellare.",
+      "Nuovo secchiello: tocchi una zona chiusa e si riempie del colore scelto (il cielo, un prato, una maglietta). Si annulla come un tratto.",
+      "La lavagna è molto più grande. Quando apri la tastiera per scrivere si rimpicciolisce e spariscono le figurine, così il disegno resta sempre in vista."
+    ]
+  },
+  {
+    v: 139,
+    data: "30 settembre 2026",
+    titolo: "Nuovo gioco: Scarabocchio 🎨",
+    descrizione: [
+      "Scarabocchio è il nostro \"disegna e indovina\". A turno uno sceglie una parola tra 3 e la disegna, gli altri la vedono comparire in tempo reale e provano a indovinarla scrivendo in chat.",
+      "La risposta giusta non la vede nessuno: compare solo \"Marco ha indovinato!\". Se ci sei quasi, il gioco lo dice solo a te.",
+      "Punti: 100 al primo che indovina, poi 80, 60, 40 e 20. Chi disegna prende 25 punti per ognuno che indovina.",
+      "Lavagna con 4 colori, gomma, due spessori, \"annulla\" e \"cancella tutto\". Mentre il tempo passa si scoprono alcune lettere della parola.",
+      "Si gioca online, ognuno dal suo telefono, da 2 a 10. Nella saletta l'host sceglie il tempo, i giri e se usare anche parole difficili, e conta anche nel torneo online."
+    ]
+  },
+  {
+    v: 138,
+    data: "30 settembre 2026",
+    titolo: "Torneo online con un link solo, e regole sempre in mano all'host 🏆",
+    descrizione: [
+      "Torneo: adesso puoi giocarlo online. Scegli \"Online\", mandi UN link solo e gli amici entrano una volta per tutto il torneo. Tu scegli i giochi uno dopo l'altro e sul telefono di tutti si aprono da soli.",
+      "Nel torneo online la saletta mostra la classifica, che si aggiorna dopo ogni partita. Con \"Chiudi e premia\" tutti vedono il podio col campione.",
+      "Anche la Sala online adesso è una saletta coi personaggi, come quella dei giochi.",
+      "Saletta d'attesa: chi ha aperto la stanza ha il tasto \"⚙️ Regole\" e può cambiarle quando vuole, anche con gli amici già dentro.",
+      "Le regole da cambiare ci sono in L'Asta (modalità, crediti e tema), Horto Muso (cavalli e bot), Nomi, Cose e Città (categorie, secondi e giri), Palla a Pendolo (bot e collisioni) e La linea del tempo (categorie e carte).",
+      "Palla a Pendolo online: ognuno sceglie il suo ruolo con due tasti chiari, \"🎯 Lancio io\" e \"🏃 Sto sulla trave\". Vale anche per chi entra dal link.",
+      "Crea profilo: oltre a nome, password e faccina c'è il tasto \"🧍 Crea il tuo personaggio\". Il personaggio che fai si salva insieme al profilo."
+    ]
+  },
+  {
+    v: 137,
+    data: "30 settembre 2026",
+    titolo: "Come giocate? E la saletta d'attesa coi personaggi 🛋️",
+    descrizione: [
+      "Ogni gioco adesso comincia chiedendo come giocate: su questo telefono, contro il computer (dove c'è) oppure online. La scelta non sta più in mezzo alle impostazioni.",
+      "Su questo telefono: prima aggiungi gli amici, poi scegli le impostazioni. Online: scegli le impostazioni, apri la stanza e mandi il link agli amici (anche con WhatsApp, dal tasto \"Manda il link\").",
+      "Online si aspetta in una saletta d'attesa, uguale per tutti i giochi: divano, tappeto, quadro col simbolo del gioco, e i personaggi di chi è entrato. Respirano, si guardano intorno, ogni tanto salutano o fanno un saltello; chi arriva entra con un salto e dice \"Ciao!\". Tocca il tuo personaggio e ti saluta.",
+      "Nomi, Cose e Città: dopo \"Ho finito\" il gioco chiede conferma (e ti dice se hai lasciato caselle vuote).",
+      "Nomi, Cose e Città: le parole giuste, con la lettera giusta e che il gioco conosce (nomi, città, nazioni, animali, colori e altro), partono già con il pollice su da parte di tutti. Quelle con la lettera sbagliata o che il gioco non conosce partono bocciate: basta un tocco per cambiare voto.",
+      "Black Jack online: nella saletta vedi le tue fiches e puoi ritirare il bonus gratis anche se sei entrato da un invito. Le fiches ritirate arrivano subito al tavolo.",
+      "Asta Fantacalcio: i calciatori escono in ordine tutto a caso, forti e scarsi mescolati.",
+      "Tris: nuovo bot \"Difficile\", forte ma che ogni tanto si distrae, quindi si può battere. \"Impossibile\" resta imbattibile.",
+      "Arrivano i trofei di Tris e di Forza 4: 17 per gioco, più il Platino se li prendi tutti."
+    ]
+  },
+  {
+    v: 136,
+    data: "26 settembre 2026",
+    titolo: "Avatar rifatti: lui e lei, look pronti e tantissimi oggetti 🧍✨",
+    descrizione: [
+      "Maschio e femmina ora si distinguono subito. Lui ha spalle larghe e sopracciglia folte; lei ha la vita stretta, i fianchi morbidi, le ciglia e le labbra rosate.",
+      "Se passi da maschio a femmina (o viceversa), capelli, barba e trucco si adattano da soli. Gli avatar dei bot e dei giocatori senza profilo sono lui o lei in base al nome (Luca è un ragazzo, Anna una ragazza).",
+      "20 look pronti tra i vestiti: con un tocco diventi Pirata, Mago, Supereroe, Rapper, Tifoso, Cuoco, Angioletto, Diavoletto, Babbo Natale… Faccia, capelli e corpo restano i tuoi.",
+      "Nuova scheda \"Extra\": un oggetto in mano (palloncino, gelato, microfono, bacchetta magica, bandiera, pizza…), qualcosa sulla schiena (zaino, chitarra, mantello, ali d'angelo, ali di fata o di pipistrello), un animaletto (gatto, cane, coniglio, pulcino o pappagallo sulla spalla) e la pittura sul viso.",
+      "Tanti oggetti nuovi: 13 cappelli (coppola, borsalino, pirata, mago, cuoco, Babbo Natale, elmo vichingo, tiara, aureola, cornetti, orecchie da coniglio…), 6 occhiali e maschere, 5 cose al collo, 5 vestiti, 8 stampe, bermuda, mimetici, anfibi, infradito, pantofole e pattini.",
+      "Personalizzare è più divertente: in ogni scheda c'è il tasto \"🎲 a caso\" solo per quella parte, il tasto ↩️ annulla l'ultima scelta, la telecamera zooma sul viso quando scegli occhi, trucco e capelli, e se tocchi l'avatar ride, fa l'occhiolino o ti saluta."
+    ]
+  },
+  {
+    v: 135,
+    data: "26 settembre 2026",
+    titolo: "Black Jack più chiaro e più veloce 🃏",
+    descrizione: [
+      "Mentre giochi vedi sempre quanto ha il banco: Bot sta nell'angolo in basso a sinistra con il suo punteggio, anche quando la telecamera zooma su di te.",
+      "Quando tocca a Bot la telecamera va sulle sue carte, al centro, e solo quando è arrivata lui gira la carta coperta.",
+      "Sopra la testa di ognuno, oltre al nome, ci sono le fiches che ha. Le cifre hanno il punto: 1.000, 10.000.",
+      "Online si punta tutti insieme: ognuno fa la sua puntata dal suo telefono, senza aspettare il turno degli altri (e lo stesso per l'assicurazione).",
+      "Quando dividi, le carte arrivano una alla volta, come al casinò: prima giochi la prima mano, poi Bot dà la seconda carta all'altra.",
+      "Se qualcuno esce dalla partita online, il tavolo non resta più bloccato ad aspettarlo."
+    ]
+  },
+  {
+    v: 134,
+    data: "26 settembre 2026",
+    titolo: "Nomi, Cose e Città online 🔗✍️",
+    descrizione: [
+      "Nomi, Cose e Città si gioca anche \"ognuno dal suo telefono\": apri una stanza, mandi il codice o il link, e si gioca nello studio del game show.",
+      "Si scrive tutti nello stesso momento, ognuno sul suo foglio, con lo stesso tempo per tutti. Sul maxischermo si vede chi ha già finito.",
+      "Al tabellone ognuno vota dal suo telefono: una parola vale finché non la boccia almeno metà degli altri. Con \"Ho votato\" si passa alla categoria dopo quando hanno votato tutti.",
+      "C'è anche nella Sala online, tra i giochi che l'host può lanciare per tutti.",
+      "Quando entri da un invito non devi più scrivere il nome: entri direttamente col profilo del tuo telefono (vale per tutti i giochi online)."
+    ]
+  },
+  {
+    v: 133,
+    data: "26 settembre 2026",
+    titolo: "Studio senza scatti, musica e applausi 🎵👏",
+    descrizione: [
+      "Game show più fluidi: la telecamera ora si muove senza far ridisegnare lo studio al telefono, e il bancone dei concorrenti non sparisce più durante i movimenti.",
+      "Le torri di luci in alto a destra e a sinistra ora sono pannelli LED che ballano a tempo di musica, molto più leggeri per il telefono. Se il telefono fa fatica, lo studio si alleggerisce da solo.",
+      "Sotto al gioco c'è una musichetta chill. Si spegne e si riaccende col tasto 🎵 in alto a destra, e il telefono se lo ricorda.",
+      "Applausi veri del pubblico: quando entra ogni concorrente, a ogni turno, quando indovini; e l'ovazione con i fischi per chi vince.",
+      "Black Jack: la nuova mano parte con la stessa puntata della mano prima (non più sempre 100)."
+    ]
+  },
+  {
+    v: 132,
+    data: "26 settembre 2026",
+    titolo: "Categoria a sorpresa, slot che rallenta e studio più fluido 🎲",
+    descrizione: [
+      "Patata Bollente: oltre alle 3 categorie ora si può votare \"🎲 A sorpresa\". Se vince, sul maxischermo gira la ruota delle categorie, che rallenta piano piano e si ferma su una categoria a caso. Il tempo della bomba resta fermo finché la ruota gira.",
+      "Nomi, Cose e Città: la slot machine della lettera ora è un rullo vero. Parte velocissima e rallenta piano piano (tac… tac…… tac) fino a fermarsi sulla lettera, senza più frenate di colpo.",
+      "Studio del game show più fluido quando la telecamera si muove: luci, fari, raggi e cartellini sono più leggeri per il telefono, e la barra del tempo non ridisegna più lo schermo a ogni istante.",
+      "La linea del tempo: fra un turno e l'altro sul maxischermo torna il logo del programma."
+    ]
+  },
+  {
+    v: 131,
+    data: "26 settembre 2026",
+    titolo: "Nomi, Cose e Città nello studio ✍️📋",
+    descrizione: [
+      "Anche Nomi, Cose e Città ora è un game show, con sigla, pubblico e i vostri avatar ai leggii.",
+      "La lettera esce sul maxischermo come una slot machine, con il rullo di tamburi e l'applauso.",
+      "A ogni turno la telecamera va su chi scrive (con il passaggio del telefono) e poi entra nel suo FOGLIO: un foglio a righe con la lettera cerchiata in rosso, si scrive in corsivo e il tempo è una riga che si accorcia.",
+      "Quando tutti hanno scritto si va al TABELLONE: categoria per categoria, le parole di tutti una sotto l'altra con il voto di ognuno (c'è anche \"👍 tutti\" per fare prima). Accanto a ogni parola vedi subito se vale 10, 5 (uguale a un'altra approvata) o 0.",
+      "Alla fine del giro i punti scorrono sui leggii tra gli applausi e la classifica compare sul maxischermo."
+    ]
+  },
+  {
+    v: 130,
+    data: "26 settembre 2026",
+    titolo: "La Patata Bollente nello studio 💣📺",
+    descrizione: [
+      "Anche la Patata Bollente ora è un game show: sigla, pubblico, occhi di bue e tutti voi dietro ai leggii con il vostro avatar.",
+      "Si vota la categoria sul maxischermo; poi rullo di tamburi, la categoria esce e la bomba VOLA sul primo che la tiene.",
+      "Durante il gioco il maxischermo mostra categoria e conto alla rovescia gigante. Chi ha la bomba sta sotto l'occhio di bue, con la bomba che trema sulla testa e la faccia spaventata. Per passarla tocchi il leggio di chi la riceve (gli anelli verdi dicono chi puoi scegliere) e la bomba vola da un leggio all'altro.",
+      "Quando scade il tempo: BOOM! Lampo, scossa, fiammata e zoom sul leggio: chi esplode diventa grigio con la faccia bruciata e \"💀 OUT\", il pubblico fa \"ohhh\".",
+      "Il tempo della bomba non scende durante le animazioni (rivelazione e bomba che arriva): nessuno perde secondi, anche online.",
+      "Alla fine l'occhio di bue sul vincitore, coriandoli e podio con gli avatar."
+    ]
+  },
+  {
+    v: 129,
+    data: "26 settembre 2026",
+    titolo: "Pubblico vivo e occhio di bue 🎤",
+    descrizione: [
+      "Il pubblico del game show è fatto di tanti piccoli avatar veri, tutti diversi: le file ondeggiano ognuna per conto suo e quando qualcuno indovina saltano tutti.",
+      "In mezzo alla folla ci sono bastoncini luminosi che sventolano, cartelli (FORZA!, WOW!, ⭐⭐⭐…), lucine dei telefoni, flash delle foto e luci colorate che passano sul pubblico.",
+      "L'occhio di bue su chi gioca ora scende fino al pavimento, lascia una pozza di luce sotto il leggio e illumina anche il banco.",
+      "Il pubblico sta in penombra, così i concorrenti risaltano. Tutto resta leggero, senza lag."
+    ]
+  },
+  {
+    v: 128,
+    data: "26 settembre 2026",
+    titolo: "Game show più fluido ⚡",
+    descrizione: [
+      "Lo studio della Linea del tempo non lagga più: la scenografia (arco, torri, pubblico, pavimento, cornice) ora è un'immagine disegnata una volta sola che la telecamera sposta senza fatica.",
+      "Restano in movimento fari, barre delle torri, lucine del pubblico e lampadine, ma fatti in modo leggero. Anche gli avatar dei leggii sono immagini già pronte.",
+      "Sui telefoni meno potenti lo studio si alleggerisce da solo (fari fermi e immagini più leggere)."
+    ]
+  },
+  {
+    v: 127,
+    data: "26 settembre 2026",
+    titolo: "La linea del tempo diventa un GAME SHOW 📺",
+    descrizione: [
+      "Si gioca in uno studio televisivo: maxischermo con la cornice di lampadine, arco al neon, luci che girano, torri LED, pubblico sugli spalti con le lucine dei telefoni, pavimento lucido.",
+      "Ognuno ha la sua POSTAZIONE: il tuo avatar dietro un banco lucido con il nome illuminato, i punti su un display a LED, il pulsante rosso e una striscia del suo colore. Quando tocca a te si accende l'occhio di bue.",
+      "La telecamera fa la regia: sigla iniziale sul pubblico e presentazione dei concorrenti, stacco su chi gioca, zoom sul maxischermo dove si gioca, inquadratura larga mentre si alzano i cartellini dei voti.",
+      "La rivelazione: rullo di tamburi, la carta si gira sul maxischermo con i raggi, poi stacco su chi ha giocato che esulta o si dispera, il pubblico applaude o fa \"ohhh\", i punti scorrono sul display. Poi i cartellini si girano uno dopo l'altro con +50 o −50.",
+      "Fino a 10 concorrenti: da 5 in su i leggii sono su due file sfalsate e la telecamera fa la panoramica lungo le file.",
+      "Online il tempo parte dopo lo stacco su chi gioca, così nessuno perde secondi. Niente si salta: è uno spettacolo!"
+    ]
+  },
+  {
+    v: 126,
+    data: "26 settembre 2026",
+    titolo: "La linea del tempo tutta nuova ✨",
+    descrizione: [
+      "Grafica rifatta da capo, a tutto schermo: niente più aspetto \"antico\".",
+      "La linea del tempo è verticale, con gli anni colorati sull'asse e le carte in stile vetro. Ogni categoria ha il suo colore e la sua icona: Storia arancio, Calcio verde, Cinema rosso, Invenzioni blu, Rap viola.",
+      "La carta da piazzare è colorata e luccica. Tocchi il punto dove va (Prima di tutto, Metti qui, Dopo tutto): la carta ci compare dentro e poi confermi con ✅ Mettila qui. Niente più tocchi sbagliati.",
+      "Gli AVATAR: in alto tutti i giocatori con faccia e punti (chi gioca è illuminato), accanto a \"Tocca a…\" c'è chi deve piazzare, nei voti la faccia di chi ha votato, alla fine il podio.",
+      "Il risultato: la carta si GIRA e svela l'anno, l'avatar esulta se hai indovinato (con i coriandoli) o fa la faccia triste se hai sbagliato.",
+      "La carta appena entrata nella linea si illumina al turno dopo. Online ognuno ha il suo avatar e la linea non torna più in cima quando arrivano i voti."
+    ]
+  },
+  {
+    v: 125,
+    data: "26 settembre 2026",
+    titolo: "Horto Muso rifatto: ippodromo, cavalli veri e il tuo avatar in sella 🏇",
+    descrizione: [
+      "Cavalli disegnati da capo: galoppano davvero (zampe snodate, criniera e coda che ondeggiano), 8 mantelli diversi con stella, lista e calzini bianchi, briglie e gualdrappa col numero.",
+      "In sella c'è il TUO avatar; online quelli dei tuoi amici. I bot sono Bot, Sara, Leo, Nina, Giulia, Toni e Rosa.",
+      "Ippodromo a tutto schermo: cielo, tribuna con la folla che salta, staccionata e prato a strisce.",
+      "Telecamera che segue la corsa come in TV: i cavalli restano grandi mentre scorrono prato, staccionata e cartelli dei metri. Il traguardo arriva solo alla fine.",
+      "Minimappa in alto del percorso a mezzo ovale, con un pallino per ogni cavallo, più la tua posizione e i metri che mancano.",
+      "Si parte dai cancelletti che si aprono al VIA. Polvere dietro gli zoccoli, righe di vento quando frusti e galoppo più veloce; se sei sfinito il cavallo rallenta.",
+      "Photo finish con i cavalli nuovi (si fermano pure le zampe nello scatto): è obbligatorio, non si può saltare. Poi podio finale con gli avatar."
+    ]
+  },
+  {
+    v: 124,
+    data: "26 settembre 2026",
+    titolo: "Classifica trofei e amici 👥",
+    descrizione: [
+      "Nuovo tasto 👥 Classifica in home, accanto a Trofei.",
+      "🌍 Generale: TUTTI i giocatori in fila, da chi ha più trofei a chi ne ha meno, con 🥇🥈🥉 per il podio e i trofei di ogni tipo (💠💎🥇🥈🥉).",
+      "Da lì mandi l'amicizia a chiunque col tasto ➕. Se ti è arrivata la sua richiesta, il tasto diventa ✓ e accetti al volo.",
+      "👥 Amici: la classifica solo tra te e i tuoi amici. Puoi anche cercare un nome e chiedergli l'amicizia.",
+      "📨 Richieste: accetta ✓ o rifiuta ✕ quelle arrivate e annulla quelle che hai mandato. Il pallino rosso in home ti avvisa se ne hai di nuove.",
+      "Tocca un nome per vedere i suoi trofei gioco per gioco. Da lì puoi anche chiedere o togliere l'amicizia (se la togli, sparite dalla lista l'uno dell'altro).",
+      "Per comparire in classifica bisogna aprire l'app aggiornata almeno una volta."
+    ]
+  },
+  {
+    v: 123,
+    data: "26 settembre 2026",
+    titolo: "Glow Hockey: disco dal cielo, bordi luminosi e musica 🔥",
+    descrizione: [
+      "Dopo un gol niente più attesa a racchette bloccate: il disco CADE DALL'ALTO. Parte grande con la sua ombra, si rimpicciolisce fino a toccare terra (tump!) e da lì si può colpire. Intanto ti muovi liberamente.",
+      "Anche a inizio partita il disco arriva dall'alto.",
+      "Il campo prende TUTTO lo schermo, da bordo a bordo e fino in fondo: niente più spazio vuoto sotto.",
+      "Disco e racchette più grandi del 10% (si vedono e si seguono meglio sul campo più alto) e porte un filo più larghe. Il bot è stato riprovato con partite simulate: Facile resta facile, Difficile è una sfida alla pari.",
+      "I bordi si illuminano nel punto esatto in cui il disco li colpisce.",
+      "Musica gasante in stile Geometry Dash: cassa dritta, basso che pompa, arpeggio e melodia. Tasto 🎵/🔇 in alto a destra sul campo."
+    ]
+  },
+  {
+    v: 122,
+    data: "26 settembre 2026",
+    titolo: "Palla a Pendolo con gli avatar 🎯",
+    descrizione: [
+      "Sulla trave ci sono gli avatar veri: il tuo (con \"TU\" sopra), quelli degli amici online e i bot con la loro faccia (Bot, Sara, Leo).",
+      "Chi lancia si vede di spalle in basso, coi suoi colori: capelli, pelle, maglia e cappello. Se lanci tu, ci sei tu di schiena!",
+      "A tutto schermo: niente titolo, i tasti ◀ ▶ e SALTA/LANCIA stanno sopra l'acqua agli angoli. Un aiuto compare solo nei primi secondi.",
+      "Quando cadi in acqua cade proprio il tuo avatar, che fa la capriola.",
+      "\"Finto 3D\" nei giochi con gli avatar (Scopa, 2 vs 2, Scopone, Black Jack): respirano e sbattono le palpebre, chi deve giocare ci pensa su e nei giochi a 4 gli altri lo guardano."
+    ]
+  },
+  {
+    v: 121,
+    data: "26 settembre 2026",
+    titolo: "Scopa, 2 vs 2 e Scopone da bordo a bordo 🟩🟥",
+    descrizione: [
+      "La stanza riempie tutto lo schermo: niente più cornice ai lati, sopra e sotto. La mensola con le tue carte arriva fino in fondo.",
+      "Punteggio, tasto indietro e musica sono dentro la stanza, in alto.",
+      "Squadre a colpo d'occhio: il nome del tuo compagno è verde, quelli degli avversari rossi (il bordo diventa dorato quando tocca a loro)."
+    ]
+  },
+  {
+    v: 120,
+    data: "26 settembre 2026",
+    titolo: "Scopa 2 vs 2 e Scopone con gli avatar 🤝",
+    descrizione: [
+      "Anche Scopa 2 vs 2 e Scopone ora sono una stanza vera: il tuo compagno seduto di fronte (col 🤝 e il bordo verde), i due avversari agli angoli del tavolo, ognuno col suo ventaglio di carte coperte.",
+      "Le facce cambiano: chi deve giocare ci pensa su 🤔, chi fa scopa esulta e salta con il compagno, gli altri ci restano male.",
+      "I bot hanno un nome e una faccia fissi: Bot (sempre lui!), Giulia e Toni nella 2 vs 2; Bot, Rosa e Peppe nello Scopone. Online si vedono gli avatar veri degli amici.",
+      "Tavolo come nella Scopa: a tutta altezza, 8 posti fissi, carte che non cambiano grandezza e non saltano. Distribuzione animata a giro (tavolo, poi tu e gli altri a turno).",
+      "Scopone: le tue 10 carte stanno su due file da 5, grandi e leggibili.",
+      "Musica nuova per tutti e tre i giochi di scopa: più allegra e ritmata, stile osteria."
+    ]
+  },
+  {
+    v: 119,
+    data: "26 settembre 2026",
+    titolo: "Scopa: tavolo a tutto schermo 🃏",
+    descrizione: [
+      "La stanza con Bot e il tavolo usa tutta l'altezza del telefono: niente più spazio vuoto sotto la tua mano.",
+      "Via il mazzo dal tavolo: tutto il panno è per le carte, con 8 posti (4 per fila). Le carte hanno SEMPRE la stessa grandezza fino a 8 in tavola; solo con 9 o più si rimpiccioliscono.",
+      "Distribuzione animata come dal vero: prima le 4 carte in tavola una alla volta, poi una a te e una a Bot, a turno. Anche quando si ridanno le carte a metà mano. Bot aspetta che la distribuzione finisca prima di giocare.",
+      "Posti fissi in tavola: ogni carta resta dov'è finché non viene presa, il posto lasciato vuoto resta vuoto e la carta nuova va nel primo posto libero. Niente più carte che saltano.",
+      "Il suggerimento per scegliere la presa compare sul tavolo invece che sotto, così non sposta niente.",
+      "Il punteggio in alto non finisce più sotto il tasto indietro."
+    ]
+  },
+  {
+    v: 118,
+    data: "26 settembre 2026",
+    titolo: "Avatar: accessori nuovi e borse 👜",
+    descrizione: [
+      "In testa: cerchietto, fiocco, mollette e cappello di paglia, tutti col colore che vuoi.",
+      "Occhiali a gatto e occhiali grandi da diva. Orecchini: perla, cuoricini e cerchi grandi.",
+      "Al collo: girocollo, catenina col cuoricino e foulard annodato.",
+      "Borse: a tracolla o borsetta in mano, in 10 colori più quello libero.",
+      "I tacchi ora si vedono di profilo, col tacco a spillo. Gli stivali alti vanno sotto la gonna invece di coprirla."
+    ]
+  },
+  {
+    v: 117,
+    data: "26 settembre 2026",
+    titolo: "Avatar: tanti vestiti e scarpe da donna 👗",
+    descrizione: [
+      "Sopra: crop top (con la pancia scoperta), top a spalline, camicetta con le balze, cardigan aperto, maglione largo.",
+      "Vestiti interi, corto e lungo, col nastro in vita: col vestito le voci \"Sotto\" spariscono, perché copre tutto.",
+      "Sotto: leggings, pantaloni a zampa, shorts di jeans sfilacciati, minigonna, gonna a pieghe, gonna a tubino.",
+      "Scarpe: tacchi, ballerine col fiocchetto, stivaletti, stivali alti fino al ginocchio, zeppe.",
+      "Gli avatar a caso da donna ora usano anche i capi nuovi."
+    ]
+  },
+  {
+    v: 116,
+    data: "26 settembre 2026",
+    titolo: "Avatar: trucco completo, due avatar e ricci nuovi 💄",
+    descrizione: [
+      "Due personaggi a testa: sotto il riflettore c'è quello che usi. Scorri col dito a destra o a sinistra (o usa le frecce) per passare all'altro: quello che hai sul palco quando esci diventa quello dei giochi.",
+      "Il trucco ha una scheda tutta sua e si può mettere tutto insieme: ombretto, eyeliner, mascara, rossetto e blush, ognuno col suo colore (anche libero). Le anteprime sono in primo piano sul viso.",
+      "Ombretto leggero, sfumato, intenso o con brillantini. Eyeliner sottile, alato, grafico o matita sotto. Mascara naturale, volume o ciglia finte. Rossetto velato, pieno o lucido. Blush leggero, intenso o abbronzato.",
+      "Sei tagli ricci nuovi, con i boccoli disegnati uno per uno. Corti: riccioletti, ciuffo riccio. Medi: caschetto riccio, ricci con frangia. Lunghi: ricci lunghi, ricci raccolti.",
+      "Corpo femminile più proporzionato: fianchi meno larghi.",
+      "Editor più comodo: avatar grande sul palco, \"Salva\" piccolo in alto a destra, il dado per l'avatar a caso in basso a sinistra, le sei schede su una riga. Molto più spazio per scorrere le scelte, con scritte grandi che vanno a capo.",
+      "Nelle anteprime dei tagli il cappello sparisce, così vedi bene i capelli.",
+      "Il ciuffo di lato non copre più l'occhio."
+    ]
+  },
+  {
+    v: 115,
+    data: "26 settembre 2026",
+    titolo: "Black Jack: la regia da TV 🎬",
+    descrizione: [
+      "Si apre con Bot che vi guarda e dà il benvenuto, poi la telecamera passa su ognuno di voi e vi presenta.",
+      "Tavolo ovale vero, con tutti seduti attorno. Durante le puntate si vede tutto il tavolo, con il valore scritto sopra ogni pila di fiche.",
+      "Alla seconda carta la telecamera scorre lungo il tavolo; quando tocca a qualcuno fa lo zoom su di lui: faccia, fiche e carte da vicino.",
+      "Quando gioca Bot, zoom sulle sue carte mentre scopre quella coperta. A fine mano si torna a tutti, con vincite e perdite.",
+      "Le carte si posano a cascata come fanno i croupier: non finiscono più sopra quelle del vicino, nemmeno in 10.",
+      "Tocca la faccia di un giocatore (o di Bot) per guardarlo da vicino per un attimo."
+    ]
+  },
+  {
+    v: 114,
+    data: "26 settembre 2026",
+    titolo: "Avatar: 55 tagli e tante facce nuove 💇",
+    descrizione: [
+      "20 tagli nuovi. Corti: sfumato, spike, banana, treccine, stempiato, chierica, afro alto. Medi: ciuffo di lato, scalati, boccoli, anime, bob con frangia, arruffati. Lunghi: lunghissimi, coda di lato, due chignon, codini bassi, lunghi con frangia, boccoli, riga di lato.",
+      "Viso: tre forme nuove (a cuore, lungo, paffuto) e le orecchie a scelta (piccole, grandi, a punta da elfo).",
+      "Occhi nuovi: occhiolino, ciglia lunghe, felini, tristi, luccicanti, chiusi. Più colori degli occhi.",
+      "Sopracciglia: dritte, unite, fini, arrabbiate, con il taglio. Nasi: puntino, a patata, lungo, dritto.",
+      "Bocche: sorrisetto, risata, triste, da micio, canini, apparecchio, morde il labbro, nervoso. Segni: voglia e stellina.",
+      "Nuovi colori di capelli (platino, rame, verde acqua, magenta, corvino) e di pelle.",
+      "Corretto: dopo aver ricaricato la pagina non si deve più scorrere per trovare i tasti."
+    ]
+  },
+  {
+    v: 113,
+    data: "26 settembre 2026",
+    titolo: "Black Jack: si gioca sul lato lungo 🎰",
+    descrizione: [
+      "Il tavolo è girato come quelli veri: i giocatori siedono in fila sul lato lungo, in fondo, per tutta la larghezza dello schermo; la parte curva è dal lato di Bot.",
+      "Da 6 a 10 giocatori ci si mette su due file sfalsate: chi sta dietro spunta sopra le spalle di chi sta davanti, così le facce restano più grandi.",
+      "Il tavolo è ancora più lungo e usa tutto lo spazio della parete."
+    ]
+  },
+  {
+    v: 112,
+    data: "26 settembre 2026",
+    titolo: "Black Jack a tutto schermo 📱",
+    descrizione: [
+      "Il Black Jack ora occupa esattamente lo schermo, fino in fondo: il tavolo si prende tutto lo spazio, sotto restano solo le tue carte e i tasti.",
+      "Le carte grandi si adattano allo spazio e non finiscono più sopra i tasti.",
+      "La scritta del turno in alto non si sovrappone più a nomi e teste.",
+      "Da soli o in pochi, carte e fiche sul tavolo sono più grandi. A fine mano, sotto, un riassunto compatto delle fiche di tutti."
+    ]
+  },
+  {
+    v: 111,
+    data: "26 settembre 2026",
+    titolo: "Più spazio per giocare 📐",
+    descrizione: [
+      "Nei giochi non c'è più la scritta col nome del gioco in alto: resta solo la freccia per tornare indietro, piccola nell'angolo.",
+      "Sul telefono con l'app installata la schermata non finisce più sotto i tasti di Android: niente più scorrere per trovare i pulsanti.",
+      "Black Jack: tavolo ancora più grande, via il mazzo a destra, e sulla parete c'è scritto in grande a chi tocca e quante fiche ha.",
+      "Black Jack: sotto restano le tue carte grandi, con Dividi e Raddoppia a sinistra e Stai e Carta a destra.",
+      "Scopa: il tavolo si prende lo spazio lasciato libero dalla scritta."
+    ]
+  },
+  {
+    v: 110,
+    data: "26 settembre 2026",
+    titolo: "Black Jack: priorità al tavolo 🎰",
+    descrizione: [
+      "Il tavolo ora occupa gran parte dello schermo e i giocatori sono più grandi.",
+      "I nomi stanno sopra le teste e il punteggio è scritto accanto alle carte di ognuno: niente più etichette sopra le facce.",
+      "La parte sotto è più compatta: carte più piccole e i quattro tasti (Carta, Stai, Raddoppia, Dividi) su una riga sola.",
+      "A fine mano la vincita o la perdita compare accanto al nome."
+    ]
+  },
+  {
+    v: 109,
+    data: "25 settembre 2026",
+    titolo: "Black Jack: tutti seduti al tavolo 🎰",
+    descrizione: [
+      "Ora la vista è da dietro Bot: vedi tutti i giocatori seduti attorno al tavolo a mezzaluna, faccia a faccia.",
+      "Il tavolo si adatta: da soli sei grande al centro, in due le facce si vedono benissimo, fino a 10 si stringono ma ci stanno tutti.",
+      "Le fiche puntate si vedono sul tavolo, in pila davanti a ognuno. A fine mano chi perde resta senza e chi vince vede la sua vincita.",
+      "Le facce reagiscono: chi gioca ci pensa, chi sballa fa il muso, chi fa Black Jack esulta. A fine mano compare quanto hai vinto o perso."
+    ]
+  },
+  {
+    v: 108,
+    data: "25 settembre 2026",
+    titolo: "Black Jack: arriva Bot, il dealer 🎩",
+    descrizione: [
+      "Il banco ora ha una faccia: Bot, in giacca e papillon, dietro al tavolo. Le sue carte vengono posate sul panno davanti a lui.",
+      "Bot reagisce: 'Fate il vostro gioco!' quando si punta, ci pensa quando pesca, fa il muso se sballa ed esulta se vince il banco.",
+      "Ogni giocatore ha il suo avatar al posto: i posti si adattano a quanti siete (da soli niente fila, fino a 5 una fila larga, da 6 a 10 due file).",
+      "Quando tocca a qualcuno, la sua faccia compare accanto al nome. Online ognuno vede l'avatar vero degli altri.",
+      "Anche nella Scopa il bot ora si chiama Bot."
+    ]
+  },
+  {
+    v: 107,
+    data: "25 settembre 2026",
+    titolo: "Scopa: si gioca seduti al tavolo 🃏🧍",
+    descrizione: [
+      "Il tavolo ora si vede in prospettiva, come se fossi seduto davvero: le carte sono posate sul panno verde e il mazzo è sul tavolo.",
+      "Di fronte a te siede l'avversario, con il suo avatar e le carte coperte in mano. Il bot ha sempre la stessa faccia, online vedi l'avatar vero del tuo amico.",
+      "Le espressioni cambiano: quando tocca a lui ci pensa 🤔, se ti fa scopa salta dalla gioia, se la fai tu fa il muso."
+    ]
+  },
+  {
+    v: 106,
+    data: "25 settembre 2026",
+    titolo: "Niente più uscite per sbaglio 🚪",
+    descrizione: [
+      "Prima di uscire dal profilo ora compare una finestra al centro: 'Sei sicuro?'. Il tasto per uscire si attiva dopo un attimo, così i tocchi ripetuti non ti fanno uscire per errore.",
+      "Quando salvi l'avatar il tasto diventa subito '👋 Salvato!', così sai che il tocco è arrivato."
+    ]
+  },
+  {
+    v: 105,
+    data: "25 settembre 2026",
+    titolo: "Avatar: vestiti e accessori a volontà 🎩👖",
+    descrizione: [
+      "Accessori a strati, da combinare: in testa, occhiali, orecchini e al collo. Nuovi: cilindro, cowboy, pescatore, basco, cappellino da festa, orecchie da gatto, coroncina di fiori.",
+      "Occhiali quadrati, aviatore e a cuore; orecchini a punto luce, pendenti e piercing; sciarpa, collana, perle, papillon, cravatta e bandana.",
+      "Maglie nuove: polo, dolcevita, giacca, bomber e maglia da calcio. Stampe a pois, quadri, smile, pallone e numero.",
+      "Jeans strappati, cargo e gonna lunga; scarpe: sneakers, stivali, eleganti o sandali.",
+      "Il tasto '📲 Installa l'app' ora si vede sempre in home."
+    ]
+  },
+  {
+    v: 104,
+    data: "25 settembre 2026",
+    titolo: "SPeeD GAME diventa un'app 📲 + avatar a volontà",
+    descrizione: [
+      "Installala sul telefono: tocca '📲 Installa l'app' in home. Si apre a schermo pieno, senza la barra dell'indirizzo, con la sua icona.",
+      "35 tagli di capelli divisi in Corti, Medi e Lunghi: afro, dreadlock, trecce, coda alta, mullet, undercut, emo e tanti altri.",
+      "Viso: occhi a mandorla, assonnati e a puntino, nuove sopracciglia, nasi e bocche (linguaccia, dentoni…), segni particolari e trucco con i suoi colori.",
+      "Barbe nuove: lunga, collare, ancora e basettoni. E da oggi si chiama 'avatar'!"
+    ]
+  },
+  {
+    v: 103,
+    data: "25 settembre 2026",
+    titolo: "Avatar più proporzionati 🧍",
+    descrizione: [
+      "La testa è più piccola del 15%: a figura intera l'avatar è più slanciato e i vestiti si vedono meglio.",
+      "Nei tondini (home e giochi) la faccia resta grande e ben riconoscibile."
+    ]
+  },
+  {
+    v: 102,
+    data: "24 settembre 2026",
+    titolo: "Scopa: il bot Difficile ora è difficile davvero 🧠🃏",
+    descrizione: [
+      "Si ricorda tutte le carte uscite e immagina che carte puoi avere in mano tu.",
+      "Guarda una mossa avanti: evita di lasciarti scope, protegge i 7 e il settebello, punta a denari e primiera quando servono.",
+      "Contro il Medio vince 7 partite su 10 e concede quasi metà delle scope."
+    ]
+  },
+  {
+    v: 101,
+    data: "24 settembre 2026",
+    titolo: "Avatar: nuove proporzioni e pantaloni veri 👖",
+    descrizione: [
+      "Busto più corto e gambe più lunghe: ora i pantaloni si vedono bene, dai fianchi alle scarpe.",
+      "5 tipi di 'sotto': jeans (cuciture, tasche, risvolto), classici con la piega, tuta con le bande, pantaloncini e gonna.",
+      "Nuovi colori: jeans scuro, jeans chiaro, beige e verde militare. Con la camicia compare la cintura con la fibbia.",
+      "Più dettagli: scarpe con punta e lacci, pieghe al gomito, cuciture sulle spalle, dita delle mani."
+    ]
+  },
+  {
+    v: 100,
+    data: "24 settembre 2026",
+    titolo: "Avatar: ritocchi, colori liberi e il saluto 👋",
+    descrizione: [
+      "Ritocchi come nei Mii (scheda Viso): grandezza, distanza e altezza degli occhi, altezza delle sopracciglia, grandezza del naso, altezza della bocca.",
+      "Colore libero: tocca il tondo 🎨 in fondo ai colori e scegli qualsiasi tinta per capelli, occhi, vestiti, scarpe e accessori.",
+      "4 acconciature nuove: ciuffo, codini, chignon e rasato. Ombre più morbide e una luce di bordo che dà più volume.",
+      "Quando apri l'editor e quando salvi, il tuo avatar ti saluta!"
+    ]
+  },
+  {
+    v: 99,
+    data: "24 settembre 2026",
+    titolo: "Il tuo avatar prende vita ✨",
+    descrizione: [
+      "Nell'editor l'avatar sta su un palco illuminato: respira, sbatte le palpebre e fa un saltello a ogni scelta.",
+      "Vestiti nuovi: maglietta, maniche lunghe, felpa col cappuccio, camicia, canotta. Stampe: righe, stella, fulmine, cuore.",
+      "Scegli anche il colore delle scarpe e dell'accessorio. Cappellino e berretto ora coprono bene i capelli.",
+      "La vibrazione ora arriva solo quando selezioni un tasto, non più quando scorri la pagina."
+    ]
+  },
+  {
+    v: 98,
+    data: "24 settembre 2026",
+    titolo: "Avatar più belli e più scelte 🎨",
+    descrizione: [
+      "Disegno più curato: ciocche nei capelli, occhi con l'iride sfumata, pieghe dei vestiti, scarpe con la suola.",
+      "Nuove scelte: forma del viso, guance (nessuna, leggere, rosse o lentiggini), labbra, sopracciglia sottili.",
+      "Barba e baffi ora stanno sotto 'Capelli' (accenno, corta, folta, pizzetto, baffi, baffoni…) e si possono unire agli accessori.",
+      "Nuovi accessori: berretto con pompon e orecchini."
+    ]
+  },
+  {
+    v: 97,
+    data: "24 settembre 2026",
+    titolo: "Il tuo avatar! 🧍",
+    descrizione: [
+      "Crea il tuo personaggio stile Mii: tocca il tuo nome in alto e poi 'Crea il tuo avatar'.",
+      "Scegli uomo o donna, corporatura, pelle, capelli, occhi, bocca, vestiti (anche la gonna) e accessori.",
+      "Si salva nel profilo: ti segue su ogni telefono. Presto comparirà nei giochi e alcuni accessori speciali si sbloccheranno coi trofei 👑"
+    ]
+  },
+  {
+    v: 96,
+    data: "24 settembre 2026",
+    titolo: "La Scalinata: i bot ora ragionano 🧠🪜",
+    descrizione: [
+      "Bot, Kevin e Cody si ricordano cosa scegli: se giochi sempre lo stesso numero, uno di loro ti blocca.",
+      "Quando qualcuno è vicino alla cima, provano a fermarlo scegliendo il suo numero.",
+      "Restano un po' imprevedibili: niente trucchi facili, bisogna cambiare strategia."
+    ]
+  },
+  {
+    v: 95,
+    data: "24 settembre 2026",
+    titolo: "Trofei per Glow Hockey, Scopone e La Scalinata 🏒🃏🪜",
+    descrizione: [
+      "Glow Hockey: 20 trofei, dal primo gol fino a battere il bot Difficile 7 a 0.",
+      "Scopone: 17 trofei tra Classico e Scientifico, con Settebello, Primiera, scope tue e Cappotto.",
+      "La Scalinata: 17 trofei, dal primo 'Bonk!' fino all'Ascensore Privato (5, 5, 5 senza scontri)."
+    ]
+  },
+  {
+    v: 94,
+    data: "24 settembre 2026",
+    titolo: "Trofei: percentuali e conteggio per livello 📊",
+    descrizione: [
+      "In cima alla schermata Trofei vedi quanti bronzi, argenti, ori, diamanti e platini hai preso su quelli che esistono.",
+      "Una barra con la percentuale di completamento generale, e una per ogni gioco."
+    ]
+  },
+  {
+    v: 93,
+    data: "24 settembre 2026",
+    titolo: "Trofei per Scopa e Scopa 2 vs 2 🃏🏆",
+    descrizione: [
+      "Scopa: 24 trofei, dalle prime scope al Settebello, dalla Primiera al 4+1 'Sopra la Media', fino alla rimonta e alla vittoria a zero.",
+      "Scopa 2 vs 2: 19 trofei di squadra, con le tue scope personali, il Settebello preso da te e gli assist al compagno.",
+      "Contano contro il bot e online, per chi ha il profilo."
+    ]
+  },
+  {
+    v: 92,
+    data: "24 settembre 2026",
+    titolo: "17 trofei per L'Impostore 🕵️🏆",
+    descrizione: [
+      "Trofei da detective (vota giusto l'impostore, anche 5 volte di fila) e da bugiardo (vinci da impostore, con o senza aiutino, magari senza prendere nemmeno un voto).",
+      "Contano le partite di chi ha il profilo attivo sul telefono."
+    ]
+  },
+  {
+    v: 91,
+    data: "24 settembre 2026",
+    titolo: "28 trofei per il Black Jack 🃏🏆",
+    descrizione: [
+      "Il Black Jack ha i suoi trofei: mani vinte, Black Jack, bonus ritirati, fiches vinte, sballi, pareggi, 21 con tre o più carte, puntate coraggiose e serie di fila. Prendili tutti per il Platino!",
+      "Glow Hockey: disco ancora un pizzico più veloce."
+    ]
+  },
+  {
+    v: 90,
+    data: "23 settembre 2026",
+    titolo: "Glow Hockey al massimo ⚡",
+    descrizione: [
+      "Hitbox precise: anche con una strisciata velocissima la racchetta colpisce il disco (prima a volte ci passava attraverso). I pali della porta sono veri: il disco ci rimbalza contro.",
+      "Disco più veloce e più scorrevole, fisica due volte più precisa, schermo con meno ritardo.",
+      "Dopo un gol tutto si ferma e le racchette tornano al loro posto; niente titolo in alto, il campo è più grande.",
+      "Il computer ora va anche sulla prima palla."
+    ]
+  },
+  {
+    v: 89,
+    data: "23 settembre 2026",
+    titolo: "Glow Hockey: campo nuovo e suoni 🏒🔊",
+    descrizione: [
+      "Campo rifatto come l'air hockey classico: bordi gialli (avversario) e blu (tu), la porta è un'apertura nel bordo, punteggio a lato del centrocampo.",
+      "Ogni tocco del disco fa rumore (più forte il colpo, più forte il suono), anche sulle sponde, e c'è un jingle quando segni.",
+      "Dopo un gol il disco riparte nella metà di chi l'ha subito.",
+      "Per ora si gioca solo contro il computer: la sfida online tra due telefoni è in pausa."
+    ]
+  },
+  {
+    v: 88,
+    data: "23 settembre 2026",
+    titolo: "Trofeo sbloccato! 🔔",
+    descrizione: [
+      "Quando sblocchi un trofeo compare un avviso in alto per qualche secondo, con un suono e una leggera vibrazione (più speciale per il Platino).",
+      "Il tasto in home ora si chiama 'Trofei'."
+    ]
+  },
+  {
+    v: 87,
+    data: "23 settembre 2026",
+    titolo: "35 trofei per La linea del tempo 📜🏆",
+    descrizione: [
+      "La linea del tempo ha i suoi trofei: carte giuste per ogni categoria, voti azzeccati, partite perfette, serie di fila, vittorie online e molto altro. Prendili tutti per il Platino!",
+      "Le serie 'di fila' continuano anche tra una partita e l'altra. I trofei contano le giocate di chi ha il profilo attivo sul telefono."
+    ]
+  },
+  {
+    v: 86,
+    data: "23 settembre 2026",
+    titolo: "Hockey: ora il computer attacca 🏒🔥",
+    descrizione: [
+      "Il bot va a prendersi il disco nella sua metà campo e tira con decisione, mirando agli angoli della tua porta.",
+      "In difesa prevede dove arriverà il tuo tiro, e se il disco è vicino te lo rispara indietro.",
+      "Non si fa più autogol: se il disco gli passa alle spalle ci gira attorno o si sposta. Facile resta facile, a Difficile preparati a perdere!"
+    ]
+  },
+  {
+    v: 85,
+    data: "23 settembre 2026",
+    titolo: "Hockey: bot più giusto 🏒",
+    descrizione: [
+      "Il computer non trema più e non resta incastrato col disco negli angoli.",
+      "Medio e Difficile ora si possono battere: il bot ha un tempo di reazione e lascia scoperti gli angoli della porta. Mira lì!"
+    ]
+  },
+  {
+    v: 84,
+    data: "23 settembre 2026",
+    titolo: "Hockey contro il computer + Trofei da platinare 🏒🏆",
+    descrizione: [
+      "Glow Hockey ora si gioca anche da soli contro il computer, con 3 difficoltà (Facile, Medio, Difficile): tutto sul tuo telefono, nessun ritardo.",
+      "Le Sfide diventano stile PlayStation: ogni gioco ha i suoi trofei Bronzo, Argento, Oro e Diamante, e il Platino quando li sblocchi tutti.",
+      "Nella schermata Sfide trovi già tutti i giochi: le sfide di ognuno le aggiungiamo a mano a mano."
+    ]
+  },
+  {
+    v: 83,
+    data: "23 settembre 2026",
+    titolo: "Sfide e Trofei 🏆",
+    descrizione: [
+      "Nuovo tasto 'Sfide' in home: sblocca trofei giocando, con la barra che mostra quanto ti manca.",
+      "Si parte col Black Jack (es. 'Arriva a 10.000 fiches', 'Fai 10 Black Jack'): i traguardi degli altri giochi arrivano man mano che aggiungiamo le loro statistiche."
+    ]
+  },
+  {
+    v: 82,
+    data: "21 settembre 2026",
+    titolo: "Black Jack: bonus più frequente e mosse a voce 💬",
+    descrizione: [
+      "Il bonus gratuito ora torna ogni 2 ore (invece di 6): 300 fiches, così puoi rientrare al tavolo più spesso.",
+      "Quando qualcuno chiede carta, passa, raddoppia o divide, sopra il suo riquadro esce una nuvoletta in prima persona (\"Carta!\", \"Passo\", \"Raddoppio!\"): capisci al volo cosa ha fatto ognuno."
+    ]
+  },
+  {
+    v: 81,
+    data: "19 settembre 2026",
+    titolo: "Statistiche nel profilo 📊",
+    descrizione: [
+      "Nel tuo profilo ora trovi le statistiche del Black Jack: mani giocate e vinte, percentuale di vittorie, Black Jack fatti, record di fiches e vincita più alta.",
+      "Si aggiornano da sole a fine partita. In arrivo le statistiche degli altri giochi e le sfide."
+    ]
+  },
+  {
+    v: 80,
+    data: "19 settembre 2026",
+    titolo: "Black Jack: 300 fiches gratis ogni 6 ore 🎁",
+    descrizione: [
+      "Prima di iniziare una partita puoi ritirare 300 fiches gratis: il regalo torna disponibile ogni 6 ore, così non resti mai davvero a secco.",
+      "Se finisci le fiches non riparti più col gruzzolo pieno: giochi con delle fiches 'di prova' solo per divertirti, mentre le fiches vere le recuperi col bonus.",
+      "Vale per il tuo profilo, quindi il saldo e il bonus ti seguono su ogni telefono."
+    ]
+  },
+  {
+    v: 79,
+    data: "19 settembre 2026",
+    titolo: "Black Jack: punti quanto vuoi 💰",
+    descrizione: [
+      "La puntata ora è libera: parti da 100 e la regoli come vuoi con −100 / −10 / +10 / +100, oppure con un tocco punti Tutto.",
+      "Niente più cifre fisse: metti l'importo esatto che preferisci prima di ricevere le carte."
+    ]
+  },
+  {
+    v: 78,
+    data: "19 settembre 2026",
+    titolo: "Profili con login e fiches che restano 👤",
+    descrizione: [
+      "Ora puoi creare il tuo profilo con nome e password: entri una volta e ti ritrovi già dentro ogni volta che apri l'app, anche da un altro telefono.",
+      "I dati restano salvati sul cloud, non sul singolo telefono. La prima cosa che sfrutta questo: le fiches del Black Jack. Non riparti più sempre dallo stesso gruzzolo, ma con quelle avanzate dalla partita scorsa.",
+      "Vale anche online: ognuno entra col suo profilo (senza riscrivere il nome) e si porta dietro le sue fiches. In arrivo le statistiche."
+    ]
+  },
+  {
+    v: 77,
+    data: "19 settembre 2026",
+    titolo: "Black Jack: carte che volano dal mazzo, con più calma 🎴",
+    descrizione: [
+      "Ora c'è un mazzo sul tavolo e ogni carta parte da lì e vola fino a te (e a tutti gli altri): niente più carte che spuntano dal nulla.",
+      "La distribuzione è più lenta, una carta alla volta, così hai il tempo di leggerle e di sperare nel numero giusto.",
+      "Quando chiedi carta e sballi (o ti fermi), la carta resta a schermo qualche secondo prima di passare il turno: niente più fretta."
+    ]
+  },
+  {
+    v: 76,
+    data: "19 settembre 2026",
+    titolo: "Black Jack: carte a una a una, più tensione 🂠",
+    descrizione: [
+      "La distribuzione non è più tutta insieme: il mazziere dà una carta alla volta, prima a ogni giocatore e poi a sé (la seconda coperta), col ritmo del vero tavolo.",
+      "Anche il banco ora si scopre e pesca una carta alla volta: gira la coperta e tira finché ha 16 o meno, si ferma a 17 o più. Molto più bello da guardare, sperando nel numero giusto.",
+      "Vale sia da un telefono solo sia online (tutti vedono le carte comparire allo stesso ritmo)."
+    ]
+  },
+  {
+    v: 75,
+    data: "19 settembre 2026",
+    titolo: "Black Jack anche online 🃏🔗",
+    descrizione: [
+      "Il Black Jack ora si gioca anche online, ognuno dal suo telefono: l'host apre il tavolo, manda il codice (o il link) e gli amici entrano da soli.",
+      "L'host fa da banco, ognuno punta e gioca la sua mano dal proprio telefono quando è il suo turno, e tutti vedono il tavolo aggiornarsi in tempo reale.",
+      "Trovi il Black Jack anche nella 'Sala online', per passarci in mezzo agli altri giochi."
+    ]
+  },
+  {
+    v: 74,
+    data: "19 settembre 2026",
+    titolo: "Nuovo gioco: Black Jack 🃏",
+    descrizione: [
+      "Arriva il Black Jack (il 21) contro il banco! Carte francesi disegnate a mano, Sabot da 6 mazzi, fiches da puntare, e tutte le mosse: Carta, Stai, Raddoppia, Dividi e Assicurazione. Da 1 a 10 giocatori.",
+      "Interfaccia da tavolo verde pensata per il telefono: il Banco in alto, il giocatore di turno grande al centro coi tasti comodi, e tutti gli altri in una fila che scorre in basso. Con carte animate, suoni e vibrazione.",
+      "Per ora si gioca con un telefono solo (il banco è la CPU). La modalità online, ognuno dal suo telefono, arriva a breve."
+    ]
+  },
+  {
+    v: 73,
+    data: "19 settembre 2026",
+    titolo: "Vibrazione ai tasti + più carte all'Asta 📳",
+    descrizione: [
+      "Ora ogni tasto dà una piccola vibrazione al tocco, in tutti i giochi: l'esperienza è più tattile (funziona sui telefoni Android; su iPhone il tocco resta silenzioso).",
+      "Nell'Asta, durante il gioco, è sparito il punto interrogativo di fianco alle carte: le fasce restano comunque nascoste fino alla schermata finale 'Fasce svelate!', e i nomi delle carte hanno più spazio.",
+      "'Il Giardino Perfetto' e 'La Palestra di Quartiere' sono pieni di carte nuove in tutti i round."
+    ]
+  },
+  {
+    v: 72,
+    data: "18 settembre 2026",
+    titolo: "Asta: fasce a sorpresa + nuova categoria PlayStation 🎮",
+    descrizione: [
+      "Nell'Asta le fasce (A/B/C) ora restano NASCOSTE per tutta la partita: durante l'asta vedi solo un '?' e 'fascia ancora segreta'. Si scoprono solo alla fine, nella nuova schermata 'Fasce svelate!', subito prima della classifica: più tensione, non sai mai quanto vale davvero una carta.",
+      "Nuova categoria: 'Il Party PlayStation' 🎮 — connessione internet, microfono e chat, compagno di squadra, setup e ambiente.",
+      "'Il Coinquilino Ideale' pieno di carte nuove in tutti e quattro i round.",
+      "Le armi da fuoco dell'Asta (pistola, fucile a pompa, canna mozza, mitragliatrice) ora hanno icone disegnate: basta pistole ad acqua giocattolo."
+    ]
+  },
+  {
+    v: 71,
+    data: "18 settembre 2026",
+    titolo: "Carte dell'Asta più belle + tante carte nuove ⚽",
+    descrizione: [
+      "Nell'Asta le carte sono state ridisegnate: l'icona ora è grande dentro una medaglia con luce e ombra, con testi più curati. Vale per tutti i temi e per il Fantacalcio.",
+      "'La Squadra da Calcetto' è piena di carte nuove (ora oltre 400): portieri, difensori, centrocampisti e attaccanti a raffica, per partite sempre diverse.",
+      "'Il Primo Appuntamento': tolta una carta che era di fatto un finale ('Scappa dalla Finestra del Bagno')."
+    ]
+  },
+  {
+    v: 70,
+    data: "18 settembre 2026",
+    titolo: "Battaglia Navale più bella 🚢",
+    descrizione: [
+      "Le navi ora sono dei veri scafi (con prua e poppa arrotondate), non più quadrati grigi.",
+      "Numeri e lettere invertiti sui bordi: numeri in alto (colonne), lettere a sinistra (righe), come la battaglia navale classica.",
+      "Tabellone con cornice, mare più curato e mini-navi nella lista della flotta: tutto più presentabile."
+    ]
+  },
+  {
+    v: 69,
+    data: "17 settembre 2026",
+    titolo: "La Sala online: il gruppo passa da un gioco all'altro 👥",
+    descrizione: [
+      "Dalla home c'è '👥 Sala online': crei una sala, mandi il codice o il link, e gli amici entrano una volta sola.",
+      "Poi scegli i giochi dalla sala: partono per tutti e gli amici entrano da soli, senza reinserire il codice ogni volta. A fine partita si torna tutti nella stessa sala e scegli un altro gioco.",
+      "Decide sempre l'host quale gioco si fa. Funzionano tutti i giochi 'ognuno dal suo telefono'."
+    ]
+  },
+  {
+    v: 68,
+    data: "17 settembre 2026",
+    titolo: "Voti a fine Asta con budget di stelle ⭐",
+    descrizione: [
+      "Nuovo modo di votare le squadre a fine Asta: hai un budget di stelle da distribuire tra gli avversari (media 3,5 a testa), e devi spenderlo tutto.",
+      "Si possono dare mezze stelle, da 0,5 a 5 (mai 0), con i tasti − e +. Non ci si vota da soli.",
+      "Budget in base ai giocatori: 3→7, 4→10,5, 5→14, 6→17,5, 7→21, 8→24,5, 9→28, 10→31,5 stelle. In 2 il voto è libero (0,5–5)."
+    ]
+  },
+  {
+    v: 67,
+    data: "17 settembre 2026",
+    titolo: "Asta online più comoda + Pendolo più fluido 🔧",
+    descrizione: [
+      "L'Asta online: mentre c'è l'asta puoi vedere in fondo 'I kit finora' con le squadre di tutti (prima non si vedevano durante l'asta).",
+      "Corretto un fastidio: quando una persona confermava i voti, agli altri si azzeravano le stelle già messe. Ora restano.",
+      "La lineetta del tempo ora si muove su tutti i telefoni (su alcuni Android non partiva).",
+      "Palla a Pendolo online: movimento più reattivo per chi gioca dal proprio telefono (il tuo personaggio risponde subito) e aggiornamenti più frequenti."
+    ]
+  },
+  {
+    v: 66,
+    data: "17 settembre 2026",
+    titolo: "Palla a Pendolo online: scegli il tuo ruolo 🎯",
+    descrizione: [
+      "Nella sala d'attesa online l'host può scegliere se lanciare o stare sulla trave: tocca il lanciatore o un posto sulla trave per metterti lì.",
+      "Ti scambi con chi c'era: se era un bot, ora lancia un bot; se era un amico online, cambiate posto. Così puoi giocare sulla trave contro un bot che lancia, anche online."
+    ]
+  },
+  {
+    v: 65,
+    data: "17 settembre 2026",
+    titolo: "Mini asta Fantacalcio ⚽",
+    descrizione: [
+      "Nel gioco L'Asta ora puoi scegliere la Modalità: 'Temi classici' (come prima) oppure la nuova 'Mini asta Fantacalcio'.",
+      "Nel Fantacalcio ognuno ha 20 crediti e deve completare una rosa da 5: 1 portiere, 1 difensore, 2 centrocampisti, 1 attaccante. I calciatori (veri, Serie A) escono uno alla volta dal mazzo.",
+      "Chi ha già un ruolo pieno non punta su quel ruolo. Non puoi restare senza crediti: il sistema ti obbliga a tenerne 1 per ogni slot che ti manca.",
+      "Se un calciatore non lo vuole nessuno finisce in fondo al mazzo (accollo) e ritorna più avanti. Alla fine si votano le rose a stelle come nell'Asta classica. Funziona anche 'ognuno dal suo telefono'.",
+      "Scorrendo in basso vedi sempre 'Le rose finora' con le squadre di tutti (solo i calciatori presi, ordinati per ruolo). E quando restano in due a contendersi l'ultimo di un ruolo, compare un avviso: chi non se lo aggiudica si accolla l'altro rimasto."
+    ]
+  },
+  {
+    v: 64,
+    data: "17 settembre 2026",
+    titolo: "Il mazzo sul tavolo 🂠",
+    descrizione: [
+      "Nella Scopa e nella Scopa 2vs2 ora c'è il mazzo sul tavolo verde (con quante carte restano): quando finisci le carte in mano, le nuove arrivano dal mazzo con una animazione, non spuntano più dal nulla.",
+      "Palla a Pendolo: premendo Rigioca ora l'impostazione delle collisioni resta quella scelta (prima tornava su 'no')."
+    ]
+  },
+  {
+    v: 63,
+    data: "17 settembre 2026",
+    titolo: "Carte più grandi e schermo pieno 🃏",
+    descrizione: [
+      "Nei giochi di carte le carte sono più grandi e si usa tutta l'altezza dello schermo: tolta l'intestazione col nome del gioco (resta solo la freccia per tornare indietro) e le scritte tipo 'Tocca a te' — di chi è il turno si capisce dal nome col bordo dorato.",
+      "Il tavolo verde e la mensola della tua mano non cambiano più dimensione: prima, quando finivi le carte in mano, il tavolo si allargava. Ora restano fissi.",
+      "Horto Muso: corretto il photo-finish (il cavallo vincente è il primo a toccare la linea) e reso più lento."
+    ]
+  },
+  {
+    v: 62,
+    data: "17 settembre 2026",
+    titolo: "Horto Muso al rallentatore + tavoli delle carte più stabili 🐎🃏",
+    descrizione: [
+      "Horto Muso: il cavallo vincente non si illumina più — si capisce dalla foto. E poco prima del traguardo va tutto al rallentatore per creare suspense, poi scatta il photo-finish.",
+      "Giochi di carte: il tavolo verde e la mensola della tua mano non cambiano più dimensione in base a quante carte ci sono. Le carte hanno una misura fissa (ci stanno fino a 9 sul tavolo e tutta la mano su una riga): si vede un po' più 'da lontano' ma resta sempre tutto in ordine."
+    ]
+  },
+  {
+    v: 61,
+    data: "16 settembre 2026",
+    titolo: "Nuovo gioco: Palla a Pendolo 🎯 (anche online!)",
+    descrizione: [
+      "Sei di spalle davanti a una trave sull'acqua. Il lanciatore mira di lato (◀ ▶ o trascinando) e preme LANCIA: la palla parte con forza sempre uguale e arriva lenta fino alla trave. Il mirino rosso mostra dove cadrà.",
+      "Chi sta sulla trave si muove ◀ ▶ e SALTA per schivare quando il mirino punta lui. Vince il lanciatore se li butta giù tutti in tempo, altrimenti vince chi resta in piedi.",
+      "Da solo puoi scegliere il ruolo: LANCI TU (contro 3 bot) oppure STAI SULLA TRAVE (schivi un bot che lancia e devi sopravvivere). Online invece si sceglie il ruolo in sala d'attesa (i posti liberi = bot). Sta nei Minigiochi.",
+      "La palla ora va oltre la trave e può prenderti anche mentre torna indietro: devi restare attento fino a quando è passata del tutto!",
+      "Il salto ora ha una ricarica (una volta ogni ~2 secondi: niente salti a raffica, e il tasto si spegne mentre ricarica). Nuova impostazione per far sì che i personaggi non si attraversino (collisioni). Puoi anche nascondere il puntino rosso della mira.",
+      "Nella home le categorie non si scorrono più di lato: ora vanno a capo (3 per riga).",
+      "Inoltre: la corsa di Horto Muso online adesso è più fluida per chi entra come ospite (niente più scatti)."
+    ]
+  },
+  {
+    v: 60,
+    data: "15 settembre 2026",
+    titolo: "Battaglia Navale più chiara 🎯",
+    descrizione: [
+      "Il tabellone ora ha le lettere in alto e i numeri a lato. Quando sistemi una nave vedi prima l'anteprima di dove la metti (verde se ci sta, rossa se no) e confermi con 'Metti qui'.",
+      "Quando affondi una nave esce la scritta 'Colpito e affondato!'."
+    ]
+  },
+  {
+    v: 59,
+    data: "15 settembre 2026",
+    titolo: "Nuovo gioco: Battaglia Navale 🚢",
+    descrizione: [
+      "La battaglia navale classica! Sistema la tua flotta su una griglia 10×10 e affonda quella dell'avversario, a turni.",
+      "Giochi contro il computer o online con un amico (ognuno vede solo le proprie navi). La trovi nella sezione '1 contro 1'."
+    ]
+  },
+  {
+    v: 58,
+    data: "15 settembre 2026",
+    titolo: "Nuovo tavolo verde nei giochi di carte 🟢",
+    descrizione: [
+      "Scopa, Scopa 2vs2 e Scopone ora hanno un vero tavolo verde: il compagno di fronte in alto, i rivali ai lati e le carte a terra al centro.",
+      "La tua mano sta in basso su una mensola, staccata dal tavolo: non si confonde più con le carte a terra. Chi è di turno ha il nome col bordo dorato."
+    ]
+  },
+  {
+    v: 57,
+    data: "14 settembre 2026",
+    titolo: "Musica dei giochi di carte più alta 🔊",
+    descrizione: [
+      "Nella Scopa, Scopa 2vs2 e Scopone la musichetta di sottofondo era troppo bassa: ora si sente molto di più.",
+      "Ho aggiunto una protezione anti-distorsione, così è più forte ma senza gracchiare. Il tasto 🎵/🔇 resta lì per spegnerla."
+    ]
+  },
+  {
+    v: 56,
+    data: "14 settembre 2026",
+    titolo: "Horto Muso fino a 8 cavalli 🐎",
+    descrizione: [
+      "Ora nella corsa dei cavalli puoi scegliere quanti corrono: 2, 4, 6 o 8 (con te). Le corsie si adattano allo schermo.",
+      "Vale contro i bot e online (i posti liberi li riempiono i bot). Foto-finish e replay finale restano per tutti."
+    ]
+  },
+  {
+    v: 55,
+    data: "14 settembre 2026",
+    titolo: "L'Asta online: cambia argomento restando insieme 🔨",
+    descrizione: [
+      "Nella sala online ora chi ha aperto la stanza sceglie l'argomento dell'asta (e può cambiarlo lì).",
+      "A fine partita, con “Nuova partita” tornate tutti nella stessa sala per fare l'asta di un altro argomento, senza rientrare col codice."
+    ]
+  },
+  {
+    v: 54,
+    data: "14 settembre 2026",
+    titolo: "Musichetta chill nei giochi di carte 🎵",
+    descrizione: [
+      "Scopa, Scopa 2 vs 2 e Scopone ora hanno una musica di sottofondo rilassante mentre giochi.",
+      "In alto a destra c'è il tasto 🎵/🔇 per accenderla o spegnerla: la scelta viene ricordata."
+    ]
+  },
+  {
+    v: 53,
+    data: "14 settembre 2026",
+    titolo: "Online: entri e vedi subito la sala 👥",
+    descrizione: [
+      "Quando entri in una partita online ora vedi la sala con tutti i partecipanti (e i posti liberi riempiti dai bot), proprio come chi ha aperto la stanza — non più solo “sei dentro”.",
+      "Vale per tutti i giochi online. In Horto Muso, dopo lo scatto della foto il replay fa tagliare il traguardo a tutti i cavalli (e si chiude comunque entro pochi secondi)."
+    ]
+  },
+  {
+    v: 52,
+    data: "14 settembre 2026",
+    titolo: "La Scalinata anche in 2 o 3 (con i bot) 🪜",
+    descrizione: [
+      "Ora non serve per forza essere in 4: puoi giocare la Scalinata da solo, in 2 o in 3 e i posti liberi li riempiono i bot (Bot, Kevin, Cody).",
+      "Vale sia a un telefono solo sia online. Prima obbligava a mettere 4 persone: sistemato."
+    ]
+  },
+  {
+    v: 51,
+    data: "14 settembre 2026",
+    titolo: "Nuovo minigioco: Horto Muso 🐎",
+    descrizione: [
+      "Una corsa di cavalli tutta da toccare! Sei tu contro i cavalli del computer (scegli quanti, da 1 a 3).",
+      "Corsie dritte, stessa distanza per tutti. Premi FRUSTA per accelerare, ma ogni frustata consuma energia (la barra sopra il tuo cavallo).",
+      "Se finisci l'energia il cavallo si sfinisce: rallenta e per 3 secondi non puoi frustare. Dosa le frustate e taglia il traguardo per primo! Lo trovi in “Minigiochi”.",
+      "Si gioca anche ONLINE: apri una stanza, manda il codice e correte ognuno dal suo telefono (i posti liberi li giocano i bot).",
+      "A fine gara parte un breve “foto-finish” zoomato sul traguardo che fa capire chi ha vinto, poi arriva la classifica."
+    ]
+  },
+  {
+    v: 50,
+    data: "13 settembre 2026",
+    titolo: "Categorie nella home 🎲",
+    descrizione: [
+      "Sotto il tuo nome ora ci sono i filtri per categoria: “Tutti” fa vedere tutto, poi puoi scegliere Carte, Sfida in 2, Festa, Minigiochi, Quiz & parole.",
+      "Carte: Scopa, Scopa 2 vs 2, Scopone. Sfida in 2: Glow Hockey, Tris, Drop 4. Festa: L'Asta, L'Impostore, Sì... però. Minigiochi: La Scalinata. Quiz & parole: La linea del tempo, Nomi Cose e Città, La Patata Bollente.",
+      "Toccando una categoria si aggiorna solo l'elenco, senza far saltare la pagina."
+    ]
+  },
+  {
+    v: 49,
+    data: "13 settembre 2026",
+    titolo: "Asta più chiara + regola della bomba",
+    descrizione: [
+      "L'Asta: ora vedi tutti e 4 i round (le cose che si metteranno all'asta) con i loro nomi — quello in corso ha il contorno giallo, quelli fatti la spunta, i prossimi si vedono comunque.",
+      "L'Asta: mentre si fa l'asta di una carta trovi sempre in vista l'elenco “Ancora in palio” con le altre cose ancora da aggiudicare in quel round.",
+      "La Patata Bollente: quando ti rimandano indietro la bomba (col tasto giallo), ora puoi ridarla SOLO a chi te l'ha rimandata (prima potevi darla a chiunque)."
+    ]
+  },
+  {
+    v: 48,
+    data: "13 settembre 2026",
+    titolo: "Nuovo gioco: Scopa 2 vs 2 🃏 (a squadre, anche online)",
+    descrizione: [
+      "Arriva la Scopa a squadre, in quattro al tavolo: tu e il tuo compagno (di fronte) contro due avversari. Si gioca a turno alternando le squadre.",
+      "Due modi: contro i bot (tu + 3 bot) oppure online, ognuno dal suo telefono — apri la stanza, manda il codice e i posti che restano liberi li giocano i bot.",
+      "Stesse carte e stesse regole della Scopa (con la pesca), animazioni e schermo fisso come gli altri giochi. Punti a squadra: Carte, Denari, Settebello, Primiera e le Scope. Partita a 11."
+    ]
+  },
+  {
+    v: 47,
+    data: "13 settembre 2026",
+    titolo: "Carte più fluide e schermo fisso 🃏",
+    descrizione: [
+      "Scopa e Scopone: quando prendi, la tua carta ora vola verso la carta che prende (non più al centro a caso), poi spariscono insieme.",
+      "Niente più lampeggio: in Scopa, Scopone, Tris e Forza 4 lo schermo resta fermo a ogni mossa (prima si ridisegnava tutto ogni volta).",
+      "La Patata Bollente: sistemata la regola del passaggio — non puoi ripassare la bomba a chi l'ha già avuta finché non finisce il giro (il ritorno resta possibile solo col tasto “Rimanda indietro”)."
+    ]
+  },
+  {
+    v: 46,
+    data: "13 settembre 2026",
+    titolo: "Nuovo gioco: Scopone 🃏 (classico e scientifico)",
+    descrizione: [
+      "Arriva lo Scopone, in quattro a squadre: tu e il Compagno contro due Rivali (contro il computer).",
+      "Due varianti: Scientifico (10 carte a testa, tavolo vuoto) e Classico (9 carte + 4 sul tavolo).",
+      "Stesse carte napoletane vere e stesse animazioni della Scopa. Punti a squadra: Carte, Denari, Settebello, Primiera e le Scope. Partita a 11."
+    ]
+  },
+  {
+    v: 45,
+    data: "13 settembre 2026",
+    titolo: "Scopa con le carte napoletane VERE 🃏",
+    descrizione: [
+      "Ora la Scopa usa le carte napoletane vere (un mazzo di pubblico dominio): denari, coppe, spade e bastoni disegnati come si deve, con Fante, Cavallo e Re. Si riconoscono al volo.",
+      "Nuove animazioni: quando prendi, la tua carta si mette sopra quelle prese e volano via verso di te; quando non prendi, la carta si posa sul tavolo. Niente più riquadro col risultato.",
+      "Corretto anche un fastidio: nella sala il tasto per togliere un giocatore ora si vede senza dover scorrere."
+    ]
+  },
+  {
+    v: 44,
+    data: "13 settembre 2026",
+    titolo: "Scopa: carte più chiare e si vede cosa si prende",
+    descrizione: [
+      "Semi ridisegnati più fedeli alle carte vere e ben colorati: coppe come calici dorati con rosso e verde, spade a sciabola, bastoni di legno, monete d'oro — grandi e riconoscibili a colpo d'occhio, anche sulle figure.",
+      "Quando tu o l'avversario prendete delle carte, per un attimo si vede la carta giocata e quali carte prende, invece di farle sparire e basta."
+    ]
+  },
+  {
+    v: 43,
+    data: "13 settembre 2026",
+    titolo: "Scopa: carte più belle e presa con un tocco 🃏",
+    descrizione: [
+      "Le carte ora somigliano molto di più a quelle vere: i semi disegnati per bene (monete, coppe, spade, bastoni) e le pedine contate come sulle carte napoletane, con le figure per Fante, Cavallo e Re.",
+      "Per prendere basta un tocco: tocchi la tua carta e prende da sola. Devi scegliere solo se ci sono più prese possibili.",
+      "Le carte del tavolo ora sono al centro, per sfruttare tutto lo schermo."
+    ]
+  },
+  {
+    v: 42,
+    data: "13 settembre 2026",
+    titolo: "Nuovo gioco: Scopa 🃏 (carte napoletane)",
+    descrizione: [
+      "Arriva la Scopa con le carte napoletane, disegnate apposta per l'app (denari, coppe, spade, bastoni).",
+      "Prendi le carte del tavolo, fai scopa quando lo svuoti, e a fine smazzata si contano i punti veri: Carte, Denari, Settebello, Primiera e le Scope. Partita a 11.",
+      "Due modi: da solo contro il bot (Facile / Medio / Difficile) oppure online, ognuno dal suo telefono col codice (ognuno vede solo le proprie carte).",
+      "Piccolo suono e vibrazione quando prendi le carte."
+    ]
+  },
+  {
+    v: 41,
+    data: "13 settembre 2026",
+    titolo: "Tris e Drop 4 con i suoni 🔊",
+    descrizione: [
+      "Nel Tris, quando metti X o O senti il rumore di un pennarello che scrive veloce.",
+      "In Drop 4, quando la pedina cade senti un bel \"tock\" soddisfacente al momento dell'incastro.",
+      "Aggiunta anche una vibrazione leggera (dove il telefono la supporta). Se il telefono è in silenzioso, i suoni non partono: è normale."
+    ]
+  },
+  {
+    v: 40,
+    data: "13 settembre 2026",
+    titolo: "Nuovo gioco: Drop 4 🟡",
+    descrizione: [
+      "Il classico \"quattro in fila\" a gravità: scegli una colonna, la pedina cade in fondo. Vince chi allinea quattro pedine (in fila, in colonna o in diagonale).",
+      "Giallo contro Bianco, su griglia grigia 7×6. Le pedine cadono con una piccola animazione.",
+      "Tre modi come per il Tris: da solo contro il bot (Facile / Medio / Difficile), in due sullo stesso telefono, oppure online ognuno dal suo telefono col codice."
+    ]
+  },
+  {
+    v: 39,
+    data: "13 settembre 2026",
+    titolo: "Nuovo gioco: Tris ⭕❌",
+    descrizione: [
+      "Arriva il Tris (il filetto): allinea tre simboli per vincere.",
+      "Tre modi di giocare: da solo contro il bot (con difficoltà Facile, Medio o Impossibile), in due sullo stesso telefono, oppure online ognuno dal suo telefono (uno apre la stanza, l'altro entra col codice).",
+      "A ogni rivincita cambia chi inizia, così è più giusto."
+    ]
+  },
+  {
+    v: 38,
+    data: "13 settembre 2026",
+    titolo: "Glow Hockey: campo intero a schermo + ospite più reattivo 🏒",
+    descrizione: [
+      "Il campo ora entra tutto nello schermo: vedi tutte e due le porte senza dover scorrere. Si adatta da solo alla dimensione del telefono.",
+      "Chi entra col codice ora entra in campo all'istante appena l'host preme Comincia (prima a volte restava fermo sull'attesa).",
+      "Colpi dell'ospite più reattivi sul collegamento diretto: quando siete sulla stessa rete, il ritardo è ridotto al minimo, così le collisioni della sua racchetta col disco funzionano molto meglio."
+    ]
+  },
+  {
+    v: 37,
+    data: "13 settembre 2026",
+    titolo: "Glow Hockey: modalità \"stessa rete\" (collegamento diretto) ⚡",
+    descrizione: [
+      "Novità grossa: quando i due telefoni sono sulla stessa rete (o vicini), ora si collegano DIRETTAMENTE tra loro, senza far passare il gioco dal server. La latenza crolla: per chi entra, disco molto più fluido e colpi che finalmente contano.",
+      "Si attiva da sola: apri la stanza e invita come sempre. Durante la partita, sotto al campo, vedi il tipo di collegamento: \"⚡ diretto (stessa rete)\" oppure \"🌐 via internet\". Se il diretto non è possibile (reti diverse, firewall), si gioca lo stesso via internet come prima.",
+      "Corretto anche un difetto: chi veniva invitato restava su \"Collegamento in corso…\" senza vedere di essere entrato. Ora appena entra vede \"✅ Sei dentro! In attesa che l'host cominci\"."
+    ]
+  },
+  {
+    v: 36,
+    data: "13 settembre 2026",
+    titolo: "Glow Hockey: i colpi dell'ospite contano di più 🏒",
+    descrizione: [
+      "Chi entra col codice (l'ospite) a volte colpiva il disco ma \"non succedeva niente\": la sua racchetta arrivava sul disco con troppo ritardo. Ora il ritardo è ridotto al minimo, così i colpi vengono registrati molto meglio.",
+      "Il disco lato ospite va più liscio: se un aggiornamento tarda un attimo, il disco prosegue da solo il suo movimento invece di \"congelarsi e saltare\".",
+      "Nota onesta: se siete sulla stessa rete di casa, i dati passano comunque da internet (dal server del collegamento), quindi un filo di ritardo resta. Se vuoi il massimo sulla stessa rete, si può fare un collegamento diretto telefono-a-telefono: dimmelo."
+    ]
+  },
+  {
+    v: 35,
+    data: "12 settembre 2026",
+    titolo: "Aspetto più vivace ✨",
+    descrizione: [
+      "Lo sfondo era troppo cupo: ora è un blu più chiaro e vivace (con un leggero sfumato), su tutte le schermate — home, lobby e giochi.",
+      "Testi e carte restano ben leggibili."
+    ]
+  },
+  {
+    v: 34,
+    data: "12 settembre 2026",
+    titolo: "Glow Hockey più fluido: collegamento realtime dedicato ⚡",
+    descrizione: [
+      "Il disco lato ospite andava a scatti sul collegamento gratuito condiviso. Ora Glow Hockey usa un collegamento realtime dedicato (a bassa latenza), più veloce e costante.",
+      "Aggiunta anche l'interpolazione con buffer: il movimento è liscio anche se i pacchetti arrivano irregolari.",
+      "Gli altri giochi restano sul collegamento di prima (per loro va benissimo). Se il realtime non è disponibile, l'hockey torna da solo al collegamento normale."
+    ]
+  },
+  {
+    v: 33,
+    data: "12 settembre 2026",
+    titolo: "Nuovo gioco: Glow Hockey 🏒 (online, in due)",
+    descrizione: [
+      "Air hockey ognuno dal suo telefono: uno apre la stanza, l'altro entra col codice. Muovi la racchetta col dito nella tua metà campo e segna nella porta avversaria. Primo a 7 gol vince.",
+      "Il disco è calcolato dal telefono di chi apre la stanza (fonte di verità) e l'altro lo \"insegue\" attenuando il ritardo: onestamente, un filo di lag lato ospite può restare (dipende dalla rete).",
+      "Per ora la grafica è essenziale: prima la sostanza, poi la faccio più bella (stile neon)."
+    ]
+  },
+  {
+    v: 32,
+    data: "11 settembre 2026",
+    titolo: "Nuovo gioco: La Patata Bollente 💣",
+    descrizione: [
+      "Si vota fra 3 categorie e si gioca la più votata. Poi parte la bomba: dici a voce una parola della categoria e la lanci a chi vuoi, toccando il suo pallino nel cerchio.",
+      "Il timer riparte ogni volta che qualcuno riceve la bomba, e la musica accelera. Ogni 4 passaggi il tempo cala di 2 secondi (15, 13, 11, 9, 7, 5). Non puoi ripassare alla stessa persona finché non chiudi il giro.",
+      "Se chi te l'ha data non ha detto la parola, c'è \"Rimanda indietro\": riprende lui col tempo che aveva (senza reset). A chi scade il tempo, esplode: eliminato. Vince l'ultimo rimasto.",
+      "Si gioca a un telefono solo o, la cosa più bella, ognuno dal suo telefono: tutti in cerchio, ognuno lancia la bomba dal suo telefono."
+    ]
+  },
+  {
+    v: 31,
+    data: "11 settembre 2026",
+    titolo: "Online: la stanza dà subito il codice 🔗✅",
+    descrizione: [
+      "Ora quando apri una stanza \"ognuno dal suo telefono\" il CODICE compare subito, senza aspettare il collegamento. Prima, se la rete era lenta, poteva restare vuoto: ora non più.",
+      "C'è anche una spia: 🟡 mentre apre la stanza, 🟢 quando è pronta da condividere.",
+      "La Scalinata online, in fase di scelta: la scalinata resta davanti agli occhi e i numeri 1/3/5 sono lì sotto. Quando qualcuno sceglie, si illumina solo il suo pallino (col bip), senza più il fastidioso sfarfallio dello schermo."
+    ]
+  },
+  {
+    v: 30,
+    data: "11 settembre 2026",
+    titolo: "La Scalinata si gioca anche online, con i bot 🪜🔗",
+    descrizione: [
+      "Ora la Scalinata si può fare \"ognuno dal suo telefono\": apri la stanza, mandi il codice, e i posti liberi li riempiono dei bot. Così giochi anche da solo, in 2 o in 3 (il primo bot si chiama Bot).",
+      "Nella fase di scelta vedi sempre tutti i giocatori: quando uno sceglie, il suo pallino si illumina e il telefono fa un \"bip\", così capisci al volo chi manca ancora.",
+      "Poi i numeri restano un paio di secondi sopra la testa di tutti prima di far salire le pedine: più suspense per leggere se qualcuno ha fatto il tuo stesso numero."
+    ]
+  },
+  {
+    v: 29,
+    data: "11 settembre 2026",
+    titolo: "Sì... però online: prima la stanza, poi le regole 🔗",
+    descrizione: [
+      "Scegliendo \"ognuno dal suo telefono\" ora apri subito la stanza: in lobby vedi il CODICE bello grande e un tasto per COPIARE IL LINK da mandare agli amici.",
+      "Le regole (fasi Classica o Personalizzata) si scelgono lì, nella lobby, dopo aver invitato tutti — non più prima.",
+      "Così l'ordine è naturale: prima decidi come giocare e crei la stanza, poi imposti la partita."
+    ]
+  },
+  {
+    v: 28,
+    data: "11 settembre 2026",
+    titolo: "Nuovo gioco: La Scalinata 🪜",
+    descrizione: [
+      "Si gioca esattamente in 4. A ogni round hai 4 secondi per scegliere in segreto quanti gradini salire: 1, 3 o 5.",
+      "Le scelte si scoprono tutte insieme, con il numero sopra la testa di ognuno. Il colpo di scena: se due (o più) scelgono lo stesso numero, restano fermi. Avanza solo chi ha scelto un numero che nessun altro ha scelto.",
+      "Le pedine salgono sulla scala colorata verso il traguardo, in cima. Il primo che arriva al gradino 15 vince.",
+      "Un telefono solo: passatevi il telefono, ognuno sceglie di nascosto il suo numero."
+    ]
+  },
+  {
+    v: 27,
+    data: "11 settembre 2026",
+    titolo: "Sì... però si gioca ognuno dal suo telefono 🔗",
+    descrizione: [
+      "L'host apre una stanza con un codice; gli amici entrano dal loro telefono. In lobby si sceglie il giudice e si formano le due squadre.",
+      "Ognuno vede sempre il TAVOLO completo (i Bonus e Malus della propria squadra e di quella avversaria) e ha sotto mano le proprie carte, comprese quelle Malus da lanciare.",
+      "Il giudice, alla fine, sceglie lo scenario migliore. A fine partita si torna alla lobby e si possono rifare giudice e squadre.",
+      "Novità anche a un telefono solo: la vecchia fase Cerotto è diventata un semplice altro Bonus (Rinforzo), e non c'è più nessun limite di tempo per scegliere le carte o per l'arringa."
+    ]
+  },
+  {
+    v: 26,
+    data: "10 settembre 2026",
+    titolo: "Nuovo gioco: Sì... però 🤨",
+    descrizione: [
+      "Party game a squadre: a ogni round uno fa da giudice (a rotazione) e gli altri si dividono in due squadre. Bastano 3 giocatori.",
+      "Ogni squadra costruisce lo scenario di vita migliore con carte BONUS e sabota l'avversario con carte MALUS, in 4 fasi: Paradiso, Schianto, Cerotto (un bonus per arginare un malus ricevuto) e Ghigliottina.",
+      "Poi 1 minuto di arringa a testa per convincere il giudice che il proprio scenario, per quanto devastato, è il migliore da vivere.",
+      "L'host può usare la sequenza classica o COMPORRE le proprie fasi (tipo carta, quante, bersaglio). 101 carte di partenza, e se ne possono aggiungere quante si vuole. Vale anche nel Torneo."
+    ]
+  },
+  {
+    v: 25,
+    data: "10 settembre 2026",
+    titolo: "Nuovo gioco: L'Impostore 🕵️",
+    descrizione: [
+      "Tutti ricevono la stessa parola, tranne uno: l'impostore. Il telefono si passa di mano e ognuno guarda il suo ruolo in segreto.",
+      "L'host decide se dare all'impostore un AIUTINO: una parola simile ma diversa (per bleffare meglio) oppure lasciarlo al buio.",
+      "L'app sorteggia chi inizia. A voce, a turno, ognuno dà un indizio legato alla propria parola; poi si vota chi è l'impostore.",
+      "Se lo scoprite, punti a chi l'ha beccato; se la fa franca, punti all'impostore. Vale anche nel Torneo. Da 3 giocatori in su."
+    ]
+  },
+  {
+    v: 24,
+    data: "10 settembre 2026",
+    titolo: "Nuovo gioco: Nomi, Cose e Città ✍️",
+    descrizione: [
+      "Il classico rivisitato per il telefono: a turno esce una lettera e hai pochi secondi per riempire tutte le categorie con parole che iniziano con quella lettera.",
+      "Scegli tu le categorie: quelle classiche (Nome, Città, Animale, Colore, Mestiere…), il set BLACK HUMOR per chi ama ridere di traverso, e puoi aggiungere le TUE categorie personalizzate.",
+      "Poi si vota tutti insieme: se più della metà approva la parola vale 10 punti, 5 se due hanno scritto la stessa parola, 0 se è bocciata o vuota. Ognuno ha il suo tasto e può cambiare idea cliccando di nuovo.",
+      "Da 2 giocatori in su. Vale anche dentro il Torneo."
+    ]
+  },
+  {
+    v: 23,
+    data: "10 settembre 2026",
+    titolo: "Risolto: entrando col codice si finiva nel gioco sbagliato 🔧",
+    descrizione: [
+      "Prima, chi entrava in una stanza scrivendo il CODICE finiva sempre nella Linea del tempo, anche se l'host aveva avviato un altro gioco (per esempio L'Asta).",
+      "Ora chi entra col codice viene portato automaticamente nel gioco giusto, quello che sta ospitando chi ha creato la stanza.",
+      "Il link condiviso funzionava già: questa correzione riguarda chi entra digitando il codice a mano."
+    ]
+  },
+  {
+    v: 22,
+    data: "10 settembre 2026",
+    titolo: "Modalità Torneo 🏆",
+    descrizione: [
+      "Nuovo tasto TORNEO in home: metti insieme il gruppo una volta sola e giocate più partite di fila, anche a giochi diversi, con gli stessi partecipanti.",
+      "I punti si sommano di partita in partita e la classifica generale è sempre aggiornata: alla fine c'è il podio del torneo.",
+      "I punti vanno dal 1° al 10° posto e sono alti: il vincitore di una partita prende da 100 a 300 punti a seconda di quanto è difficile il gioco. Più il gioco è tosto, più vale vincerlo (L'Asta vale più della Linea del tempo).",
+      "Nel torneo si gioca con un telefono solo, passandolo di mano in mano."
+    ]
+  },
+  {
+    v: 21,
+    data: "10 settembre 2026",
+    titolo: "Nuovo tema per L'Asta: Il Road Trip 🚗",
+    descrizione: [
+      "Organizza il viaggio in macchina perfetto (o quello da incubo): il mezzo, il guidatore, la colonna sonora, l'imprevisto in autostrada.",
+      "Dalla Tesla ultima generazione alla Fiat Duna del '99, dal pilota di rally mancato a quello a cui hanno appena ritirato la patente, dalla playlist Spotify perfetta a Radio Maria col rosario in loop, dal casello con la sbarra alzata alla gomma bucata in galleria.",
+      "I temi dell'Asta sono adesso quattordici. 184 carte ciascuno."
+    ]
+  },
+  {
+    v: 20,
+    data: "10 settembre 2026",
+    titolo: "Nuovo tema per L'Asta: La Sessione Universitaria 🎓",
+    descrizione: [
+      "Affronta l'esame più difficile: la preparazione, l'esaminatore, il compagno prima di te, la domanda.",
+      "Dalla memoria fotografica attivata al programma del 2018 studiato per sbaglio, dal prof empatico al barone spietato, dal compagno che ti fa fare un figurone a quello che vomita sulla cattedra, dall'argomento a piacere alla nota a piè di pagina di pagina 842.",
+      "Primo tema scritto rispettando fin dall'inizio la regola d'oro: nessuna carta anticipa il voto dell'esame, restano tutte ingredienti.",
+      "I temi dell'Asta sono adesso tredici. 184 carte ciascuno."
+    ]
+  },
+  {
+    v: 19,
+    data: "10 settembre 2026",
+    titolo: "Nuovo tema per L'Asta: Il Capodanno 🎆",
+    descrizione: [
+      "Metti insieme il Capodanno perfetto (o quello da dimenticare): l'organizzatore, la location, l'imprevisto a mezzanotte, il conto.",
+      "Dall'amico con la villa libera al PR che vi fa entrare nel privé, dalla villa con piscina riscaldata alla sala d'attesa del pronto soccorso, dal bacio di mezzanotte al blackout alle 23:55.",
+      "Con questo tema si è affinata una regola per tutte le carte del gioco: nessuna dice mai come va a finire la storia, sono solo ingredienti — il verdetto lo danno sempre gli altri col voto.",
+      "I temi dell'Asta sono adesso dodici: Zombie, Pizza, Panino, Rapina, Supereroi, Primo Appuntamento, Giardino, Vacanza, Coinquilino, Calcetto, Palestra, Capodanno. 184 carte ciascuno."
+    ]
+  },
+  {
+    v: 18,
+    data: "10 settembre 2026",
+    titolo: "Nuovo tema per L'Asta: La Palestra di Quartiere 🏋️",
+    descrizione: [
+      "Metti insieme la palestra perfetta (o l'incubo del lunedì): l'istruttore di sala, il compagno d'allenamento, l'attrezzo libero, lo spogliatoio.",
+      "Dal motivatore olimpionico al venditore di integratori abusivo, dallo spotter che ti salva la vita a quello che ti molla il bilanciere sul collo, dalla doccia bollente in solitaria al 70enne nudo che parla di politica.",
+      "I temi dell'Asta sono adesso undici: Zombie, Pizza, Panino, Rapina, Supereroi, Primo Appuntamento, Giardino, Vacanza, Coinquilino, Calcetto, Palestra. 184 carte ciascuno."
+    ]
+  },
+  {
+    v: 17,
+    data: "10 settembre 2026",
+    titolo: "Nuovo tema per L'Asta: La Squadra da Calcetto ⚽",
+    descrizione: [
+      "Metti su la squadra per la partitella del giovedì: portiere, difensore, centrocampista, attaccante.",
+      "Il tema più da spogliatoio di tutti: il portiere col completo fluo da 200€, il difensore che fa autogol di tacco, il centrocampista fumatore in debito d'ossigeno, l'attaccante coi due ferri da stiro al posto dei piedi.",
+      "I temi dell'Asta sono adesso dieci: Zombie, Pizza, Panino, Rapina, Supereroi, Primo Appuntamento, Giardino, Vacanza, Coinquilino, Calcetto. 184 carte ciascuno."
+    ]
+  },
+  {
+    v: 16,
+    data: "10 settembre 2026",
+    titolo: "Tre temi nuovi per L'Asta 🌳 🏝️ 🏠",
+    descrizione: [
+      "IL GIARDINO PERFETTO 🌳 — terreno, attrazione, sport e chi vive in giardino. Dal prato all'inglese al fango scivoloso, dalla piscina olimpionica al campo minato. Nell'ultimo round vince chi si prende gli ospiti più belli (farfalle, lucciole) e perde chi si becca i cinghiali.",
+      "LA VACANZA PERFETTA 🏝️ — il mezzo di trasporto, l'alloggio, il compagno di viaggio, l'attività. Dal jet privato al bagagliaio di una Punto, dalla villa alle Maldive al sacco a pelo in stazione.",
+      "IL COINQUILINO IDEALE 🏠 — l'abitudine notturna, la specialità in cucina, l'animale domestico, come paga l'affitto. Dal coinquilino che pulisce di notte a quello che suona la batteria alle 3, dal gatto coccolone alla puzzola libera per casa.",
+      "I temi dell'Asta sono adesso nove: Zombie, Pizza, Panino, Rapina, Supereroi, Primo Appuntamento, Giardino, Vacanza, Coinquilino. 184 carte ciascuno."
+    ]
+  },
+  {
+    v: 15,
+    data: "9 settembre 2026",
+    titolo: "Due temi nuovi per L'Asta 🦸 💘",
+    descrizione: [
+      "SUPEREROI 🦸 — quattro round per costruire il tuo eroe: il superpotere, il costume, il gadget e il punto debole. In fascia alta il controllo dei fulmini, in fondo lo sbadiglio contagioso.",
+      "Nel round del punto debole vale la regola al contrario: la fascia alta è la debolezza rarissima (metalli alieni), quella bassa è l'imbarazzo di tutti i giorni (wifi lento).",
+      "IL PRIMO APPUNTAMENTO 💘 — location, outfit, argomento di conversazione e imprevisto della serata. Dal ristorante stellato al kebabbaro zozzo, dallo smoking alle mutande e canottiera.",
+      "L'ultimo round non è il finale della serata ma l'IMPREVISTO: se sei fortunato inizia a piovere e avete un solo ombrello, se sei sfortunato arriva la polizia. Com'è andata lo decidono gli altri col voto.",
+      "I temi dell'Asta sono adesso sei: Zombie, Pizza, Panino, Rapina, Supereroi e Primo Appuntamento. 184 carte ciascuno."
+    ]
+  },
+  {
+    v: 14,
+    data: "9 settembre 2026",
+    titolo: "L'Asta si gioca ognuno dal suo telefono 🔗 + tema Rapina 💰",
+    descrizione: [
+      "L'Asta ora si può giocare in due modi: con UN TELEFONO SOLO appoggiato al tavolo, oppure OGNUNO DAL SUO TELEFONO.",
+      "Chi organizza sceglie il modo prima di iniziare: se sceglie online, l'app crea una stanza con un codice e un link da mandare agli amici.",
+      "Ognuno rilancia dal proprio telefono, vede la sua offerta e i suoi crediti, e alla fine vota le squadre degli altri in segreto (non puoi votare te stesso).",
+      "Nuovo tema: IL COLPO DEL SECOLO 💰 — quattro round per mettere su la rapina perfetta: La Mente, I Muscoli, La Fuga, Il Nascondiglio. 184 carte nuove.",
+      "I temi dell'Asta sono ora quattro: Zombie, Pizza, Panino e Rapina."
+    ]
+  },
+  {
+    v: 13,
+    data: "9 settembre 2026",
+    titolo: "Profilo e La Sala 👤 🎉",
+    descrizione: [
+      "Ora puoi creare il tuo profilo (nome e faccina) e ritrovarlo ogni volta: all'avvio scegli se CREARE un profilo nuovo o ACCEDERE a uno già salvato su questo telefono.",
+      "Nasce La Sala: metti insieme il gruppo una volta sola e resta lì tra una partita e l'altra.",
+      "A fine partita chi organizza decide: Rigioca, Cambia gioco o torna alla Sala per modificare i giocatori. Il gruppo non si perde più.",
+      "I profili restano solo su questo telefono: non servono password."
+    ]
+  },
+  {
+    v: 12,
+    data: "9 settembre 2026",
+    titolo: "Proposte e segnalazioni 💡 🐞",
+    descrizione: [
+      "Hai un'idea per un gioco, una carta o una regola? Ora c'è il tasto Proposte: scrivila e arriva a chi gestisce il gioco.",
+      "Se qualcosa non funziona c'è il tasto Bug: racconta cosa è successo e lo sistemiamo.",
+      "I messaggi li legge soltanto chi gestisce il gioco."
+    ]
+  },
+  {
+    v: 11,
+    data: "9 settembre 2026",
+    titolo: "L'Asta: tre temi da scegliere 🧟 🍕 🍔",
+    descrizione: [
+      "Oltre agli zombie sono arrivati due temi nuovi: La Pizza Perfetta e Il Panino Perfetto.",
+      "Pizza: Impasto, Base, Formaggio e Condimenti. Panino: Pane, Carne, Formaggio & Salse, Extra & Contorno.",
+      "Ogni tema ha 184 carte, quindi le partite restano sempre diverse.",
+      "Chi organizza sceglie il tema prima di cominciare. Dalla bufala e il tartufo fino alla cenere del forno e alla salsa misteriosa: qualcuno resterà con un piatto discutibile."
+    ]
+  },
+  {
+    v: 10,
+    data: "9 settembre 2026",
+    titolo: "Nuovo gioco: L'Asta 🔨",
+    descrizione: [
+      "Da 2 a 10 giocatori, con un telefono solo appoggiato al tavolo: tutti vedono le carte e ognuno tocca il suo tasto.",
+      "Quattro round a tema (tema iniziale: Sopravvivenza Zombie). In ogni round ognuno si aggiudica una carta all'asta.",
+      "Si parte da 1 credito, si rilancia di 1 e dopo ogni rilancio partono 10 secondi: paga solo chi vince.",
+      "Devi tenere almeno 1 credito per ogni round che resta, quindi attento a non svuotare il portafoglio subito.",
+      "184 oggetti divisi in tre fasce (A, B, C) ragionate sulla sopravvivenza: i pezzi migliori restano rari, quindi anche in 4 esce una sola carta di fascia A.",
+      "Il gioco ricorda le carte già uscite e preferisce quelle mai viste: partite di fila non si somigliano.",
+      "Alla fine si vedono i kit di tutti e ognuno vota quelli degli altri da 1 a 5 stelle: vince chi ne raccoglie di più."
+    ]
+  },
+  {
+    v: 9,
+    data: "9 settembre 2026",
+    titolo: "Oltre 800 avvenimenti e fino a 10 giocatori",
+    descrizione: [
+      "Aggiunte 600 carte nuove: ora sono più di 800 in tutto, con tante più cose per ogni categoria.",
+      "Storia 174, Invenzioni e scoperte 169, Rap italiano 156, Cinema 153, Calcio 152.",
+      "Si può giocare fino a 10 giocatori (prima erano 8), anche nelle stanze online."
+    ]
+  },
+  {
+    v: 8,
+    data: "9 settembre 2026",
+    titolo: "Si vota anche con un telefono solo",
+    descrizione: [
+      "Anche giocando su un unico telefono, dopo che uno sceglie il punto il telefono passa agli altri per votare 👍/👎.",
+      "Chi vota giusto guadagna 50 punti, chi sbaglia ne perde 50 — come nella modalità online."
+    ]
+  },
+  {
+    v: 7,
+    data: "9 settembre 2026",
+    titolo: "Tantissimi nuovi avvenimenti",
+    descrizione: [
+      "Aggiunti 70 nuovi avvenimenti verificati: ora sono circa 200 in tutto.",
+      "Più roba per Storia, Invenzioni, Calcio, Rap italiano e Cinema: le partite sono sempre diverse."
+    ]
+  },
+  {
+    v: 6,
+    data: "8 settembre 2026",
+    titolo: "Sfida a punti, voti e grafica nuova",
+    descrizione: [
+      "Ogni turno ha 30 secondi di tempo.",
+      "Risposta giusta +100 punti, sbagliata −100. Se sbagli la data resta segreta e la carta non entra nella linea (ma la carta si consuma lo stesso).",
+      "Online: quando scegli, gli altri votano se sono d'accordo — chi vota giusto prende 50 punti, chi sbaglia ne perde 50.",
+      "Classifica sempre in alto e classifica finale animata. Aggiunti suoni, vibrazione e una grafica più moderna."
+    ]
+  },
+  {
+    v: 5,
+    data: "8 settembre 2026",
+    titolo: "Partita più bella: nessuno resta indietro",
+    descrizione: [
+      "La partita ora finisce solo quando TUTTI hanno finito le loro carte, non più al primo che le esaurisce.",
+      "Vince chi finisce per primo, ma tutti arrivano in fondo.",
+      "Le descrizioni degli avvenimenti si vedono già mentre scegli dove mettere la carta, e restano sempre visibili sulla linea del tempo.",
+      "Grafica generale più curata."
+    ]
+  },
+  {
+    v: 4,
+    data: "8 settembre 2026",
+    titolo: "Si gioca anche ognuno dal proprio telefono",
+    descrizione: [
+      "Chi organizza sceglie all'inizio: «un telefono solo» (si passa di mano) oppure «ognuno dal suo telefono».",
+      "Online l'host apre una stanza con un codice; gli amici entrano aprendo il link o digitando il codice.",
+      "I turni si aggiornano da soli su tutti i telefoni: gioca chi tocca, gli altri guardano dal vivo.",
+      "Funziona quando il gioco è aperto dal sito pubblicato online."
+    ]
+  },
+  {
+    v: 3,
+    data: "8 settembre 2026",
+    titolo: "Categorie da scegliere e link per gli amici",
+    descrizione: [
+      "Nella linea del tempo ora scegli le categorie: Storia, Invenzioni e scoperte, Calcio, Rap italiano e Cinema.",
+      "Le attivi tutte insieme, oppure solo quelle che vuoi.",
+      "Chi organizza decide categorie e numero di carte, poi crea un link con tutto già impostato da mandare agli amici.",
+      "Aggiunti tanti nuovi avvenimenti verificati su calcio, rap italiano e cinema."
+    ]
+  },
+  {
+    v: 2,
+    data: "8 settembre 2026",
+    titolo: "Arriva il tasto Novità",
+    descrizione: [
+      "Da adesso c'è questo elenco: ogni volta che aggiungiamo qualcosa, lo trovi qui.",
+      "Un pallino rosso sul tasto ti avvisa quando c'è una novità che non hai ancora visto."
+    ]
+  },
+  {
+    v: 1,
+    data: "8 settembre 2026",
+    titolo: "Primo gioco: La linea del tempo",
+    descrizione: [
+      "Metti gli avvenimenti nell'ordine giusto sulla linea del tempo: più si riempie, più diventa difficile.",
+      "Da 1 a 8 giocatori, con un solo telefono che passa di mano in mano.",
+      "Circa 90 avvenimenti veri, ognuno con una riga che racconta cosa è successo.",
+      "Vittoria a chi finisce le carte per primo, con podio e medaglie."
+    ]
+  }
+];
